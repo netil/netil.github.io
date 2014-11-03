@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Web Components & Polymer</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+        <style>
+            textarea { width:90%;position:relative;dispaly:block;font-size:0.55em;background-color:#3F3F3F; color:#fff;font-family: monospace;
+                line-height: 1.2em;
+                word-wrap: break-word;
+                box-shadow: 0px 0px 6px rgba(0,0,0,0.3); }
+
+            .code {
+                position:relative; }
+
+            .code > button {
+                font-family: "Nanum Gothic";
+                margin: 0 0 10px 15px;
+                padding: .3em;
+                font-size:.6em;
+                margin: 0 2px;
+                background-color: #0A5AFA;
+                width: 120px;
+                color: #fff;
+                position: absolute;
+                display: block;
+                border: none;
+                top: 1px;
+                left: 853px;
+                opacity: .4;
+                z-index: 1; }
+
+            .code > button:hover {
+                opacity: 1; }
+
+            button {
+                width: 150px;
+                height: 40px;
+                font-size: 20px; }
+
+            .f_left { float:left }
+
+            p.content {
+                font-size: 28px; }
+
+            .emphasize {
+                color: #81FFDC;
+            }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <!-- bg image : https://www.flickr.com/photos/didmyself/8019255477/ -->
+				<section data-background="./resource/lego7.jpg" data-transition="zoom" data-background-transition="zoom">
+                    <div style="text-align:right">
+                        <h1><img src="http://webcomponents.org/img/logo.svg" alt="WebComponents.org" height="100"> Web Components</h1>
+                        <h2>&</h2>
+                        <h1><img src="https://www.polymer-project.org/images/logos/p-logo.svg" width="150"> Polymer</h1>
+                        <p style="margin-top:50px;color:rgb(52,0,255)">
+                            <small>
+                                <span style="color:red">2014.11.04</span><br>
+                                <img src="http://jindo.dev.naver.com/jindo_home/img/naver_ci_green.png" style="margin:0 0 7px 0"> 박재성
+                            </small>
+                        </p>
+                    </div>                    
+				</section>
+
+                <section>
+                    <h2>who is this guy?</h2>
+                    <div class="fragment">
+                        JindoJS 자바스크립트 프레임워크<br>
+                        <a href="http://jindo.dev.naver.com/" title="JindoJS" target="_new"><img src="./img/jindo.png" width="300"></a>
+
+                    </div>
+                    <div>
+                        <a href="http://book.naver.com/bookdb/book_detail.nhn?bid=6749231" title="자바스크립트 UI 개발과 Jindo 프레임워크" target="_new" class="fragment">
+                            <img src="http://bookthumb.phinf.naver.net/cover/067/492/06749231.jpg?udate=20120705" width="210"></a>
+                        <a href="http://book.naver.com/bookdb/book_detail.nhn?bid=7006583" title="자바스크립트 성능 이야기" target="_new" class="fragment">
+                            <img src="http://bookthumb.phinf.naver.net/cover/070/065/07006583.jpg?udate=20120911" width="200"></a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>일반적인 웹 개발은?</h2>
+
+                    <div class="fragment" style="position:absolute">
+                        <img src="./resource/navercast01.png" style="border:solid 2px #989898">
+                    </div>
+                    <div class="fragment" style="position:absolute;left:150px;z-index:1">
+                        <img src="./resource/navercast02.png" style="border:solid 2px #989898">
+                    </div>
+                    <div class="fragment" style="position:absolute;left:300px;z-index:2">
+                        <img src="./resource/navercast03.png" style="border:solid 2px #989898">
+                    </div>
+                    <div class="fragment" style="position:absolute;left:450px;z-index:3">
+                        <img src="./resource/navercast04.png" style="border:solid 2px #989898">
+                    </div>
+                    <div class="fragment" style="position:absolute;top:400px;left:290px;z-index:3">
+                        <img src="./resource/navercast05.png" style="border:solid 2px #989898">
+                    </div>
+                </section>
+
+				<section>
+					<h1>Web Components?</h1>
+					<p>
+                        재사용 가능한 컴포넌트를 만들 수 있는 표준 기술들의 모음
+                    </p>
+                    <ol style="list-style:none">
+                        <li class="fragment"><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:middle"> Custom Elements : 커스텀 태그를 통한 요소 생성</li>
+                        <li class="fragment"><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:middle"> HTML Imports : HTML 페이지 로딩</li>
+                        <li class="fragment"><img src="http://webcomponents.org/img/icon-templates.png" style="vertical-align:middle"> HTML Templates : 템플릿</li>
+                        <li class="fragment"><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:middle"> Shadow DOM : DOM과 스타일의 캡슐화</li>
+                    </ol>
+				</section>
+
+                <!-- Custom Elements -->
+				<section data-background="#742717">
+                    <section>
+                        <h1><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:140px"> Custom Elements</h1>
+                        <p>커스텀 태그를 통한 요소 생성</p>
+                        <ol style="list-style:square;font-size:25px">
+                            <li class="fragment">새로운 HTML 요소를 생성</li>
+                            <li class="fragment">다른 요소를 확장해 생성가능</li>
+                            <li class="fragment">단일 태그에 커스텀 기능의 묶음 가능</li>
+                            <li class="fragment">기존 DOM 요소의 API를 확장</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:65px"> Custom Elements</h2>
+                        <p>기본 사용방법</p>
+
+                        태그명에 '-'(dash)는 반드시 포함해야 한다.
+                        <pre><code>    // document.registerElement()를 통해 등록
+    var NTag = document.registerElement('n-tag');
+
+    // 또는 다음과 같이 특정 HTML 인터페이스를 사용해 등록할 수도 있다.
+    // custom element는 기본적으로 'HTMLElement'를 상속한다.
+    var NTag = document.registerElement('n-tag', {
+        prototype: Object.create(HTMLElement.prototype)
+    });
+
+    // 문서에 추가
+    document.body.appendChild(new NTag());
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:65px"> Custom Elements</h2>
+                        <p class="code"><button onclick="run('script101')">JavaScript</button>
+                            <textarea id="script101" style="height:300px">
+var NTag = document.registerElement('n-tag', {
+    prototype: Object.create(HTMLElement.prototype)
+});
+
+document.body.appendChild(new NTag());
+
+//alert(document.querySelector("n-tag"));
+//alert(document.getElementsByTagName("n-tag")[0].__proto__.constructor +"");</textarea>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:65px"> Custom Elements</h2>
+                        <p>기존 요소를 확장</p>
+
+                        <pre><code>    // &lt;button> 태그를 확장
+    var XButton = document.registerElement('x-button', {
+        prototype: Object.create(HTMLButtonElement.prototype),
+        extends: 'button'
+    });</code></pre>
+
+                        <p>확장된 요소들은 type extension custom elements라 불리우며,<br>"<u>element X is a Y</u>"와 같이 사용</p>
+<pre><code>    &lt;button is="x-button">&lt;/button></code></pre>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:65px"> Custom Elements</h2>
+                        <p>속성과 메서드 추가</p>
+
+                        <p class="code"><button onclick="run('script01')">JavaScript</button>
+                            <textarea id="script01" style="height:300px">
+// 1. HTML 객체 생성
+var XTestProto = Object.create(HTMLElement.prototype);
+
+// 2. ‘hi’ 메서드 추가
+XTestProto.hi = function() { alert('안녕하세요.'); };
+
+// 3. 읽기 전용 ‘bar’ 속성 설정
+Object.defineProperty(XTestProto, "bar", {value: 5});
+
+// 4. &lt;x-test> 태그 등록. 태그명에는 '-'가 꼭 포함되어야 함.
+var XTest = document.registerElement('x-test', { prototype: XTestProto });
+
+/*
+var XTestProto = document.registerElement('x-test', {
+    prototype: Object.create(HTMLElement.prototype, {
+        bar: {
+            get: function() { return 5; }
+        },
+        hi: {
+            value: function() {
+                alert('안녕하세요.');
+            }
+        }
+    })
+});
+*/</textarea>
+                        </p>
+
+                        <p class="code"><button onclick="run('html01')">HTML</button>
+                            <textarea id="html01"></textarea>
+                        </p>
+                        <div id="content01"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:65px"> Custom Elements</h2>
+                        <p>Lifecycle callback</p>
+
+                        <table style="font-size:30px">
+                            <thead>
+                                <tr>
+                                    <th>콜백</th>
+                                    <th>발생시점</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>createdCallback</td>
+                                    <td>인스턴스가 생성될 때</td>
+                                </tr>
+                                <tr>
+                                    <td>attachedCallback</td>
+                                    <td>생성된 인스턴스가 문서에 추가될때</td>
+                                </tr>
+                                <tr>
+                                    <td>detachedCallback</td>
+                                    <td>인스턴스가 문서에서 제거될 때</td>
+                                </tr>
+                                <tr>
+                                    <td>attributeChangedCallback<br>(attrName, oldVal, newVal)</td>
+                                    <td>속성이 변경될 때(추가/삭제/수정)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+<pre><code>    var proto = Object.create(HTMLElement.prototype);
+
+    // 콜백 등록
+    proto.createdCallback = function() { ... };
+    proto.attachedCallback = function() { ... };
+
+    var XFoo = document.registerElement('x-foo', {prototype: proto});</code></pre>
+
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:65px"> Custom Elements</h2>
+                        <p>컨텐츠가 포함된 custom element</p>
+
+                        <p class="code"><button onclick="run('script201')">JavaScript</button>
+                            <textarea id="script201" style="height:300px">
+var NTagProto = Object.create(HTMLElement.prototype);
+
+NTagProto.createdCallback = function() {
+    this.innerHTML = "<b>반갑습니다~</b>";
+};
+
+var NTagHi = document.registerElement('n-tag-hi', { prototype: NTagProto });</textarea>
+                        </p>
+                        <p class="code"><button onclick="run('html201')">HTML</button>
+                            <textarea id="html201"></textarea>
+                        </p>
+                        <div id="content201"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-customelements.png" style="vertical-align:text-bottom;height:65px"> Custom Elements</h2>
+                        <p>
+                            아직 요소의 등록이 제대로 되지 않은 상태인 경우,<br>
+                            FOUC<sup>*</sup> 상태로 페이지가 렌더링될 수 있다.
+                        </p>
+                        <p><u>:unresolved</u> pseudo class를 사용해 이를 방지할 수 있다.</p>
+
+                        <pre><code>
+    x-test { ... }
+    x-test:unresolved { opacity: 0; }
+                        </code></pre>
+
+
+                        <small>*FOUC(Flash Of Unstyled Content) -
+                            <a href="http://en.wikipedia.org/wiki/Flash_of_unstyled_content" target="_new">
+                                http://en.wikipedia.org/wiki/Flash_of_unstyled_content</a>
+                        </small>
+                    </section>
+				</section>
+
+                <!-- HTML Imports -->
+                <section data-background="#1A3819">
+                    <section>
+                        <h1><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:140px"> HTML Imports</h1>
+                        <p>
+                            HTML 페이지를 로딩
+                        </p>
+                        <ol style="list-style:square;font-size:25px">
+                            <li class="fragment">JS/HTML/CSS를 묶음 형태로 사용 → 단일 URL로 호출</li>
+                            <li class="fragment">HTML Import를 통한 추가되는 컴포넌트들은 중복되는 경우라도 호출,<br>파싱 및 실행은 단 한 번만 수행</li>
+                            <li class="fragment">Import 내의 스크립트는 메인 문서의 파싱을 블럭하지 않음</li>
+                            <li class="fragment">스크립트는 import시 실행되나, 다른 요소(마크업,CSS 등)들은<br>메인 페이지에 추가되는 시점에 활성화</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:65px"> HTML Imports</h2>
+                        <p>
+                            기본 사용방법
+                        </p>
+                        <pre><code>    &lt;link rel="import" href="/path/file_name.html"></code></pre>
+                        <p>다른 도메인의 파일을 임포트 하기 위해선<br>CORS가 활성화 되어 있어야 한다.</p>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:65px"> HTML Imports</h2>
+                        <p>
+                            이벤트 (load & error)
+                        </p>
+                        <pre><code>
+    &lt;link rel="import" href="/path/file_name.html"
+            onload="handleLoad(event)"
+            onerror="handleError(event)">
+
+</code></pre>
+                        <p class="content">브라우저가 &lt;link rel="import"> 태그를 만나면<br>
+                           즉시 로딩하기 때문에 이벤트 핸들러는<br>
+                           import 태그 이전에 선언되어야 한다.
+                        </p>
+
+                        <p class="fragment code" style="margin-top:30px"><button onclick="run('script102')">JavaScript</button>
+                            <textarea id="script102" style="height:250px">
+var el = document.createElement("link");
+el.rel = "import";
+el.href="./resource/blank.html";
+
+el.onload = function(e) {
+    // TODO
+
+};
+
+document.head.appendChild(el);</textarea>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:65px"> HTML Imports</h2>
+                        <p>
+                            import된 컨텐츠의 활용
+                        </p>
+                        <p><br>
+                            import가 수행된다고 해서 그 지점에 컨텐츠가<br>
+                            포함되는 형태는 아니며, 브라우저가 해당 파일을<br>
+                            파싱하고 사용할 수 있도록 준비되는 것.<br><br>
+
+                            import 속성을 사용해 컨텐츠 문서에 접근할 수 있다.
+                        </p>
+
+                        <p class="fragment code" style="margin-top:30px"><button onclick="run('script202')">JavaScript</button>
+                            <textarea id="script202" style="height:250px">// import된 문서를 얻는다.
+var contentDoc = document.querySelector('link[rel="import"]').import;
+
+// 컨텐츠 문서에서 셀렉터를 통해 요소를 선택한다.
+//alert(contentDoc.querySelector("*").outerHTML);</textarea>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:65px"> HTML Imports</h2>
+                        <p>
+                            페이지의 동작
+                        </p>
+                        main.html <pre><code class="html" data-trim>&lt;link rel="import" href="import.html">
+</code></pre>
+
+                        import.html <pre><code class="nohightlight" data-trim>&lt;link rel="stylesheet" href="common.css">
+&lt;style>
+    /* 이 블럭내의 스타일은 기본적으로 main.html에 반영됨 */
+&lt;/style>
+&lt;script>
+// import.html 문서를 가리킴. 즉, 현재 파일
+var importDoc = document.currentScript.ownerDocument;
+
+// main.html 문서를 가리킴. 즉, 현재 파일을 import 하는 파일
+var mainDoc = document;
+
+// import.html 문서내의 스타일시트를 main.html에 포함하고자 한다면, 아래와 같이 별도 추가작업이 필요
+var styles = importDoc.querySelector('link[rel="stylesheet"]');
+mainDoc.head.appendChild(styles.cloneNode(true));
+&lt;/script>
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:65px"> HTML Imports</h2>
+                        <p>기억할 점</p>
+
+                        <ul style="margin-top:30px">
+                            <li class="fragment">스크립트는 <u>window 문맥</u>에서 실행</li>
+                            <li class="fragment">import는 메인 페이지의 파싱을 블럭하지는 않지만,<br><u>렌더링은 블럭</u><br>
+                                <p class="content fragment"><br>
+                                    import되는 페이지에 style이 포함될 수 있으므로, 브라우저는 FOUC를 방지하기 위해 렌더링을 블럭<br><br>
+                                    비동기적으로 import 하고자 한다면 async 속성을 추가<br>
+                                    <span class="emphasize">&lt;link rel="import" href="/path/some.html" async></span>
+                                </p>
+                            </li>
+                            <li class="fragment">
+                                import 파일들은 일반적인 리소스와 마찬가지로 브라우저 캐싱됨
+                            </li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:65px"> HTML Imports</h2>
+                        <pre><code class="html">
+    <!-- main.html -->
+    &lt;head>&lt;link rel="import" href="some.html">&lt;/head>
+    &lt;body>
+    &lt;script>
+                var link = document.querySelector('link[rel="import"]');
+                var content = link.import;
+                var el = content.querySelector('div');
+                document.body.appendChild(el.cloneNode(true));
+        &lt;/script>
+    &lt;/body>
+                        </code></pre>
+                        <pre><code class="html">
+    <!-- some.html -->
+    &lt;script>alert("파일이 import 되었습니다.");&lt;/script>
+    &lt;div>
+          &lt;style> h3 { color: red; } &lt;/style>
+          &lt;h3>HTML Imports&lt;/h3>
+          &lt;p>안녕하세요. 반갑습니다~!&lt;/p>
+    &lt;/div>
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-htmlimports.png" style="vertical-align:text-bottom;height:65px"> HTML Imports</h2>
+                        <p class="code"><button onclick="run('script02')">JavaScript</button>
+                            <textarea id="script02" style="height:300px">
+// TODO : import "./resource/some.html"
+
+/*
+var link = document.querySelector('link[rel="import"]');
+var content = link.import;
+var el = content.querySelector('div');
+document.getElementById("content02").appendChild(el.cloneNode(true));
+*/</textarea>
+                        </p>
+                        <div id="content02"></div>
+                    </section>
+                </section>
+
+                <!-- HTML Templates -->
+                <section data-background="#212124">
+                    <section>
+                        <h1><img src="http://webcomponents.org/img/icon-templates.png" style="vertical-align:text-bottom;height:140px"> HTML Templates</h1>
+                        <p>
+                            재사용을 위한 템플릿
+                        </p>
+                        <ul style="list-style:square;font-size:25px">
+                            <li class="fragment">비활성화 상태의 복제 가능한 DOM chunk</li>
+                            <li class="fragment">새로운 태그 : &lt;template> … &lt;/template></li>
+                            <li class="fragment">태그 내의 태그들은 사용되기 전까진 파싱은 되나 렌더링되지 않음</li>
+                            <li class="fragment">컨텐츠는 클론/사용 되기전까진 비활성</li>
+                            <li class="fragment">페이지의 일부분이 아님</li>
+                            <li class="fragment">중첩된 &lt;template>은 동작하지 않음</template>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-templates.png" style="vertical-align:text-bottom;height:65px"> HTML Templates</h2>
+                        <pre><code>
+        // 1. content 속성을 사용해 템플릿의 노드(#document-fragment)에 접근할 수 있다.
+        var content = document.getElementById("count").content;
+
+        // 2. 템플릿내의 DOM에 대한 작업을 한다.
+        var span = content.querySelector('span');
+        span.textContent = parseInt(span.textContent, 10) + 1;
+
+        // 3. 메인 DOM에 document.importNode()를 통해 추가한다.
+        document.getElementById("content03").appendChild(
+            document.importNode(content, true));
+                        </code></pre>
+                        <pre><code>
+        &lt;!-- 템플릿 -->
+        &lt;template id="count">
+          &lt;div>Template used: &lt;span>0&lt;/span>&lt;/div>
+          &lt;script>alert('클릭하셨네요!');&lt;/script>
+        &lt;/template>
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-templates.png" style="vertical-align:text-bottom;height:65px"> HTML Templates</h2>
+                        <p class="code"><button onclick="run('script03')">JavaScript</button>
+                            <textarea id="script03" style="height:230px">
+// 1. content 속성을 사용해 템플릿의 노드(#document-fragment)에 접근할 수 있다.
+var content = document.getElementById("count").content;
+
+// 2. 템플릿내의 DOM에 대한 작업을 한다.
+var span = content.querySelector('span');
+span.textContent = parseInt(span.textContent, 10) + 1;
+
+// 3. 메인 DOM에 document.importNode()를 통해 추가한다.
+document.getElementById("content03").appendChild(document.importNode(content, true));
+                            </textarea>
+                        </p>
+
+                        <p class="code"><button onclick="run('html03')">HTML</button>
+                            <textarea id="html03" style="height:100px">
+<template id="count">
+    <div>Template used: <span>0</span></div>
+    <script>alert('클릭하셨네요!');</script>
+</template></textarea>
+                        </p>
+                        <div id="content03"></div>
+                    </section>
+                </section>
+
+                <!-- Shadow DOM -->
+                <section data-background="#403200">
+                    <section>
+                        <h1><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:140px"> Shadow DOM</h1>
+                        <p>
+                            DOM과 스타일의 캡슐화
+                        </p>
+                        <ul style="list-style:square;font-size:25px">
+                            <li class="fragment">별도의 스코프를 갖는 DOM</li>
+                            <li class="fragment">새로운 root node → "shadow root"</li>
+                            <li class="fragment">shadow root를 가지고 있는 요소는 "shadow host"라고 불리움</li>
+                            <li class="fragment">shadow host의 컨텐츠는 렌더링되지 않으며, 대신 shadow root의 컨텐츠가 렌더링됨</li>
+                            <li class="fragment">Polymer에서 생성하는 모든 요소들은 shadow DOM으로 처리</li>
+                        </ul>
+
+                        <pre class="fragment"><code><video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg"  controls="controls"></video></code></pre>
+                        <p class="fragment">
+                            <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls></video>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p>기본 사용방법</p>
+
+                        <p class="code"><button onclick="run('script104')">JavaScript</button>
+                            <textarea id="script104" style="height:300px">
+// shadow root를 포함할 host를 얻는다.
+var host = document.getElementById('shadow_btn');
+
+// shadow root를 생성한다.
+var root = host.createShadowRoot();
+root.textContent = '안녕하세요.';</textarea>
+                        </p>
+
+                        <p class="code"><button onclick="run('html104')">HTML</button>
+                            <textarea id="html104"><button id="shadow_btn">Hello, world!</button></textarea>
+                        </p>
+                        <div id="content104"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p>Pesudo class</p>
+                        <p class="content">
+                            Shadow DOM에 정의된 css 스타일은<br>
+                            기본적으로 ShadowRoot 스코프를 갖는다.
+                        </p>
+
+                        <p class="emphasize" style="font-weight:bold;margin-top:40px">:host / :host(selector)</p>
+                        <p class="content">host 요소를 의미 (ShadowRoot context내에서만 사용가능)</p>
+
+                        <p class="code"><button onclick="run('script204')">JavaScript</button>
+                            <textarea id="script204" style="height:240px">
+var host = document.getElementById('shadow_btn2');
+var root = host.createShadowRoot();
+
+// ShadowRoot를 host 하는 요소를 가리킨다.
+root.innerHTML = '<style>' +
+    ':host { text-transform: uppercase; }' +
+    '</style>' +
+    '<content></content>';</textarea>
+                        </p>
+                        <div id="content204"><button id="shadow_btn2" class="red">My Button</button></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p>Pesudo class</p>
+
+                        <p class="emphasize" style="font-weight:bold;margin-top:40px">:host-context(selector)</p>
+                        <p class="content">host의 조상 요소들중 selector와 매칭되는 경우에만 host에 스타일을 지정</p>
+
+                        <p class="code"><button onclick="run('script304')">JavaScript</button>
+                            <textarea id="script304" style="height:240px">
+var host = document.getElementById('shadow_btn3');
+var root = host.createShadowRoot();
+
+// ShadowRoot를 host 하는 조상 요소들 중 매칭되는 경우에만 스타일을 지정
+root.innerHTML = '<style>' +
+    ':host-context(.host-context) { text-transform: uppercase; }' +
+    '</style>' +
+    '<content></content>';</textarea>
+                        </p>
+                        <p class="code"><button onclick="run('html304')">HTML</button>
+                            <textarea id="html304" style="height:100px"><div class="host-context">
+    <button id="shadow_btn3" class="red">My Button</button>
+</div></textarea>
+                        <div id="content304"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p>Pesudo element</p>
+
+                        <p class="emphasize" style="font-weight:bold;margin-top:40px">::shadow </p>
+                        <p class="content">ShadowRoot를 갖는 요소</p>
+
+                        <p class="code"><button onclick="run('script404')">JavaScript</button>
+                            <textarea id="script404" style="height:160px">
+var host = document.getElementById('shadow_div');
+var root = host.createShadowRoot();
+
+root.innerHTML = '<span>Shadow DOM</span>' +
+                 '<content></content>';</textarea>
+                        </p>
+                        <p class="code"><button onclick="run('html404')">HTML</button>
+                            <textarea id="html404" style="height:160px"><style>#shadow_div::shadow span { color: red }</style>
+
+<div id="shadow_div">
+    <span>Light DOM</span>
+</div></textarea>
+                        <div id="content404"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p>Combinator</p>
+
+                        <p class="emphasize" style="font-weight:bold;margin-top:40px">/deep/</p>
+                        <p class="content">::shadow 보다 강력하며, 모든 shadow boundary를 가로질러 임의의 요소와 매칭</p>
+
+                        <pre><code data-trim>
+                        // shadow 트리내의 모든 .hello 클래스 요소와 매칭
+body /deep/ .hello { /* 스타일 */ }
+                        </code></pre>
+
+                        <p class="code"><button onclick="run('html504')">HTML</button>
+                            <textarea id="html504" style="height:130px"><style>
+/* 네이티브 요소 스타일링 */
+video /deep/ input[type="range"] {
+    background: hotpink; }
+</style></textarea>
+                        <div id="content504"></div>
+                        <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls></video>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p><span class="emphasize">&lt;content></span> : host의 특정 요소를 출력(포함)</p>
+
+                        <p class="code"><button onclick="run('script604')">JavaScript</button>
+                            <textarea id="script604" style="height:200px">
+var host = document.getElementById('shadow_div06');
+var root = host.createShadowRoot();
+root.innerHTML = '<style>h3 { color: red; }\
+        content[select="h3"]::content > h3 { color: green; }\
+        ::content section p { text-decoration: underline; }</style>\
+    <h3>Shadow DOM</h3>\
+    <content select="h3"></content>\
+    <content select="section"></content>';</textarea>
+                        </p>
+
+                        <p class="code"><button onclick="run('html604')">HTML</button>
+                            <textarea id="html604" style="height:120px"><div id="shadow_div06"><h3>Light DOM</h3>
+<section>
+    <div>I'm not underlined</div>
+    <p>I'm underlined in Shadow DOM!</p>
+</section></div></textarea>
+                        <div id="content604" style="line-height:20px;font-size:30px;height:160px;overflow:auto"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p>몇가지 특징</p>
+
+                        <ul style="list-style:square;font-size:25px">
+                            <li class="fragment">한개의 host에서 여러 개의 ShadowRoot를 만들 수 있음</li>
+                            <li class="fragment">하지만, LIFO(Last In, First Out) 스택과 같이 마지막에 추가된<br>ShadowRoot가 렌더링됨</li>
+                            <li class="fragment">제일 처음 추가된 트리는 'older tree'<br>→ .olderShadowRoot 속성을 통해 접근</li>
+                            <li class="fragment">제일 마지막에 추가된 트리는 'yonger tree'<br>→ .shadowRoot를 통해 접근</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p><span class="emphasize">&lt;shadow></span> : shadow root에서 shadow 요소를 출력(포함)</p>
+
+                        <p class="code"><button onclick="run('script704')">JavaScript</button>
+                            <textarea id="script704" style="height:240px">
+var host = document.getElementById('shadow_div7');
+var root1 = host.createShadowRoot();
+var root2 = host.createShadowRoot();
+
+root1.innerHTML = '<div>루트 1</div><content></content>';
+root2.innerHTML = '<div>루트 2</div><shadow></shadow>';</textarea>
+                        </p>
+
+                        <p class="code"><button onclick="run('html704')">HTML</button>
+                            <textarea id="html704" style="height:130px"><div id="shadow_div7">Light DOM</div></textarea>
+                        <div id="content704"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p class="emphasize">Element.getDistributedNodes()</p>
+                        <p class="content">&lt;content>로 포함된 노드들을 접근할 수 있도록 한다.</p>
+
+                        <p class="code"><button onclick="run('script804')">JavaScript</button>
+                            <textarea id="script804" style="height:240px">
+var host = document.getElementById('shadow_div8');
+var root = host.createShadowRoot();
+
+// 템플릿을 ShadowRoot에 추가한다.
+var template = document.getElementById('sdom');
+var clone = document.importNode(template.content, true);
+root.appendChild(clone);
+
+var html = [];
+[].forEach.call(root.querySelectorAll('content'), function(el) {
+    html.push(el.select + ': ');
+
+    // <content>로 포함된 노드를 얻는다.
+    var nodes = el.getDistributedNodes();
+
+    [].forEach.call(nodes, function(node) {
+        html.push(node.outerHTML);
+    });
+
+    html.push('\n');
+});
+
+alert(html.join(""));
+</textarea>
+                        </p>
+
+                        <p class="code"><button onclick="run('html804')">HTML</button>
+                            <textarea id="html804" style="height:130px"><div id="shadow_div8">
+    <span>HTML</span> <span>5</span>
+    <div>Shadow DOM</div>
+    <h5>footer</h5>
+</div>
+
+<!-- 템플릿 -->
+<template id="sdom">
+    <header><content select="span"></content></header>
+    <section><content select="div"></content></section>
+    <footer><content select="h5"></content></footer>
+</template></textarea>
+                        <div id="content804"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p class="emphasize">Element.getDestinationInsertionPoints()</p>
+
+                        <p class="content">자신을 포함시킨 ShadowRoot 요소에 접근</p>
+
+                        <p class="code"><button onclick="run('script904')">JavaScript</button>
+                            <textarea id="script904" style="height:320px">
+var host = document.getElementById('shadow_div9');
+var root1 = host.createShadowRoot();
+var root2 = host.createShadowRoot();
+
+root1.innerHTML = '<content select="h2"></content>';
+root2.innerHTML = '<shadow></shadow>';
+
+// 해당 요소를 ShadowRoot에 포함시킨 요소에 접근
+var h2 = document.querySelector('#shadow_div9 h2');
+var insertionPoints = h2.getDestinationInsertionPoints();
+
+var html = [];
+[].forEach.call(insertionPoints, function(contentEl) {
+    html.push(contentEl.outerHTML);
+});
+
+alert(html.join("\n"));
+</textarea>
+                        </p>
+
+                        <p class="code"><button onclick="run('html904')">HTML</button>
+                            <textarea id="html904" style="height:90px"><div id="shadow_div9">
+    <h2>Light DOM</h2>
+</div></textarea>
+                        <div id="content904"></div>
+                    </section>
+
+                    <section>
+                        <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
+                        <p>Shadow DOM Visualizer</p>
+                        <iframe src="http://html5-demos.appspot.com/static/shadowdom-visualizer/index.html" style="width:100%;height:580px;overflow-y:auto"></iframe>
+
+                        <p class="content">
+                            <a href="http://html5-demos.appspot.com/static/shadowdom-visualizer/index.html" target="_new">
+                            http://html5-demos.appspot.com/static/shadowdom-visualizer/index.html</a>
+                        </p>
+                    </section>
+
+                </section>
+
+                <!-- bg image : https://www.flickr.com/photos/criminalintent/5101528210/ -->
+				<section data-background="./resource/lego9.png">
+					<h1 class="fragment" style="border:dotted 2px #fff;color:#fff;padding: 30px 0;border:soild 1px red">Web Component를<br>사용하면?</h1>
+					<p class="fragment" style="color:#fff;font-size:50px">
+						태그 형태로 특정 기능을 갖는 UI 컴포넌트들을<br>
+						삽입할 수 있어, 손쉬운 재사용이 가능해집니다!
+					</p>
+				</section>
+
+				<section>
+					<h1><img src="https://www.polymer-project.org/images/logos/p-logo.svg" width="150"> Polymer?</h1>
+					<p>
+						Polymer is a library that makes building applications easier.<br>
+						Is built on <u>Web Components</u>.
+					</p>
+					<img src="./img/polymer.png">
+                    <p>
+                        <a href="https://www.polymer-project.org/" target="_new">https://www.polymer-project.org/</a>
+                    </p>
+				</section>
+
+				<section>
+					<h2>Polymer Architecture</h2>
+					<ul style="position:relative;width:600px;list-style:none">
+						<li class="fragment">
+							Polymer Elements : polymer.js
+						</li>
+						<li>
+							<div style="position:absolute;top:325px;left:-15px;width:100%;height:1px;border-top:dotted 5px rgb(21,253,5);"></div> <img src="./img/polymer_architecture.png">
+						</li>
+						<li class="fragment">Polyfill : platform.js <span style="font-size:20px">(webcomponent.js로 변경예정)</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Polyfill?</h2>
+					<p>
+						브라우저가 네이티브 하게 지원하지 않는 기능을<br>사용 가능하도록 만들어주는 코드 모음<br>
+						<a href="http://remysharp.com/2010/10/08/what-is-a-polyfill/" target="_new">http://remysharp.com/2010/10/08/what-is-a-polyfill/</a>
+					</p>
+
+                    <ul style="margin-top:20px">
+                        <li style="list-style:none;text-decoration:underline">Web Components polyfill</li>
+                        <li>Mozilla X-Tag : <a href="http://www.x-tags.org/" target="_new">http://www.x-tags.org/</a></li>
+                        <li>Google Polymer : <a href="http://www.polymer-project.org/" target="_new">http://www.polymer-project.org/</a></li>
+                    </ul>
+				</section>
+
+				<section>
+					<h2>브라우저 호환성</h2>
+					<iframe src="./resource/Polymer Compatibility Matrix.html" style="width:840px;height:500px;"></iframe>
+
+                    <p style="font-size:20px">
+					   <a href="https://www.polymer-project.org/resources/compatibility.html" target="_new">
+                            https://www.polymer-project.org/resources/compatibility.html</a>
+                    </p>
+                    <p class="content">
+                        Chrome 36+ 부터 웹컴포넌트 스펙들은 네이티브하게 지원
+                    </p>
+				</section>
+
+				<section>					
+					<h2>
+						<img src="https://www.polymer-project.org/images/logos/p-logo.svg" style="width:90px;vertical-align:text-bottom">
+                        Polymer <spam>는</span>
+                    </h2>
+                    <h3>
+                        <u>Evergreen Browser</u><sup>*</sup>에서<br><br>문제없는 실행을 목표.
+					</h3>
+					<p style="margin-top:50px;font-size:30px">
+						<sup>*</sup>Evergreen Web Browser is a web browser<br>
+						that automatically updates itself on startup.
+                    </p>
+                    <p style="font-size:20px">
+						<a href="http://www.yetihq.com/blog/evergreen-web-browser/" target="_new">
+                            http://www.yetihq.com/blog/evergreen-web-browser/</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Polymer Elements : <font style="color:darkorange">Core Elements</font></h2>
+					<p>
+						유틸리티 요소와 공통적 UI 요소들의 모음<br>
+						Ajax, 애니메이션, 드래그&드롭, 아이콘 모음, 툴팁, etc.
+					</p>
+                    <p class="fragment">
+                        <iframe style="width:100%;height:500px;"
+                            src="https://www.polymer-project.org/components/core-elements/demo.html"></iframe>
+                        <a href="http://www.polymer-project.org/docs/elements/core-elements.html" style="font-size:20px">
+                            http://www.polymer-project.org/docs/elements/core-elements.html</a>
+                    </p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Polymer Elements : <font style="color:darkorange">Paper Elements</font></h2>
+						<p>
+							<u>Material design</u><sup>*</sup>이 적용된 UI 요소들의 모음<br>
+							버튼, 체크박스, 다이얼로그, 입력요소, 탭, 토스트, etc.<br>
+						</p>
+                        <p class="fragment">
+                            <iframe style="width:100%;height:500px;"
+                                src="https://www.polymer-project.org/components/paper-elements/demo.html"></iframe>
+                            <a href="http://www.polymer-project.org/docs/elements/paper-elements.html" style="font-size:20px">
+                                http://www.polymer-project.org/docs/elements/paper-elements.html</a>
+                        </p>
+					</section>
+
+					<section>
+						<h2>Material Design?</h2>
+						<blockquote style="font-size:25px">
+							"머티리얼 디자인에서 표면과 그림자는 물리적인 구조를 형성하여,<br>
+							사용자들이 화면 상의 어떤 부분을 터치할 수 있고<br>
+							움직일 수 있는지 쉽게 이해할 수 있도록 돕습니다."
+						</blockquote>
+						<iframe width="560" height="315" src="//www.youtube.com/embed/Q8TXgCzxEnw" frameborder="0" allowfullscreen></iframe>
+						<ul>
+							<li class="fragment">다양한 디바이스를 아우르는 일관된 디자인</li>
+							<li class="fragment">질감이 느껴지는 표면(tactile surfaces)</li>
+							<li class="fragment">대담하고 선명한 그래픽 디자인 (bold graphic design)</li>
+							<li class="fragment">자연스러운 애니메이션</li>
+						</ul>
+						</p>
+					</section>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>사용방법 #1</h2>
+                        <p>
+                            이미 만들어진 요소들을 사용하는 방법
+                        </p>
+
+                        <ol style="width:800px;margin-top:40px;text-align:center;list-style:none;">
+                            <li class="fragment">
+                                1. platform.js를 페이지에 로딩<br>
+                                <pre><code>&lt;script src="../components/platform/platform.js">&lt;/script></code></pre>
+                            </li>
+                            <li class="fragment">
+                                2. 사용할 요소를 페이지에 로딩<br>
+                                <pre><code>&lt;link rel="import" href="./components/paper-checkbox/paper-checkbox.html"></code></pre>
+                            </li>
+                            <li class="fragment">
+                                3. 페이지 내에 새로 추가된 요소를 태그로 선언<br>
+                                <pre><code>&lt;paper-checkbox>&lt;/paper-checkbox></code></pre>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h3>이미 만들어진 요소들을 사용하는 방법</h3>
+                        <p class="code"><button onclick="run('html05')">HTML</button>
+                            <textarea id="html05" style="height:350px"><!-- paper elements
+paper-input label="이름을 입력하세요."
+paper-checkbox
+paper-radio-button
+-->
+</textarea>
+                        </p>
+                        <iframe id="content05" src="./resource/polymer.html" style="width:90%;height:250px"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>사용방법 #2 - 직접 요소를 생성</h2>
+                        <p>
+                            Step 1: 요소에 해당되는 페이지 작성
+                        </p>
+
+                        <ol style="width:800px;margin-top:40px;text-align:center;list-style:none;">
+                            <li class="fragment">
+                                1. Polymer core를 페이지에 삽입<br>
+                                <pre><code>&lt;link rel="import" href="../components/polymer/polymer.html"></code></pre>
+                            </li>
+                            <li class="fragment">
+                                2. &lt;polymer-element>를 사용해 새로운 태그 등록<br>
+                            <pre><code>&lt;polymer-element name="사용자정의-태그" noscript>
+      &lt;template>
+          &lt;span>내용&lt;/span>
+      &lt;/template>
+&lt;/polymer-element>
+</code></pre>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h2>사용방법 #2 - 직접 요소를 생성</h2>
+                        <p>
+                            Step 2: 사용될 페이지에서 요소 페이지 삽입 후, 태그로 선언
+                        </p>
+
+<pre><code class="html">&lt;head>
+      &lt;script src="../components/platform/platform.js">&lt;/script>
+      &lt;link rel="import" href="./파일.html">
+&lt;/head>
+&lt;body>
+      &lt;사용자정의-태그>&lt;/사용자정의-태그>
+&lt;/body>
+</code></pre>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h3>직접 생성한 요소를 사용하는 방법</h3>
+                        <p class="code"><button onclick="run('script06')">JavaScript</button>
+                            <textarea id="script06" style="height:80px"></textarea>
+                        </p>
+                        <p class="code"><button onclick="run('html06')">HTML</button>
+                            <textarea id="html06" style="height:80px"><naver-search></<naver-search></textarea>
+                        </p>
+                        <iframe id="content06" src="./polymer/starter/demo2.html" style="width:90%;height:400px"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>Polymer demo App</h1>
+
+                    <p style="clear:left">
+                        <a href="https://www.polymer-project.org/apps/topeka/">Topeka</a> / 
+                        <a href="https://www.polymer-project.org/components/paper-calculator/demo.html">Calculator</a>
+                    </p>
+
+                    <p>
+                        <iframe style="width:45%;height:500px;float:left"
+                            src="https://www.polymer-project.org/apps/topeka/"></iframe>                        
+                    
+                        <iframe style="width:45%;height:500px;"
+                            src="https://www.polymer-project.org/components/paper-calculator/demo.html"></iframe>
+                    </p>
+                </section>
+
+				<section>
+					<h1>Vulcanize</h1>
+					<p>
+						사용되는 웹 컴포넌트 파일들을 병합해<br>
+						HTTP request를 줄일 수 있도록 해주는 도구
+					</p>
+                    <pre><code class="bash">
+    # 설치
+    $ sudo npm install -g vulcanize
+
+    # 사용
+    $ vulcanize 대상파일.html --inline --strip -o 결과파일.html
+                    </code></pre>
+					<a href="https://github.com/Polymer/vulcanize">https://github.com/Polymer/vulcanize</a>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>Web Components Ecosystem</h2>
+                        <p>
+                            다양한 웹컴포넌트 생태계
+                        </p>
+                        <ul style="list-style:none;font-size:16px;line-height:10px;text-align:center">
+                            <li>
+                                <img src="./img/ecosystem01.png" style="width:70%"><br>
+                                <a href="http://component.kitchen/" target="_new">http://component.kitchen/</a>
+                            </li>
+                            <li>
+                                <img src="./img/ecosystem02.png" style="width:70%"><br>
+                                <a href="http://customelements.io/" target="_new">http://customelements.io/</a>
+                            </li>
+                            <li>
+                                <img src="./img/ecosystem03.png" style="width:70%"><br>
+                                <a href="http://googlewebcomponents.github.io/" target="_new">http://googlewebcomponents.github.io/</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1><a href="http://bower.io/" target="_new" title="Bower"><img src="http://bower.io/img/bower-logo.png" style="width:150px"></a> Bower</h1>
+                        <p>
+                            대다수의 웹컴포넌트들은<br>
+                            Bower<sup>*</sup>를 통한 손쉬운 설치를 제공
+                        </p>
+
+                        <pre><code class="bash">$ bower install 컴포넌트명</code></pre>
+
+                        <p style="font-size:20px">
+                            <sup>*</sup>A package manager for the web -
+                            <a href="http://bower.io/" target="_new">
+                                http://bower.io/</a>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>&lt;sortable-table></h3>
+                        <pre><code class="bash">$ bower install sortable-table</code></pre>
+                        <p class="code"><button onclick="run('html07')">HTML</button>
+                            <textarea id="html07" style="height:180px"><sortable-table columns='["과일","가","나","다"]'
+    data='[
+		[ "사과", 4, 10, 2 ],
+		[ "바나나", 0, 4, 0 ],
+		[ "포도", 2, 3, 5 ]
+	]'>
+</sortable-table></textarea>
+                        </p>
+                        <iframe id="content07" src="./polymer/starter/table-sort.html" style="width:90%;height:400px"></iframe>
+                    </section>
+
+                    <section>
+                        <h3>&lt;google-map></h3>
+                        <pre><code class="bash">$ bower install GoogleWebComponents/google-map</code></pre>
+                        <p class="code"><button onclick="run('html08')">HTML</button>
+                            <textarea id="html08" style="height:180px"><google-map
+    latitude="37.499405"
+    longitude="127.033716"
+    zoom="17" fitToMarkers="true">
+        <google-map-marker latitude="37.499405" longitude="127.033716"
+            title="포스코P&S타워"></google-map-marker>
+</google-map></textarea>
+                        </p>
+                        <iframe id="content08" src="./polymer/starter/google-map.html" style="width:90%;height:400px"></iframe>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2><img src="https://mozbrick.github.io/media/img/logo.svg" style="width:130px;vertical-align:text-bottom"> Mozilla Brick</h2>
+                        <p>
+                            모질라에서 개발한 UI 웹컴포넌트
+                        </p>
+                        <p class="fragment" style="font-size:20px">
+                            <iframe style="width:100%;height:500px;background-color:#fff"
+                                    src="https://mozbrick.github.io/"></iframe>
+                            <a href="https://mozbrick.github.io/" target="_new">https://mozbrick.github.io/</a>
+                        </p>
+                    </section>
+                </section>
+
+				<section>
+					<h2>Reference</h2>
+					<ul style="font-size:24px;line-height:35px">
+						<li>
+							WebComponents.org<br>
+							<a href="http://webcomponents.org/" target="_new">http://webcomponents.org/</a>
+						</li>
+						<li>
+							Google I/O 2014 - Polymer and Web Components change everything you know about Web development<br>
+							<a href="https://www.youtube.com/watch?v=8OJ7ih8EE7" target="_new">https://www.youtube.com/watch?v=8OJ7ih8EE7</a>
+						</li>
+						<li>
+							Google I/O 2014 - Polymer and the Web Components revolution<br>
+							<a href="https://www.youtube.com/watch?v=yRbOSdAe_JU" target="_new">https://www.youtube.com/watch?v=yRbOSdAe_JU</a>
+						</li>
+						<li>
+							Google I/O 2014 - Unlock the next era of UI development with Polymer<br>
+							<a href="https://www.youtube.com/watch?v=HKrYfrAzqFA" target="_new">https://www.youtube.com/watch?v=HKrYfrAzqFA</a>
+						</li>
+						<li>
+							Custom Elements<br>
+							<a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/" target="_new">http://www.html5rocks.com/en/tutorials/webcomponents/customelements/</a>
+						</li>
+						<li>
+							HTML Imports<br>
+							<a href="http://www.html5rocks.com/en/tutorials/webcomponents/imports/" target="_new">http://www.html5rocks.com/en/tutorials/webcomponents/imports/</a>
+						</li>
+						<li>
+							HTML's New Template Tag<br>
+							<a href="http://www.html5rocks.com/en/tutorials/webcomponents/template/" target="_new">http://www.html5rocks.com/en/tutorials/webcomponents/template/</a>
+						</li>
+						<li>
+							Shadow DOM<br>
+							<a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/" target="_new">http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/</a><br>
+                            <a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/" target="_new">http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/</a><br>
+                            <a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/" target="_new">http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/</a><br>
+						</li>
+					</ul>
+				</section>
+
+                <!-- bg image : https://www.flickr.com/photos/nukamari/8199540353/ -->
+				<section data-background="./resource/lego8.jpg" data-transition="linear" data-background-transition="linear">
+					<p style="margin-left:-50px;font-size:3.5em;text-align:left;font-weight:bolder;letter-spacing:-10px;color:blue;text-decoration-line:solid 1px red;-webkit-text-stroke:2px #fff;">
+                        &lt;thank-you><br>&nbsp;<span style="font-size:.8em;padding-left:100px">고맙습니다.</span><br>&lt;/thank-you>
+                    </p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+			    width: 1024,
+			    height: 768,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+            function run(sId) {
+                var el = document.getElementById(sId),
+                    sValue = el.value,
+                    sType = sId.replace(/\d+/g,"");
+
+                el = document.getElementById("content"+ sId.replace(/[a-z]+/ig,""));
+
+                if(sType == "script") {
+                    try {
+                        if(el.tagName == "IFRAME") {
+                            el.contentWindow.window.eval(sValue);
+                        } else {
+                            eval(sValue);
+                        }
+                    } catch(e) {
+                        if(e.message.indexOf("tagName") > -1) {
+                            eval(sValue);
+                        } else {
+                            alert(e);
+                        }
+                    }
+                } else if(sType == "html") {
+                    if(el.tagName == "IFRAME") {
+                        el.contentWindow.document.body.innerHTML += sValue;
+                    } else {
+                        el.innerHTML += sValue;
+                    }
+                }
+            }
+		</script>
+
+	</body>
+</html>
