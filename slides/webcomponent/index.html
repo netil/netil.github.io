@@ -229,6 +229,7 @@ Object.defineProperty(XTestProto, "bar", {value: 5});
 var XTest = document.registerElement('x-test', { prototype: XTestProto });
 
 /*
+// 또는 아래와 같은 형식으로도 가능하다.
 var XTestProto = document.registerElement('x-test', {
     prototype: Object.create(HTMLElement.prototype, {
         bar: {
