@@ -993,11 +993,11 @@ alert(html.join("\n"));
                         <ol style="width:800px;margin-top:40px;text-align:center;list-style:none;">
                             <li class="fragment">
                                 1. webcomponents.js를 페이지에 로딩<br>
-                                <pre><code>&lt;script src="./bower_components/webcomponentsjs/webcomponents.js">&lt;/script></code></pre>
+                                <pre><code>&lt;script src="bower_components/webcomponentsjs/webcomponents.js">&lt;/script></code></pre>
                             </li>
                             <li class="fragment">
                                 2. 사용할 요소를 페이지에 로딩<br>
-                                <pre><code>&lt;link rel="import" href="./bower_components/paper-input/paper-input.html"></code></pre>
+                                <pre><code>&lt;link rel="import" href="bower_components/paper-input/paper-input.html"></code></pre>
                             </li>
                             <li class="fragment">
                                 3. 페이지 내에 새로 추가된 요소를 태그로 선언<br>
@@ -1030,7 +1030,7 @@ alert(html.join("\n"));
                         <ol style="width:800px;margin-top:40px;text-align:center;list-style:none;">
                             <li class="fragment">
                                 1. Polymer core를 페이지에 삽입<br>
-                                <pre><code>&lt;link rel="import" href="../bower_components/polymer/polymer.html"></code></pre>
+                                <pre><code>&lt;link rel="import" href="bower_components/polymer/polymer.html"></code></pre>
                             </li>
                             <li class="fragment">
                                 2. &lt;polymer-element>를 사용해 새로운 태그 등록<br>
@@ -1051,7 +1051,7 @@ alert(html.join("\n"));
                         </p>
 
 <pre><code class="html">&lt;head>
-      &lt;script src="../bower_components/webcomponentsjs/webcomponents.js">&lt;/script>
+      &lt;script src="bower_components/webcomponentsjs/webcomponents.js">&lt;/script>
       &lt;link rel="import" href="./파일.html">
 &lt;/head>
 &lt;body>
@@ -1303,16 +1303,14 @@ alert(html.join("\n"));
                     }
                 }
             }
-		</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-56978261-1', 'auto');
-  ga('send', 'pageview');
-</script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+      ga('create', 'UA-56978261-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 	</body>
 </html>
