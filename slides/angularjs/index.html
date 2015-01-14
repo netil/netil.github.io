@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>가볍게 살펴보는 AngularJS</title>
+
+		<meta name="description" content="A presentation of Web Components & Polymer">
+		<meta name="author" content="JaeSung Park">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../revealjs/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs/css/theme/moon.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../revealjs/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../revealjs/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+        <style>
+            textarea { width:90%;position:relative;dispaly:block;font-size:0.55em;background-color:#3F3F3F; color:#fff;font-family: monospace;
+                line-height: 1.2em;
+                word-wrap: break-word;
+                box-shadow: 0px 0px 6px rgba(0,0,0,0.3); }
+
+            .code {
+                position:relative; }
+
+            .code > button {
+                font-family: "Nanum Gothic";
+                margin: 0 0 10px 15px;
+                padding: .3em;
+                font-size:.6em;
+                margin: 0 2px;
+                background-color: #0A5AFA;
+                width: 120px;
+                color: #fff;
+                position: absolute;
+                display: block;
+                border: none;
+                top: 1px;
+                left: 853px;
+                opacity: .4;
+                z-index: 1; }
+
+            .code > button:hover {
+                opacity: 1; }
+
+            button {
+                width: 150px;
+                height: 40px;
+                font-size: 20px; }
+
+            .f_left { float:left }
+
+            p.content {
+                font-size: 28px; }
+
+            .emphasize {
+                color: #81FFDC; }
+
+            .reveal section ul {
+                list-style:square;
+                font-size:25px; }
+
+            .reveal .l_none { list-style: none; }
+            .reveal li.l_title { margin-left: -20px; }
+
+            .reveal .txt_28 { font-size: 28px }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <!-- bg image : https://www.flickr.com/photos/stevensnodgrass/8549544197/ -->
+				<section  data-background="./img/cover.jpg" data-transition="zoom" data-background-transition="zoom">
+                    <div>
+                        <h1>
+                            가볍게 살펴보는<br>
+                            <img src="http://upload.wikimedia.org/wikipedia/commons/c/ca/AngularJS_logo.svg" alt="WebComponents.org" height="200"><br>
+                        </h1>
+                        <p style="color:#fff;text-shadow:1px 1px 2px black,0 0 1em black,0 0 0.2em black;">
+                            <small>Jan 16, 2015 - AU개발랩 박재성</small>
+                        </p>
+                    </div>                    
+				</section>
+
+                <section data-background="#212124">
+                    <h2>AngularJS?</h2>
+                    <div>
+                        <img src="./img/img01.jpg">
+                        <ul style="list-style:square;font-size:25px">
+                            <li>2009년 Miško Hevery과 Adam Abrons에 의해 개발된 MVC(또는 MVW) 프레임워크</li>
+                            <li>SPA(Single Page Application) 형태의 웹 어플리케이션 개발에 적합</li>
+                            <li>DOM 제어에 중점을 두지 않고 데이터 변화와 출력에 중점</li>
+                        </p>
+                    </div>
+                </section>
+
+                <section data-background="#742717">
+                    <h2>Philosophy</h2>
+
+                        <ul style="margin-top:20px">
+                            <li class="l_title l_none"><h3>1. 데이터 중심적</h3></li>
+                            <li>기존 방식은 먼저 대상 DOM 요소를 선택 한 후, 필요한 작업을 수행하는 형태<br>
+                                → AngularJS는 데이터 자체에 초점을 맞추어 작업, 데이터의 출력은 자동으로 수행<br><br></li>
+
+                            <li class="l_title l_none"><h3>2. 테스트 주도적</h3></li>
+                            <li>Dependency Injection을 통해 손쉽게 mock-up 객체로 전환</li>
+                            <li>뷰와 분리된 컨트롤러내의 비즈니스 로직은 테스트 친화적<br><br></li>
+
+                            <li class="l_title l_none"><h3>3. 선언적 HTML</h3></li>
+                            <li>커스텀 태그, 태그 속성 등을 통한 선언적 형태의 사용</li>
+                        </ul>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>간단 AngularJS 예제 #1</h2>
+                    <div>
+                        <iframe scrolling='no' src='http://codepen.io/netil/embed/bNqGZJ?height=430&theme-id=5264&slug-hash=eqtJo&user=none&default-tab=html'
+                                frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:100%;height:475px;overflow:hidden'>
+                        </iframe>
+                    </div>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>간단 AngularJS 예제 #2</h2>
+                    <div>
+                        <iframe scrolling='no' src='http://codepen.io/netil/embed/LEWERm?height=430&theme-id=5264&slug-hash=eqtJo&user=none&default-tab=html'
+                                frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:100%;height:475px;overflow:hidden'>
+                        </iframe>
+                    </div>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>양방향 데이터 바인딩<br>(Two-Way Data Binding)</h2>
+                    <div>
+                        <p><img src="./img/data_binding.png"></p>
+                    </div>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>초기화 과정</h2>
+                    <div>
+                        <p style="float:left"><img src="./img/bootstrap.png"></p>
+
+                        <ul style="float:left;width:450px;margin-top:20px">
+                            <li class="fragment">1. DOMContentLoaded 이벤트에서 실행</li>
+                            <li class="fragment">2. AngularJS 영역 초기화 과정 :<br>
+                                <ul style="font-size:20px;list-style:circle">
+                                    <li>문서 내에서 ng-app 지시자 확인</li>
+                                    <li>모듈 및 지시자와 연관된 모듈을 로딩</li>
+                                    <li>어플리케이션 injector 생성</li>
+                                    <li>DOM의 컴파일 <p style="font-size:18px;color:#727272">컴파일은 DOM트리를 순회하면서 지시를 찾아 매칭하고(Compile 과정), 이후 지시자와 스코프를 결합(Link 과정)해 모델의 변경을 뷰에 출력하는 일련의 처리 작업을 의미</p></li>
+                                </ul>
+                            </li>
+                            <li class="fragment">3. 변경된 DOM의 화면 출력</li>
+                        </ul>
+
+                        <p style="clear:left"><a href="https://docs.angularjs.org/guide/bootstrap" class="txt_28" target="_new">Bootstrap: Angular initialization process</a></p>
+                    </div>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>개발방법 비교:<br>DOM 제어 vs AngularJS</h2>
+
+                    <p>
+                        <a href="http://todomvc.com/" title="TodoMVC" target="_new">
+                            <img src="http://todomvc.com/site-assets/logo.svg" style="width:300px;border:solid 1px;padding:10px;border-radius:10px;background-color:#fff;">
+                        </a>
+                    </p>
+
+                    <iframe class="fragment" src='http://todomvc.com/examples/jquery/#/all'
+                        frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:100%;height:385px;overflow:hidden'>
+                    </iframe>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>개발방법 비교: DOM 제어</h2>
+
+                    <img src="./img/todo_dom.png">
+                </section>
+
+                <section data-background="#212124">
+                    <h2>개발방법 비교: AngularJS</h2>
+
+                    <img src="./img/todo_angularjs.png">
+                </section>
+
+                <section data-background="#212124">
+                    <h2>개발방법 비교:<br>DOM 제어 vs AngularJS</h2>
+
+                    <table style="font-size:30px">
+                        <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>종류</th>
+                            <th>크기(byte)</th>
+                            <th>Total(byte)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>DOM 제어(Jindo)</td>
+                            <td>HTML</td>
+                            <td>1,164</td>
+                            <td><span style="color:#FD2822">4,951 (100%)</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>JavaScript</td>
+                            <td>3,787</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>AngularJS</td>
+                            <td>HTML</td>
+                            <td>2,059</td>
+                            <td><span style="color:#2FCC02">3,161 (63.84%)</span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>JavaScript</td>
+                            <td>1,102</td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>적용사례로 살펴본 학습 비용</h2>
+
+                    <table style="font-size:30px;margin-top:50px">
+                        <thead>
+                        <tr style="color:#d19439">
+                            <th>구분</th>
+                            <th>학습 시간/예측</th>
+                            <th>개발 서비스 종류</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>사례1</td>
+                            <td>6주</td>
+                            <td>서비스 어드민</td>
+                        </tr>
+                        <tr>
+                            <td>사례2</td>
+                            <td>7일(2일 학습 + 5일 개발)</td>
+                            <td>2개의 탭을 갖는 목록</td>
+                        </tr>
+                        <tr>
+                            <td>사례3</td>
+                            <td>JS 초급: 쉽게접근<br>JS 중/상급:<br>기존 방식의 익숙함으로<br>인한 시간필요</td>
+                            <td>APM, 저작도구, 프로모션 페이지, etc.</td>
+                        </tr>
+                        <tr>
+                            <td>사례4</td>
+                            <td>2주</td>
+                            <td>컨텐츠와 목록 포함하는 엔드 페이지</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- bg image : https://www.flickr.com/photos/hackny/8048248960/ -->
+                <section data-background="./img/8048248960_b6835fd849_k.jpg">
+
+                        <h2>개발자들이 생각하는 장점</h2>
+
+                        <div style="width:100%;height:380px;position:absolute;background-color:#353636;opacity:0.5;border-radius:20px;border:dotted 4px #fff;"></div>
+                        <ul style="margin-top:40px;font-size:34px;position:relative;color:#fff;padding:20px;">
+                            <li class="fragment">유지보수가 쉽다, 개발속도가 빠르다.</li>
+                            <li class="fragment">간편한 데이터 바인딩을 통해 뷰 업데이트가 쉽다.</li>
+                            <li class="fragment">코드 패턴이 동일해 개인간 차이에 따른 결과물의 차이가 적다, 코드량이 감소한다.</li>
+                            <li class="fragment">SPA 개발에 최적화 되어 있다.</li>
+                            <li class="fragment">기능적인 분리가 명확해 협업이 쉽다.</li>
+                        </ul>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>고려사항: 성능 #1 <span class="txt_28">TodoMVC Benchmark</span></h2>
+
+                    <iframe src='http://dsuket.github.io/todomvc-perf-comparison/'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:100%;height:500px;overflow:hidden'>
+                    </iframe>
+                    <a class="txt_28" href="http://dsuket.github.io/todomvc-perf-comparison/" target="_new">http://dsuket.github.io/todomvc-perf-comparison/</a>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>고려사항: 성능 #2 <span class="txt_28">초기 로딩&렌더링</span></h2>
+
+                    <p><img src="http://www.filamentgroup.com/images/initial-load-mvc/todo-mvc-performance-summary.png" style="width:350px"></p>
+                    <a class="txt_28" href="http://www.filamentgroup.com/lab/mv-initial-load-times.html" target="_new">http://www.filamentgroup.com/lab/mv-initial-load-times.html</a>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>고려사항: 성능 #3 <span class="txt_28">Ajax 데이터 처리</span></h2>
+
+
+                </section>
+
+                <section data-background="#212124">
+                    <h2>고려사항: FOUC<sup>*</sup></h2>
+
+<pre><code>&lt;body ng-app="myApp">
+&lt;div ng-controller="myControllerList">
+    &lt;ul>
+        &lt;li ng-repeat="fruit in fruits">
+            &lt;span>{{fruit.name}}&lt;/span> / &lt;span>{{fruit.qty}}&lt;/span>
+        &lt;/li>
+    &lt;/ul>
+
+    &lt;button onclick="location.reload()">reload&lt;/button>
+&lt;/div>
+&lt;script type="text/javascript" src="https://code.angularjs.org/1.3.8/angular.min.js">&lt;/script>
+&lt;script type="text/javascript">
+angular.module("myApp",[])
+    .controller("myControllerList", function($scope) {
+        $scope.fruits = [
+            { name: '메론', qty: 9 },
+            { name: '망고', qty: 3 },
+            { name: '바나나', qty: 1 }
+        ];
+    });
+&lt;/script>
+&lt;/body></code></pre>
+
+                    <iframe src='./demo/fouc.html'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:90%;height:150px;overflow:hidden'>
+                    </iframe>
+
+                    <small>*FOUC(Flash Of Unstyled Content) -
+                        <a href="http://en.wikipedia.org/wiki/Flash_of_unstyled_content" target="_new">
+                            http://en.wikipedia.org/wiki/Flash_of_unstyled_content</a>
+                    </small>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>고려사항: 이벤트 바인딩</h2>
+
+                    <p>양방향 데이터 바인딩을 위해 모델로 지정된 요소에<br>여래 개의 이벤트가 바인딩 된다.</p>
+                    <iframe class="fragment" src='./demo/event.html'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:90%;height:350px;overflow:hidden'>
+                    </iframe>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>고려사항: 호환성</h2>
+
+                    <p>Angular 2.0에선 1.x과 호환성 갖지 않음 (주요 문법의 변경과 폐지)</p>
+                    <img src="./img/angular20.png" style="border:solid 1px #fff;padding:20px;background-color:#fff;border-radius: 10px;">
+
+                    <p class="txt_28"><a href="http://www.youtube.com/watch?v=gNmWybAyBHI" target="_new">ng-europe 2014: Angular 2.0 Core</a></p>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>도입 할까?,말까?</h2>
+
+                    <img class="fragment" src="./img/flow_chart.png" style="border:solid 1px #fff;padding:20px;background-color:#fff;border-radius: 10px;">
+                </section>
+
+                <!-- bg image : https://www.flickr.com/photos/homeofbastian/3206456480 -->
+				<section data-background="./img/end.jpg" data-transition="linear" data-background-transition="linear">
+					<p style="font-size:3.5em;font-weight:bolder;letter-spacing:-10px;color:#fff;text-decoration-line:solid 1px red;-webkit-text-stroke:0.5px #00D3BF;">
+                        <span style="font-size:.8em;padding-left:100px">muchas gracias.</span>
+                    </p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../revealjs/lib/js/head.min.js"></script>
+		<script src="../revealjs/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+			    width: 1024,
+			    height: 768,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+            function run(sId) {
+                var el = document.getElementById(sId),
+                    sValue = el.value,
+                    sType = sId.replace(/\d+/g,"");
+
+                el = document.getElementById("content"+ sId.replace(/[a-z]+/ig,""));
+
+                if(sType == "script") {
+                    try {
+                        if(el.tagName == "IFRAME") {
+                            console.log(sValue);
+                            el.contentWindow.window.eval(sValue);
+                        } else {
+                            eval(sValue);
+                        }
+                    } catch(e) {
+                        if(e.message.indexOf("tagName") > -1) {
+                            eval(sValue);
+                        } else {
+                            alert(e);
+                        }
+                    }
+                } else if(sType == "html") {
+                    if(el.tagName == "IFRAME") {
+                        el.contentWindow.document.body.innerHTML = sValue;
+                    } else {
+                        el.innerHTML += sValue;
+                    }
+                }
+            }
+
+/*
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56978261-1', 'auto');
+      ga('send', 'pageview');
+*/
+    </script>
+	</body>
+</html>

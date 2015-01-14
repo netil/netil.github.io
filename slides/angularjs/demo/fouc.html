@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>AngularJS</title>
+    <style>body{background-color:#fff}</style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myControllerList">
+    <ul>
+        <li ng-repeat="fruit in fruits">
+            <span>{{fruit.name}}</span> / <span>{{fruit.qty}}</span>
+        </li>
+    </ul>
+
+    <button onclick="location.reload()">reload</button>
+</div>
+<script type="text/javascript" src="https://code.angularjs.org/1.3.8/angular.min.js"></script>
+<script type="text/javascript">
+angular.module("myApp",[])
+    .controller("myControllerList", function($scope) {
+        $scope.fruits = [
+            { name: '메론', qty: 9 },
+            { name: '망고', qty: 3 },
+            { name: '바나나', qty: 1 }
+        ];
+    });
+</script>
+</body>
+</html>

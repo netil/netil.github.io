@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html ng-app>
+<head>
+    <title>AngularJS</title>
+    <script type="text/javascript" src="angular.js"></script>
+    <style>body{background-color:#fff}</style>
+</head>
+<body>
+<div>
+    <input type="text" ng-model="val"><br>
+    <span>{{ val }}</span>
+</div>
+
+<h2>Event log</h2>
+<div id="log"></div>
+<script>
+    var elLog = document.getElementById("log");
+
+    function printLog(str) {
+        var el = elLog.querySelector("#"+ str);
+
+        if(!el) {
+            el = document.createElement("div");
+            el.id = str;
+            el.innerHTML = str + ": <span>1</span>";
+            elLog.appendChild(el);
+        } else {
+            el.querySelector("span").innerHTML = ~~el.querySelector("span").innerHTML + 1;
+        }
+    }
+</script>
+</body>
+</html>
