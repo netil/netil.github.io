@@ -82,6 +82,12 @@
             .reveal li.l_title { margin-left: -20px; }
 
             .reveal .txt_28 { font-size: 28px }
+            .reveal .reload_btn {
+                border-radius: 15px;
+                background-color: transparent;
+                border: solid 4px #fff;
+                color: #fff;
+                font-weight: bold; }
         </style>
 	</head>
 
@@ -98,9 +104,11 @@
                             가볍게 살펴보는<br>
                             <img src="http://upload.wikimedia.org/wikipedia/commons/c/ca/AngularJS_logo.svg" alt="WebComponents.org" height="200"><br>
                         </h1>
-                        <p style="color:#fff;text-shadow:1px 1px 2px black,0 0 1em black,0 0 0.2em black;">
+
+                        <p style="color:#fff;text-shadow:1px 1px 2px black,0 0 1em black,0 0 0.2em black;margin-bottom:-30px">
                             <small>Jan 16, 2015 - AU개발랩 박재성</small>
                         </p>
+                        <img src="http://jindo.dev.naver.com/jindo_home/img/naver_ci_green.png" style="margin:0 0 7px 0">
                     </div>                    
 				</section>
 
@@ -315,9 +323,39 @@
                 </section>
 
                 <section data-background="#212124">
-                    <h2>고려사항: 성능 #3 <span class="txt_28">Ajax 데이터 처리</span></h2>
+                    <h2>고려사항: 성능 #3 <span class="txt_28">데이터 처리</span></h2>
 
+                    <p>100개 목록 데이터가 HTML에 포함되어 처리되는 경우</p>
 
+                    <iframe id="dataload_normal" src='http://ajaxui.nhncorp.com/svnview/yorky/mania/prototype/angularjs_performance/news.php?count=100'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:50%;height:500px;float:left'>
+                    </iframe>
+                    <iframe id="dataload_angular" src='http://ajaxui.nhncorp.com/svnview/yorky/mania/prototype/angularjs_performance/news_angularjs.php?count=100'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:50%;height:500px;float:left'>
+                    </iframe>
+
+                    <p style="clear:left;padding-top:10px">
+                        <button class="reload_btn" onclick="document.getElementById('dataload_normal').src='http://ajaxui.nhncorp.com/svnview/yorky/mania/prototype/angularjs_performance/news.php?count=100'">일반</button>
+                        <span style="font-size:20px">< click to refresh ></span>
+                        <button class="reload_btn" onclick="document.getElementById('dataload_angular').src='http://ajaxui.nhncorp.com/svnview/yorky/mania/prototype/angularjs_performance/news_angularjs.php?count=100'">AngularJS</button>
+                    </p>
+                </section>
+
+                <section data-background="#212124">
+                    <h2>고려사항: 성능 #4 <span class="txt_28">데이터 바인딩</span></h2>
+
+                    <p>데이터 편차에 따른 처리 속도</p>
+
+                    <iframe id="dataload2_normal" src='http://ajaxui.nhncorp.com/svnview/yorky/mania/prototype/angularjs_performance/news_bind.php'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:50%;height:500px;float:left'>
+                    </iframe>
+                    <iframe id="dataload2_angular" src='http://ajaxui.nhncorp.com/svnview/yorky/mania/prototype/angularjs_performance/news_angularjs_bind.php'
+                            frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:50%;height:500px;float:left'>
+                    </iframe>
+
+                    <p style="font-size:28px;clear:left;padding-top:10px">
+                        One-Way Data Binding vs. Two-Way Data Binding
+                    </p>
                 </section>
 
                 <section data-background="#212124">
@@ -382,8 +420,9 @@ angular.module("myApp",[])
 
                 <!-- bg image : https://www.flickr.com/photos/homeofbastian/3206456480 -->
 				<section data-background="./img/end.jpg" data-transition="linear" data-background-transition="linear">
-					<p style="font-size:3.5em;font-weight:bolder;letter-spacing:-10px;color:#fff;text-decoration-line:solid 1px red;-webkit-text-stroke:0.5px #00D3BF;">
-                        <span style="font-size:.8em;padding-left:100px">muchas gracias.</span>
+					<p style="font-size:3.5em;letter-spacing:-10px;color:#fff;-webkit-text-stroke:3px #00D3BF;">
+                        <span style="display:inherit;margin-left:-100px">muchas</span>
+                        <span style="display:inherit;padding-left:38px;margin:-83px 0 0 -100px">gracias.</span>
                     </p>
 				</section>
 
