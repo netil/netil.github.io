@@ -435,7 +435,6 @@ angular.module("myApp",[])
 		<script src="../revealjs/js/reveal.min.js"></script>
 
 		<script>
-
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -474,7 +473,6 @@ angular.module("myApp",[])
                 if(sType == "script") {
                     try {
                         if(el.tagName == "IFRAME") {
-                            console.log(sValue);
                             el.contentWindow.window.eval(sValue);
                         } else {
                             eval(sValue);
