@@ -2972,7 +2972,7 @@ forEach({
 
 window.createEventHandler = function createEventHandler(element, events) {
   var eventHandler = function(event, type) {
-    printLog && printLog(event.type);
+    window.printLog && printLog(event.type);
 
     // jQuery specific api
     event.isDefaultPrevented = function() {
@@ -3012,6 +3012,10 @@ window.createEventHandler = function createEventHandler(element, events) {
       if (!event.isImmediatePropagationStopped()) {
         eventFns[i].call(element, event);
       }
+    }
+
+    if(typeof nn  != "undefined" && nn){
+        document.getElementById("loading_speed").innerHTML = new Date().getTime() - nn + "ms";
     }
   };
 
