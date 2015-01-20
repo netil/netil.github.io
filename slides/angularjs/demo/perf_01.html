@@ -1,8 +1,6 @@
 ﻿<!DOCTYPE html>
 <!-- saved from url=(0072)http://m.news.naver.com/newsflash.nhn?mode=LS2D&sid1=101&sid2=258&page=1 -->
-<html lang="ko">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title id="browserTitleArea">경제 :: 네이버 뉴스</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
@@ -19,10 +17,12 @@
 		document.getElementById("loading_speed").innerHTML = new Date().getTime()  - ntime + "ms";
 	}
  </script>
+
+
 </head>
 <body class="s" queryid="C1416217598867832428" onload="loadtime();">
 
-<div style="right:10px;z-index:3000;background-color:#efefef;width:200px;height:25px;position:fixed;top:10px;padding-top:8px;border:solid 1px #000;text-align:center">
+<div style="position:absolute; right: 10px;z-index:3000;background-color:#efefef;width:200px;height:25px; position:fixed; top:10px;">
     로딩 속도 : <span id="loading_speed"></span>
 </div>
 
@@ -75,6 +75,7 @@
 
     <div class="box3">
         <ul class="block" id="newsArea">
+
             <li class="type_a" id="newsflash1">
                 <a href="http://m.news.naver.com/read.nhn?oid=366&aid=0000229703&sid1=101&sid2=258&mode=LS2D" onclick="nclk(this,&#39;eco_sto.list&#39;,&#39;0000366_000000000000000000229703&#39;,&#39;1&#39;);">
                     리스트 0<span class="by">디지털타임스 <span id="main_news_servicedate1">오후 1:15</span></span>
@@ -1054,6 +1055,8 @@
 
 </div>
 
+
+
 <script type="text/javascript" src="./js/jindo.mobile.min.js"></script>
 <script type="text/javascript" src="./js/jindo.mobile.component.js"></script>
 <script type="text/javascript" src="./js/default.dependency.js"></script>
@@ -1179,11 +1182,6 @@ function logout(url) {
 
 </script>
 
-
-
-
-
-
 <script type="text/javascript">
 
 var reqUrl = "ajaxdata.html?mode=LS2D&sid1=101&sid2=258";
@@ -1193,10 +1191,6 @@ new SafariPageNavigation($Element("requestMoreNews"), $Element("moreNews"), $Ele
 		.listenClickEvent();
 
 </script>
-
-
-
-
 
 <script type="text/javascript">
 		jindo.$Fn(function(){
@@ -1219,20 +1213,19 @@ new SafariPageNavigation($Element("requestMoreNews"), $Element("moreNews"), $Ele
 		</script>
 <!-- LCS -->
 
-
-
-
 <script type="text/javascript" src="./js/statistics.js"></script>
-
-
 <script type="text/javascript">
 
 if(typeof BMR !== "undefined"){
 	BMR.run('http://sp.naver.com/sp');
 }
-lcs_do();
+
+//lcs_do();
+
 historyManager.init("naver_mobile_news_history", "");
 </script>
+
+
 <!-- //LCS -->
 <div id="videoWrap"></div>
 
