@@ -16,7 +16,7 @@
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../revealjs/lib/css/zenburn.css">
-
+        <script src="./resource/jquery-2.1.4.min.js"></script>
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -100,11 +100,9 @@
 
                 <section>
                     <h2>About me</h2>
-                    <div class="fragment">
-                        JindoJS 자바스크립트 프레임워크<br>
-                        <a href="http://jindo.dev.naver.com/" title="JindoJS" target="_new"><img src="./img/jindo.png" width="300"></a>
-
-                    </div>
+                    <p class="fragment">
+                        네이버 AU 개발랩
+                    </p>
                     <div>
                         <a href="http://book.naver.com/bookdb/book_detail.nhn?bid=6749231" title="자바스크립트 UI 개발과 Jindo 프레임워크" target="_new" class="fragment">
                             <img src="http://bookthumb.phinf.naver.net/cover/067/492/06749231.jpg?udate=20120705" width="210"></a>
@@ -677,7 +675,7 @@ root.innerHTML = '<span>Shadow DOM</span>' +
                         <div id="content404"></div>
                     </section>
 
-                    <section>
+<!--                    <section>
                         <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
                         <p>Combinator</p>
 
@@ -697,7 +695,7 @@ video /deep/ input[type="range"] {
 </style></textarea>
                         <div id="content504"></div>
                         <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls></video>
-                    </section>
+                    </section>-->
 
                     <section>
                         <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
@@ -839,7 +837,7 @@ alert(html.join("\n"));
                         <div id="content904"></div>
                     </section>
 
-                    <section>
+<!--                    <section>
                         <h2><img src="http://webcomponents.org/img/icon-shadowdom.png" style="vertical-align:text-bottom;height:65px"> Shadow DOM</h2>
                         <p>Shadow DOM Visualizer</p>
                         <iframe src="http://html5-demos.appspot.com/static/shadowdom-visualizer/index.html" style="width:100%;height:580px;overflow-y:auto"></iframe>
@@ -848,7 +846,7 @@ alert(html.join("\n"));
                             <a href="http://html5-demos.appspot.com/static/shadowdom-visualizer/index.html" target="_new">
                             http://html5-demos.appspot.com/static/shadowdom-visualizer/index.html</a>
                         </p>
-                    </section>
+                    </section>-->
 
                 </section>
 
@@ -907,11 +905,19 @@ alert(html.join("\n"));
 
 				<section>
 					<h2>브라우저 호환성</h2>
-					<iframe src="./resource/Polymer Compatibility Matrix.html" style="width:840px;height:500px;"></iframe>
-
-                    <p style="font-size:20px">
-					   <a href="https://www.polymer-project.org/resources/compatibility.html" target="_new">
-                            https://www.polymer-project.org/resources/compatibility.html</a>
+                    <h3>Native</h3>
+                    <p style="font-size:20px;margin-top:-20px">
+                        <a href="https://www.polymer-project.org/1.0/resources/compatibility.html#native-browser-support" target="_new">https://www.polymer-project.org/1.0/resources/compatibility.html</a>
+                    </p>
+                    <p style="font-size:20px;margin:-20px 0 10px 0;">
+                        <img src="img/browser_support_native.png"><br>
+                    </p>
+                    <h3>Polyfill</h3>
+                    <p style="font-size:20px;margin-top:-20px">
+                        <a href="https://github.com/WebComponents/webcomponentsjs#browser-support" target="_new">https://github.com/WebComponents/webcomponentsjs</a>
+                    </p>
+                    <p style="font-size:20px;margin-top:-20px">
+                        <img src="img/browser_support_polyfill.png"><br>
                     </p>
                     <p class="content">
                         Chrome 36+ 부터 웹컴포넌트 스펙들은 네이티브하게 지원
@@ -928,25 +934,25 @@ alert(html.join("\n"));
 					</h3>
 					<p style="margin-top:50px;font-size:30px">
 						<sup>*</sup>Evergreen Web Browser is a web browser<br>
-						that automatically updates itself on startup.
+						that updates itself without prompting the user.
                     </p>
                     <p style="font-size:20px">
-						<a href="http://www.yetihq.com/blog/evergreen-web-browser/" target="_new">
-                            http://www.yetihq.com/blog/evergreen-web-browser/</a>
+						<a href="http://tomdale.net/2013/05/evergreen-browsers/" target="_new">
+                            http://tomdale.net/2013/05/evergreen-browsers/</a>
 					</p>
 				</section>
 
 				<section>
-					<h2>Polymer Elements : <font style="color:darkorange">Core Elements</font></h2>
+					<h2>Polymer Elements : <font style="color:darkorange">Iron Elements</font></h2>
 					<p>
 						유틸리티 요소와 공통적 UI 요소들의 모음<br>
 						Ajax, 애니메이션, 드래그&드롭, 아이콘 모음, 툴팁, etc.
 					</p>
                     <p class="fragment">
                         <iframe style="width:100%;height:500px;"
-                            src="https://www.polymer-project.org/components/core-elements/demo.html"></iframe>
-                        <a href="http://www.polymer-project.org/docs/elements/core-elements.html" style="font-size:20px">
-                            http://www.polymer-project.org/docs/elements/core-elements.html</a>
+                            src="https://elements.polymer-project.org/browse?package=iron-elements"></iframe>
+                        <a href="https://elements.polymer-project.org/browse?package=iron-elements" style="font-size:20px">
+                            https://elements.polymer-project.org/browse?package=iron-elements</a>
                     </p>
 				</section>
 
@@ -959,9 +965,9 @@ alert(html.join("\n"));
 						</p>
                         <p class="fragment">
                             <iframe style="width:100%;height:500px;"
-                                src="https://www.polymer-project.org/components/paper-elements/demo.html"></iframe>
-                            <a href="http://www.polymer-project.org/docs/elements/paper-elements.html" style="font-size:20px">
-                                http://www.polymer-project.org/docs/elements/paper-elements.html</a>
+                                src="https://elements.polymer-project.org/browse?package=paper-elements"></iframe>
+                            <a href="https://elements.polymer-project.org/browse?package=paper-elements" style="font-size:20px">
+                                https://elements.polymer-project.org/browse?package=paper-elements</a>
                         </p>
 					</section>
 
@@ -1009,11 +1015,10 @@ alert(html.join("\n"));
                     <section>
                         <h3>이미 만들어진 요소들을 사용하는 방법</h3>
                         <p class="code"><button onclick="run('html05')">HTML</button>
-                            <textarea id="html05" style="height:350px"><!-- paper elements
-<paper-input label="이름을 입력하세요.">
-<paper-checkbox>
-<paper-radio-button>
--->
+                            <textarea id="html05" style="height:350px"><!-- paper elements -->
+<paper-input label="이름을 입력하세요."><br>
+<paper-checkbox>체크 1</paper-checkbox><br>
+<paper-radio-button>선택 2</paper-radio-button>
 </textarea>
                         </p>
                         <iframe id="content05" src="./demo/polymer.html" style="width:90%;height:250px"></iframe>
@@ -1033,12 +1038,35 @@ alert(html.join("\n"));
                                 <pre><code>&lt;link rel="import" href="bower_components/polymer/polymer.html"></code></pre>
                             </li>
                             <li class="fragment">
-                                2. &lt;polymer-element>를 사용해 새로운 태그 등록<br>
-                            <pre><code>&lt;polymer-element name="사용자정의-태그" noscript>
+                                2. &lt;dom-element>를 사용해 새로운 태그 등록<br>
+                            <pre><code>&lt;dom-element name="사용자정의-태그" noscript>
       &lt;template>
           &lt;span>내용&lt;/span>
       &lt;/template>
-&lt;/polymer-element>
+&lt;/dom-element>
+&lt;script>
+    // element registration
+    Polymer({
+        is: "사용자정의-태그",
+
+        ready:function(e) {
+            // when element is ready
+        },
+
+        hi: function() {
+            alert("안녕하세요~");
+        },
+
+        // add properties and methods on the element's prototype
+        properties: {
+            // declare properties for the element's public API
+            greeting: {
+                type: String,
+                value: "Hello!"
+            }
+        }
+    });
+&lt;/script>
 </code></pre>
                             </li>
                         </ol>
@@ -1078,16 +1106,14 @@ alert(html.join("\n"));
                     <h1>Polymer demo App</h1>
 
                     <p style="clear:left">
-                        <a href="https://www.polymer-project.org/apps/topeka/">Topeka</a> / 
-                        <a href="https://www.polymer-project.org/components/paper-calculator/demo.html">Calculator</a>
+                        <a href="https://polymer-topeka.appspot.com/">Topeka</a> /
+                        More on :
+                        <a href="http://builtwithpolymer.org/">Built with Polymer</a>
                     </p>
 
                     <p>
-                        <iframe style="width:45%;height:500px;float:left"
-                            src="https://www.polymer-project.org/apps/topeka/"></iframe>                        
-                    
-                        <iframe style="width:45%;height:500px;"
-                            src="https://www.polymer-project.org/components/paper-calculator/demo.html"></iframe>
+                    <iframe style="width:45%;height:500px"
+                        src="https://polymer-topeka.appspot.com"></iframe>
                     </p>
                 </section>
 
@@ -1113,18 +1139,14 @@ alert(html.join("\n"));
                         <p>
                             다양한 웹컴포넌트 생태계
                         </p>
-                        <ul style="list-style:none;font-size:16px;line-height:10px;text-align:center">
-                            <li>
-                                <img src="./img/ecosystem01.png" style="width:70%"><br>
+                        <ul style="list-style:none;font-size:26px;line-height:16px;text-align:center">
+                            <li style="margin-top:20px">
+                                <img src="./img/ecosystem01.png"><br>
                                 <a href="http://component.kitchen/" target="_new">http://component.kitchen/</a>
                             </li>
-                            <li>
-                                <img src="./img/ecosystem02.png" style="width:70%"><br>
+                            <li style="margin-top:20px">
+                                <img src="./img/ecosystem02.png"><br>
                                 <a href="http://customelements.io/" target="_new">http://customelements.io/</a>
-                            </li>
-                            <li>
-                                <img src="./img/ecosystem03.png" style="width:70%"><br>
-                                <a href="http://googlewebcomponents.github.io/" target="_new">http://googlewebcomponents.github.io/</a>
                             </li>
                         </ul>
                     </section>
@@ -1146,18 +1168,13 @@ alert(html.join("\n"));
                     </section>
 
                     <section>
-                        <h3>&lt;sortable-table></h3>
-                        <pre><code class="bash">$ bower install sortable-table</code></pre>
+                        <h3>&lt;clock-face></h3>
+                        <pre><code class="bash">$ bower install clock-face</code></pre>
                         <p class="code"><button onclick="run('html07')">HTML</button>
-                            <textarea id="html07" style="height:180px"><sortable-table class="bootstrap" columns='["과일","가","나","다"]'
-    data='[
-		[ "사과", 4, 10, 2 ],
-		[ "바나나", 0, 4, 0 ],
-		[ "포도", 2, 3, 5 ]
-	]'>
-</sortable-table></textarea>
+                            <textarea id="html07" style="height:180px"><clock-face></clock-face>
+<!-- <clock-face hour="9" minute="30" second="10" class="red big"></clock-face> --></textarea>
                         </p>
-                        <iframe id="content07" src="./demo/sortable-table.html" style="width:90%;height:400px"></iframe>
+                        <iframe id="content07" src="./demo/clock-face.html" style="width:90%;height:400px"></iframe>
                     </section>
 
                     <section>
@@ -1245,7 +1262,6 @@ alert(html.join("\n"));
 		<script src="../revealjs/js/reveal.min.js"></script>
 
 		<script>
-
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({

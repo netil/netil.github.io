@@ -7,7 +7,7 @@
     <link rel="import" href="../bower_components/polymer/polymer.html">
 </head>
 <body>
-<polymer-element name="naver-search" noscript>
+<dom-module name="naver-search" noscript>
     <template>
         <style>
             button, fieldset, img {
@@ -144,7 +144,7 @@
                             <option>긍정부정검색</option>
                         </optgroup>
                     </select>
-                    <span class="green_window" queryid="C1406276495122190587"><input id="query" name="query" type="text" title="검색어 입력" class="input_text" tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off" onclick="document.getElementById('fbm').value=1;"></span><button id="search_btn" type="submit" title="검색" tabindex="3" class="sch_smit" onmouseover="this.className='sch_smit over'" onmousedown="this.className='sch_smit down'" onmouseout="this.className='sch_smit'" onclick="clickcr(this,'sch.action','','',event);$$.getSingle('#u_skip a').id = 'sform'"><span class="ir">검색</span></button>
+                    <span class="green_window" queryid="C1406276495122190587"><input id="query" name="query" type="text" title="검색어 입력" class="input_text" tabindex="1" accesskey="s" style="ime-mode:active;" autocomplete="off"></span><button id="search_btn" type="submit" title="검색" tabindex="3" class="sch_smit"><span class="ir">검색</span></button>
                     <input type="hidden" id="sm" name="sm" value="top_hty">
                     <input type="hidden" id="fbm" name="fbm" value="0">
                     <input type="hidden" id="acr" name="acr" value="" disabled="disabled">
@@ -162,9 +162,31 @@
             <div id="nautocomplete" class="autocomplete">
                 <span class="btn_arw top"><a href="#" onclick="return false;" tabindex="2"><img src="http://sstatic.naver.com/search/images11/btn_atcmp_down_on.gif" width="13" height="11" title="자동완성 펼치기" alt="자동완성 펼치기" class="triangleImg"></a></span>
             </div>
-
+            </div>
         </div>
     </template>
-</polymer-element>
+    <script>
+        // element registration
+        Polymer({
+            is: "naver-search",
+            ready:function(e) {
+                // when element is ready
+            },
+            hi: function() {
+                alert("안녕하세요~");
+            },
+
+            // add properties and methods on the element's prototype
+
+            properties: {
+                // declare properties for the element's public API
+                greeting: {
+                    type: String,
+                    value: "Hello!"
+                }
+            }
+        });
+    </script>
+</dom-module>
 </body>
 </html>
