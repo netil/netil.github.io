@@ -26,9 +26,9 @@ element.addEventListener("webkitmouseforcewillbegin", function(event) {
 
 ----------
 
-== ![1319485593888.png](img/01.png)
+<img src="img/01.png" class="fragment grow">
 
-== ![392999144567.png](img/02.png)
+<img src="img/02.png" class="fragment grow">
 
 ----------
 
@@ -52,7 +52,7 @@ element.addEventListener("touchstart", function(event) {
 
 ## iPad Pro 
 - 기존 iPad들의 뷰포트 width(device-width)는 <span class="green">768px</span>
-- iPad Pro(12.9 인치 - 2015/11 출시)의 뷰포트 width는 <span class="red">1024px</span>
+- iPad Pro(12.9 인치 - 2015/11 출시)의 뷰포트 width는 <span class="fragment grow highlight-red">1024px</span>
   <small>iPad Pro는 3D Touch 미지원. 대신 Apple Pen을 지원 (Apple Pen과 관련된 별도 API는 없음)</small>
 
 - [iOS9 and Responsive Web Design](http://www.mobilexweb.com/wp-content/uploads/2015/09/ios9rwd.png)
@@ -154,7 +154,7 @@ if (video.webkitSupportsPresentationMode &&
 - 쿠키와 웹사이트 데이터를 사파리와 공유.
   <small>- ex. 로그인된 상태라면 Safari View Controller에서도 동일하게 로그인된 상태가 됨, form에 대한 데이터의 autofill 처리, 등</small>
 
-<img src="img/08.png" width=400>
+<img src="img/08.png" width=400 class="fragment grow">
 
 - [Introducing Safari View Controller - Apple WWDC 2015](https://www.youtube.com/watch?v=lY2_QwZPZZM)
 - [iOS 9 and Safari View Controller: The Future of Web Views](http://www.macstories.net/stories/ios-9-and-safari-view-controller-the-future-of-web-views/)
@@ -166,7 +166,7 @@ App extension(유료)을 설치하면 사파리에서<br>
 광고, 트래커, 커스텀 폰트, 큰 이미지, JS 파일 등을 차단<br>
 <small>*App extension은 사파리에 JSON 포맷의 rules 배열정보를 제공하며, 사파리는 이 정보를 바이트코드로 변환해 사용</small>
 
-<img src="img/09.png" style="width:400px;float:left">
+<img src="img/09.png" style="width:400px;float:left" class="fragment grow">
 <p style="float:left">사파리 설정에서 Content Blocker 앱을 설정하는 형태로 사용</p>
 
 - 지원 기기 :
@@ -180,6 +180,8 @@ App extension(유료)을 설치하면 사파리에서<br>
 - <img src="img/1Blocker.jpg" width=80>  [1Blocker](https://itunes.apple.com/us/app/1blocker-block-ads-tracking/id1025729002) (무료)
 - <img src="img/crystal.png" width=80 style="border-radius:18px"> [Crystal](https://itunes.apple.com/app/id1022177308) (유료)
 - <img src="img/purify.png" width=80> [Purify](https://itunes.apple.com/us/app/id1030156203) - [실행 데모 동영상](https://www.youtube.com/watch?v=VzJfyB6LrJs) (유료)
+
+[List of content blockers for iOS 9](http://www.loopinsight.com/2015/09/16/a-list-of-content-blockers-for-ios-9/)
 
 ----------
 
@@ -202,6 +204,9 @@ App extension(유료)을 설치하면 사파리에서<br>
 
 ## WKWebView 
 - UIWebView는 공식적으로 <span class="red">폐지(deprecated) 예정</span>
+  <small>[In apps that run in iOS 8 and later, use WKWebView instead of using UIWebView.](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWebView_Class/#//apple_ref/doc/uid/TP40006950-CH3-DontLinkElementID_8)</small>
+  
+
 - Swift or Objective-C 에서 [WKWebsiteDataStore](https://developer.apple.com/library/prerelease/ios/documentation/WebKit/Reference/WKWebsiteDataStore_Class_Ref/index.html)를 통해 웹뷰의 로컬스토리지를 핸들링 할수도 있음
 - 별도 파일을 URL로 로딩가능
 - 커스텀 UserAgent 지정가능
@@ -230,7 +235,7 @@ App extension(유료)을 설치하면 사파리에서<br>
 ## App Search
 Spotlight 검색 또는 Siri를 통해 앱의 컨텐츠 또는 웹을 검색<br>
 
-<img src="img/appsearch.jpg" width=500>
+<img src="img/appsearch.jpg" width=500 class="fragment grow">
 
 <p style="text-align:left">
 [App Search API Validation Tool](https://search.developer.apple.com/appsearch-validation-tool/)로 App Search 최적화(SEO) 여부 검사<br>
@@ -262,19 +267,21 @@ CloudKit JS를 통해 iCloud 데이터에 액세스 할수 있다.
 ## 새로운 OS (tvOS, watchOS)
 ![464321707670.png](img/13.png)
 
-- tvOS: 브라우저 및 웹뷰 없음. 그러나 JavaScript, XHR 그리고 DOM은 XML 기반의 TVML 마크업을 통해 실행
+- tvOS: 브라우저 및 웹뷰 없음. 그러나 JavaScript, XHR 그리고 DOM은<br>
+  XML 기반의 TVML 마크업을 통해 실행 
   - [About TVML](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/)
 - watchOS: 브라우저 및 웹뷰 없음
 
 
 ----------
 
-# API 지원
+# JavaScript & CSS
 
 ----------
 
 ## Navigation Timing API
-웹사이트의 성능측정 데이터를 제공하는 Navigation Timing API가 iOS 8.0에 추가되었다가 8.1에서 제거되었는데, iOS9에 다시 추가
+웹사이트의 성능측정 데이터를 제공하는 Navigation Timing API가<br>
+iOS 8.0에 추가되었다가 8.1에서 제거되었는데, iOS9에 다시 추가
 
 - 참고 : [Navigation Timing](http://www.w3.org/TR/navigation-timing/)
 
@@ -427,7 +434,7 @@ if (window.CSS && CSS.supports("-webkit-scroll-snap-type", "mandatory")) {
 ----------
 
 ## 기타
-- `-webkit-` prefix를 붙여 사용하던 CSS 속성들 일부에 대해 prefix 제거 ([목록](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewInSafari/Articles/Safari_9.html#//apple_ref/doc/uid/TP40014305-CH9-DontLinkElementID_6))
+- <span class="green">-webkit-</span> prefix를 붙여 사용하던 CSS 속성들 일부에 대해 prefix 제거 ([목록](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewInSafari/Articles/Safari_9.html#//apple_ref/doc/uid/TP40014305-CH9-DontLinkElementID_6))
 - <span class="red">&lt;input type=file></span>에서 iCloud 드라이브 또는 써드파티 앱의 파일 등 선택가능
 - https 프로토콜을 사용하는 페이지에서는 http와 https를 혼용해 리소스들을 로딩할 수 없음
 - 네이티브 앱에서 확장기능을 통해, 사파리의 공유된 링크(shared links)에 데이터를 추가할 수 있음
@@ -440,7 +447,3 @@ if (window.CSS && CSS.supports("-webkit-scroll-snap-type", "mandatory")) {
 - [iOS 9, Safari and the Web: 3D Touch, new Responsive Web Design, Native integration and HTML5 APIs](http://www.mobilexweb.com/blog/ios9-safari-for-web-developers)
 - [What's new in Safari 9](http://www.johanbrook.com/writings/what-s-new-in-safari-9/)
 - [What's New in Safari : Safari 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewInSafari/Articles/Safari_9.html#//apple_ref/doc/uid/TP40014305-CH9-DontLinkElementID_6)
-
-----------
-
-# 고맙습니다.
