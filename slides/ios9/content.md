@@ -226,7 +226,7 @@ App extension(유료)을 설치하면 사파리에서<br>
 
 == <img src="img/universal_links01.png" style="float:left;margin:50px">
 
-== <img src="img/universal_links02.png" style="float:left">
+<div class="fragment" style="width:300px;height:200px;background-image:url(img/universal_links02.png);margin:50px 400px;"></div>
 
 ----------
 
