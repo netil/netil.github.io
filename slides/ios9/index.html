@@ -97,12 +97,17 @@
                 cursor: pointer;
                 opacity: 0.5;
             }
+
+            #timer span {
+                display: inline-block;
+                margin-top: 2px;
+            }
         </style>
 	</head>
 
 	<body>
 
-        <div id="timer" onclick="startTimer(60*10,this)">10:00</div>
+        <div id="timer"><span onclick="startTimer(60*10,this)">10:00</span></div>
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
