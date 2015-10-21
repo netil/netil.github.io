@@ -222,7 +222,6 @@ App extension(유료)을 설치하면 사파리에서<br>
 앱이 처리할 URL에 대한 데이터를 apple-app-site-association JSON  파일로 https 웹서버에 업로드 <small>Amazon: https://www.amazon.com/apple-app-site-association</small>
 </p>
 
-- [ios9 정책 변경에 따른 앱 실행 flow 변경(안)](http://yobi.navercorp.com/engineering/discuss/issue/84)<br>
 - [How to Set Up Universal Links to Deep Link on Apple iOS 9](https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9)
 
 == <img src="img/universal_links01.png" style="float:left;margin:50px">
