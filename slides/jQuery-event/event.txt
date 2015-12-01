@@ -1,0 +1,654 @@
+﻿- demo 구성 :
+element에 바인딩된 이벤트 확인하기
+--> jQuery._data($0).events.click[0];
+
+실제 요소에 바인딩된 핸들러가 다른것을 확인
+--> 모든 이벤트 핸들러는 jQuery 핸들러가 설정됨
+getEventListeners($0).click[0].listener;
+
+페이지에 바인딩된 이벤트 종류 확인하기
+--> jQuery.events.global;
+
+.trigger() 실행때 등록한 핸들러와 인라인 이벤트(onevent) 핸들러가 실행되는 것을 확인
+$(elem).on("click", ... );
+<div onclick="alert(1)">
+
+
+Event hook
+jQuery.event.props.push("some") 추가해서 확인해 보기
+
+special 실행 확인
+_default : 실제 사용자 이벤트시에는 실행되지 않음. .trigger()로 실행된 경우에만 실행
+실제 클릭해보고, $('#link').trigger('click')로 실행해서 확인
+
+
+
+1. jQuery event의 기본 사용
+	이벤트 타입에 namespace 지정가능
+        ==> "click.namespace"
+
+	여러개의 이벤트를 공백 구분자로 처리 가능 등
+
+
+2. event
+	event.js
+	jQuery Event API:
+	jQuery.event: helper function/prop
+	jQuery.Event: 이벤트 객체
+	
+	alias.js
+	blur focus focusin focusout load resize scroll unload click dblclick " +
+	"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
+	"change select submit keydown keypress keyup error contextmenu
+	hover bind unbind delegate undelegate
+
+	이벤트명 메서드를 통해 편리하게 사용할 수 있는 메서드 alias 처리
+	
+	jQuery.on() --> jQuery.event.add()
+
+	
+3. Event flows
+	a. .on()
+	b. 이벤트 발생시
+	c. .off()
+	d. .trigger()
+
+
+https://learn.jquery.com/events/event-basics/
+
+
+elem.trigger("click")은 실제 이벤트를 발생시키는 것이 아니라, 해당 요소에 바인딩된 이벤트 핸들러만을
+실행시킨다. 즉, 요소가 <a>라면 href를 탐색하지 않는다.
+
+이벤트 핸들러 내에서의 this는 raw element를 가리킴. jQuery로 래핑하고자 한다면 $(this)와 같이 처리필요
+
+Special Events
+You can use special events to simulate other events.
+
+
+
+jQuery.removeEvent
+
+
+-------------------------------------------------------
+- jQuery.event :
+Helper functions for managing events -- not part of the public interface.
+Props to Dean Edwards' addEvent library for many of the ideas.
+
+// 동일 이벤트가 다시 trigger 되지 않도록 이벤트 type을 저장하는 속성
+jQuery.event.triggered
+
+-------------------------------------------------------
+
+- jQuery.Event :  jQuery 이벤트 객체
+jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+
+-------------------------------------------------------
+
+jQuery api로 확장되는 메서드 :
+
+- jQuery.fn.extend({
+	on
+	one
+	off
+	trigger
+	triggerHandler
+});
+
+
+Event structure :
+==> 해당 요소에 바인딩된 이벤트 객체를 캐싱
+private 변수 dataPriv
+
+dataPriv.cache["3"] = {
+	events: {
+		focus: [{
+			data: 
+			guid: 1,  // handler unique key
+			handler: USER_BINDED_FUNCTION,  // 사용자가 정의한 핸들러
+			namespace: "",
+			needsContext: undefined,
+			origType: "focus",
+			selector: undefined,
+			type: "focus"	
+		}],
+		keydown: [{ 
+			guid: 2,
+			...
+		},
+		{
+			guid: 3,
+			...
+		}]
+	},
+	// native addEventLIsteners에 실제 바인딩되는 공통함수
+	// 모든 이벤트에는 아래의 함수가 바인딩된다.
+	handle: function(e) {
+		function( e ) {
+			// Discard the second event of a jQuery.event.trigger() and
+			// when an event is called after a page has unloaded
+			return typeof jQuery !== "undefined" && jQuery.event.triggered !== e.type ?
+				jQuery.event.dispatch.apply( elem, arguments ) : undefined;
+		};
+	}
+};
+
+동일한 이벤트를 여러번 바인딩하더라도, 실제로는 제일 처음의 이벤트만 DOM에 실질적으로 
+바인딩하고, 이후 바인딩되는 이벤트들은 내부 이벤트 객체 배열에 추가된다.
+
+jQuery.event.global
+jQuery.event.triggered
+
+
+이벤트명이 실제 존재하지 않는 이벤트라고 해도 addEventListener()를 통해 등록됨
+-------------------------------------------------------
+https://learn.jquery.com/events/event-extensions/
+
+jQuery.event.props = [ ... ];
+	이벤트 핸들러에 전달되는 이벤트 객체에 추가되는 속성 목록
+	(* trigger()를 통해 발생되는 경우는 제외)
+
+// extend or normalize the event object
+link jQuery.event.fixHooks["이벤트명"] = {
+	// 브라우저 이벤트 객체에서 jQuery 이벤트 객체로 복사되어야 하는 속성명
+	props: [],
+	
+	// 이벤트 객체를 생성한 후 실행되는 함수로, 이벤트 객체에 전달되는 속성을 핸들링할 수 있다.
+	filter: function(event, originalEvent) {}
+};
+
+```js
+jQuery.event.fixHooks.drop = {
+    props: [ "dataTransfer" ]
+};
+```
+
+* jQuery는 기본적으로 키보드와 마우스 이벤트에 대한 hook을 처리함 :
+
+a) jQuery.event.keyHooks
+	char charCode key keyCode 속성 값을 키보드 이벤트 객체에 추가
+
+b) jQuery.event.mouseHooks
+	button buttons clientX clientY offsetX offsetY pageX pageY screenX screenY toElement
+	위의 속성 값을 마우스 이벤트 객체에 추가
+
+------------------------------------------------------
+
+jQuery.event.simulate: function( type, elem, event, bubble ) {}
+
+이벤트를 시뮬레이션 하기위한 메서드
+이벤트 객체에 다음의 값이 설정됨
+{
+	type: "이벤트 타입",
+	isSimulated: true,  // simulate 여부 값 속성 추가
+	originalEvent: {}   // native 이벤트는 빈 객체로 설정 
+}
+
+------------------------------------------------------
+
+jQuery.event.special
+http://benalman.com/news/2010/03/jquery-special-events/
+
+special event hook은 특정 이벤트에 대한 속성과 함수로 이루어져 있으며,
+해당 이벤트의 동작을 제어하기 위해 사용된다.
+
+jQuery.event.special["이벤트명"] = {
+	// trigger()로 실행되었을 때 버블링 여부. (default false)
+	noBubble : Boolean,
+
+	// 해당 이벤트가 지정된 이벤트(일반적으로 DOM 이벤트) 와 같이 처리되도록 한다.
+	// "click"이라고 지정한 경우, 해당 이벤트는 click 이벤트와 같이 처리
+	bindType: String,
+	delegateType: String,
+
+	// 이벤트가 바인딩될 때 실행
+	// 이벤트가 바인딩 되게 하려면 return false; 필수.
+	setup: function( data: Object, namespaces, eventHandle: function ),
+
+	// 이벤트가 제거(동일 이벤트가 여러개 등록된 경우, 마지막 이벤트)될 때 실행
+	// 이벤트가 제거되게 하려면 return false; 필수.
+	teardown: function(),
+
+	// 이벤트를 바인딩할 때마다 실행
+	// .on()을 통해 등록될 때 마다 실행됨
+	add: function( handleObj ),
+
+	// 이벤트를 제거할 때마다 실행
+	// .off()를 통해 제거하는 경우 실행됨
+	remove: function( handleObj ),
+
+	// .trigger() 또는 .triggerHandler()를 통해 이벤트가 발생되는 경우 실행
+	// 이벤트 객체가 생성된 후, 이벤트 핸들러가 실행되기 전 시점에 호출된다.
+	trigger: function( event: jQuery.Event, data: Object ),
+
+	// .trigger()를 통해 실행되었을때 등록된 이벤트 핸들러 이후 실행
+	_default: function( event: jQuery.Event, data: Object ),
+
+	// 존재하는 경우, 기 등록된 핸들러 대신 실행
+	handle: function( event: jQuery.Event, data: Object )
+}
+
+handleObj = {
+	type: String,
+	origType: String,
+	namespace: String,
+	selector: String,
+	data: Object,
+	handler: function(event: jQuery.Event) {}
+}
+
+-------------------------------------------------------
+
+// Unique for each copy of jQuery on the page
+jQuery.expando = "jQuery" + ( version + Math.random() ).replace( /\D/g, "" );
+
+--------------------------------------------------------
+
+* FLOW : 이벤트 바인딩 시
+
+1) $(element).on("event", handler);
+
+2) jQuery.event에 추가
+return this.each( function() {
+	jQuery.event.add( this, types, fn, data, selector );
+});
+
+3) jQuery.event.add() 구성
+
+jQuery.guid++ 증가해 handler에 유니크 값 부여
+
+// Handle multiple events separated by a space
+// If event changes its type, use the special event handlers for the changed type
+jQuery.event.special[ type ];
+
+// 이벤트에 대한 정보 객체를 생성 후, 이벤트 객체의 "이벤트명" 키 값의 배열에 추가
+// handleObj is passed to all event handlers
+handleObj = jQuery.extend({
+	type: type,
+	origType: origType,
+	data: data,
+	handler: handler,
+	guid: handler.guid,
+	selector: selector,
+	needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
+	namespace: namespaces.join(".")
+}, handleObjIn );
+
+어떤 이벤트가 사용되었는지 확인을 위해 이벤트 종류를 저장
+// Keep track of which events have ever been used, for event optimization
+jQuery.event.global[ type ] = true;
+
+--------------------------------------------------------
+
+* FLOW : 이벤트 발생 시
+
+1) 1. event.js 구성
+2. 이벤트 바인딩시 어떤 플로우로 진행되는지
+3. 메서드 수행시 처리
+4. 특징
+	이벤트 타입에 namespace 지정가능
+        ==> "click.namespace"
+
+	여러개의 이벤트를 공백 구분자로 처리 가능 등
+5. 주의할 점
+
+
+https://learn.jquery.com/events/event-basics/
+
+
+elem.trigger("click")은 실제 이벤트를 발생시키는 것이 아니라, 해당 요소에 바인딩된 이벤트 핸들러만을
+실행시킨다. 즉, 요소가 <a>라면 href를 탐색하지 않는다.
+
+이벤트 핸들러 내에서의 this는 raw element를 가리킴. jQuery로 래핑하고자 한다면 $(this)와 같이 처리필요
+
+Special Events
+You can use special events to simulate other events.
+
+
+
+jQuery.removeEvent
+
+
+-------------------------------------------------------
+- jQuery.event :
+Helper functions for managing events -- not part of the public interface.
+Props to Dean Edwards' addEvent library for many of the ideas.
+
+// 동일 이벤트가 다시 trigger 되지 않도록 이벤트 type을 저장하는 속성
+jQuery.event.triggered
+
+-------------------------------------------------------
+
+- jQuery.Event :  jQuery 이벤트 객체
+jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+
+-------------------------------------------------------
+
+jQuery api로 확장되는 메서드 :
+
+- jQuery.fn.extend({
+	on
+	one
+	off
+	trigger
+	triggerHandler
+});
+
+
+모든 이벤트 등록은 .on()을 통해서 처리됨
+--> delegate(), bind(), etc. 내부에서 .on()으로 바인딩 처리
+
+Event structure :
+==> 해당 요소에 바인딩된 이벤트 객체를 캐싱
+private 변수 dataPriv
+jQuery.data() 에서 사용하는 캐시 데이터는 dataUser
+
+jQuery._data(element);로 dataPriv에 저장된 캐시를 얻어올 수 있다.
+jQuery._removeData(element);로 dataPrive에 저장된 캐시를 제거할 수 있다.
+그러나 이벤트 바인딩은 남아있고, 처리하는 핸들러에 대한 내용만 삭제된다.
+
+Data 추가시 마다 Data.uid++ 증가
+handler.guid = jQuery.guid++; 핸들러 추가시 마다 증가
+
+dataPriv.cache["3"] = {
+	events: {
+		focus: [ {
+			data: 
+			guid: 1,
+			handler: USER_BINDED_FUNCTION,  // 사용자가 정의한 핸들러
+			namespace: "",
+			needsContext: undefined,
+			origType: "focus",
+			selector: undefined,
+			type: "focus"	
+		}],
+		keydown: [ { 
+			guid: 2,
+			...
+		},
+		{
+			guid: 3,
+			...
+		}]
+	},
+	// native addEventLIsteners에 실제 바인딩되는 공통함수
+	// 모든 이벤트에는 아래의 함수가 바인딩된다.
+	handle: function(e) {
+		function( e ) {
+			// Discard the second event of a jQuery.event.trigger() and
+			// when an event is called after a page has unloaded
+			return typeof jQuery !== "undefined" && jQuery.event.triggered !== e.type ?
+				jQuery.event.dispatch.apply( elem, arguments ) : undefined;
+		};
+	}
+};
+
+동일한 이벤트를 여러번 바인딩하더라도, 실제로는 제일 처음의 이벤트만 DOM에 실질적으로 
+바인딩하고, 이후 바인딩되는 이벤트들은 내부 이벤트 객체 배열에 추가된다.
+
+jQuery.event.global
+jQuery.event.triggered
+
+
+이벤트명이 실제 존재하지 않는 이벤트라고 해도 addEventListener()를 통해 등록됨
+-------------------------------------------------------
+https://learn.jquery.com/events/event-extensions/
+
+jQuery.event.props = [ ... ];
+	이벤트 핸들러에 전달되는 이벤트 객체에 추가되는 속성 목록
+	(* trigger()를 통해 발생되는 경우는 제외)
+
+// extend or normalize the event object
+link jQuery.event.fixHooks["이벤트명"] = {
+	// 브라우저 이벤트 객체에서 jQuery 이벤트 객체로 복사되어야 하는 속성명
+	props: [],
+	
+	// 이벤트 객체를 생성한 후 실행되는 함수로, 이벤트 객체에 전달되는 속성을 핸들링할 수 있다.
+	filter: function(event, originalEvent) {}
+};
+
+```js
+jQuery.event.fixHooks.drop = {
+    props: [ "dataTransfer" ]
+};
+```
+
+* jQuery는 기본적으로 키보드와 마우스 이벤트에 대한 hook을 처리함 :
+
+a) jQuery.event.keyHooks
+	char charCode key keyCode 속성 값을 키보드 이벤트 객체에 추가
+
+b) jQuery.event.mouseHooks
+	button buttons clientX clientY offsetX offsetY pageX pageY screenX screenY toElement
+	위의 속성 값을 마우스 이벤트 객체에 추가
+
+------------------------------------------------------
+
+jQuery.event.simulate: function( type, elem, event, bubble ) {}
+
+이벤트를 시뮬레이션 하기위한 메서드
+이벤트 객체에 다음의 값이 설정됨
+{
+	type: "이벤트 타입",
+	isSimulated: true,  // simulate 여부 값 속성 추가
+	originalEvent: {}   // native 이벤트는 빈 객체로 설정 
+}
+
+------------------------------------------------------
+
+jQuery.event.special
+http://benalman.com/news/2010/03/jquery-special-events/
+
+special event hook은 특정 이벤트에 대한 속성과 함수로 이루어져 있으며,
+해당 이벤트의 동작을 제어하기 위해 사용된다.
+
+jQuery.event.special["이벤트명"] = {
+	// trigger()로 실행되었을 때 버블링 여부. (default false)
+	noBubble : Boolean,
+
+	// 해당 이벤트가 지정된 이벤트(일반적으로 DOM 이벤트) 와 같이 처리되도록 한다.
+	// "click"이라고 지정한 경우, 해당 이벤트는 click 이벤트와 같이 처리
+	bindType: String,
+	delegateType: String,
+
+	// 이벤트가 바인딩될 때 실행
+	// 이벤트가 바인딩 되게 하려면 return false; 필수.
+	setup: function( data: Object, namespaces, eventHandle: function ),
+
+	// 이벤트가 제거(동일 이벤트가 여러개 등록된 경우, 마지막 이벤트)될 때 실행
+	// 이벤트가 제거되게 하려면 return false; 필수.
+	teardown: function(),
+
+	// 이벤트를 바인딩할 때마다 실행
+	// .on()을 통해 등록될 때 마다 실행됨
+	add: function( handleObj ),
+
+	// 이벤트를 제거할 때마다 실행
+	// .off()를 통해 제거하는 경우 실행됨
+	remove: function( handleObj ),
+
+	// .trigger() 또는 .triggerHandler()를 통해 이벤트가 발생되는 경우 실행
+	// 이벤트 객체가 생성된 후, 이벤트 핸들러가 실행되기 전 시점에 호출된다.
+	trigger: function( event: jQuery.Event, data: Object ),
+
+	// 이벤트 핸들러 실행 직전 실행 (여러개의 핸들러가 등록된 경우라도 핸들러 실행전에 최초 한번 실행)
+	preDispatch: function(e) {},
+
+	// 모든 이벤트 핸들러가 실행된 후 실행 (여러개의 핸들러가 등록된 경우라도 핸들러가 모두 실행된 후, 한번 실행)
+	postDispatch: function(event) {},
+
+	// .trigger()를 통해 실행되었을때 등록된 이벤트 핸들러 이후 실행
+	_default: function( event: jQuery.Event, data: Object ),
+
+	// 존재하는 경우, 기 등록된 원래의 핸들러 대신 실행
+	handle: function( event: jQuery.Event, data: Object )
+}
+
+handleObj = {
+	type: String,
+	origType: String,
+	namespace: String,
+	selector: String,
+	data: Object,
+	handler: function(event: jQuery.Event) {}
+}
+
+-------------------------------------------------------
+
+// Unique for each copy of jQuery on the page
+jQuery.expando = "jQuery" + ( version + Math.random() ).replace( /\D/g, "" );
+
+--------------------------------------------------------
+
+- 이벤트를 여러개 바인딩하는 경우? :
+ex. "click keydown focus"
+
+* FLOW : 이벤트 바인딩 시
+
+1) $(element).on("event", handler);
+
+2) jQuery.event에 추가
+return this.each( function() {
+	jQuery.event.add( this, types, fn, data, selector );
+});
+
+3) jQuery.event.add() 구성
+
+jQuery.guid++ 증가해 handler에 유니크 값 부여
+
+// Handle multiple events separated by a space
+// If event changes its type, use the special event handlers for the changed type
+jQuery.event.special[ type ];
+
+// 이벤트에 대한 정보 객체를 생성 후, 이벤트 객체의 "이벤트명" 키 값의 배열에 추가
+// handleObj is passed to all event handlers
+handleObj = jQuery.extend({
+	type: type,
+	origType: origType,
+	data: data,
+	handler: handler,
+	guid: handler.guid,
+	selector: selector,
+	needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
+	namespace: namespaces.join(".")
+}, handleObjIn );
+
+special.setup();
+sepciall.add();
+
+handlers.push( handleObj );
+
+어떤 이벤트가 사용되었는지 확인을 위해 이벤트 종류를 저장
+// Keep track of which events have ever been used, for event optimization
+jQuery.event.global[ type ] = true;
+
+--------------------------------------------------------
+
+* FLOW : 이벤트 발생 시
+
+1) jQuery.event.dispatch 실행
+	eventHandle = elemData.handle = function( e ) {
+		// Discard the second event of a jQuery.event.trigger() and
+		// when an event is called after a page has unloaded
+		return typeof jQuery !== "undefined" && jQuery.event.triggered !== e.type ?
+			jQuery.event.dispatch.apply( elem, arguments ) : undefined;
+	};
+
+jQuery.event.dispatch() :
+
+	2) jQuery.event.fix( event );
+		실행해 이벤트에 따른 hook 처리 및
+	
+		jQuery로 native 이벤트 래핑
+		```js
+		event = new jQuery.Event( originalEvent );
+		```
+	3) dataPriv.get( this, "events" ) 에서 저장된 핸들러를 가져온다.
+	
+	4) jQuery.event.special["이벤트명"].preDispatch(event) 실행
+	
+	
+	5) 핸들러가 여러개인 경우, 순차적으로 실행
+	   handlerQueue = jQuery.event.handlers.call( this, event, handlers );
+	
+	6) handlerQueue 만큼 반복하면서 핸들러를 실행
+		해당 이벤트에 등록된 jQuery.special["이벤트명"].handle 이 존재하면, 
+		원래 등록된 핸들러 대신 special["이벤트명"].handle 함수를 실행
+	
+	7) jQuery.event.special["이벤트명"].postDispatch(event) 실행
+	
+	8) return event.result; 반환
+
+--------------------------------------------------------
+
+https://learn.jquery.com/events/triggering-event-handlers/
+
+Triggering event :
+jQuery에서 제공되는 트리거 함수는 .on()을 통해 추가된 이벤트 핸들러를 실행하는 것으로
+native 이벤트를 발생시키는 용도로 사용할 수는 없다.
+
+native 이벤트를 발생시키고자 한다면 jquery.simulate( https://github.com/jquery/jquery-simulate/)를
+사용할 수 있다. document.createEventObject < IE9 and document.createEvent 를 사용해 이벤트를 발생한다.
+
+
+.trigger() vs .triggerHandler()
+- triggerHandler()는 첫 번째 요소에 대해서만 핸들러를 실행
+- 체이닝 되지 않음. 핸들러의 반환값을 반환
+- 기본동작을 사용할 수 없음 (form submit 과 같은)
+- 버블링되지 않으며, 첫 번째 요소에 등록된 핸들러만 실행
+
+
+* FLOW : 이벤트 trigger 시
+
+1) jQuery.event.trigger() 실행
+
+	새로운 이벤트 객체 생성 및 속성 값 설정
+	new jQuery.Event( type, typeof event === "object" && event );
+	
+	이벤트 전파 경로를 작성
+	for ( ; cur; cur = cur.parentNode ) {
+		eventPath.push( cur );
+		tmp = cur;
+	}
+
+	등록된 이벤트 핸들러 실행
+	special._default 존재하면 실행
+
+--------------------------------------------------------
+
+* FLOW : 이벤트 제거 시
+
+1) jQuery.event.remove( this, types, fn, selector ) 실행
+	
+	이벤트 분리(여러개 인 경우를 대비) 후, 반복문 실행
+	[반복문 1]
+	
+		이벤트 파라미터가 전달되지 않은 경우, 모든 이벤트를 제거
+		if ( !type ) {
+			for ( type in events ) {
+				// recursive 하게 jQuery.event.remove()를 각각 호출
+				jQuery.event.remove( elem, type + types[ t ], handler, selector, true );
+			}
+		}
+	
+		단일 이벤트에 등록된 핸들러에 대해 반복문 실행 (여러개 또는 단일)
+		[반복문 2]
+
+			handlers.splice( j, 1 );  핸들러 배열에서 값을 제거하는 형태로 큐에서 제거
+			special.remove()가 존재하면 실행
+	
+		special.teardown() 실행
+		jQuery.removeEvent( elem, type, elemData.handle );를 통해 요소에 바인딩된 이벤트를 실제로 제거하고, event 객체에서 해당 이벤트에 대한 내용 삭제
+		delete events[ type ];
+
+		해당 요소에 바인딩된 이벤트가 모두 제거된 경우라면 캐시 객체에서도 제거한다.
+		// Remove the expando if it's no longer used
+		if ( jQuery.isEmptyObject( events ) ) {
+			delete elemData.handle;
+			dataPriv.remove( elem, "events" );
+		}
+	
+	
+	
