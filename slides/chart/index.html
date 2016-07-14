@@ -14,12 +14,11 @@
 		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
 		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/night.css" id="theme">
 
-        <link rel="stylesheet" href="http://api.typolink.co.kr/css?family=WooriSaebomB:700|WooriSaebomM:400|WooriSaebomR:400">
-
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
 
 
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -228,7 +227,7 @@
 
             Reveal.addEventListener('fragmentshown', function(e) {
                 // event.fragment = the fragment DOM element
-                console.log(e.fragment)
+                console.log(e)
             });
             Reveal.addEventListener('fragmenthidden', function(e) {
                 // event.fragment = the fragment DOM element
@@ -238,13 +237,15 @@
                 var selector = "."+ type +" h1, ."+ type +" p";
                 var classList = [ "title", "sub-title" ];
 
-                e.currentSlide.querySelectorAll(selector).forEach(function(v, i) {
-                    v.classList.add(classList[i]);
-                });
+                try {
+                    e.currentSlide.querySelectorAll(selector).forEach(function (v, i) {
+                        v.classList.add(classList[i]);
+                    });
 
-                e.previousSlide.querySelectorAll(selector).forEach(function(v, i) {
-                    v.classList.remove(classList[i]);
-                });
+                    e.previousSlide.querySelectorAll(selector).forEach(function (v, i) {
+                        v.classList.remove(classList[i]);
+                    });
+                } catch(e) {}
             }
 
 
