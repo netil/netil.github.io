@@ -115,8 +115,12 @@
                 animation: slide-down 1s cubic-bezier(0.645, 0.045, 0.355, 1) both;
             }
 
-            .reveal .left {
-                animation: slide-left-repeat cubic-bezier(0.645, 0.045, 0.355, 1) 2s both infinite;
+            .reveal .fragment-text {
+                animation: fragment cubic-bezier(0.645, 0.045, 0.355, 1) 1s both;
+            }
+
+            .reveal .scale {
+                animation: scale cubic-bezier(0.645, 0.045, 0.355, 1) 1s both;
             }
 
             @keyframes slide-up {
@@ -128,9 +132,14 @@
                 to { transform: translateY(0); }
             }
 
-            @keyframes slide-left {
-                from { transform: translateX(100%); }
-                to { transform: translateX(0); }
+            @keyframes scale {
+                from { transform: scale(0); }
+                to { transform: scale(1); }
+            }
+
+            @keyframes fragment {
+                from { opacity: 0; transform: translate(0, 30%); }
+                to { opacity: 1; transform: translate(0, 0); }
             }
         </style>
 	</head>
@@ -227,10 +236,11 @@
 
             Reveal.addEventListener('fragmentshown', function(e) {
                 // event.fragment = the fragment DOM element
-                console.log(e)
+                event.fragment.classList.add("fragment-text");
             });
             Reveal.addEventListener('fragmenthidden', function(e) {
                 // event.fragment = the fragment DOM element
+                event.fragment.classList.remove("fragment-text");
             });
 
             function animate(type, e) {

@@ -72,8 +72,8 @@ http://yobi.navercorp.com/Front-End/chart/post/19
 
 ![design guide](./img/design-guide.png)
 
-- 각각의 요소들은 분리되고, 배치되어야 하는 상황<br>
-- 세밀한 위치 조정 필요
+- 각각의 요소들은 분리되어 세밀한 크기와 위치 조정 필요
+- 커스터마이징이 어느 정도까지 가능한지 모르는데 답변을 해줘야 하는 상황
 
 ----------
 
@@ -96,6 +96,7 @@ http://yobi.navercorp.com/Front-End/chart/post/19
 
 # 1차 시도
 
+x축 텍스트의 날짜 값 표현 ![](./img/x-tick-text.png)
 ```html
 <text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
 	<tspan x="0" dy=".71em" dx="0">11월15년</tspan>
@@ -107,8 +108,34 @@ http://yobi.navercorp.com/Front-End/chart/post/19
 
 <h1 class="fragment" style="color:red;">FAIL</h1>
 
-- 세밀한 위치 조정의 어려움 (속성값 변경 필요) <!-- .element: class="fragment" -->
 - resize시 원래대로 복귀 (C3.js 내부처리) <!-- .element: class="fragment" -->
+
+----------
+
+# 2차 시도
+
+tick multiline 옵션을 이용해 줄바꿈 해보자
+```js
+axis: {
+    x: {
+        tick: {
+            width: 30,
+            multiline: true
+        }
+    }
+}
+```
+```html
+<text y="9" x="0" transform="" style="text-anchor: middle; display: block;">
+    <tspan x="0" dy=".71em" dx="0">11월</tspan>
+    <tspan x="0" dy="11.5" dx="0">15년</tspan>
+</text>
+```
+
+<h1 class="fragment" style="color:red;margin:0;position: absolute;top: 45%;left: 37%;">FAIL</h1>
+
+- 텍스트에 따른 너비값이 고정적이지 않기 때문에 width 옵션 사용불가 <!-- .element: class="fragment" -->
+- 세밀한 위치 조정 어려움 (속성값 변경 필요) <!-- .element: class="fragment" -->
 
 ----------
 
@@ -120,7 +147,26 @@ http://yobi.navercorp.com/Front-End/chart/post/19
 
 ----------
 
-# Mobile Support
+# 모바일 지원
+
+- C3.js 마우스 이벤트(over/out/move/click)로 인해, 의도치 않은 인터렉션 발생
+
+터치하고 바로 떼었을 때: <!-- .element: class="fragment" -->
+> iOS 9:<br> <!-- .element: class="fragment" -->
+> touchstart -> touchend -> mouseover -> mousemove -> mouseout (포커스가 이동되면 발생)
+
+> Android 5.1.1 (Galaxy S6 Edge):<br> <!-- .element: class="fragment" -->
+> touchstart -> touchend -> mouseover -> mousemove -> mousedown -> mouseup -> click -> mouseout (포커스가 이동되면 발생)
+
+*C3.js는 데스크탑에 최적화 되어 있음 <!-- .element: class="fragment" -->
+
+----------
+
+터치를 통한 데이터 선택<br> <!-- .element: class="f_left fragment" -->
+![move](https://pages.oss.navercorp.com/chart/c3p/img/use/guide_touchemove.gif)
+
+rotation & resizing <!-- .element: class="fragment" -->
+![rotation](./img/rotation.gif)
 
 ----------
 
@@ -148,6 +194,13 @@ C3+는 SVG 기반의 차트 라이브러리인 C3.js를 확장해<br>
 
 ----------
 
+# 커스텀 축
+
+마크업 템플릿을 옵션으로 설정
+
+
+----------
+
 # 범례
 
 마크업 템플릿을 옵션으로 설정
@@ -160,7 +213,7 @@ donut 유형에서 데이터가 0인 경우, 데이터가 없는 것을 표현
 
 ----------
 
-##
+# 기억하면 좋을것 같음
 
 - jQuery로 SVG 요소 manipulation은 불명확 하다.
 - SVG 요소의 dimension을 구할땐
