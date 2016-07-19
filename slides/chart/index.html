@@ -85,8 +85,18 @@
             .yellow {color:#e7ad52}
             .nostyle {list-style-type:none}
             .size18, span.size18 {font-size:18px}
-            span.size9 { font-size: 9px; }
+            .size9, span.size9 { font-size: 9px; }
             .bold, span.bold {font-weight:bold}
+
+            .reveal .redbox {
+                border: solid 5px red;
+                position:absolute;
+                background-color: rgba(249,0,0,.2);
+                width: 100px;
+                height: 100px;
+                top:0;
+                left: 50%;
+            }
 
             p > img.flow {
                 border: solid 10px #17A9FF;
@@ -99,8 +109,18 @@
                 margin: 4px 5px;
             }
 
+            .reveal .title-animate {
+                margin-bottom: 15px;
+            }
+
             .reveal .title-animate > div {
                 overflow: hidden;
+            }
+
+            .reveal .title-animate > div:first-child {
+                border-bottom: solid 1px;
+                margin: 0 auto;
+                width: 80%;
             }
 
             .reveal .title-animate > div p {
@@ -109,6 +129,10 @@
 
             .reveal .title {
                 animation: slide-up 1s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+            }
+
+            .reveal .title {
+                margin-bottom: -10px;
             }
 
             .reveal .sub-title {
@@ -150,7 +174,7 @@
 			<div class="slides">
 				<section data-background="http://i.imgur.com/4q2t8mh.gif" data-background-transition="fade">
                     <div class="title-animate" style="text-align:right;margin-top:50px">
-                        <h1 class="title outline">차트</h1>
+                        <h1 class="title outline" style="margin-bottom:10px">차트</h1>
                         <p class="sub-title" style="font-size:2em;margin-top:-30px">고군 분투기</p>
 
                         <p style="margin-top:50px;">
@@ -179,11 +203,10 @@
                          data-background-transition="fade">
                 </section>
 
-                <!-- bg image : https://www.flickr.com/photos/pslee999/14539172610/ -->
-                <section data-background-image="./img/cover2.jpg">
-                    <h1 class="outline">Gracias</h1>
-
-                    <span class="size9">[Image source] https://www.flickr.com/photos/pslee999/14539172610/</span>
+                <!-- bg image : https://www.flickr.com/photos/ccc4ever/7240038852/ -->
+                <section data-background-image="./img/end-cover.jpg" style="text-align:right">
+                    <h1 class="outline" style="margin-bottom:-20px">Gracias</h1>
+                    <span class="size9 green">[Image source] https://www.flickr.com/photos/ccc4ever/7240038852/</span>
                 </section>
 
 			</div>
