@@ -1,6 +1,6 @@
 /**
  * Simple bookmarklet timer
- * javascript:void(!function(d, s){s=d.createElement("script");s.src="http://netil.github.io/slides/timer.js";d.head.appendChild(s);Timer.init(prompt("Minutes?"))}(document));
+ * javascript:void(!function(d, s){s=d.createElement("script");s.src="http://netil.github.io/slides/timer.js";d.head.appendChild(s);s.onload=function(){Timer.init(prompt("Minutes?"))}}(document));
  */
 var Timer = {
     min: 10,
