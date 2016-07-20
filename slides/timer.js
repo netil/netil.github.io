@@ -1,3 +1,7 @@
+/**
+ * Simple bookmarklet timer
+ * javascript:void(!function(d, s){s=d.createElement("script");s.src="http://netil.github.io/slides/timer.js";d.head.appendChild(s);Timer.init(prompt("Minutes?"))}(document));
+ */
 var Timer = {
     min: 10,
     wrapper: null,
@@ -8,7 +12,9 @@ var Timer = {
             return;
         }
 
-        var div = this.wrapper = document.createElement("div");
+        var doc = document;
+        var div = this.wrapper = doc.createElement("div");
+
         div.style.cssText = [
             "font-family:'Montserrat', 'Hanna', Impact, sans-serif",
             "width:110px",
@@ -38,18 +44,21 @@ var Timer = {
         div.innerHTML = "<span>"+ (min < 10 ? "0":"") + min +":00</span>";
         this.el = div.querySelector("span");
 
-        document.body.insertBefore(div, document.body.firstChild);
+        doc.body.insertBefore(div, doc.body.firstChild);
 
         var fp = function (e) {
             Timer.start();
-            document.body.removeEventListener("keydown", fp);
+            doc.body.removeEventListener("keydown", fp);
         }
 
-        document.body.addEventListener("keydown", fp, false);
+        doc.body.addEventListener("keydown", fp, false);
     },
 
     start: function() {
-        var  duration = this.min*60, min, sec;
+        var wrapper = this.wrapper;
+        var el = this.el || wrapper.querySelector("span");
+        var duration = this.min*60, min, sec;
+
         this.interval = setInterval(function () {
             min = Math.abs(parseInt(duration / 60, 10));
             sec = Math.abs(parseInt(duration % 60, 10));
@@ -57,11 +66,11 @@ var Timer = {
             min = min < 10 ? "0" + min : min;
             sec = sec < 10 ? "0" + sec : sec;
 
-            Timer.el.innerHTML = min + ":" + sec;
+            el.innerHTML = min + ":" + sec;
 
             if (--duration < 0) {
                 //clearInterval(interval);
-                Timer.wrapper.style.color = "red";
+                wrapper.style.color = "red";
             }
         }, 1000);
     }
