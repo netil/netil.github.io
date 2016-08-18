@@ -17,6 +17,37 @@ https://weather-pwa-sample.firebaseapp.com/
 
 2번 이상 방문(최소 5분 이상의 간격)하는 경우, 홈스크린에 추가
 
+----------
+
+sw-precache
+static 파일 대상
+
+the module automatically versions all your cached resources based on a hash of each file’s contents.
+When a change to any file is detected as part of your build process, the generated service worker knows to expire
+the old version and fetch the new version of the resource. All of the cache entries that remain the same are left untouched.
+
+https://codelabs.developers.google.com/codelabs/sw-precache/
+
+
+sw-toolbox
+https://www.youtube.com/watch?v=jCKZDTtUA2A&t=16m58s
+
+dynamic 컨텐츠 대상
+
+3가지의 전략
+toolbox.cacheFirst
+toolbox.networkFirst
+toolbox.fastest
+
+toolbox.router.get("/images", toolbox.cacheFirst);
+
+
+chrome://serviceworker-internals/
+
+
+[Background Sync API](https://www.chromestatus.com/feature/6170807885627392)
+[Push API](https://www.chromestatus.com/feature/5416033485586432)
+
 
 ----------
 
@@ -29,6 +60,91 @@ https://weather-pwa-sample.firebaseapp.com/
 
 For URL addressable resources, use the Cache API (part of Service Worker)
 For all other data, use IndexedDB (with a Promises wrapper).
+
+----------
+
+```html
+<script src="./bower_components/sw-toolbox/companion.js" data-service-worker="./sw.js"></script>
+```
+
+```js
+// companion.js
+(function() {
+  'use strict';
+  var workerScript = document.currentScript.dataset.serviceWorker;
+
+  if (workerScript && 'serviceWorker' in navigator) {
+    navigator.serviceWorker.register(workerScript);
+  }
+})();
+```
+
+----------
+
+## Tools
+
+### sw-precache
+
+```js
+gulp.task('generate-service-worker', function(callback) {
+  var path = require('path');
+  var swPrecache = require('sw-precache');
+  var rootDir = 'app';
+
+  swPrecache.write(path.join(rootDir, 'service-worker.js'), {
+    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif}'],
+    stripPrefix: rootDir
+  }, callback);
+});
+```
+
+----------
+
+## Tools
+
+### sw-toolbox
+
+```js
+(global => {
+  'use strict';
+
+  // Load the sw-tookbox library.
+  importScripts('./bower_components/sw-toolbox/sw-toolbox.js');
+
+  // Turn on debug logging, visible in the Developer Tools' console.
+  global.toolbox.options.debug = true;
+
+  // The route for the images
+  toolbox.router.get('/images/(.*)', global.toolbox.cacheFirst, {
+    cache: {
+          name: 'svg',
+          maxEntries: 10,
+          maxAgeSeconds: 86400 // cache for a day
+        }
+  });
+
+  // The route for any requests from the googleapis origin
+  toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
+    cache: {
+      name: 'googleapis',
+      maxEntries: 10,
+      maxAgeSeconds: 86400 // cache for a day
+    },
+    origin: /\.googleapis\.com$/,
+    // Set a timeout threshold of 2 seconds
+    networkTimeoutSeconds: 2
+  });
+
+  // By default, all requests that don't match our custom handler will use the toolbox.networkFirst
+  // cache strategy, and their responses will be stored in the default cache.
+  global.toolbox.router.default = global.toolbox.networkFirst;
+
+  // Boilerplate to ensure our service worker takes control of the page as soon as possible.
+  global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
+  global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
+})(self);
+```
+view-source:https://deanhume.github.io/Service-Worker-Toolbox/sw.js
 
 ----------
 
