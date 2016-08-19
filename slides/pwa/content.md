@@ -19,6 +19,26 @@ https://weather-pwa-sample.firebaseapp.com/
 
 ----------
 
+## 스토리지를 활용한 캐싱 방법
+
+initializer
+	==> 스토리지 버전과 비교
+		==> 다르다면 새로운 버전을 로딩
+		==> 동일하다면 스토리지에서 로딩
+
+```js
+function load(sType, sSrc) {
+    var s = document.createElement("script");
+
+    s.type = "text/javascript";
+    s.charset = "utf-8";
+    s[sType] = sSrc;
+    (document.head || document.getElementsByTagName("head")[0]).appendChild(s);
+}
+```
+
+----------
+
 sw-precache
 static 파일 대상
 
@@ -103,6 +123,12 @@ gulp.task('generate-service-worker', function(callback) {
 ## Tools
 
 ### sw-toolbox
+
+http://deanhume.com/home/blogpost/getting-started-with-the-service-worker-toolbox/10134
+
+
+Basic Routes
+https://github.com/GoogleChrome/sw-toolbox/blob/master/doc-pages/usage.md
 
 ```js
 (global => {
