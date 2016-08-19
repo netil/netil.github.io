@@ -1,0 +1,33 @@
+{
+  "name": "Demo",
+  "version": "1.0.0",
+  "description": "A sample purposes demo.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netil/netil.github.io.git"
+  },
+  "author": "Jae Sung Park",
+  "license": "MIT>",
+  "homepage": "https://netil.github.io",
+  "dependencies": {
+    "sw-toolbox": "^3.2.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "gulp-cache": "^0.2.10",
+    "gulp-changed": "^1.2.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-size": "^1.2.3",
+    "gulp-uglify": "^1.2.0",
+    "gulp-uncss": "^1.0.2",
+    "run-sequence": "^1.1.1",
+    "sw-precache": "^4.0.0"
+  }
+}

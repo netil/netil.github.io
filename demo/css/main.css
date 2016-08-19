@@ -1,0 +1,27 @@
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+body {
+    margin: 10px;
+    background-color: #2196F3
+}
+
+img {
+    border: solid 1px white;
+    margin: 0 10px;
+}
+
+audio {
+    width: 85%;
+    margin: 10px 0;
+}
+
+#container {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}

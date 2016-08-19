@@ -1,0 +1,16 @@
+{
+  "name": "Demo",
+  "short_name": "Demo",
+  "icons": [{
+    "src": "img/logo.png",
+    "type": "image/png",
+    "sizes": "128x128"
+  }/*, {
+    "src": "img/logo_152.png",
+    "type": "image/png",
+    "sizes": "152x152"
+  }*/],
+  "start_url": "/?homescreen=1",
+  "display": "standalone",
+  "background_color": "#2196F3"
+}

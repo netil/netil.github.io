@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=description content="Demo">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel=canonical href="https://netil.github.io/">
+    <title>Demo</title>
+    <link rel=manifest href=manifest.json>
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=application-name content="Demo">
+    <!--<link rel=icon sizes=192x192 href=/images/some.png>-->
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name=apple-mobile-web-app-title content="Demo">
+    <!--<link rel=apple-touch-icon href=/images/some.png>-->
+    <!--<meta name=msapplication-TileImage content=/images/some.png>-->
+    <meta name=msapplication-TileColor content=#2196F3>
+    <meta name=theme-color content=#2196F3>
+    <link rel=stylesheet href=css/main.css>
+</head>
+
+<body>
+<h1>Demo</h1>
+
+<div id="container">
+    <img src="img/brown.png" style="width:40%">
+    <img src="img/cony.png" style="width:40%">
+
+    <audio src="assets/dingdong.mp3" controls></audio>
+</div>
+
+<script>
+    !function(path) {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register(path).then(function() {
+                console.log("Service Worker Registered");
+            });
+        }
+    }('sw2.js');
+</script>
+</body>
+</html>
