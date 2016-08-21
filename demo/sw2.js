@@ -8,10 +8,10 @@
     global.toolbox.options.debug = true;
 
     // Precache
-    toolbox.precache(['/index.html', '/css/main.css']);
+    global.toolbox.precache(['/index.html', '/css/main.css']);
 
     // The route for the images
-    toolbox.router.get('/img/(.*)', global.toolbox.cacheFirst, {
+    global.toolbox.router.get('/img/(.*)', global.toolbox.cacheFirst, {
         cache: {
             name: 'img',
             maxEntries: 10,
@@ -19,6 +19,7 @@
         }
     });
 
+    /*
     toolbox.router.get('/assets/(.*)', global.toolbox.cacheFirst, {
         cache: {
             name: 'assets',
@@ -26,8 +27,9 @@
             maxAgeSeconds: 86400 // cache for a day
         }/*,
         // Set a timeout threshold of 2 seconds
-        networkTimeoutSeconds: 2*/
+        networkTimeoutSeconds: 2
     });
+    */
 
     // By default, all requests that don't match our custom handler will use the toolbox.networkFirst
     // cache strategy, and their responses will be stored in the default cache.

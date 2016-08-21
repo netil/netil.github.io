@@ -19,6 +19,15 @@ https://weather-pwa-sample.firebaseapp.com/
 
 ----------
 
+## 브라우저는 이미 캐싱하고 있지 않나?
+
+브라우저는 방문한 사이트의 리소스들을 이미 캐싱한다.
+그러나, 많은 경우 캐싱된 리소스를 사용하지 못하는 경우들이 존재한다
+
+(표 삽입)
+
+----------
+
 ## 스토리지를 활용한 캐싱 방법
 
 initializer
@@ -41,6 +50,7 @@ function load(sType, sSrc) {
 
 sw-precache
 static 파일 대상
+precaches resources
 
 the module automatically versions all your cached resources based on a hash of each file’s contents.
 When a change to any file is detected as part of your build process, the generated service worker knows to expire
@@ -50,6 +60,8 @@ https://codelabs.developers.google.com/codelabs/sw-precache/
 
 
 sw-toolbox
+provides common caching patterns for runtime requests
+
 https://www.youtube.com/watch?v=jCKZDTtUA2A&t=16m58s
 
 dynamic 컨텐츠 대상
