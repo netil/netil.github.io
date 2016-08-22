@@ -2,11 +2,16 @@
   "name": "Demo",
   "short_name": "Demo",
   "icons": [{
-    "src": "/img/brown-144.png",
+    "src": "./img/brown-96.png",
+    "type": "image/png",
+    "sizes": "96x96"
+  },
+  {
+    "src": "./img/brown-144.png",
     "type": "image/png",
     "sizes": "144x144"
   }],
-  "start_url": "/?homescreen=1",
+  "start_url": "./?homescreen=1",
   "display": "standalone",
   "background_color": "#2196F3"
 }

@@ -1,22 +1,26 @@
 (global => {
     'use strict';
 
-    // Load the sw-tookbox library.
+    // Load the sw-toolbox library.
     importScripts('./js/sw-toolbox.js');
 
     // Turn on debug logging, visible in the Developer Tools' console.
     global.toolbox.options.debug = true;
 
-    // Precache
-    global.toolbox.precache(['/index.html', '/css/main.css']);
+    // Precache at install time, but it won’t actually set up a route to serve them
+    global.toolbox.precache(['./manifest.json', './index.html', './css/main.css', './sw2.js', './js/sw-toolbox.js']);
 
     // The route for the images
-    global.toolbox.router.get('/img/(.*)', global.toolbox.cacheFirst, {
+    global.toolbox.router.get('img/(.*)', global.toolbox.cacheFirst, {
         cache: {
-            name: 'img',
+            name: 'js',
             maxEntries: 10,
-            maxAgeSeconds: 86400 // cache for a day
+            maxAgeSeconds: 60*60*24 // cache for a day
         }
+    });
+
+    global.toolbox.router.get('img/(.*)', global.toolbox.cacheFirst, {
+
     });
 
     /*
