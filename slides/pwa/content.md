@@ -13,6 +13,14 @@
 
 ----------
 
+## Performance matters
+
+PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold green">offline caching!</span>
+
+![](https://codelabs.developers.google.com/codelabs/sw-precache/img/79a9d0b80352f04e.png)
+
+----------
+
 ## The challenges of PWA
 
 - iOS 미지원
@@ -20,14 +28,10 @@
   - Web App Manifest?
   - Push & Notification API?
 
-----------
+- 데스크탑 브라우저?  
 
-## Performance matters
-
-PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold green">offline caching!</span>
-
-![](https://codelabs.developers.google.com/codelabs/sw-precache/img/79a9d0b80352f04e.png)
-
+캐싱은 오프라인에서의 동작도 중요하지만,<br>
+성능을 위해서 모든 환경(데스크탑/모바일)에서도 필요하다.
 
 ----------
 
@@ -37,8 +41,8 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 사용자가 방문하는 웹사이트의 모든 리소스들에 대해 브라우저는<br>
 로컬 캐시해 다음 방문시 로컬 캐시된 리소스를 활용하도록 처리된다.
 
-그러나 많은 경우 로컬 캐시된 리소스를<br>
-활용하지 못하는 경우가 발생하기도 한다.
+그러나 많은 경우(온라인 상태인 경우라도)<br>
+로컬 캐시된 리소스를 활용하지 못하는 경우가 발생한다.
 
 물론, <span class="underline">오프라인인 경우에는 로컬 캐싱은 사용불가</span>
 
@@ -48,7 +52,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 |Status|Description|
 |----|----|
-| cfirst visit</span> | 첫 방문인 경우, 당연히 캐싱되어 있는 리소스는 존재하지 않음 |
+| <span class="red bold">first visit</span> | 첫 방문인 경우, 당연히 캐싱되어 있는 리소스는 존재하지 않음 |
 | <span class="red bold">cleared</span> | 캐싱되어 있는 경우라도, 사용자가 직접 캐시를 비우거나, 백신으로 인해 지워지거나 또는 브라우저의 버그로 제거되기도 한다. (약 19%의 Chrome 사용자들의 경우, 최소 1주일에 한번 이상 버그로 인해 캐시가 지워진다. - [참고](https://plus.google.com/+WilliamChanPanda/posts/hsfVHq6wKxG)) |
 | <span class="red bold">purged</span> | 로컬 캐시의 공간은 모든 웹사이트가 공유해 사용하기 때문에 한정된 공간으로 인해 이전에 캐시된 내용은 새로운 캐시 저장을 위해 지워지게 된다. |
 | <span class="red bold">expired</span> | 약 69%의 리소스들은 캐싱에 대한 헤더가 없거나 또는 1일 미만의 값으로 설정되어 있다. 캐싱 기간이 만료되면, 로컬에 저장된 캐시의 내용이 유효하더라도 새롭게 요청되어 진다. ([참고](http://httparchive.org/interesting.php#caching)) |
@@ -91,6 +95,19 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
+## Lie-Fi
+
+> "Indicates that you are connected to a wireless network, however you are still unable to load webpages"
+> \- [urban dictionary](http://www.urbandictionary.com/define.php?term=lie-fi)
+
+![](http://www.sitepen.com/blog/wp-content/uploads/2016/06/lie-fi.gif)
+
+<p style="margin-top:35px;font-size:20px">
+[참고]: [What is lie-fi?](https://developers.google.com/web/fundamentals/performance/poor-connectivity/lie-fi)
+</p>
+
+----------
+
 <!-- .slide: data-background="#e74c3c" -->
 <div class="title-animate">
     <div><h1>Service Workers</h1></div>
@@ -100,7 +117,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 ----------
 
 ## [sw-precache](https://github.com/GoogleChrome/sw-precache)
-빌드 기반의 리소스의 프리캐싱
+빌드 기반의 리소스 프리캐싱
 
 - 캐싱 리소스 파일의 컨텐츠에 기반해 해쉬를 통한 자동 버저닝
 - 변경이 감지되면, 이전 버전을 만료시키고,<br>새로운 버전을 fetch 하도록 SW를 생성
@@ -108,20 +125,19 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
-
 ## sw-precache
 
 ex. Gulp task:
 ```js
 gulp.task('generate-service-worker', function(callback) {
-  var path = require('path');
-  var swPrecache = require('sw-precache');
-  var rootDir = 'app';
+    var path = require('path');
+    var swPrecache = require('sw-precache');
+    var rootDir = 'demo';
 
-  swPrecache.write(path.join(rootDir, 'service-worker.js'), {
-    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif}'],
-    stripPrefix: rootDir
-  }, callback);
+    swPrecache.write(path.join(rootDir, 'sw.js'), {
+        staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
+        stripPrefix: rootDir
+    }, callback);
 });
 ```
 
@@ -134,14 +150,19 @@ gulp.task('generate-service-worker', function(callback) {
 ## [sw-toolbox](https://github.com/GoogleChrome/sw-toolbox)
 런타임 요청에 대한 공통의 캐싱 패턴을 제공
 
-다음의 3가지 패턴(전략)을 제공
+다음의 3가지 패턴(전략*)을 제공
 - cacheFirst
 - networkFirst
 - fastest
 
 ```js
-toolbox.router.get("/images", toolbox.cacheFirst);
+// URL 패턴에 매칭되는 리소스에 대한 캐싱 전략을 지정
+toolbox.router.get("/images", toolbox.[ cacheFirst | networkFirst | fastest ], options);
 ```
+
+<p style="margin-top:35px;font-size:20px">
+*[The offline cookbook](https://jakearchibald.com/2014/offline-cookbook/)
+</p>
 
 ----------
 
@@ -151,50 +172,49 @@ toolbox.router.get("/images", toolbox.cacheFirst);
 (global => {
   'use strict';
 
-  // Load the sw-tookbox library.
+  // sw-tookbox 로딩
   importScripts('./js/sw-toolbox/sw-toolbox.js');
 
-  // Turn on debug logging, visible in the Developer Tools' console.
+  // 디버깅을 위한 로깅 옵션 (개발자 도구 콘솔에 로깅됨)
   global.toolbox.options.debug = true;
 
-  // The route for the images
+  // 이미지 폴더로 요청되는 리소스
   toolbox.router.get('/images/(.*)', global.toolbox.cacheFirst, {
     cache: {
-          name: 'svg',
+          name: 'img',
           maxEntries: 10,
-          maxAgeSeconds: 86400 // cache for a day
+          maxAgeSeconds: 60*60*24 // 1일간 유효
         }
   });
 
-  // The route for any requests from the googleapis origin
+  // cloudflare.com (cdnjs.com)에서 요청되는 모든 리소스
   toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
     cache: {
-      name: 'googleapis',
-      maxEntries: 10,
-      maxAgeSeconds: 86400 // cache for a day
+      name: 'cdnjs',
+      maxEntries: 5,  // LRU
+      maxAgeSeconds: 60*60*24
     },
-    origin: /\.googleapis\.com$/,
-    // Set a timeout threshold of 2 seconds
+    origin: /\.cloudflare\.com$/,
+
+    // 네트워크 timeout 설정
     networkTimeoutSeconds: 2
   });
 
-  // By default, all requests that don't match our custom handler will use the toolbox.networkFirst
-  // cache strategy, and their responses will be stored in the default cache.
+  // 정의된 route에 일치하지 않는 리소스들에 대한 요청의 기본 전략 설정
+  // 응답은 기본 캐시에 저장된다.
   global.toolbox.router.default = global.toolbox.networkFirst;
 
-  // Boilerplate to ensure our service worker takes control of the page as soon as possible.
+  // sw가 페이지의 컨트롤을 빠른 시점에 취할 수 있도록 하는 boilerplate
   global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
   global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
 })(self);
 ```
 
 <p style="margin-top:35px;font-size:20px">
-https://www.youtube.com/watch?v=jCKZDTtUA2A&t=16m58s    
-https://youtu.be/gfHXekzD7p0?list=PLNYkxOF6rcIB3ci6nwNyLYNU6RDOU3YyL
-http://deanhume.com/home/blogpost/getting-started-with-the-service-worker-toolbox/10134
 
-[Basic Routes](https://github.com/GoogleChrome/sw-toolbox/blob/master/doc-pages/usage.md)<br>
-view-source:https://deanhume.github.io/Service-Worker-Toolbox/sw.js
+[Instant Loading with Service Workers (Chrome Dev Summit 2015)](https://www.youtube.com/watch?v=jCKZDTtUA2A&t=16m58s)<br>
+[Service Worker Toolbox, Totally Tooling Tips](https://youtu.be/gfHXekzD7p0?list=PLNYkxOF6rcIB3ci6nwNyLYNU6RDOU3YyL)<br>
+[Getting started with the sw-toolbox](http://deanhume.com/home/blogpost/getting-started-with-the-service-worker-toolbox/10134)
 </p>
 
 ----------
@@ -202,7 +222,7 @@ view-source:https://deanhume.github.io/Service-Worker-Toolbox/sw.js
 ### [offline-plugin for webpack](https://github.com/NekR/offline-plugin)
 webpack 프로젝트에서 사용할 수 있는 플러그인
 
-1) webpack.config
+1) webpack.config 설정
 
 ```js
 var OfflinePlugin = require('offline-plugin');
@@ -312,12 +332,14 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota (
     e => console.log('Error', e)
 );
 ```
+<p style="margin-top:35px;font-size:25px">
+    <sup style="font-size:9px">(2016/6/16~17)</sup> BlinkOn 6 conference: [State of Offline Storage APIs](https://docs.google.com/presentation/d/11CJnf77N45qPFAhASwnfRNeEMJfR-E_x05v1Z6Rh5HA/edit#slide=id.g1468a77557_0_15)
+</p>
 
 | Type | Previous | Current Work |
 | --- | --- |
 | <span class="green bold">Pool</span> | (free space –<br> chrome's current usage) / 3 | fixed % of total disk space:<br>(drive size - OS size) * P |
 | <span class="green bold">Origin quota</span> | pool size / 5 | pool size / N |
-
 
 PWA gets at most 6% of free space on device
 
@@ -338,8 +360,10 @@ Chrome DevTools > Application Tab:
 - Service Workers
 - Cache
 
-[Debug Progressive Web Apps](https://web-central.appspot.com/web/tools/chrome-devtools/debug/progressive-web-apps/?hl=en)<br>
-chrome://serviceworker-internals/
+> chrome://serviceworker-internals/<br>
+> [Debug Progressive Web Apps](https://web-central.appspot.com/web/tools/chrome-devtools/debug/progressive-web-apps/?hl=en)
+> [Service Worker Debugging](https://www.chromium.org/blink/serviceworker/service-worker-faq)
+ 
 
 ----------
 
@@ -355,8 +379,9 @@ chrome://serviceworker-internals/
 ## Service Workers
 
 - 네트워크 핸들링
-- 이벤트 에뮬레이션: Update, Push, Sync, Unregister
-- 실행 및 중지
+- 에뮬레이션: Push a notification, Sync event
+- update/unregister sw
+- start/stop sw
 
 ![](./img/debug-sw.png)
 
@@ -372,39 +397,33 @@ chrome://serviceworker-internals/
 
 ----------
 
-## Case Studies
+# Demos
 
-Service Workers in Production
-https://developers.google.com/web/showcase/2015/service-workers-iowa
-https://developers.google.com/web/showcase/2016/iowa2016
-https://pwa.rocks/
-
+- https://www.pokedex.org/
+- https://www.washingtonpost.com/pwa/
+- https://pwa.rocks/
+- https://weather-pwa-sample.firebaseapp.com/
 
 ----------
 
-## Reference
+# Case Studies
+
+Service Workers in Production
+- https://developers.google.com/web/showcase/2015/service-workers-iowa
+- https://developers.google.com/web/showcase/2016/iowa2016
+- https://pwa.rocks/
+
+----------
+
+## Resources
 
 - [Service Workers 101](https://github.com/delapuente/service-workers-101/)
 - [The Service Worker Lifecycle](https://bitsofco.de/the-service-worker-lifecycle/)
 - [Awesome Progressive Web Apps](https://github.com/TalAter/awesome-progressive-web-apps)
 - [Progressive Web App Dev Summit 2016](https://events.withgoogle.com/progressive-web-app-dev-summit/)
+- [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
 
 ----------
-
-Progressive Web Apps
-https://developers.google.com/web/progressive-web-apps/
-
-Service Worker related libraries, sw-precache and sw-toolbox
-https://developers.google.com/web/tools/service-worker-libraries/
-
-The offline cookbook
-https://jakearchibald.com/2014/offline-cookbook/
-
-Demo
-https://www.pokedex.org/
-https://www.washingtonpost.com/pwa/
-https://pwa.rocks/
-https://weather-pwa-sample.firebaseapp.com/
 
 
 2번 이상 방문(최소 5분 이상의 간격)하는 경우, 홈스크린에 추가
