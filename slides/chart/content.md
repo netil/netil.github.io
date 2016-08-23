@@ -29,7 +29,7 @@
 
 ## 차트 개발 작업이 assign 되었다면?
 
-<div class="fragment" style="font-family:궁서체; background-color:#fff;color:#000; width:30%;height:200px;float:left">
+<div class="fragment" style="font-family:궁서체,HYgsrB; background-color:#fff;color:#000; width:30%;height:200px;float:left">
     <div style="margin-top:2em">차트를 <span style="text-decoration:line-through">살려야</span><br>적용해야 한다.</div>
 </div>
 
@@ -337,7 +337,7 @@ https://docs.webplatform.org/wiki/svg/methods/getBBox
     <div><h1>C3+ Goal</h1></div>
 </div>
 
-- 매번 다른 기술/라이브러리를 다루는 비용 제거해 보자 <!-- .element: class="fragment" -->
+- 매번 다른 기술/라이브러리를 다루는 반복적인 비용을 제거해 보자 <!-- .element: class="fragment" -->
 - 기본적 디자인(테마)을 활용해 커스터마이징(디자인)에 따른 비용 제거해 보자 <!-- .element: class="fragment" -->
 - 기술적 경험 축적: SVG, D3, C3.js <!-- .element: class="fragment" -->
 

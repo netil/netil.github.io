@@ -1,45 +1,39 @@
 (global => {
     'use strict';
 
-    // Load the sw-toolbox library.
+    // sw-tookbox 로딩
     importScripts('./js/sw-toolbox.js');
 
-    // Turn on debug logging, visible in the Developer Tools' console.
+    // 디버깅을 위한 로깅 옵션 (개발자 도구 콘솔에 로깅됨)
     global.toolbox.options.debug = true;
 
-    // Precache at install time, but it won’t actually set up a route to serve them
-    global.toolbox.precache(['./manifest.json', './index.html', './css/main.css', './sw2.js', './js/sw-toolbox.js']);
-
-    // The route for the images
-    global.toolbox.router.get('img/(.*)', global.toolbox.cacheFirst, {
+    // 이미지 폴더로 요청되는 리소스
+    toolbox.router.get('./img/(.*)', global.toolbox.cacheFirst, {
         cache: {
-            name: 'js',
+            name: 'img',
             maxEntries: 10,
-            maxAgeSeconds: 60*60*24 // cache for a day
+            maxAgeSeconds: 60*60*24 // 1일간 유효
         }
     });
 
-    global.toolbox.router.get('img/(.*)', global.toolbox.cacheFirst, {
-
-    });
-
-    /*
-    toolbox.router.get('/assets/(.*)', global.toolbox.cacheFirst, {
+    // cloudflare.com (cdnjs.com)에서 요청되는 모든 리소스
+    toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
         cache: {
-            name: 'assets',
-            maxEntries: 10,
-            maxAgeSeconds: 86400 // cache for a day
-        }/*,
-        // Set a timeout threshold of 2 seconds
+            name: 'cdnjs',
+            maxEntries: 5,  // LRU
+            maxAgeSeconds: 60*60*24
+        },
+        origin: /\.cloudflare\.com$/,
+
+        // 네트워크 timeout 설정
         networkTimeoutSeconds: 2
     });
-    */
 
-    // By default, all requests that don't match our custom handler will use the toolbox.networkFirst
-    // cache strategy, and their responses will be stored in the default cache.
+    // 정의된 route에 일치하지 않는 리소스들에 대한 요청의 기본 전략 설정
+    // 응답은 기본 캐시에 저장된다.
     global.toolbox.router.default = global.toolbox.networkFirst;
 
-    // Boilerplate to ensure our service worker takes control of the page as soon as possible.
+    // sw가 페이지의 컨트롤을 빠른 시점에 취할 수 있도록 하는 boilerplate
     global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
     global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
 })(self);

@@ -10,15 +10,15 @@
     <link rel=manifest href=manifest.json>
     <meta name=mobile-web-app-capable content=yes>
     <meta name=application-name content="Demo">
-    <!--<link rel=icon sizes=192x192 href=/images/some.png>-->
     <meta name=apple-mobile-web-app-capable content=yes>
     <meta name=apple-mobile-web-app-status-bar-style content=black>
     <meta name=apple-mobile-web-app-title content="Demo">
-    <!--<link rel=apple-touch-icon href=/images/some.png>-->
-    <!--<meta name=msapplication-TileImage content=/images/some.png>-->
     <meta name=msapplication-TileColor content=#2196F3>
     <meta name=theme-color content=#2196F3>
     <link rel=stylesheet href=css/main.css>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs/1.2.0/pkgd/eg.pkgd.min.js"></script>
 </head>
 
 <body>
@@ -30,15 +30,6 @@
 
     <audio src="assets/dingdong.mp3" controls></audio>
 </div>
-
-<script>
-    !function(path) {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register(path).then(function() {
-                console.log("Service Worker Registered");
-            });
-        }
-    }('sw2.js');
-</script>
+<script src="./js/companion.js" data-service-worker="./sw2.js"></script>
 </body>
 </html>
