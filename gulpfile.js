@@ -44,10 +44,10 @@ gulp.task('default', ['clean'], function(cb) {
 gulp.task('generate-service-worker', function(callback) {
     var path = require('path');
     var swPrecache = require('sw-precache');
-    var rootDir = 'app';
+    var rootDir = 'demo';
 
     swPrecache.write(path.join(rootDir, 'sw.js'), {
-        staticFileGlobs: [rootDir + '/demo/**/*.{js,html,css,png,jpg,gif}'],
+        staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
         stripPrefix: rootDir
     }, callback);
 });

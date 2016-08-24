@@ -21,6 +21,28 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
+# 캐싱은 왜 중요한가?
+
+- 오프라인 지원 <!-- .element: class="fragment" -->
+- 성능 향상<br> <!-- .element: class="fragment" -->
+  네트워크 보다 캐시를 통해 요청받는 것이 빠르기 때문
+- Lie-Fi <!-- .element: class="fragment" -->
+
+----------
+
+## Lie-Fi
+
+> "Indicates that you are connected to a wireless network, however you are still unable to load webpages" <!-- .element: class="fragment" -->
+> \- [urban dictionary](http://www.urbandictionary.com/define.php?term=lie-fi)
+
+![](http://www.sitepen.com/blog/wp-content/uploads/2016/06/lie-fi.gif) <!-- .element: class="fragment" -->
+
+<p style="margin-top:35px;font-size:20px">
+[참고]: [What is lie-fi?](https://developers.google.com/web/fundamentals/performance/poor-connectivity/lie-fi)
+</p>
+
+----------
+
 ## The challenges of PWA
 
 - iOS 미지원
@@ -28,35 +50,48 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
   - Web App Manifest?
   - Push & Notification API?
 
-- 데스크탑 브라우저?  
-
-캐싱은 오프라인에서의 동작도 중요하지만,<br>
-성능을 위해서 모든 환경(데스크탑/모바일)에서도 필요하다.
+- 데스크탑 브라우저? (Service Worker 기준)
+  - IE (Not Supported), [Edge](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/serviceworker/) (In Development)
+  - [Safari](https://webkit.org/status/#specification-service-workers) (Under Consideration)
+  - [FireFox](https://platform-status.mozilla.org/#service-worker) (Supported)
+  
+<p class="fragment" style="margin-top:30px;padding:10px 0;border:dotted 1px #fff">
+ 브라우저의 [지원 범위](https://jakearchibald.github.io/isserviceworkerready/)가 문제.<br>
+ <span style="font-size:40px">캐싱을 모든 환경에서 사용할 순 없을까?</span>
+</p>
 
 ----------
 
 ## 그런데... 잠깐.
 ## 브라우저는 이미 캐싱하고 있지 않나?
 
-사용자가 방문하는 웹사이트의 모든 리소스들에 대해 브라우저는<br>
+사용자가 방문하는 웹사이트의 모든 리소스들에 대해 브라우저는<br> <!-- .element: class="fragment" -->
 로컬 캐시해 다음 방문시 로컬 캐시된 리소스를 활용하도록 처리된다.
 
-그러나 많은 경우(온라인 상태인 경우라도)<br>
+그러나 많은 경우(온라인 상태인 경우라도)<br> <!-- .element: class="fragment" -->
 로컬 캐시된 리소스를 활용하지 못하는 경우가 발생한다.
 
-물론, <span class="underline">오프라인인 경우에는 로컬 캐싱은 사용불가</span>
+<p>물론, <span class="underline">오프라인인 경우에는 로컬 캐싱은 사용불가</span></p> <!-- .element: class="fragment" -->
 
 ----------
 
-## 캐시의 상태
+<!-- .slide: data-background="#639ddc" -->
+<div class="title-animate">
+    <div><h1>Cache</h1></div>
+    <div><p>로컬 캐시에 대하여</p></div>
+</div>
+
+----------
+
+# 캐시의 상태
 
 |Status|Description|
 |----|----|
-| <span class="red bold">first visit</span> | 첫 방문인 경우, 당연히 캐싱되어 있는 리소스는 존재하지 않음 |
-| <span class="red bold">cleared</span> | 캐싱되어 있는 경우라도, 사용자가 직접 캐시를 비우거나, 백신으로 인해 지워지거나 또는 브라우저의 버그로 제거되기도 한다. (약 19%의 Chrome 사용자들의 경우, 최소 1주일에 한번 이상 버그로 인해 캐시가 지워진다. - [참고](https://plus.google.com/+WilliamChanPanda/posts/hsfVHq6wKxG)) |
-| <span class="red bold">purged</span> | 로컬 캐시의 공간은 모든 웹사이트가 공유해 사용하기 때문에 한정된 공간으로 인해 이전에 캐시된 내용은 새로운 캐시 저장을 위해 지워지게 된다. |
-| <span class="red bold">expired</span> | 약 69%의 리소스들은 캐싱에 대한 헤더가 없거나 또는 1일 미만의 값으로 설정되어 있다. 캐싱 기간이 만료되면, 로컬에 저장된 캐시의 내용이 유효하더라도 새롭게 요청되어 진다. ([참고](http://httparchive.org/interesting.php#caching)) |
-| <span class="red bold">revved</span> | 이전 방문으로 인해 캐싱이 되어 있는 상태라고 해도, 사이트의 내용이 변경되어 사용자의 로컬 캐시된 리소스와 달라 사용되지 못할 수도 있다. |
+| <span class="red bold fragment">first visit</span> | <span class="fragment">첫 방문인 경우, 당연히 캐싱되어 있는 리소스는 존재하지 않음</span> |
+| <span class="red bold fragment">cleared</span> | <span class="fragment">캐싱되어 있는 경우라도, 사용자가 직접 캐시를 비우거나, 백신으로 인해 지워지거나 또는 브라우저의 버그로 제거되기도 한다. (약 19%의 Chrome 사용자들의 경우, 최소 1주일에 한번 이상 버그로 인해 캐시가 지워진다. - [참고](https://plus.google.com/+WilliamChanPanda/posts/hsfVHq6wKxG))</span> |
+| <span class="red bold fragment">purged</span> | <span class="fragment">로컬 캐시의 공간은 모든 웹사이트가 공유해 사용하기 때문에 한정된 공간으로 인해 이전에 캐시된 내용은 새로운 캐시 저장을 위해 지워지게 된다.</span> |
+| <span class="red bold fragment">expired</span> | <span class="fragment">약 69%의 리소스들은 캐싱에 대한 헤더가 없거나 또는 1일 미만의 값으로 설정되어 있다. 캐싱 기간이 만료되면, 로컬에 저장된 캐시의 내용이 유효하더라도 새롭게 요청되어 진다. ([참고](http://httparchive.org/interesting.php#caching))</span> |
+| <span class="red bold fragment">revved</span> | <span class="fragment">이전 방문으로 인해 캐싱이 되어 있는 상태라고 해도, 사이트의 내용이 변경되어 사용자의 로컬 캐시된 리소스와 달라 사용되지 못할 수도 있다.</span> |
 
 ----------
 
@@ -76,7 +111,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
-## 모바일 브라우저의 캐시
+## 브라우저의 캐시 공간
 
 로컬 캐싱은 성능에 큰 영향을 주는 요소 중 한 가지.<br>
 그러나 모바일 환경에서의 캐싱은 데스크탑 브라우저에 비해 적은 공간을 사용
@@ -91,19 +126,6 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 <p style="margin-top:35px;font-size:20px">
 [참고]: [Early findings: Mobile browser cache persistence and behaviour](http://www.webperformancetoday.com/2012/07/12/early-findings-mobile-browser-cache-persistence-and-behaviour/)
-</p>
-
-----------
-
-## Lie-Fi
-
-> "Indicates that you are connected to a wireless network, however you are still unable to load webpages"
-> \- [urban dictionary](http://www.urbandictionary.com/define.php?term=lie-fi)
-
-![](http://www.sitepen.com/blog/wp-content/uploads/2016/06/lie-fi.gif)
-
-<p style="margin-top:35px;font-size:20px">
-[참고]: [What is lie-fi?](https://developers.google.com/web/fundamentals/performance/poor-connectivity/lie-fi)
 </p>
 
 ----------
@@ -134,6 +156,7 @@ gulp.task('generate-service-worker', function(callback) {
     var swPrecache = require('sw-precache');
     var rootDir = 'demo';
 
+    // static 리소스들에 대한 sw.js를 생성
     swPrecache.write(path.join(rootDir, 'sw.js'), {
         staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
         stripPrefix: rootDir
@@ -169,6 +192,7 @@ toolbox.router.get("/images", toolbox.[ cacheFirst | networkFirst | fastest ], o
 ## sw-toolbox
 
 ```js
+// sw.js
 (global => {
   'use strict';
 
@@ -211,10 +235,9 @@ toolbox.router.get("/images", toolbox.[ cacheFirst | networkFirst | fastest ], o
 ```
 
 <p style="margin-top:35px;font-size:20px">
-
-[Instant Loading with Service Workers (Chrome Dev Summit 2015)](https://www.youtube.com/watch?v=jCKZDTtUA2A&t=16m58s)<br>
-[Service Worker Toolbox, Totally Tooling Tips](https://youtu.be/gfHXekzD7p0?list=PLNYkxOF6rcIB3ci6nwNyLYNU6RDOU3YyL)<br>
-[Getting started with the sw-toolbox](http://deanhume.com/home/blogpost/getting-started-with-the-service-worker-toolbox/10134)
+    [Instant Loading with Service Workers (Chrome Dev Summit 2015)](https://www.youtube.com/watch?v=jCKZDTtUA2A&t=16m58s)<br>
+    [Service Worker Toolbox, Totally Tooling Tips](https://youtu.be/gfHXekzD7p0?list=PLNYkxOF6rcIB3ci6nwNyLYNU6RDOU3YyL)<br>
+    [Getting started with the sw-toolbox](http://deanhume.com/home/blogpost/getting-started-with-the-service-worker-toolbox/10134)
 </p>
 
 ----------
@@ -251,7 +274,18 @@ require('offline-plugin/runtime').install();
 
 ----------
 
-# SW가 지원되지 않는<br>환경에선 어떻게?
+## 무엇을 캐싱해야 할까? 
+
+[Application Shell architecture](https://medium.com/google-developers/instant-loading-web-apps-with-an-application-shell-architecture-7c0c2f10c73)
+
+<img src=https://cdn-images-2.medium.com/max/1200/1*6BUS9ahijjPrr4BfV0Oq8g.jpeg width=70%>
+
+----------
+
+<!-- .slide: data-background="#008844" -->
+<div class="title-animate">
+    <div><h1>SW가 지원되지<br>않는 환경에선?</h1></div>
+</div>
 
 - 스토리지를 활용한 캐싱:<br>
   Web Storage, IndexedDB, File API, etc.
@@ -264,32 +298,33 @@ require('offline-plugin/runtime').install();
 
 ## 웹 스토리지를 활용한 캐싱 방법
 
-캐시의 상태에 따라 항상 모든 static 파일들이 사용자의 로컬 영역에<br>
+캐시의 상태에 따라 항상 모든 static 파일들이 사용자의 로컬 영역에<br> <!-- .element: class="fragment" -->
 존재한다는 보장은 없기 때문에, 자주 변경이 되지 않는 파일에 대해서는<br>
 localStorage를 이용해 확실하게 캐싱되도록 처리하는 방법도 고려할 수 있다.
 
-### 몇가지 고려사항 : <!-- .element: class="underline" -->
-- 자주 변경을 필요로 하지 않는 기본 라이브러리들로 대상을 한정
-- 자주 변경되지 않더라도, 업데이트가 필요할 수 있기 때문에 '버전관리' 필요
-- localStorage는 브라우저에 따라 최대 저장용량이 다를 수 있다.<br>
+### 몇가지 고려사항 : <!-- .element: class="underline fragment" -->
+- 자주 변경을 필요로 하지 않는 기본 라이브러리들로 대상을 한정 <!-- .element: class="fragment" -->
+- 자주 변경되지 않더라도, 업데이트가 필요할 수 있기 때문에 '버전관리' 필요 <!-- .element: class="fragment" -->
+- localStorage는 브라우저에 따라 최대 저장용량이 다를 수 있다.<br> <!-- .element: class="fragment" -->
   대체로 5MB 까지 저장할 수 있지만, 보다 정확한 최대치 확인필요 
   
   
-[데모]: [네이버 검색 활용 예](https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC)
+<p>[데모]: [네이버 검색 활용 예](https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC)</p> <!-- .element: class="fragment" -->
 
 ----------
 
-## 로딩 전략
+# 로딩 전략
 
 initializer: 스토리지 버전과 비교<br>
-> storage.VER != file.VER ?<br>
->   load from File :
->   load from Storage
+> storage.VER == file.VER ?<br>
+>   load from <span class="green">Storage</span> :
+>   load from <span class="red">File</span>
 
 
 ```js
-let load = code => {
-    var s = document.createElement("script");
+// 스토리지에 저장된 스크립트를 evaluation 한다.
+let load = (code = "") => {
+    let s = document.createElement("script");
     s.charset = "utf-8";
     s.text = code;
     (document.head || document.getElementsByTagName("head")[0]).appendChild(s);
@@ -297,13 +332,6 @@ let load = code => {
 ```
 
 조건과 상황에 따라 다르지만, 기존 대비 <span class="red underline bold">25%</span> 성능향상 경험
-
-----------
-
-## Application Shell architecture
-
-[Instant Loading Web Apps With An Application Shell Architecture](https://medium.com/google-developers/instant-loading-web-apps-with-an-application-shell-architecture-7c0c2f10c73)
-![](https://cdn-images-2.medium.com/max/1200/1*6BUS9ahijjPrr4BfV0Oq8g.jpeg)
 
 ----------
 
@@ -333,7 +361,7 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota (
 );
 ```
 <p style="margin-top:35px;font-size:25px">
-    <sup style="font-size:9px">(2016/6/16~17)</sup> BlinkOn 6 conference: [State of Offline Storage APIs](https://docs.google.com/presentation/d/11CJnf77N45qPFAhASwnfRNeEMJfR-E_x05v1Z6Rh5HA/edit#slide=id.g1468a77557_0_15)
+    <sup style="font-size:9px">(2016/6/16~17)</sup> [BlinkOn 6 conference](https://www.youtube.com/playlist?list=PL9ioqAuyl6UL-7hTmxb3WQjMwQmANbVPL): [State of Offline Storage APIs](https://docs.google.com/presentation/d/11CJnf77N45qPFAhASwnfRNeEMJfR-E_x05v1Z6Rh5HA/edit#slide=id.g1468a77557_0_15)
 </p>
 
 | Type | Previous | Current Work |
@@ -350,7 +378,15 @@ PWA gets at most 6% of free space on device
 
 ----------
 
-## PWA 디버깅
+<!-- .slide: data-background="#daa60b" -->
+<div class="title-animate">
+    <div><h1>Debug PWA</h1></div>
+    <div><p>크롬 개발자 도구</p></div>
+</div>
+
+----------
+
+# PWA 디버깅
 
 SW는 'https' 에서만 동작한다.<br>
 그러나 디버깅 용도를 위해 http://localhost 에서도 동작
@@ -367,7 +403,7 @@ Chrome DevTools > Application Tab:
 
 ----------
 
-## Manifest
+# Manifest
 
 - 전체 outline 확인
 - homescreen 이벤트 에뮬레이션
@@ -376,10 +412,10 @@ Chrome DevTools > Application Tab:
 
 ----------
 
-## Service Workers
+# Service Workers
 
 - 네트워크 핸들링
-- 에뮬레이션: Push a notification, Sync event
+- 에뮬레이션: [Push a notification](https://gauntface.github.io/simple-push-demo/), [Sync event](https://wicg.github.io/BackgroundSync/demo/)
 - update/unregister sw
 - start/stop sw
 
@@ -387,7 +423,7 @@ Chrome DevTools > Application Tab:
 
 ----------
 
-## Cache
+# Cache
 
 캐시된 리소스의 확인<br>
 ![](./img/debug-cache.png)
@@ -397,33 +433,13 @@ Chrome DevTools > Application Tab:
 
 ----------
 
-# Demos
+# Resources
 
-- https://www.pokedex.org/
-- https://www.washingtonpost.com/pwa/
-- https://pwa.rocks/
-- https://weather-pwa-sample.firebaseapp.com/
-
-----------
-
-# Case Studies
-
-Service Workers in Production
-- https://developers.google.com/web/showcase/2015/service-workers-iowa
-- https://developers.google.com/web/showcase/2016/iowa2016
-- https://pwa.rocks/
-
-----------
-
-## Resources
-
-- [Service Workers 101](https://github.com/delapuente/service-workers-101/)
+- https://pwa.rocks/ (오페라에서 아카이빙한 PWA 앱 목록)
+- Google Developers: [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
+- Google Developers: [SW Case Studies](https://developers.google.com/web/showcase/)
+- Mozilla [Service Worker Cookbook](https://serviceworke.rs/)
+- Service Workers 101: [SW Infographic](https://github.com/delapuente/service-workers-101/)
 - [The Service Worker Lifecycle](https://bitsofco.de/the-service-worker-lifecycle/)
-- [Awesome Progressive Web Apps](https://github.com/TalAter/awesome-progressive-web-apps)
+- [Awesome Progressive Web Apps](https://github.com/TalAter/awesome-progressive-web-apps) (PWA 리소스 큐레이션)
 - [Progressive Web App Dev Summit 2016](https://events.withgoogle.com/progressive-web-app-dev-summit/)
-- [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
-
-----------
-
-
-2번 이상 방문(최소 5분 이상의 간격)하는 경우, 홈스크린에 추가
