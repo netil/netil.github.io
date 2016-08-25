@@ -48,11 +48,12 @@ gulp.task('sw-precache', function(callback) {
 
     swPrecache.write(path.join(rootDir, 'sw.js'), {
         staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
+        stripPrefix: rootDir
 
         // 런타임 캐싱 사용시, 생성되는 sw.js에 sw-toolbox가 자동으로 포함
         // https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject
-        /* runtimeCaching: [{
-             urlPattern: /\.cloudflare\.com$/,
+        /*,runtimeCaching: [{
+             urlPattern: /\.cloudflare\.com\/(.*)/i,
              handler: 'fastest',
                  options: {
                  cache: {
@@ -61,6 +62,5 @@ gulp.task('sw-precache', function(callback) {
                  }
              }
          }],*/
-        stripPrefix: rootDir
     }, callback);
 });
