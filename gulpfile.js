@@ -44,7 +44,7 @@ gulp.task('default', ['clean'], function(cb) {
 gulp.task('precache', function(callback) {
     var path = require('path');
     var swPrecache = require('sw-precache');
-    var rootDir = 'demo';
+    var rootDir = 'demo/pwa';
 
     swPrecache.write(path.join(rootDir, 'sw.js'), {
         staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
@@ -61,6 +61,6 @@ gulp.task('precache', function(callback) {
                      name: 'cdnjs'
                  }
              }
-         }],*/
+         }]*/
     }, callback);
 });

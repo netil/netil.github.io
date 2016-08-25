@@ -8,7 +8,7 @@
     global.toolbox.options.debug = true;
 
     // 이미지 폴더로 요청되는 리소스
-    toolbox.router.get('./img/(.*)', global.toolbox.cacheFirst, {
+    toolbox.router.get('/demo/pwa/img/(.*)', global.toolbox.cacheFirst, {
         cache: {
             name: 'img',
             maxEntries: 10,

@@ -405,7 +405,7 @@ PWA gets at most 6% of free space on device
 # PWA 디버깅
 
 SW는 'https' 에서만 동작한다.<br>
-그러나 디버깅 용도를 위해 http://localhost 에서도 동작
+그러나 디버깅 용도를 위해 http://localhost 및 http://127.0.0.1 에서도 동작 (포트 상관없음)
 
 Chrome DevTools > Application Tab:
 - Manifest
