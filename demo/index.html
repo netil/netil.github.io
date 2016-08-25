@@ -16,20 +16,30 @@
     <meta name=msapplication-TileColor content=#2196F3>
     <meta name=theme-color content=#2196F3>
     <link rel=stylesheet href=css/main.css>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs/1.2.0/pkgd/eg.pkgd.min.js"></script>
 </head>
 
 <body>
-<h1>Demo</h1>
+<h1>egjs Flicking  <a href="http://naver.github.io/egjs/demo/flicking/">demo</a></h1>
 
 <div id="container">
-    <img src="img/brown.png" style="width:40%">
-    <img src="img/cony.png" style="width:40%">
-
-    <audio src="assets/dingdong.mp3" controls></audio>
+    <div>
+        <img src="img/brown.png">
+        <p>Brown</p>
+    </div>
+    <div>
+        <img src="img/cony.png">
+        <p>Cony</p>
+    </div>
+    <div>
+        <img src="img/sally.png">
+        <p>Sally</p>
+    </div>
 </div>
+<script>
+    $("#container").flicking({ circular: true });
+</script>
 <script src="./js/companion.js" data-service-worker="./sw2.js"></script>
 </body>
 </html>
