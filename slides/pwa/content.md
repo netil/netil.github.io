@@ -157,26 +157,25 @@ ex. Gulp task:
 gulp.task('precache', function(callback) {
     var path = require('path');
     var swPrecache = require('sw-precache');
-    var rootDir = 'demo';
+    var rootDir = 'demo/pwa';
 
-    // static 리소스들에 대한 sw.js를 생성
     swPrecache.write(path.join(rootDir, 'sw.js'), {
         staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
         stripPrefix: rootDir
-    }, callback);
-    
-    // 런타임 캐싱 사용시, 생성되는 sw.js에 sw-toolbox가 자동으로 포함
-    // https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject
-    /*,runtimeCaching: [{
-         urlPattern: /\.cloudflare\.com\/(.*)/i,
-         handler: 'fastest',
-             options: {
-             cache: {
-                 maxEntries: 10,
-                 name: 'cdnjs'
+
+        // 런타임 캐싱 사용시, 생성되는 sw.js에 sw-toolbox가 자동으로 포함
+        // https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject
+        /*,runtimeCaching: [{
+             urlPattern: /\.cloudflare\.com\/(.*)/i,
+             handler: 'fastest',
+                 options: {
+                 cache: {
+                     maxEntries: 10,
+                     name: 'cdnjs'
+                 }
              }
-         }
-     }],*/
+         }]*/
+    }, callback);
 });
 ```
 
@@ -208,45 +207,44 @@ toolbox.router.get("/images", toolbox.[ cacheFirst | networkFirst | fastest ], o
 ## sw-toolbox
 
 ```js
-// sw.js
 (global => {
-  'use strict';
+    'use strict';
 
-  // sw-tookbox 로딩
-  importScripts('./js/sw-toolbox/sw-toolbox.js');
+    // sw-tookbox 로딩
+    importScripts('./js/sw-toolbox.js');
 
-  // 디버깅을 위한 로깅 옵션 (개발자 도구 콘솔에 로깅됨)
-  global.toolbox.options.debug = true;
+    // 디버깅을 위한 로깅 옵션 (개발자 도구 콘솔에 로깅됨)
+    global.toolbox.options.debug = true;
 
-  // 이미지 폴더로 요청되는 리소스
-  toolbox.router.get('/images/(.*)', global.toolbox.cacheFirst, {
-    cache: {
-          name: 'img',
-          maxEntries: 10,
-          maxAgeSeconds: 60*60*24 // 1일간 유효
+    // 이미지 폴더로 요청되는 리소스
+    toolbox.router.get('/demo/pwa/img/(.*)', global.toolbox.cacheFirst, {
+        cache: {
+            name: 'img',
+            maxEntries: 10,
+            maxAgeSeconds: 60*60*24 // 1일간 유효
         }
-  });
+    });
 
-  // cloudflare.com (cdnjs.com)에서 요청되는 모든 리소스
-  toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
-    cache: {
-      name: 'cdnjs',
-      maxEntries: 5,  // LRU
-      maxAgeSeconds: 60*60*24
-    },
-    origin: /\.cloudflare\.com$/,
+    // cloudflare.com (cdnjs.com)에서 요청되는 모든 리소스
+    toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
+        cache: {
+            name: 'cdnjs',
+            maxEntries: 5,  // LRU
+            maxAgeSeconds: 60*60*24
+        },
+        origin: /\.cloudflare\.com$/,
 
-    // 네트워크 timeout 설정
-    networkTimeoutSeconds: 2
-  });
+        // 네트워크 timeout 설정
+        networkTimeoutSeconds: 2
+    });
 
-  // 정의된 route에 일치하지 않는 리소스들에 대한 요청의 기본 전략 설정
-  // 응답은 기본 캐시에 저장된다.
-  global.toolbox.router.default = global.toolbox.networkFirst;
+    // 정의된 route에 일치하지 않는 리소스들에 대한 요청의 기본 전략 설정
+    // 응답은 기본 캐시에 저장된다.
+    global.toolbox.router.default = global.toolbox.networkFirst;
 
-  // sw가 페이지의 컨트롤을 빠른 시점에 취할 수 있도록 하는 boilerplate
-  global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
-  global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
+    // sw가 페이지의 컨트롤을 빠른 시점에 취할 수 있도록 하는 boilerplate
+    global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
+    global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
 })(self);
 ```
 
@@ -287,6 +285,13 @@ module.exports = {
 ```js
 require('offline-plugin/runtime').install();
 ```
+
+----------
+
+# Demo
+sw-precache 및 sw-toolbox
+
+<a href="https://netil.github.io/demo/pwa/" target="_new">https://netil.github.io/demo/pwa/</a>
 
 ----------
 
