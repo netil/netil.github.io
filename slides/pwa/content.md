@@ -146,6 +146,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 - 캐싱 리소스 파일의 컨텐츠에 기반해 해쉬를 통한 자동 버저닝
 - 변경이 감지되면, 이전 버전을 만료시키고,<br>새로운 버전을 fetch 하도록 SW를 생성
 - 변경되지 않은 캐시 요소에 대해선 그대로 유지
+- cache-first strategy
 
 ----------
 
@@ -163,6 +164,19 @@ gulp.task('generate-service-worker', function(callback) {
         staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
         stripPrefix: rootDir
     }, callback);
+    
+    // 런타임 캐싱 사용시, 생성되는 sw.js에 sw-toolbox가 자동으로 포함
+    // https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject
+    /* runtimeCaching: [{
+        urlPattern: /\.cloudflare\.com$/,
+        handler: 'fastest',
+        options: {
+            cache: {
+                maxEntries: 10,
+                name: 'cdnjs'
+            }
+        }
+    }],*/
 });
 ```
 
