@@ -154,7 +154,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ex. Gulp task:
 ```js
-gulp.task('generate-service-worker', function(callback) {
+gulp.task('precache', function(callback) {
     var path = require('path');
     var swPrecache = require('sw-precache');
     var rootDir = 'demo';
@@ -167,16 +167,16 @@ gulp.task('generate-service-worker', function(callback) {
     
     // 런타임 캐싱 사용시, 생성되는 sw.js에 sw-toolbox가 자동으로 포함
     // https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject
-    /* runtimeCaching: [{
-        urlPattern: /\.cloudflare\.com$/,
-        handler: 'fastest',
-        options: {
-            cache: {
-                maxEntries: 10,
-                name: 'cdnjs'
-            }
-        }
-    }],*/
+    /*,runtimeCaching: [{
+         urlPattern: /\.cloudflare\.com\/(.*)/i,
+         handler: 'fastest',
+             options: {
+             cache: {
+                 maxEntries: 10,
+                 name: 'cdnjs'
+             }
+         }
+     }],*/
 });
 ```
 

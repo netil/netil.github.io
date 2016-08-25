@@ -41,7 +41,7 @@ gulp.task('default', ['clean'], function(cb) {
     //runSequence('styles', ['html', 'scripts', 'styles', 'images', 'fonts', 'sounds', 'copy', 'copy-workerscripts'], cb);
 });
 
-gulp.task('sw-precache', function(callback) {
+gulp.task('precache', function(callback) {
     var path = require('path');
     var swPrecache = require('sw-precache');
     var rootDir = 'demo';
