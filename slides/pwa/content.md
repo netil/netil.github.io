@@ -62,8 +62,10 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
-## 그런데... 잠깐.
-## 브라우저는 이미 캐싱하고 있지 않나?
+<div class="title-animate" style="margin-bottom:50px">
+    <div><h1>그런데... 잠깐.</h1></div>
+    <div><p>브라우저는 이미 캐싱하고 있지 않나?</p></div>
+</div>
 
 사용자가 방문하는 웹사이트의 모든 리소스들에 대해 브라우저는<br> <!-- .element: class="fragment" -->
 로컬 캐시해 다음 방문시 로컬 캐시된 리소스를 활용하도록 처리된다.
