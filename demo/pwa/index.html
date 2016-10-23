@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=description content="Demo">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel=canonical href="https://netil.github.io/">
+    <title>Demo</title>
+    <link rel=manifest href=manifest.json>
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=application-name content="Demo">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name=apple-mobile-web-app-title content="Demo">
+    <meta name=msapplication-TileColor content=#2196F3>
+    <meta name=theme-color content=#2196F3>
+    <link rel=stylesheet href=css/main.css>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/egjs/1.2.0/pkgd/eg.pkgd.min.js"></script>
+</head>
+
+<body>
+<h1>egjs Flicking  <a href="http://naver.github.io/egjs/demo/flicking/">demo</a></h1>
+
+<div id="container">
+    <div>
+        <img src="img/brown.png">
+        <p>Brown</p>
+    </div>
+    <div>
+        <img src="img/cony.png">
+        <p>Cony</p>
+    </div>
+    <div>
+        <img src="img/sally.png">
+        <p>Sally</p>
+    </div>
+</div>
+<pre style="background:#0c1021;color:#f8f8f8">
+
+    <span style="color:#aeaeae">// 플리킹 생성</span>
+    <span style="color:#fbde2d">$</span>(<span style="color:#61ce3c">"#container"</span>).flicking({
+        circular: <span style="color:#d8fa3c">true</span>
+    });
+
+</pre>
+<script>
+    $("#container").flicking({ circular: true });
+</script>
+<script src="./js/companion.js" data-service-worker="./sw2.js"></script>
+</body>
+</html>

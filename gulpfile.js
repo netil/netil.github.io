@@ -41,13 +41,26 @@ gulp.task('default', ['clean'], function(cb) {
     //runSequence('styles', ['html', 'scripts', 'styles', 'images', 'fonts', 'sounds', 'copy', 'copy-workerscripts'], cb);
 });
 
-gulp.task('generate-service-worker', function(callback) {
+gulp.task('precache', function(callback) {
     var path = require('path');
     var swPrecache = require('sw-precache');
-    var rootDir = 'app';
+    var rootDir = 'demo/pwa';
 
     swPrecache.write(path.join(rootDir, 'sw.js'), {
-        staticFileGlobs: [rootDir + '/demo/**/*.{js,html,css,png,jpg,gif}'],
+        staticFileGlobs: [ rootDir + '/**/*.{js,html,css,png,jpg,gif}' ],
         stripPrefix: rootDir
+
+        // 런타임 캐싱 사용시, 생성되는 sw.js에 sw-toolbox가 자동으로 포함
+        // https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject
+        /*,runtimeCaching: [{
+             urlPattern: /\.cloudflare\.com\/(.*)/i,
+             handler: 'fastest',
+                 options: {
+                 cache: {
+                     maxEntries: 10,
+                     name: 'cdnjs'
+                 }
+             }
+         }]*/
     }, callback);
 });
