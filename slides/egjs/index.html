@@ -64,7 +64,7 @@
                          data-vertical="^=0=0=0\r?\n$"
                          data-separator-notes="^Note:"
                          data-charset="utf-8"
-                         data-background="linear-gradient(-40deg, #2d2d2d 90%, #23b300 0px)"
+                         data-background="#2d2d2d"
                          data-background-transition="slide">
                 </section>
                 <!-- data-background="linear-gradient(-20deg, #03133c 30%, #23b300)" -->
@@ -163,6 +163,7 @@
                         var x = (Math.PI/text.length).toFixed(0) * i;
                         var y = (Math.PI/text.length).toFixed(0) * i;
                         span.appendChild(node);
+                         span.style.fontSize = '5vw';
                         span.style.transform = 'rotateZ('+r+'deg) translate3d('+x+'px,'+y+'px,0)';
                         element.appendChild(span);
                     }
