@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>네이버의 모던 웹 라이브러리 - egjs</title>
+
+		<meta name="description" content="A presentation of SVG chart">
+		<meta name="author" content="JaeSung Park">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../reveal.js-3.1.0/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+        <script src="../timer.js"></script>
+        <link rel="stylesheet" href="./css/main.css">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section data-background="linear-gradient(-20deg, #000 35%, #06f59a)">
+                    <div class="emblem">네이버의 모던 웹 라이브러리 • egjs • </div>
+                    <div class="egjs-logo"><img src="img/egjs.png"></div>
+                    <p style="margin-top:50px">
+                        <small>
+                            <span>24th October, 2016</span><br>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 185.343" width="80" class="naver-logo">
+                                <path fill="#2db400" d="M 133.297,0 133.297,93.512 69.246,0 l -69.246,0 0,185.343 69.01,0 0,-93.512 64.056,93.512 69.23,0 L 202.297,0 133.297,0 Z"></path>
+                                <path transform="translate(217.073,0)" fill="#2db400" d="m 94.758,118.297 16.251,-61.138 1.887,0 L 129.148,118.297 94.758,118.297 Z m 56.528,-118.297 -78.692,0 -72.594,185.343 76.758,0 6.702,-24.205 56.979,0 6.712,24.205 76.738,0 -72.605,-185.343 Z"></path>
+                                <path transform="translate(405.64,0)" fill="#2db400" d="m 145.179,0 -34.02,111.753 -1.897,0 L 75.266,0 0,0 l 77.646,185.343 65.128,0 L 220.42,0 145.179,0 Z"></path>
+                                <path transform="translate(640.843,0)" fill="#2db400" d="m 0,0 139.887,0 0,48.266 -71.543,0 0,21.82 65.912,0 0,45.553 -65.912,0 0,21.425 73.743,0 0,48.276 L 0,185.343 0,0 Z"></path>
+                                <path transform="translate(809.017,0)" fill="#2db400" d="m 99.794,78.256 c -4.02,3.266 -11.779,4.876 -18.179,4.876 l -14.82,0 0,-36.507 14.528,0 c 6.969,0 14.912,1.666 18.758,4.984 C 103.922,54.948 105.697,59.481 105.697,65.22 105.697,70.671 103.825,75.015 99.794,78.256 Z m 33.907,37.753 c 24.528,-6.825 40.333,-24.507 40.333,-52.928 0,-47.743 -37.902,-63.081 -87.83,-63.081 l -86.205,0 0,185.343 68.984,0 0,-57.876 41.194,57.876 79.302,0 -55.779,-69.333 z"></path>
+                            </svg>
+
+                            박재성 - AU개발랩
+                        </small>
+                    </p>
+                </section>
+
+                <section data-markdown="content.md"
+                         data-separator="^\r?\n----------\r?\n$"
+                         data-vertical="^=0=0=0\r?\n$"
+                         data-separator-notes="^Note:"
+                         data-charset="utf-8"
+                         data-background="linear-gradient(-40deg, #2d2d2d 90%, #23b300 0px)"
+                         data-background-transition="slide">
+                </section>
+                <!-- data-background="linear-gradient(-20deg, #03133c 30%, #23b300)" -->
+
+                <section data-background="linear-gradient(-20deg, #000 35%, #9c63c7)">
+                    <main>
+                        <h1 style="font-size:4.5em"><span>고맙</span><span>습</span><span>니다</span><span>!</span></h1>
+                        <p>
+                            사용하러 가기 Go Go!<br>
+                            <a href="https://github.com/naver/egjs/" target="_new">https://github.com/naver/egjs/</a>
+                        </p>
+                    </main>
+
+
+                </section>
+			</div>
+		</div>
+
+		<script src="../reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="../reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                slideNumber: true,
+                history: true,
+                center: true,
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+                fragments: true,
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: '../reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); },
+                        callback: function() {
+                            Array.prototype.forEach.call(document.querySelectorAll('section > p'), function(ele) {
+                                var fragIndex = ele.innerHTML.indexOf("==")
+                                if (fragIndex != -1){
+                                    ele.innerHTML = ele.innerHTML.replace("==", "");
+                                    ele.className = 'fragment';
+                                }
+                            });
+                        }
+                    },
+                    { src: '../reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return true;/* !!document.querySelector( 'pre code' );*/ },
+                        callback: function() {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    },
+                    { src: '../reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+                    { src: '../reveal.js-3.1.0/plugin/notes/notes.js', async: true }
+                ]
+            });
+
+            Reveal.addEventListener('slidechanged', function(e) {
+                animate("title-animate", e);
+            });
+
+            Reveal.addEventListener('fragmentshown', function(e) {
+                // event.fragment = the fragment DOM element
+                event.fragment.classList.add("fragment-text");
+            });
+            Reveal.addEventListener('fragmenthidden', function(e) {
+                // event.fragment = the fragment DOM element
+                event.fragment.classList.remove("fragment-text");
+            });
+
+            function animate(type, e) {
+                var selector = "."+ type +" h1, ."+ type +" p";
+                var classList = [ "title", "sub-title" ];
+
+                try {
+                    e.currentSlide.querySelectorAll(selector).forEach(function (v, i) {
+                        v.classList.add(classList[i]);
+                    });
+
+                    e.previousSlide.querySelectorAll(selector).forEach(function (v, i) {
+                        v.classList.remove(classList[i]);
+                    });
+                } catch(e) {}
+            }
+
+            var Emblem = {
+                init: function(el, str) {
+                    var element = document.querySelector(el);
+                    var text = str ? str : element.innerHTML;
+                    element.innerHTML = '';
+                    for (var i = 0, letter; letter = text[i]; i++) {
+                        var span = document.createElement('span');
+                        var node = document.createTextNode(letter);
+                        var r = (360/text.length)*i;
+                        var x = (Math.PI/text.length).toFixed(0) * i;
+                        var y = (Math.PI/text.length).toFixed(0) * i;
+                        span.appendChild(node);
+                        span.style.transform = 'rotateZ('+r+'deg) translate3d('+x+'px,'+y+'px,0)';
+                        element.appendChild(span);
+                    }
+                }
+            };
+
+            Emblem.init('.emblem');
+
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56978261-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+	</body>
+</html>

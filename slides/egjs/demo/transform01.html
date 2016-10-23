@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>egjs - transform</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/eg.min.js"></script>
+    <style>
+        body{background-color:transparent;color:#fff;font-size:40px}
+        button{font-size:40px}
+        #grid{clear:left;margin:0;padding:0;width:95%;height:450px;background:-webkit-linear-gradient(#aaa,transparent 1px),-webkit-linear-gradient(0,#aaa,#fff 1px);background-size:10px 10px}
+        #box {position:relative;top:100px;left:100px;width:100px;height:100px;background-color:red}
+    </style>
+</head>
+<body>
+
+<p>
+    <button data-set="reset">Reset</button> <button data-val="scale(2) rotate(45deg) translateX(100px)">1</button> <button data-val="rotate(45deg) translateX(100px) scale(2)">2</button> <button data-val="translateX(100px) scale(2) rotate(45deg)">3</button>
+    <span id="msg"></span>
+</p>
+
+<div id="grid">
+    <div id="box"></div>
+</div>
+
+<script>
+    $("button").on("click", function(e) {
+        var val = this.dataset.val || "";
+
+        $("#msg").html(val);
+
+        $("#box").css("transform","")
+            .animate({ transform: val  });
+    });
+</script>
+</body>
+</html>

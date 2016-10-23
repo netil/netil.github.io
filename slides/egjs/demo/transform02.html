@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>egjs - transform</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/eg.min.js"></script>
+    <style>
+        body{background-color:transparent;color:#fff;font-size:40px}
+        button{font-size:40px}
+        #grid{position:absolute;top:200px;padding:0;width:95%;height:500px;background:-webkit-linear-gradient(#aaa,transparent 1px),-webkit-linear-gradient(0,#aaa,#fff 1px);background-size:10px 10px}
+        #box {position:relative;top:30px;left:30px;width:100px;height:100px;background-color:red}
+    </style>
+</head>
+<body>
+
+<p>
+    <button data-set="reset">Reset</button> <button data-val="scale(2) rotate(45deg) translateX(100px)">1</button> <button data-val="+=translateX(100px) +=rotate(45deg)">2</button> <button data-val="scale(2) rotate(45deg) translateX(100px), +=translateX(100px) +=rotate(45deg)">chaining</button><br>
+    <span id="msg">&nbsp;</span>
+</p>
+
+<div id="grid">
+    <div id="box"></div>
+</div>
+
+<script>
+    $("button").on("click", function(e) {
+        var val = this.dataset.val || "";
+
+        $("#msg").html(val);
+        val = val.split(",");
+
+        if (val.length === 1) {
+            $("#box").animate({ transform: val[0] });
+        } else {
+            $("#box")
+                .animate({ transform: val[0] })
+                .animate({ transform: val[1] });
+        }
+    });
+</script>
+</body>
+</html>
