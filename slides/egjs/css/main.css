@@ -9,7 +9,7 @@ textarea { width:90%;position:relative;dispaly:block;font-size:0.55em;background
 .reveal pre {box-shadow:none}
 .reveal pre code.transform{width:100%;margin-left:-80px;padding:15px 0;line-height:1.5;font-size:28px}
 
-body:after {content:url(../img/deview.png);position:fixed;top:2.5em;left:2.5em}
+body:after {content:url(../img/deview.png);position:fixed;top:1.5em;left:1.5em}
 
 .code {
     position:relative; }

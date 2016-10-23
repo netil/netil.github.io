@@ -181,9 +181,9 @@
 
 ----------
 
-## 네이버 접속<br>브라우저 점유율 <span class="size18">(2016/09 기준)</span>
+## 네이버 접속 브라우저 점유율 <span class="size18">(2016/09 기준)</span>
 
-<iframe src="./demo/chart-browser.html" style="width:90%;height:600px"></iframe>
+<iframe src="./demo/chart-browser.html" style="width:90%;height:500px"></iframe>
 
 ----------
 
@@ -392,10 +392,8 @@
 
 ----------
 
-<iframe src="./demo/transform01.html" style="width:100%;height:550px"></iframe>
-<p class="reference" style="margin-top:-50px">
-    http://codepen.io/netil/pen/JRwAGN
-</p>
+<iframe src="./demo/transform01.html" style="width:100%;height:600px"></iframe>
+http://codepen.io/netil/pen/JRwAGN
 
 ----------
 
@@ -410,9 +408,7 @@
 ----------
 
 <iframe src="./demo/transform02.html" style="width:100%;height:650px"></iframe>
-<p class="reference" style="margin-top:-50px">
-    http://codepen.io/netil/pen/xEmvzG
-</p>
+http://codepen.io/netil/pen/xEmvzG
 
 ----------
 
@@ -427,9 +423,7 @@
 ----------
 
 <iframe src="./demo/transform03.html" style="width:100%;height:650px"></iframe>
-<p class="reference" style="margin-top:-50px">
-    http://codepen.io/netil/pen/EgGqOj
-</p>
+http://codepen.io/netil/pen/EgGqOj
 
 ----------
 
