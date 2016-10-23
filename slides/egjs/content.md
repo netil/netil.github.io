@@ -392,8 +392,10 @@
 
 ----------
 
-<iframe src="./demo/transform01.html" style="width:100%;height:600px"></iframe>
-http://codepen.io/netil/pen/JRwAGN
+<p style="margin:0">
+    <iframe src="./demo/transform01.html" style="width:100%;height:600px"></iframe>
+    http://codepen.io/netil/pen/JRwAGN
+</p>
 
 ----------
 
@@ -407,8 +409,10 @@ http://codepen.io/netil/pen/JRwAGN
 
 ----------
 
-<iframe src="./demo/transform02.html" style="width:100%;height:650px"></iframe>
-http://codepen.io/netil/pen/xEmvzG
+<p style="margin:0">
+    <iframe src="./demo/transform02.html" style="width:100%;height:650px"></iframe>
+    http://codepen.io/netil/pen/xEmvzG
+</p>
 
 ----------
 
@@ -422,8 +426,10 @@ http://codepen.io/netil/pen/xEmvzG
 
 ----------
 
-<iframe src="./demo/transform03.html" style="width:100%;height:650px"></iframe>
-http://codepen.io/netil/pen/EgGqOj
+<p style="margin:0">
+    <iframe src="./demo/transform03.html" style="width:100%;height:650px"></iframe>
+    http://codepen.io/netil/pen/EgGqOj
+</p>
 
 ----------
 
@@ -637,8 +643,8 @@ https://www.youtube.com/watch?v=jTRe1tvFYdE <!-- .element: style="font-size:12px
 
 ## [eg.IniniteGrid](http://naver.github.io/egjs/demo/infiniteGrid/) vs [Masonry](http://masonry.desandro.com/)
 
-<!--<iframe width="728" height="410" src="https://www.youtube.com/embed/6Kv-NV0dZXw" frameborder="0" allowfullscreen></iframe>-->
-<video width="728" height="410" src="./img/infiniteGrid-masonry.mp4" frameborder="0" controls></video>
+<iframe width="728" height="410" src="https://www.youtube.com/embed/6Kv-NV0dZXw" frameborder="0" allowfullscreen></iframe>
+<!-- video width="728" height="410" src="./img/infiniteGrid-masonry.mp4" frameborder="0" controls></video -->
 
 <p class="reference">
     https://youtu.be/6Kv-NV0dZXw

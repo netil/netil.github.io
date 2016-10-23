@@ -176,7 +176,7 @@ p > img.flow {
     text-align: center;
 }
 
-.emblem span {
+.reveal .emblem span {
     font-family: 'Kameron', 'NanumSquare', 'Jeju Gothic', 'Noto Sans KR';
     font-weight: 900;
     position: absolute;
