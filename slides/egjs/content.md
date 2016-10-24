@@ -1,9 +1,4 @@
 
-<img src="./img/qrcode.svg">
-<span style="font-size:50px;color:#fff;font-weight:bold;font-family:'Bitstream Vera Sans Mono'">netil.github.io/egjs</span>
-
-----------
-
 <!-- .slide:data-background="linear-gradient(600deg, rgb(60, 3, 3) 50%, rgb(131, 7, 7) 0px)" -->
 
 <div class="title-animate">
