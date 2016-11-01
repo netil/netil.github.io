@@ -3,7 +3,21 @@
 - Server-side rendering
 - Component (Module)
 - Isomorphic
+- Virtual DOM
 
+----------
+
+클라이언트 영역에서 처리하는 것이 좋다고 했었다가
+지금은 서버 렌더링을 얘기한다
+
+http://tomdale.net/2015/02/youre-missing-the-point-of-server-side-rendered-javascript-apps/
+
+- SEO 문제
+Ajax API로 구성되는 페이지의 경우 초기 화면은 blank로 구성되고 SEO에서 올바른 처리가 되지 못하는 문제
+- 초기 로딩속도
+정적 자원을 로딩한 후, 다시 컨텐츠를 구성하기 위해 Ajax API를 호출하는 처리시간의 소요
+- JavaScript 사용이 제한된 환경
+이 경우 클라이언트 렌더링은 무용지물 상태가 된다.
 
 ----------
 
