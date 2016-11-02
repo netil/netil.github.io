@@ -56,6 +56,12 @@ https://www.youtube.com/watch?v=z5e7kWSHWTg
 
 단방향 데이터 흐름
 
+- 변경에 대한 업데이트는?
+1) dirty checking (Angular1)
+2) observable (Anguar2)
+
+https://medium.com/tony-freed-consulting/what-is-virtual-dom-c0ec6d6a925c#.pxlx9kxwi
+
 ----------
 
 # Isomorphic JavaScript
