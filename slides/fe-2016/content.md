@@ -88,7 +88,10 @@ Module
 
 CommonJS
 RequireJS?
-ES6 
+ES6
+
+컴포넌트 기반의 개발에 대한 니즈
+
 
 ----------
 
@@ -118,6 +121,9 @@ Bundlers vs Build tools
 
 http://stateofjs.com/2016/buildtools/
 
+Bundler가 기존 build 도구들이 수행하던 작업들을 일부 대체해 경계의 모호함
+ex. loaders 등을 통한 transpiling
+
 ----------
 
 Frameworks
@@ -126,6 +132,9 @@ AngularJS
 React
 Vue
 Polymer
+
+관심도:
+https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer
 
 ----------
 
@@ -177,8 +186,11 @@ Hybrid App/JavaScript Native
 
 - Cordova
 - React Native
+- Fuse
 - Electron
 - NW.js (Node-Webkit)
+
+Titanium은 잊혀져가는
 
 ----------
 
@@ -190,11 +202,19 @@ Browsers
 
 브라우저 벤더들의 표준 implementation 관련
 - Safari Technology Preview
-- Chrome: Android에서도 canary/beta 채널 제공시작
+- Chrome: Android에서도 canary/beta 채널 제공 시작
 - Edge?
 - FireFox: 최근 Quantum(Server 기반) 엔진 변경 발표
+- Samsung Internet?
 
 ----------
+
+JS Foundation
+
+jQuery Foundation의 새로운 이름
+
+----------
+
 
 Asynchronous
 
