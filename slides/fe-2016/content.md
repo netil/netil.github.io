@@ -1,21 +1,22 @@
-어떤 것을 배워야 할까?
-시간 투자가 필요하기 때문
-
-그러나 해당 기술이 뜨지 못한다면?
-결국, 많은 기술들 속에서 어떤 것을 '선택'해야 할지가 점점 중요
+# 어떤 것을 배워야 할까?
+# 시간 투자 필요
 
 ----------
 
-'최신'에 대한 myth.
-
-- Angular1 사례:
-성능 이슈로 도입한 곳들 대부분이 전환하거나 전환예정
-
-- Angular2?
-Angular 2 Is Out: Should You Start Using It?
-http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
+## 그러나 해당 기술이 뜨지 못하면?<br>
+## 많은 기술들 속에서 어떤 것을 '선택' 할지가 점점 중요
 
 ----------
+
+# Hot 2016 
+
+[How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.78qn4410c)
+http://www.looah.com/article/view/2054 (한국어)
+
+----------
+
+
+
 
 ## 몇가지 키워드
 
@@ -26,12 +27,24 @@ http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
 
 ----------
 
-# Server-side rendering
+'최신'에 대한 Myth
+
+- Angular1 사례: 성능 이슈 어려움
+
+- Angular2?
+Angular 2 Is Out: Should You Start Using It?
+http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
+
+----------
+
+## Server-side rendering
 
 클라이언트 영역에서 처리하는 것이 좋다고 했었다가
 지금은 서버 렌더링을 얘기한다
 
 http://tomdale.net/2015/02/youre-missing-the-point-of-server-side-rendered-javascript-apps/
+
+<img src="./img/server-rendering.png">
 
 - SEO 문제
 Ajax API로 구성되는 페이지의 경우 초기 화면은 blank로 구성되고 SEO에서 올바른 처리가 되지 못하는 문제
@@ -70,6 +83,11 @@ https://medium.com/tony-freed-consulting/what-is-virtual-dom-c0ec6d6a925c#.pxlx9
 - 백엔드와 프론트엔드가 같은 코드 공유
 
 http://isomorphic.net/
+
+- Isomorphic JS: 페이지를 생성하기 위해 클라이언트와 서버를 활용하는 테크닉
+- Universal JS: 모든 환경에서 실행되는 자바스크립트
+
+http://www.2ality.com/2015/08/isomorphic-javascript.html
 
 ----------
 
@@ -134,11 +152,21 @@ Vue
 Polymer
 
 관심도:
+<img src="./img/trend.png">
+
 https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer
 
 ----------
 
 # AngularJS
+
+- AtScript -> TypeScript
+- Google: GWT -> Dart -> TypeScript?
+
+http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
+
+YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예정
+- [YouTube is being rebuilt with Web Components & Polymer](http://react-etc.net/entry/youtube-is-being-rebuilt-on-web-components-and-polymer)
 
 ----------
 
@@ -171,6 +199,14 @@ Two-way data binding
 ----------
 
 jQuery?
+
+<img src="./img/jquery-trend.png">
+
+- 프레임워크 등장 이전까진 de-facto standard 위치
+- 브라우저의 표준 지원률 향상으로 VanillaJS만으로도 점점 충분
+- 웹앱이 아닌 웹사이트에선 아직도 적합
+
+[Is jQuery Still Relevant?](http://developer.telerik.com/featured/is-jquery-still-relevant/)
 
 ----------
 
@@ -213,6 +249,12 @@ JS Foundation
 
 jQuery Foundation의 새로운 이름
 
+<img src="./img/jsf-logo.png">
+
+https://js.foundation/
+
+[자바스크립트 생태계 통합될까](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20161019140745)
+
 ----------
 
 
@@ -226,3 +268,4 @@ Asynchronous
 # 2017?
 
 ----------
+
