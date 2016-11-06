@@ -46,8 +46,8 @@ h1.outline{text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px white;}
 .green {color:green}
 .yellow {color:#e7ad52}
 .nostyle {list-style-type:none}
-.size18, span.size18 {font-size:18px}
-.size9, span.size9 {font-size: 9px}
+.reveal .size18, span.size18 {font-size:18px}
+.reveal .size9, span.size9 {font-size: 9px}
 .bold, span.bold {font-weight:bold}
 .underline {text-decoration: underline}
 

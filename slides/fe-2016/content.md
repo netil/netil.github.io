@@ -1,9 +1,9 @@
 # 어떤 것을 배워야 할까?
-# 시간 투자 필요
+# 시간 투자 필요 <!-- .element: class="fragment" -->
 
 ----------
 
-## 그러나 해당 기술이 뜨지 못하면?<br>
+# 그러나 해당 기술이 뜨지 못하면?<br>
 ## 많은 기술들 속에서 어떤 것을 '선택' 할지가 점점 중요
 
 ----------
@@ -20,13 +20,27 @@ http://stackoverflow.com/research/developer-survey-2016#technology-most-popular-
 
 ----------
 
+## but, [WebAssembly](http://webassembly.org/)
+
+- 새로운 웹용 바이너리 표준
+- 브라우저가 가상 머신처럼 동작해 컴파일된 중간 코드를 실행
+- 네이티브 애플리케이션과 같이 빠른 실행을 목표
+
+> JavaScript 대신 C, C++ 등의 언어로 브라우저 실행 프로그램 개발가능
+
+[Reached the Browser Preview milestone](http://webassembly.org/roadmap/)
+
+----------
+
 ## 뜨거웠던 2016
 
 <img src="./img/fe2016.png" style="width:60%;border:solid 5px #fff">
 
-HackerNews와 Reddit:
-[How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.78qn4410c)
+<p class="size18">
+HackerNews와 Reddit<br>
+[How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.78qn4410c)<br>
 [한글번역] http://www.looah.com/article/view/2054
+</p>
 
 ----------
 
@@ -78,15 +92,14 @@ https://www.youtube.com/watch?v=z5e7kWSHWTg
 
 ## Reason?
 
-DOM 노드 핸들링은 비용이 많이 든다.
-
-단방향 데이터 흐름
+- DOM 노드 핸들링은 비용이 많이 든다.
+- Diff 알고리즘을 통해 효율적 변경
 
 - 변경에 대한 업데이트는?
-- 1) Dirty checking
-  - Angular1
-  - React (setState 호출시 마킹)
-- 2) Observable (Anguar2)
+ - 1) Dirty checking
+   - Angular1은 VDOM은 없지만, Digest cycle내에서의 변경 watch
+   - React (setState 호출시 마킹)
+ - 2) Observable (Anguar2)
 
 https://medium.com/tony-freed-consulting/what-is-virtual-dom-c0ec6d6a925c#.pxlx9kxwi
 
@@ -106,7 +119,8 @@ http://www.2ality.com/2015/08/isomorphic-javascript.html
 
 ----------
 
-# ES6(ECMAScript 2015)
+# ES6
+### (ECMAScript 2015)
 
 2가지 질문:
 - 현재 사용 가능한가?
@@ -123,31 +137,54 @@ http://www.2ality.com/2015/08/isomorphic-javascript.html
 
 ----------
 
-# 지원율
+# ES6 지원율
 
-- 브라우저: 97%
-- Node.js 6.5 & 7: 97%
-- Babel: 71%
+| 영역 | 지원율 |
+| --- | --- |
+| Modern Browsers | 97% |
+| Node.js 6.5/7 | 97% |
+| Babel | 71% |
+
+http://kangax.github.io/compat-table/es6/
 
 ----------
 
-Module
+# Module System
 
-- CommonJS
-- RequireJS (AMD)
-- ES6 Module (표준)
+
+| Name | Type | Syntax | Execution from | Module Unit per |
+| --- | --- | --- | --- | --- | --- |
+| [CommonJS](http://www.commonjs.org/) | Synchronous | module.export<br>require | return | file |
+| [RequireJS](http://requirejs.org/) | Asynchronous | define<br>require | callback | definition |
+| [ES6 Module](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) | Sync/Async | export<br>import | return | definition |
+
+https://auth0.com/blog/javascript-module-systems-showdown/
 
 모듈/구조화에 대한 니즈
 ES6 > CommonJS > RequireJS
 
 ----------
 
-Package Manger
+# Package Manger
 
-- npm (yarn)
-- Bower?
+| Name | Target | Config | Path |
+| --- | --- | --- | --- |
+| [npm](https://www.npmjs.com/) | Node.js | package.json | node_modules |
+| [Bower](https://bower.io/) | Front-end | bower.json | bower_components |
+
+https://github.com/wilmoore/frontend-packagers
 
 ----------
+
+# Module Counts
+
+<img src="./img/npm-bower.png">
+
+http://www.modulecounts.com/
+
+----------
+
+# npm or Bower?
 
 다양한 옵션을 제공하는 것도 좋지만, 그렇다고 결졍적 이유도 존재하지 않음
 
@@ -157,23 +194,31 @@ https://twitter.com/tomdale/status/667389972794724352
 
 ----------
 
-## Bundlers vs Build tools
+# Bundlers<br>
+## vs.<br>
+# Build tools
 
 ----------
 
-## Bundler
+# Bundler
 - webpack
 - Browserify
 
+<img src="./img/bunder.png">
+
 다양한 자원들을 묶어 하나의 파일로 번들링 해주는 도구
+
+webpack > Browserify
 
 ----------
 
-## Build tool
+# Build tool
 - Grunt
 - Gulp
 
 정의된 작업들을 수행하는 도구
+
+Gulp > Grunt
 
 ----------
 
@@ -186,9 +231,11 @@ ex. loaders 등을 통한 transpiling
 
 ----------
 
-Frameworks
+# Frameworks
 
 ----------
+
+# Interests
 
 - jQuery
 - AngularJS
@@ -196,7 +243,6 @@ Frameworks
 - Vue
 - Polymer
 
-관심도:
 <img src="./img/trend.png">
 
 https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer
@@ -217,6 +263,7 @@ jQuery?
 
 # AngularJS
 
+- Angular1 != Angular2
 - AtScript -> TypeScript
 - Google: GWT -> Dart -> TypeScript?
 
@@ -255,7 +302,7 @@ Safari는 HTML Import를 제외하고 모두 지원
 
 ----------
 
-'최신'에 대한 Myth
+# '최신'에 대한 Myth
 
 - Angular1 사례: 성능 이슈 어려움
 
@@ -284,7 +331,7 @@ LTS(Long-Term Support plan for Node.js releases)를 만들어 연 1회의 릴리
 
 Hybrid App/JavaScript Native
 
-- Cordova
+- Cordova (PhoneGap)
 - React Native
 - Fuse
 
@@ -292,9 +339,9 @@ Titanium은 점점 잊혀져가는
 
 ----------
 
-매력적이나, 프레임워크별 API
-어쨌든 Native App 개발과는 다르다.
-새로 등장한 도구들이 많아 문서에 대한 부족
+## 매력적이나, 프레임워크별 다른 API<br>
+## 어쨌든 Native App 개발과는 다르다.<br>
+## 새로 등장한 도구들이 많아 문서에 대한 부족
 
 ----------
 
