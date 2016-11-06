@@ -264,12 +264,21 @@ jQuery?
 # AngularJS
 
 - Angular1 != Angular2
-- AtScript -> TypeScript
+- AtScript -> TypeScript (JS 또는 Dart도 사용가능)
 - Google: GWT -> Dart -> TypeScript?
+- 2 way data binding -> 1 way
 
 http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
 
-구글의 메인 서비스들에서의 사용?
+----------
+
+## for Production?
+
+- 아직 너무 잦은 변화
+ - 2.0.0 16/9/15
+ - 2.2.0 16/11/02
+
+- 구글 서비스 적용은?
 
 YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예정
 - [YouTube is being rebuilt with Web Components & Polymer](http://react-etc.net/entry/youtube-is-being-rebuilt-on-web-components-and-polymer)
