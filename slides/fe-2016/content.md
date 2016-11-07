@@ -3,43 +3,50 @@
 
 ----------
 
-# 그러나 해당 기술이 뜨지 못하면?<br>
-## 많은 기술들 속에서 어떤 것을 '선택' 할지가 점점 중요
+# 그러나 해당 기술이<br>뜨지 못하면?
+
+-------
+
+## 많은 기술들 속에서<br>어떤 것을 '선택' 할지가 점점 중요
 
 ----------
 
-## JavaScript
+# JavaScript
 
 지속적인 자바스크립트 인기
 
 StackOverflow 2013~2016 가장 인기있는 기술로 응답
 
-<img src="./img/javascript.png">
+<img src="./img/javascript.png" style="width:60%">
 
-http://stackoverflow.com/research/developer-survey-2016#technology-most-popular-technologies
+<p class="size18">
+[StackOverflow 2016 survey](http://stackoverflow.com/research/developer-survey-2016#technology-most-popular-technologies)
+</p>
 
 ----------
 
-## but, [WebAssembly](http://webassembly.org/)
+# [WebAssembly](http://webassembly.org/)
 
 - 새로운 웹용 바이너리 표준
 - 브라우저가 가상 머신처럼 동작해 컴파일된 중간 코드를 실행
 - 네이티브 애플리케이션과 같이 빠른 실행을 목표
 
-> JavaScript 대신 C, C++ 등의 언어로 브라우저 실행 프로그램 개발가능
+> JavaScript 대신 C, C++ 등의 언어로<br>
+> 브라우저 실행 프로그램 개발가능
 
+<p class="size18">
 [Reached the Browser Preview milestone](http://webassembly.org/roadmap/)
+</p>
 
 ----------
 
-## 뜨거웠던 2016
+# 뜨거웠던 2016
 
 <img src="./img/fe2016.png" style="width:60%;border:solid 5px #fff">
 
 <p class="size18">
-HackerNews와 Reddit<br>
-[How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.78qn4410c)<br>
-[한글번역] http://www.looah.com/article/view/2054
+HackerNews와 Reddit에서의 토론:<br>
+[How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.78qn4410c) ([한글번역](http://www.looah.com/article/view/2054))
 </p>
 
 ----------
@@ -55,11 +62,10 @@ HackerNews와 Reddit<br>
 
 ## Server-side rendering
 
-
 <img src="./img/server-rendering.png">
 
 <p class="size18">
-    http://tomdale.net/2015/02/youre-missing-the-point-of-server-side-rendered-javascript-apps/
+    [You’re Missing the Point of Server-Side Rendered JavaScript Apps](http://tomdale.net/2015/02/youre-missing-the-point-of-server-side-rendered-javascript-apps/)
 </p>
 
 ----------
@@ -83,10 +89,14 @@ HackerNews와 Reddit<br>
 
 JavaScript로 표현된 DOM 구조 (VTree)
 
-[React’s diff algorithm](http://calendar.perfplanet.com/2013/diff/)
-[Virtual DOM and diffing algorithm](https://gist.github.com/Raynos/8414846)
+<img src="./img/onchange_vdom_change.svg" style="background-color:#fff;padding:10px;width:500px"><br>
+<span class="size9">[Source] http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html</span>
 
-https://www.youtube.com/watch?v=z5e7kWSHWTg
+<ul class="size18">
+    <li>[React’s diff algorithm](http://calendar.perfplanet.com/2013/diff/)</li>
+    <li>[Virtual DOM and diffing algorithm](https://gist.github.com/Raynos/8414846)</li>
+    <li>[YouTube: React.js Conf 2015 - Hype!](https://www.youtube.com/watch?v=z5e7kWSHWTg)</li>
+</ul>
 
 ----------
 
@@ -101,13 +111,15 @@ https://www.youtube.com/watch?v=z5e7kWSHWTg
    - React (setState 호출시 마킹)
  - 2) Observable (Anguar2)
 
-https://medium.com/tony-freed-consulting/what-is-virtual-dom-c0ec6d6a925c#.pxlx9kxwi
+<p class="size18">
+    [What is Virtual Dom](https://medium.com/tony-freed-consulting/what-is-virtual-dom-c0ec6d6a925c#.pxlx9kxwi)
+</p>
 
 ----------
 
 # Isomorphic JavaScript
 
-- 서버와 클리언트 영역 모두에서 실행
+- 서버와 클라이언트 영역 모두에서 실행
 - 백엔드와 프론트엔드가 같은 코드 공유
 
 http://isomorphic.net/
@@ -131,9 +143,9 @@ http://www.2ality.com/2015/08/isomorphic-javascript.html
 # Transpiler
 
 다른 언어로 변환해주는 도구
-<img src="./img/babel.jpg">
+<img src="./img/babel.png" style="width:170px">
 
-<iframe src="http://jsbin.com/rodebep/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:400px;height:30px;"></iframe>
+<iframe src="http://jsbin.com/rodebep/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:350px;height:30px;"></iframe>
 
 ----------
 
@@ -151,6 +163,7 @@ http://kangax.github.io/compat-table/es6/
 
 # Module System
 
+모듈/구조화에 대한 니즈<br>
 
 | Name | Type | Syntax | Execution from | Module Unit per |
 | --- | --- | --- | --- | --- | --- |
@@ -158,21 +171,27 @@ http://kangax.github.io/compat-table/es6/
 | [RequireJS](http://requirejs.org/) | Asynchronous | define<br>require | callback | definition |
 | [ES6 Module](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) | Sync/Async | export<br>import | return | definition |
 
-https://auth0.com/blog/javascript-module-systems-showdown/
+<p class="size18">
+    [JavaScript Module Systems Showdown: CommonJS vs AMD vs ES2015](https://auth0.com/blog/javascript-module-systems-showdown/)
+</p>
 
-모듈/구조화에 대한 니즈
 ES6 > CommonJS > RequireJS
 
 ----------
 
 # Package Manger
 
-| Name | Target | Config | Path |
+<img src="./img/npm.svg" style="width:300px"> 
+<img src="./img/bower.svg" style="width:230px">
+
+| Name | Target | Config | Install Path |
 | --- | --- | --- | --- |
 | [npm](https://www.npmjs.com/) | Node.js | package.json | node_modules |
 | [Bower](https://bower.io/) | Front-end | bower.json | bower_components |
 
-https://github.com/wilmoore/frontend-packagers
+<p class="size18">
+    [Front-End Package Manager Comparison](https://github.com/wilmoore/frontend-packagers)
+</p>
 
 ----------
 
@@ -186,7 +205,7 @@ http://www.modulecounts.com/
 
 # npm or Bower?
 
-다양한 옵션을 제공하는 것도 좋지만, 그렇다고 결졍적 이유도 존재하지 않음
+다양한 옵션을 제공하는 것도 좋지만, 그렇다고 결정적 이유도 존재하지 않음
 
 <img src="./img/npm-tweet.png">
 
@@ -200,23 +219,26 @@ https://twitter.com/tomdale/status/667389972794724352
 
 ----------
 
-# Bundler
-- webpack
-- Browserify
-
-<img src="./img/bunder.png">
+## Bundler
 
 다양한 자원들을 묶어 하나의 파일로 번들링 해주는 도구
+
+<img src="./img/webpack.svg" style="width:100px"> webpack
+<img src="./img/Browserify.svg" style="width:140px"> Browserify
+
+<img src="./img/bundler.png" style="width:550px">
 
 webpack > Browserify
 
 ----------
 
 # Build tool
-- Grunt
-- Gulp
 
-정의된 작업들을 수행하는 도구
+<img src="./img/grunt.svg" style="width:100px"> Grunt
+<img src="./img/gulp.svg" style="width:80px"> Gulp
+
+정의된 작업(Task) 들을<br>
+수행(Runner) 하는 도구
 
 Gulp > Grunt
 
@@ -226,8 +248,8 @@ Gulp > Grunt
 
 http://stateofjs.com/2016/buildtools/
 
-Bundler가 기존 build 도구들이 수행하던 작업들을 일부 대체해 경계의 모호함
-ex. loaders 등을 통한 transpiling
+- Bundler가 기존 build 도구들이 수행하던 작업들을 일부 대체해 경계의 모호함
+- ex. loaders 등을 통한 transpiling
 
 ----------
 
@@ -237,21 +259,20 @@ ex. loaders 등을 통한 transpiling
 
 # Interests
 
-- jQuery
-- AngularJS
-- React
-- Vue
-- Polymer
+jQuery / AngularJS / React / Vue / Polymer
 
-<img src="./img/trend.png">
+<img src="./img/trend.png"><br>
+<span class="size18">(1st week, Nov. 2016)</span>
 
-https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer
+jQuery > React > Angular.js > Polymer > Vue.js
+
+[Google Trends](https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer,jQuery)
 
 ----------
 
-jQuery?
+<img src="./img/jQuery.svg" style="width:400px">
 
-<img src="./img/jquery-trend.png">
+<img src="./img/jquery-trend.png" style="width:550px"><br>
 
 - 프레임워크 등장 이전까진 de-facto standard 위치
 - 브라우저의 표준 지원률 향상으로 VanillaJS만으로도 점점 충분
@@ -261,22 +282,22 @@ jQuery?
 
 ----------
 
-# AngularJS
+<img src="./img/AngularJS.svg" style="width:500px">
 
 - Angular1 != Angular2
-- AtScript -> TypeScript (JS 또는 Dart도 사용가능)
-- Google: GWT -> Dart -> TypeScript?
-- 2 way data binding -> 1 way
+- AtScript &rarr; TypeScript (JS 또는 Dart도 사용가능)
+ - [Microsoft And Google Collaborate On Angular 2 Framework, TypeScript Language](https://techcrunch.com/2015/03/05/microsoft-and-google-collaborate-on-typescript-hell-has-not-frozen-over-yet/)
 
-http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
+- Google: GWT &rarr; Dart &rarr; TypeScript?
+- 2 way data binding &rarr; 1 way
 
 ----------
 
 ## for Production?
 
 - 아직 너무 잦은 변화
- - 2.0.0 16/9/15
- - 2.2.0 16/11/02
+ - 2.0.0 (16/9/15)
+ - 2.2.0 (16/11/02)
 
 - 구글 서비스 적용은?
 
@@ -285,39 +306,104 @@ YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예�
 
 ----------
 
-# React
+# <img src="./img/react.svg" style="width:200px"> React
 
-- JSX (JavaScript XML)
-- 예전엔 html에 비즈니스 로직이 포함되는 것에 대한 비판
-- 지금은 로직(자바스크립트)안에 html이 포함
+- 페이스북에서 개발한 MV* 구조에서 View 영역에 대한 구현체
+- 데이터의 흐름이나 구조 등을 다루지 않음 (Flux 아키텍처 구현체 [Redux](http://dobbit.github.io/redux/)와 사용)
+- Virtual DOM, one-way data flow(one-way binding) 
+- 페이스북 대표 서비스들(FB, Instagram)에서 사용
 
-(간단한 React 코드 예제 추가)
+## 하지만, <!-- .element: style="margin-top:30px" -->
+
+- 예전엔 html에 비즈니스 로직 포함에 대한 비판
+- React 로직(자바스크립트)안에 html이 포함
+ - [JSX](https://facebook.github.io/jsx/) (JavaScript XML) - [JSXTransformer](https://babeljs.io/docs/plugins/transform-react-jsx/)를 통한 변환 필요
 
 ----------
 
-# Vue
+## 간단한 React 예제
+
+<iframe src="http://jsbin.com/wonehox/4/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:400px;height:30px;"></iframe>
 
 ----------
 
-# Polymer
+# <img src="./img/vue.svg" style="width:200px"> Vue.js
 
-표준 Web Component에 기반한 프레임워크
-크롬 브라우저 UI에서 사용
+- Progressive framework for building user interfaces
+- View layer에 집중
+- [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)(Model-View-ViewModel)
+ - MVC 패턴의 Controller와 같이 데이터 관리 및 액션 처리
+- AngularJS와 유사성 (heavily influenced by Angular)
+ - 그러나, Angular에 비해 light
 
-<img src="./img/webcomponent.png">
+<p class="size18">
+    [GitLab: Why We Chose Vue.js](https://about.gitlab.com/2016/10/20/why-we-chose-vue/)
+</p>
 
-Web Component 표준 스펙의 브라우저 지원이 걸림돌
-Safari는 HTML Import를 제외하고 모두 지원
+----------
+
+## 간단한 Vue.js 예제
+
+<iframe src="http://jsbin.com/vayuhi/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:400px;height:30px;"></iframe>
+
+----------
+
+# <img src="./img/polymer.svg" style="width:200px"> Polymer
+
+- 표준 Web Component 기반한 프레임워크
+ - Custom element, HTML import, Template, Shadow DOM
+ - 웹 컴포넌트를 미지원 브라우저에 Polyfill 제공도 목적<br>
+   <span class="size18">[참고] [Web Components & Polymer](http://netil.github.io/slides/webcomponent/)</span>
+- 그동안 Web Component 표준 스펙 브라우저 지원이 걸림돌
+
+ <a href="http://webcomponents.org/" target="_new" title="http://webcomponents.org/"><img src="./img/webcomponent.png"></a>
+
+
+----------
+
+## 간단한 Web Components 예제
+
+<pre><code style='font-size:23px;line-height:1.2;padding:20px'>&lt;!-- Import polyfill -->
+&lt;script src="../webcomponentsjs/webcomponents-lite.min.js">&lt;/script>
+
+<!-- Import custom elements -->
+&lt;link rel="import" href="hello-world.html">
+
+&lt;!-- Run custom elements -->
+&lt;hello-world who="Unicorn">&lt;/hello-world>
+</code></pre>
+
+<p class="size18">
+http://webcomponents.org/hello-world-polymer/bower_components/hello-world-polymer/
+</p>
+
+----------
+
+## JS web frameworks benchmark
+
+<img src="./img/framework-benchmark.png" style="width:600px">
+
+| Name | Duration (ms) |
+| --- | --- |
+| Angular v2.0.0-rc5 | 1.85 |
+| React v15.3.1 | 1.82 |
+| Vue v2.0.0-beta1 | 1.37 |
+| VanillaJS | 1.00 |
+
+VanillaJS > Vue > React > Angular2
+
+<p class="size18">
+http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
+</p>
 
 ----------
 
 # '최신'에 대한 Myth
 
-- Angular1 사례: 성능 이슈 어려움
-
+- Angular1
+ - 성능 이슈 어려움
 - Angular2?
-Angular 2 Is Out: Should You Start Using It?
-http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
+ - [Angular 2 Is Out: Should You Start Using It?](http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/)
 
 ----------
 
@@ -325,48 +411,55 @@ http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/
 
 ----------
 
-Node.js
+# <img src="./img/nodejs.svg" style="width:300px">
 
-V8 기반의 서버 런타임
+- V8 기반의 서버 런타임 ([굳이 언급할 필요 없을 만큼의 사용률](https://github.com/nodejs/node/wiki/Projects,-Applications,-and-Companies-Using-Node))
+- 한때 느린 개발 속도에 대한 반발 ([io.js fork 후 merge](http://www.linuxfoundation.org/news-media/announcements/2015/06/nodejs-foundation-advances-community-collaboration-announces-new))
+- [LTS(Long-Term Support plan for Node.js releases)](https://github.com/nodejs/LTS)
+ - 연 1회의 릴리스와 릴리스에 대한 18개월간 지원 계획
 
-한때 느린 개발 속도에 대한 반발(io.js)
-꾸준한 성
-LTS(Long-Term Support plan for Node.js releases)를 만들어 연 1회의 릴리스와 릴리스에 대한 18개월간 지원 계획
+<img src="./img/nodejs-lts.png" style="width:500px">
 
-<img src="./img/nodejs-lts.png">
-
-
-----------
-
-Hybrid App/JavaScript Native
-
-- Cordova (PhoneGap)
-- React Native
-- Fuse
-
-Titanium은 점점 잊혀져가는
 
 ----------
 
-## 매력적이나, 프레임워크별 다른 API<br>
-## 어쨌든 Native App 개발과는 다르다.<br>
-## 새로 등장한 도구들이 많아 문서에 대한 부족
+## JavaScript Native
+
+<img src="./img/javascript-native.png">
+
+- [Cordova](https://cordova.apache.org/) ([PhoneGap](http://phonegap.com/))
+- [NativeScript](https://www.nativescript.org/)
+- [React Native](https://github.com/facebook/react-native)
+- [Fuse](https://www.fusetools.com/)
+
+[Titanium](http://www.appcelerator.com/mobile-app-development-products/)은 점점 잊혀져가는...
 
 ----------
 
-# Desktop Application
+# 하지만,
 
-- Electron (GitHub)
-- NW.js (Node-Webkit) (Intel)
+- 매력적이나, 프레임워크별 다른 API
+- 어쨌든 Native App 개발과는 다르다.
+- 새로 등장한 도구들이 많아 문서/예제 부족
 
 ----------
 
-# 요인
+## Desktop Application
 
-단일 개발 모델을 통한 멀티 패러다임 소프트웨어 개발 요구
-플랫폼별 대응 개발 비용의 문제
-일반적으로 Web, iOS, Android 개발 필요한데, 동일 기능을 3가지 환경에 맞추어 개발필요
+<img src="./img/electron-nwjs.png">
 
+- [Electron](http://electron.atom.io/) (GitHub)
+ - 2015/4 발표 - 처음 웹 기반 텍스트 편집기인 Atom의 데스크톱 셸로 개발
+- [NW.js](http://nwjs.io/) (Node-Webkit) (Intel)
+ - 2011 발표 - WebKit(Node-Webkit)에서 Chromium으로 변경
+
+----------
+
+# 다양한 시도들의 요인
+
+- 단일 개발 모델을 통한 멀티 패러다임 소프트웨어 개발 요구
+- 플랫폼별 대응 개발 비용의 문제
+- 일반적으로 Web, iOS, Android 개발 필요한데, 동일 기능을 3가지 환경에 맞추어 개발필요
 
 ----------
 
@@ -374,32 +467,33 @@ Titanium은 점점 잊혀져가는
 
 점점 더 빨라진 업데이트 주기
 브라우저 벤더들의 표준 implementation 관련
-- Safari Technology Preview
-- Chrome: Android에서도 canary/beta 채널 제공 시작
-- Edge?
-- FireFox: 최근 Quantum(Server 기반) 엔진 변경 발표
-- Samsung Internet?
+- [Safari Technology Preview](https://developer.apple.com/safari/technology-preview/release-notes/)
+ - 매 2주마다 배포, 추가될 새로운 웹 기술을 미리 사용
+- Chrome: Android에서도 [canary/beta 채널](https://blog.chromium.org/2016/10/canary-channel-for-chrome-on-android.html) 제공 시작
+ - [매 2개월마다 정식](https://www.chromium.org/developers/calendar)
+- [Edge](https://dev.windows.com/en-us/microsoft-edge/platform/status/)?
+- FireFox: 최근 [Quantum](https://medium.com/mozilla-tech/a-quantum-leap-for-the-web-a3b7174b3c12)(Server 기반) 엔진 변경 발표
+- [Samsung Internet](https://medium.com/samsung-internet-dev/introducing-samsung-internet-for-developers-6c3a3be42f72)? - 2015/8월 부터 별도 배포
 
 ----------
 
-## What about standard?
+# What about standard?
 
-- ServiceWorker (offline cache)
-- Web Component
-- Module
-- ES6(or 7)
+- [ServiceWorker](https://www.w3.org/TR/service-workers/) (offline cache)
+- [Web Components](http://webcomponents.org/)
+- [Web Payments API](https://www.w3.org/TR/webpayments-overview/)
 
 ----------
-
-# JS Foundation
-
-jQuery Foundation의 새로운 이름
 
 <img src="./img/jsf-logo.png">
 
+[jQuery Foundation](https://jquery.org/)의 새로운 이름
+
 https://js.foundation/
 
-[자바스크립트 생태계 통합될까](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20161019140745)
+<p class="size18">
+[참고] [자바스크립트 생태계 통합될까](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20161019140745)
+</p>
 
 ----------
 
