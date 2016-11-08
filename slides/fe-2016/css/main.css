@@ -1,4 +1,4 @@
-.reveal section img{border:0;background:none;vertical-align:middle}
+.reveal section img{border:0;background:none;vertical-align:middle;box-shadow:none}
 textarea { width:90%;position:relative;dispaly:block;font-size:0.55em;background-color:#3F3F3F; color:#fff;font-family: monospace;
     line-height: 1.2em;
     word-wrap: break-word;
@@ -46,7 +46,10 @@ h1.outline{text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px white;}
 .green {color:green}
 .yellow {color:#e7ad52}
 .nostyle {list-style-type:none}
-.reveal .size18, span.size18 {font-size:18px}
+
+.reveal .reference, .reveal .size18, span.size18 {font-size:18px}
+.reveal .reference:before {content:'[참고]'}
+
 .reveal .size9, span.size9 {font-size: 9px}
 .bold, span.bold {font-weight:bold}
 .underline {text-decoration: underline}

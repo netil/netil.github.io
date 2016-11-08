@@ -3,24 +3,25 @@
 
 ----------
 
-# 그러나 해당 기술이<br>뜨지 못하면?
+# 그러나 해당 기술이<br>'뜨지' 못하면?
 
--------
-
-## 많은 기술들 속에서<br>어떤 것을 '선택' 할지가 점점 중요
+<p style="border:dotted 1px #fff;margin: 50px auto;padding:10px;width:700px;font-size:50px">
+    <span>많은 기술들 속에서<br>어떤 것을 '선택' 할지가 점점 중요</span>
+</p>
 
 ----------
 
 # JavaScript
 
-지속적인 자바스크립트 인기
+<p>
+    지속적인 자바스크립트 인기<br>
+    StackOverflow 2013~2016 가장 인기있는 기술로 응답
+</p>
 
-StackOverflow 2013~2016 가장 인기있는 기술로 응답
+<img src="./img/javascript.png" style="width:550px">
 
-<img src="./img/javascript.png" style="width:60%">
-
-<p class="size18">
-[StackOverflow 2016 survey](http://stackoverflow.com/research/developer-survey-2016#technology-most-popular-technologies)
+<p class="reference">
+    [StackOverflow 2016 survey](http://stackoverflow.com/research/developer-survey-2016#technology-most-popular-technologies)
 </p>
 
 ----------
@@ -34,19 +35,19 @@ StackOverflow 2013~2016 가장 인기있는 기술로 응답
 > JavaScript 대신 C, C++ 등의 언어로<br>
 > 브라우저 실행 프로그램 개발가능
 
-<p class="size18">
-[Reached the Browser Preview milestone](http://webassembly.org/roadmap/)
+<p class="reference">
+    [Reached the Browser Preview milestone](http://webassembly.org/roadmap/)
 </p>
 
 ----------
 
 # 뜨거웠던 2016
 
-<img src="./img/fe2016.png" style="width:60%;border:solid 5px #fff">
+<img src="./img/fe2016.png" style="width:550px;border:solid 5px #fff">
 
-<p class="size18">
-HackerNews와 Reddit에서의 토론:<br>
-[How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.78qn4410c) ([한글번역](http://www.looah.com/article/view/2054))
+<p class="reference">
+    HackerNews와 Reddit에서의 토론:<br>
+    [How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.78qn4410c) ([한글번역](http://www.looah.com/article/view/2054))
 </p>
 
 ----------
@@ -64,7 +65,7 @@ HackerNews와 Reddit에서의 토론:<br>
 
 <img src="./img/server-rendering.png">
 
-<p class="size18">
+<p class="reference">
     [You’re Missing the Point of Server-Side Rendered JavaScript Apps](http://tomdale.net/2015/02/youre-missing-the-point-of-server-side-rendered-javascript-apps/)
 </p>
 
@@ -89,8 +90,8 @@ HackerNews와 Reddit에서의 토론:<br>
 
 JavaScript로 표현된 DOM 구조 (VTree)
 
-<img src="./img/onchange_vdom_change.svg" style="background-color:#fff;padding:10px;width:500px"><br>
-<span class="size9">[Source] http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html</span>
+<img src="./img/onchange_vdom_change.svg" style="background-color:#fff;padding:10px;width:550px;margin:0">
+<span style="display:inline-block" class="size9">[Source] http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html</span>
 
 <ul class="size18">
     <li>[React’s diff algorithm](http://calendar.perfplanet.com/2013/diff/)</li>
@@ -111,7 +112,7 @@ JavaScript로 표현된 DOM 구조 (VTree)
    - React (setState 호출시 마킹)
  - 2) Observable (Anguar2)
 
-<p class="size18">
+<p class="reference">
     [What is Virtual Dom](https://medium.com/tony-freed-consulting/what-is-virtual-dom-c0ec6d6a925c#.pxlx9kxwi)
 </p>
 
@@ -171,7 +172,7 @@ http://kangax.github.io/compat-table/es6/
 | [RequireJS](http://requirejs.org/) | Asynchronous | define<br>require | callback | definition |
 | [ES6 Module](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) | Sync/Async | export<br>import | return | definition |
 
-<p class="size18">
+<p class="reference">
     [JavaScript Module Systems Showdown: CommonJS vs AMD vs ES2015](https://auth0.com/blog/javascript-module-systems-showdown/)
 </p>
 
@@ -189,7 +190,7 @@ ES6 > CommonJS > RequireJS
 | [npm](https://www.npmjs.com/) | Node.js | package.json | node_modules |
 | [Bower](https://bower.io/) | Front-end | bower.json | bower_components |
 
-<p class="size18">
+<p class="reference">
     [Front-End Package Manager Comparison](https://github.com/wilmoore/frontend-packagers)
 </p>
 
@@ -210,6 +211,42 @@ http://www.modulecounts.com/
 <img src="./img/npm-tweet.png">
 
 https://twitter.com/tomdale/status/667389972794724352
+
+----------
+
+<img src="./img/yarn-logo.svg" style="width:300px">
+
+- 페이스북에서 개발한 새로운 패키지 매니저 클라이언트
+- npm 레지스트리와 호환
+- 병렬처리를 통해 npm 보다 향상된 처리성능
+- package.json을 통해 간단하게 전환가능
+```bash
+## yarn.lock 설정파일 없으면 생성
+## 설정 파일 있으면 package 설치
+ $ yarn
+ yarn install v0.16.1
+ info No lockfile found.
+ [1/4] Resolving packages...
+ ...
+ success Saved lockfile.
+ Done in 34.60s.
+```
+
+https://yarnpkg.com/
+
+<p class="reference">
+    [Yarn: A new package manager for JavaScript](https://code.facebook.com/posts/1840075619545360)
+</p>
+
+----------
+
+## npm vs Yarn
+
+<img src="./img/npm-yarn.png">
+
+<p class="reference">
+    [NPM VERSUS YARN - THE EPIC FIGHT FOR SPEED IN CONTINUOUS INTEGRATION](https://stapp.space/npm-versus-yarn-the-epic-fight-for-speed-in-continuous-integration/)
+</p>
 
 ----------
 
@@ -259,14 +296,16 @@ http://stateofjs.com/2016/buildtools/
 
 # Interests
 
-jQuery / AngularJS / React / Vue / Polymer
+jQuery / AngularJS / React / Vue.js / Polymer
 
 <img src="./img/trend.png"><br>
 <span class="size18">(1st week, Nov. 2016)</span>
 
-jQuery > React > Angular.js > Polymer > Vue.js
+jQuery > React > AngularJS > Polymer > Vue.js
 
-[Google Trends](https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer,jQuery)
+<p class="reference">
+    [Google Trends](https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer,jQuery)
+</p>
 
 ----------
 
@@ -278,7 +317,9 @@ jQuery > React > Angular.js > Polymer > Vue.js
 - 브라우저의 표준 지원률 향상으로 VanillaJS만으로도 점점 충분
 - 웹앱이 아닌 웹사이트에선 아직도 적합
 
-[Is jQuery Still Relevant?](http://developer.telerik.com/featured/is-jquery-still-relevant/)
+<p class="reference">
+    [Is jQuery Still Relevant?](http://developer.telerik.com/featured/is-jquery-still-relevant/)
+</p>
 
 ----------
 
@@ -286,7 +327,7 @@ jQuery > React > Angular.js > Polymer > Vue.js
 
 - Angular1 != Angular2
 - AtScript &rarr; TypeScript (JS 또는 Dart도 사용가능)
- - [Microsoft And Google Collaborate On Angular 2 Framework, TypeScript Language](https://techcrunch.com/2015/03/05/microsoft-and-google-collaborate-on-typescript-hell-has-not-frozen-over-yet/)
+ - [Microsoft And Google Collaborate On Angular 2 Framework, TypeScript Language](https://techcrunch.com/2015/03/05/microsoft-and-google-collaborate-on-typescript-hell-has-not-frozen-over-yet/) <!-- .element: class="size18" -->
 
 - Google: GWT &rarr; Dart &rarr; TypeScript?
 - 2 way data binding &rarr; 1 way
@@ -336,7 +377,7 @@ YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예�
 - AngularJS와 유사성 (heavily influenced by Angular)
  - 그러나, Angular에 비해 light
 
-<p class="size18">
+<p class="reference">
     [GitLab: Why We Chose Vue.js](https://about.gitlab.com/2016/10/20/why-we-chose-vue/)
 </p>
 
@@ -374,7 +415,7 @@ YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예�
 </code></pre>
 
 <p class="size18">
-http://webcomponents.org/hello-world-polymer/bower_components/hello-world-polymer/
+    http://webcomponents.org/hello-world-polymer/bower_components/hello-world-polymer/
 </p>
 
 ----------
@@ -398,14 +439,25 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 ----------
 
-# '최신'에 대한 Myth
+# '최신'은 항상 좋은가?
 
-- Angular1
- - 성능 이슈 어려움
-- Angular2?
- - [Angular 2 Is Out: Should You Start Using It?](http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/)
+- Angular case: 
+ - v1: 성능 이슈 어려움
+ - v2: [Angular 2 Is Out: Should You Start Using It?](http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/)
+- UI 컴포넌트 기반 개발 니즈
+ - React, Angular, Vue 모두 관련 기능 제공
+ - 표준에 일부 기반하기도 하지만...
 
 ----------
+
+## Being aware of biases
+
+- 매몰 비용 오류
+- 특정 기술/도구 투자 비용이 증가시, 자신의 선택 합리화를 위해 노력
+- 이러한 이유는 합리적인 시각을 갖기 어렵게 한다.
+
+----------
+
 
 # 새로운 영역
 
@@ -431,6 +483,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 - [NativeScript](https://www.nativescript.org/)
 - [React Native](https://github.com/facebook/react-native)
 - [Fuse](https://www.fusetools.com/)
+- [Tabris.js](https://tabrisjs.com/)
 
 [Titanium](http://www.appcelerator.com/mobile-app-development-products/)은 점점 잊혀져가는...
 
@@ -440,7 +493,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 - 매력적이나, 프레임워크별 다른 API
 - 어쨌든 Native App 개발과는 다르다.
-- 새로 등장한 도구들이 많아 문서/예제 부족
+- 등장한지 얼마되지 않아 문서와 예제 부족
 
 ----------
 
@@ -470,7 +523,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 - [Safari Technology Preview](https://developer.apple.com/safari/technology-preview/release-notes/)
  - 매 2주마다 배포, 추가될 새로운 웹 기술을 미리 사용
 - Chrome: Android에서도 [canary/beta 채널](https://blog.chromium.org/2016/10/canary-channel-for-chrome-on-android.html) 제공 시작
- - [매 2개월마다 정식](https://www.chromium.org/developers/calendar)
+ - [매 2개월](https://www.chromium.org/developers/calendar)마다 정식 릴리즈
 - [Edge](https://dev.windows.com/en-us/microsoft-edge/platform/status/)?
 - FireFox: 최근 [Quantum](https://medium.com/mozilla-tech/a-quantum-leap-for-the-web-a3b7174b3c12)(Server 기반) 엔진 변경 발표
 - [Samsung Internet](https://medium.com/samsung-internet-dev/introducing-samsung-internet-for-developers-6c3a3be42f72)? - 2015/8월 부터 별도 배포
@@ -479,9 +532,11 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 # What about standard?
 
-- [ServiceWorker](https://www.w3.org/TR/service-workers/) (offline cache)
+- Progressive Progressive Web Applications
+ - [ServiceWorker](https://www.w3.org/TR/service-workers/) - offline cache
 - [Web Components](http://webcomponents.org/)
 - [Web Payments API](https://www.w3.org/TR/webpayments-overview/)
+- [WebVR](https://webvr.info/)
 
 ----------
 
@@ -491,9 +546,17 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 https://js.foundation/
 
-<p class="size18">
-[참고] [자바스크립트 생태계 통합될까](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20161019140745)
+<p class="reference">
+    [자바스크립트 생태계 통합될까](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20161019140745)
 </p>
+
+----------
+
+# 우리의 자세는?
+
+<img src="./img/study-plan.png">
+
+[A Study Plan To Cure JavaScript Fatigue](https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1)
 
 ----------
 
