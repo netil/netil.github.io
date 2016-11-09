@@ -18,7 +18,7 @@
     StackOverflow 2013~2016 가장 인기있는 기술로 응답
 </p>
 
-<img src="./img/javascript.png" style="width:550px">
+<img src="./img/javascript.png" style="width:500px">
 
 <p class="reference">
     [StackOverflow 2016 survey](http://stackoverflow.com/research/developer-survey-2016#technology-most-popular-technologies)
@@ -26,6 +26,7 @@
 
 ----------
 
+### 그러나, <!-- .element: style="margin:0" -->
 # [WebAssembly](http://webassembly.org/)
 
 - 새로운 웹용 바이너리 표준
@@ -43,7 +44,7 @@
 
 # 뜨거웠던 2016
 
-<img src="./img/fe2016.png" style="width:550px;border:solid 5px #fff">
+<img src="./img/fe2016.png" style="width:500px;border:solid 5px #fff">
 
 <p class="reference">
     HackerNews와 Reddit에서의 토론:<br>
@@ -71,7 +72,7 @@
 
 ----------
 
-## Reason?
+# Reason?
 
 - SEO 문제
   - Ajax API로 구성되는 페이지의 경우 초기 화면은 blank로 구성되고 SEO에서 올바른 처리가 되지 못하는 문제
@@ -101,7 +102,7 @@ JavaScript로 표현된 DOM 구조 (VTree)
 
 ----------
 
-## Reason?
+# Reason?
 
 - DOM 노드 핸들링은 비용이 많이 든다.
 - Diff 알고리즘을 통해 효율적 변경
@@ -232,7 +233,9 @@ https://twitter.com/tomdale/status/667389972794724352
  Done in 34.60s.
 ```
 
-https://yarnpkg.com/
+<p style="margin:0">
+    https://yarnpkg.com/
+</p>
 
 <p class="reference">
     [Yarn: A new package manager for JavaScript](https://code.facebook.com/posts/1840075619545360)
@@ -296,15 +299,15 @@ http://stateofjs.com/2016/buildtools/
 
 # Interests
 
-jQuery / AngularJS / React / Vue.js / Polymer
+jQuery / Angular / React / Vue.js / Polymer
 
 <img src="./img/trend.png"><br>
 <span class="size18">(1st week, Nov. 2016)</span>
 
-jQuery > React > AngularJS > Polymer > Vue.js
+jQuery > React > Angular > Polymer > Vue.js
 
 <p class="reference">
-    [Google Trends](https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angularjs,react,vuejs,polymer,jQuery)
+    [Google Trends](https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angular,react,vuejs,polymer,jQuery)
 </p>
 
 ----------
@@ -334,16 +337,22 @@ jQuery > React > AngularJS > Polymer > Vue.js
 
 ----------
 
-## for Production?
+# for Production?
 
 - 아직 너무 잦은 변화
  - 2.0.0 (16/9/15)
  - 2.2.0 (16/11/02)
+- 꼭 TypeScript을 사용하지 않아도 되지만...
+ - 대다수의 문서가 TypeScript 기반
 
 - 구글 서비스 적용은?
 
-YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예정
+YouTube는 표준 웹컴포넌트 기반인 Polymer로 새로 개발예정
 - [YouTube is being rebuilt with Web Components & Polymer](http://react-etc.net/entry/youtube-is-being-rebuilt-on-web-components-and-polymer)
+
+<p class="reference">
+    [Angular 2 Is Out: Should You Start Using It?](http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/)
+</p>
 
 ----------
 
@@ -378,7 +387,8 @@ YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예�
  - 그러나, Angular에 비해 light
 
 <p class="reference">
-    [GitLab: Why We Chose Vue.js](https://about.gitlab.com/2016/10/20/why-we-chose-vue/)
+    <br>[GitLab: Why We Chose Vue.js](https://about.gitlab.com/2016/10/20/why-we-chose-vue/)<br>
+    [자바스크립트 프레임워크 소개 3 - Vue.js](http://meetup.toast.com/posts/99)
 </p>
 
 ----------
@@ -393,7 +403,7 @@ YouTube는 표준 웹컴포넌트 기반 Polymer 기반으로 새로 개발예�
 
 - 표준 Web Component 기반한 프레임워크
  - Custom element, HTML import, Template, Shadow DOM
- - 웹 컴포넌트를 미지원 브라우저에 Polyfill 제공도 목적<br>
+ - 웹 컴포넌트 미지원 브라우저에 Polyfill 제공도 목적<br>
    <span class="size18">[참고] [Web Components & Polymer](http://netil.github.io/slides/webcomponent/)</span>
 - 그동안 Web Component 표준 스펙 브라우저 지원이 걸림돌
 
@@ -443,18 +453,18 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 - Angular case: 
  - v1: 성능 이슈 어려움
- - v2: [Angular 2 Is Out: Should You Start Using It?](http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/)
+ - v2?  
 - UI 컴포넌트 기반 개발 니즈
  - React, Angular, Vue 모두 관련 기능 제공
  - 표준에 일부 기반하기도 하지만...
 
 ----------
 
-## Being aware of biases
+# Being aware of biases
 
 - 매몰 비용 오류
 - 특정 기술/도구 투자 비용이 증가시, 자신의 선택 합리화를 위해 노력
-- 이러한 이유는 합리적인 시각을 갖기 어렵게 한다.
+- 합리적인 시각을 갖기 어렵게 함
 
 ----------
 
@@ -483,7 +493,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 - [NativeScript](https://www.nativescript.org/)
 - [React Native](https://github.com/facebook/react-native)
 - [Fuse](https://www.fusetools.com/)
-- [Tabris.js](https://tabrisjs.com/)
+- [tabris.js](https://tabrisjs.com/)
 
 [Titanium](http://www.appcelerator.com/mobile-app-development-products/)은 점점 잊혀져가는...
 
@@ -518,13 +528,13 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 # Browsers
 
-점점 더 빨라진 업데이트 주기
-브라우저 벤더들의 표준 implementation 관련
+점점 더 빨라진 업데이트 주기<br>
+브라우저 벤더들의 표준 implementation은 확산 포인트
 - [Safari Technology Preview](https://developer.apple.com/safari/technology-preview/release-notes/)
  - 매 2주마다 배포, 추가될 새로운 웹 기술을 미리 사용
 - Chrome: Android에서도 [canary/beta 채널](https://blog.chromium.org/2016/10/canary-channel-for-chrome-on-android.html) 제공 시작
  - [매 2개월](https://www.chromium.org/developers/calendar)마다 정식 릴리즈
-- [Edge](https://dev.windows.com/en-us/microsoft-edge/platform/status/)?
+- [Edge](https://dev.windows.com/en-us/microsoft-edge/platform/status/)? - Evegreen 이라고 하지만, 윈도우 업데이트를 통해
 - FireFox: 최근 [Quantum](https://medium.com/mozilla-tech/a-quantum-leap-for-the-web-a3b7174b3c12)(Server 기반) 엔진 변경 발표
 - [Samsung Internet](https://medium.com/samsung-internet-dev/introducing-samsung-internet-for-developers-6c3a3be42f72)? - 2015/8월 부터 별도 배포
 
@@ -532,8 +542,9 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 # What about standard?
 
-- Progressive Progressive Web Applications
- - [ServiceWorker](https://www.w3.org/TR/service-workers/) - offline cache
+- Progressive Web Applications (PWAs)
+ - [ServiceWorker](https://www.w3.org/TR/service-workers/) - offline cache<br>
+    <span class="size18">[참고] [현실적 PWA](http://netil.github.io/slides/pwa/)</span> 
 - [Web Components](http://webcomponents.org/)
 - [Web Payments API](https://www.w3.org/TR/webpayments-overview/)
 - [WebVR](https://webvr.info/)
@@ -542,7 +553,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 <img src="./img/jsf-logo.png">
 
-[jQuery Foundation](https://jquery.org/)의 새로운 이름
+[jQuery Foundation](https://jquery.org/) 의 새로운 이름
 
 https://js.foundation/
 
@@ -568,3 +579,11 @@ https://js.foundation/
 - 그러나 올바른 방향으로 발전중
 
 http://stateofjs.com/2016/opinions/
+
+----------
+
+# 성공 가능성?
+
+- 표준 영역 내 포함 여부가 중요
+- 기술이 좋다고 성공하진 않는다.
+- Market 요구에 따라 결정
