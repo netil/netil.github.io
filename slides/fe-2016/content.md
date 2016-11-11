@@ -466,6 +466,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 - UI 컴포넌트 기반 개발 니즈
  - React, Angular, Vue 모두 관련 기능 제공
  - 표준에 일부 기반하기도 하지만...
+- 프레임워크는 잘다루지만 JavaScript는 모르는 상황이 올수도
 
 ----------
 
@@ -592,10 +593,12 @@ http://stateofjs.com/2016/opinions/
 
 ----------
 
-# 성공 가능성?
+# 성공 가능성 요인들
 
 - 표준 영역 내 포함 여부가 중요
 - 기술이 좋다고 성공하진 않는다.
-- 확실한 레퍼런스 필요 (React 경우처럼)
-- Market 요구에 따라 결정
+- 확실한 사용 레퍼런스 필요 (React 경우처럼)
+- 활발한 자발적인 커뮤니티 필요
+- 풍부한 문서와 예제
+- 3rd 파티 플러그인
 
