@@ -55,10 +55,10 @@
 
 # 몇가지 키워드
 
-- Server-side Rendering
-- Component (Module)
-- Isomorphic JavaScript
-- Virtual DOM
+- Server-side Rendering <!-- .element: class="fragment" -->
+- Component (Module) <!-- .element: class="fragment" -->
+- Isomorphic JavaScript <!-- .element: class="fragment" -->
+- Virtual DOM <!-- .element: class="fragment" -->
 
 ----------
 
@@ -75,15 +75,16 @@
 # Reason?
 
 - SEO 문제
-  - Ajax API로 구성되는 페이지의 경우 초기 화면은 blank로 구성되고 SEO에서 올바른 처리가 되지 못하는 문제
+  - Ajax API로 구성 페이지 초기 화면이 blank로 구성되면 SEO 문제
 
 - 초기 로딩속도
-  - 정적 자원을 로딩한 후, 다시 컨텐츠를 구성하기 위해 Ajax API를 호출하는 처리시간의 소요
+  - 정적 자원 로딩 후, 컨텐츠 구성위한 추가 Ajax API 호출 시간소요
 
 - JavaScript 사용이 제한된 환경
-  - 이 경우 클라이언트 렌더링은 무용지물 상태가 된다.
+  - 클라이언트 렌더링은 무용지물
 
-클라이언트 영역에서 처리하는 것이 좋다고 했었다가 지금은 서버 렌더링을 얘기한다
+> 하지만, 클라이언트 영역에서 처리가 빠르다고<br>
+> 했었다가 지금은 서버 렌더링 말한다.
 
 ----------
 
@@ -136,9 +137,9 @@ http://www.2ality.com/2015/08/isomorphic-javascript.html
 # ES6
 ### (ECMAScript 2015)
 
-2가지 질문:
-- 현재 사용 가능한가?
-- 사용해야 하나?
+2가지 질문
+## 1) 사용해야 하나? <!-- .element: class="fragment" -->
+## 2) 현재 사용 가능한가? <!-- .element: class="fragment" -->
 
 ----------
 
@@ -270,6 +271,10 @@ https://twitter.com/tomdale/status/667389972794724352
 
 webpack > Browserify
 
+<p class="reference">
+    https://npmcompare.com/compare/browserify,webpack
+</p>
+
 ----------
 
 # Build tool
@@ -281,6 +286,10 @@ webpack > Browserify
 수행(Runner) 하는 도구
 
 Gulp > Grunt
+
+<p class="reference">
+    https://npmcompare.com/compare/grunt,gulp
+</p>
 
 ----------
 
@@ -348,10 +357,10 @@ jQuery > React > Angular > Polymer > Vue.js
 - 구글 서비스 적용은?
 
 YouTube는 표준 웹컴포넌트 기반인 Polymer로 새로 개발예정
-- [YouTube is being rebuilt with Web Components & Polymer](http://react-etc.net/entry/youtube-is-being-rebuilt-on-web-components-and-polymer)
 
 <p class="reference">
-    [Angular 2 Is Out: Should You Start Using It?](http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/)
+    <br>[Angular 2 Is Out: Should You Start Using It?](http://www.codelord.net/2016/10/09/angular-2-is-out-should-you-start-using-it/)<br>
+    [YouTube is being rebuilt with Web Components & Polymer](http://react-etc.net/entry/youtube-is-being-rebuilt-on-web-components-and-polymer)
 </p>
 
 ----------
@@ -494,6 +503,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 - [React Native](https://github.com/facebook/react-native)
 - [Fuse](https://www.fusetools.com/)
 - [tabris.js](https://tabrisjs.com/)
+- [Ionic](http://ionicframework.com/)
 
 [Titanium](http://www.appcelerator.com/mobile-app-development-products/)은 점점 잊혀져가는...
 
@@ -501,9 +511,9 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 # 하지만,
 
-- 매력적이나, 프레임워크별 다른 API
-- 어쨌든 Native App 개발과는 다르다.
-- 등장한지 얼마되지 않아 문서와 예제 부족
+- 매력적이나, 프레임워크별 다른 API <!-- .element: class="fragment" -->
+- 어쨌든 Native App 개발과는 다르다. <!-- .element: class="fragment" -->
+- 등장한지 얼마되지 않아 문서와 예제 부족 <!-- .element: class="fragment" -->
 
 ----------
 
@@ -586,4 +596,6 @@ http://stateofjs.com/2016/opinions/
 
 - 표준 영역 내 포함 여부가 중요
 - 기술이 좋다고 성공하진 않는다.
+- 확실한 레퍼런스 필요 (React 경우처럼)
 - Market 요구에 따라 결정
+
