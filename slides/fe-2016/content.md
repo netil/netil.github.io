@@ -595,10 +595,10 @@ http://stateofjs.com/2016/opinions/
 
 # 성공 가능성 요인들
 
-- 표준 영역 내 포함 여부가 중요
-- 기술이 좋다고 성공하진 않는다.
-- 확실한 사용 레퍼런스 필요 (React 경우처럼)
-- 활발한 자발적인 커뮤니티 필요
-- 풍부한 문서와 예제
-- 3rd 파티 플러그인
+- 표준 영역 내 포함 여부가 중요 <!-- .element: class="fragment" -->
+- 기술이 좋다고 성공하진 않는다. <!-- .element: class="fragment" -->
+- 확실한 사용 레퍼런스 필요 (React 경우처럼) <!-- .element: class="fragment" -->
+- 활발한 자발적인 커뮤니티 필요 <!-- .element: class="fragment" -->
+- 풍부한 문서와 예제 <!-- .element: class="fragment" -->
+- 3rd 파티 플러그인: 상용 or 오픈 <!-- .element: class="fragment" -->
 
