@@ -5,7 +5,7 @@
 
 # 그러나 해당 기술이<br>'뜨지' 못하면?
 
-<p style="border:dotted 1px #fff;margin: 50px auto;padding:10px;width:700px;font-size:50px">
+<p style="border:dotted 1px #fff;margin:50px auto;padding:5px 10px 10px 10px;width:700px;font-size:50px">
     <span>많은 기술들 속에서<br>어떤 것을 '선택' 할지가 점점 중요</span>
 </p>
 
@@ -53,12 +53,16 @@
 
 ----------
 
-# 몇가지 키워드
-
-- Server-side Rendering <!-- .element: class="fragment" -->
-- Component (Module) <!-- .element: class="fragment" -->
-- Isomorphic JavaScript <!-- .element: class="fragment" -->
-- Virtual DOM <!-- .element: class="fragment" -->
+<!-- .slide: data-background="#e74c3c" -->
+<div class="title-animate">
+    <div><h1>몇가지 키워드</h1></div>
+    <div><p>
+        ▪ Server-side Rendering<br>
+        ▪ Component (Module)<br>
+        ▪ Isomorphic JavaScript<br>
+        ▪ Virtual DOM
+    </p></div>
+</div>
 
 ----------
 
@@ -112,7 +116,7 @@ JavaScript로 표현된 DOM 구조 (VTree)
  - 1) Dirty checking
    - Angular1은 VDOM은 없지만, Digest cycle내에서의 변경 watch
    - React (setState 호출시 마킹)
- - 2) Observable (Anguar2)
+ - 2) [Observable](http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html#observables) (Angular2)
 
 <p class="reference">
     [What is Virtual Dom](https://medium.com/tony-freed-consulting/what-is-virtual-dom-c0ec6d6a925c#.pxlx9kxwi)
@@ -302,7 +306,11 @@ http://stateofjs.com/2016/buildtools/
 
 ----------
 
-# Frameworks
+<!-- .slide: data-background="#daa655" -->
+<div class="title-animate">
+    <div><h1>Frameworks</h1></div>
+    <!--<div><p></p></div>-->
+</div>
 
 ----------
 
@@ -342,7 +350,12 @@ jQuery > React > Angular > Polymer > Vue.js
  - [Microsoft And Google Collaborate On Angular 2 Framework, TypeScript Language](https://techcrunch.com/2015/03/05/microsoft-and-google-collaborate-on-typescript-hell-has-not-frozen-over-yet/) <!-- .element: class="size18" -->
 
 - Google: GWT &rarr; Dart &rarr; TypeScript?
-- 2 way data binding &rarr; 1 way
+- 2 way data binding (not built-in v2) &rarr; 1 way
+
+<p class="reference">
+    <br>[Two-way data binding in Angular 2](http://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.html)<br>
+    [Introduction to data binding in Angular 2 versus Angular 1](https://www.themarketingtechnologist.co/introduction-to-data-binding-in-angular-2-versus-angular-1/)
+</p>
 
 ----------
 
@@ -404,7 +417,7 @@ YouTube는 표준 웹컴포넌트 기반인 Polymer로 새로 개발예정
 
 ## 간단한 Vue.js 예제
 
-<iframe src="http://jsbin.com/vayuhi/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:400px;height:30px;"></iframe>
+<iframe src="http://jsbin.com/vayuhi/embed?html,js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:400px;height:30px;"></iframe>
 
 ----------
 
@@ -460,13 +473,28 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 # '최신'은 항상 좋은가?
 
-- Angular case: 
- - v1: 성능 이슈 어려움
- - v2?  
-- UI 컴포넌트 기반 개발 니즈
+## Angular case 
+
+- v1: 성능 이슈 어려움  
+<a href="https://www.quora.com/Why-is-the-two-way-data-binding-being-dropped-in-Angular-2/answer/Lorenzo-Meriggi" target="_new">
+  <img src="./img/angular1-performance.png">
+</a>
+- v2?  
+
+----------
+
+# 프레임워크의 등장 요인
+
+### UI 컴포넌트 기반 개발 니즈
  - React, Angular, Vue 모두 관련 기능 제공
  - 표준에 일부 기반하기도 하지만...
-- 프레임워크는 잘다루지만 JavaScript는 모르는 상황이 올수도
+
+> 프레임워크는 잘다루지만<br>  <!-- .element: class="fragment" -->
+> JavaScript는 모르는 상황이 올수도
+
+<p class="reference">
+    [View encapsulation in Angular 2](http://blog.thoughtram.io/angular/2015/06/29/shadow-dom-strategies-in-angular2.html)
+</p>
 
 ----------
 
@@ -478,8 +506,11 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 ----------
 
-
-# 새로운 영역
+<!-- .slide: data-background="#639ddc" -->
+<div class="title-animate">
+    <div><h1>새로운 영역</h1></div>
+    <!--<div><p></p></div>-->
+</div>
 
 ----------
 
