@@ -115,7 +115,8 @@ JavaScript로 표현된 DOM 구조 (VTree)
 - 변경에 대한 업데이트는?
  - 1) Dirty checking
    - Angular1은 VDOM은 없지만, Digest cycle내에서의 변경 watch
-   - React (setState 호출시 마킹)
+   - React: setState 호출시 dirty로 마킹<br>
+     이후 이벤트 loop 마지막에 마킹요소 재렌더링
  - 2) [Observable](http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html#observables) (Angular2)
 
 <p class="reference">
