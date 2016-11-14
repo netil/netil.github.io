@@ -354,7 +354,8 @@ jQuery > React > Angular > Polymer > Vue.js
 
 <p class="reference">
     <br>[Two-way data binding in Angular 2](http://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.html)<br>
-    [Introduction to data binding in Angular 2 versus Angular 1](https://www.themarketingtechnologist.co/introduction-to-data-binding-in-angular-2-versus-angular-1/)
+    [Introduction to data binding in Angular 2 versus Angular 1](https://www.themarketingtechnologist.co/introduction-to-data-binding-in-angular-2-versus-angular-1/)<br>
+    [AngularJS 도입 선택 가이드](http://d2.naver.com/helloworld/1172239)
 </p>
 
 ----------
@@ -620,7 +621,10 @@ https://js.foundation/
 - 생태계의 너무 빠른 변화
 - 그러나 올바른 방향으로 발전중
 
-http://stateofjs.com/2016/opinions/
+<p class="reference">
+    <br>[State of JavaScript 2016: Opinions](http://stateofjs.com/2016/opinions/)<br>
+    [2016년과 이후 JavaScript의 동향](http://d2.naver.com/helloworld/3618177)
+</p>
 
 ----------
 
