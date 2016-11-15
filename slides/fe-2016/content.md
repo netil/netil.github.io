@@ -491,8 +491,10 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
  - React, Angular, Vue 모두 관련 기능 제공
  - 표준에 일부 기반하기도 하지만...
 
-> 프레임워크는 잘다루지만<br>  <!-- .element: class="fragment" -->
-> JavaScript는 모르는 상황이 올수도
+> "I talk to a lot of JavaScript devs and I find it<br>
+> really interesting that the ones who spend<br>
+> the most time in Angular tend to not know<br>
+> JavaScript nearly as well." \- <a href="https://about.gitlab.com/2016/10/20/why-we-chose-vue/" target="_new" class="size18">Why We Chose Vue.js</a>
 
 <p class="reference">
     [View encapsulation in Angular 2](http://blog.thoughtram.io/angular/2015/06/29/shadow-dom-strategies-in-angular2.html)
