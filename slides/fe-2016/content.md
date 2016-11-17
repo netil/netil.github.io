@@ -32,12 +32,14 @@
 - 새로운 웹용 바이너리 표준
 - 브라우저가 가상 머신처럼 동작해 컴파일된 중간 코드를 실행
 - 네이티브 애플리케이션과 같이 빠른 실행을 목표
+- JavaScript 컨텍스트에서 WASM 모듈을 로딩해 사용
+- Compute-intensive 작업 수행에 적합
 
-> JavaScript 대신 C, C++ 등의 언어로<br>
-> 브라우저 실행 프로그램 개발가능
+> 네이티브 C/C++ 코드를 작은 바이너리 포맷으로 실행
 
 <p class="reference">
-    [Reached the Browser Preview milestone](http://webassembly.org/roadmap/)
+    <br>[Reached the Browser Preview milestone](http://webassembly.org/roadmap/)<br>
+    [Advanced JS performance with V8 and Web Assembly](https://youtu.be/PvZdTZ1Nl5o?t=1424)
 </p>
 
 ----------
