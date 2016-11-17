@@ -29,7 +29,7 @@
 ### 그러나, <!-- .element: style="margin:0" -->
 # [WebAssembly](http://webassembly.org/)
 
-- 새로운 웹용 바이너리 표준
+- 새로운 웹용 표준 low-level language
 - 브라우저가 가상 머신처럼 동작해 컴파일된 중간 코드를 실행
 - 네이티브 애플리케이션과 같이 빠른 실행을 목표
 - JavaScript 컨텍스트에서 WASM 모듈을 로딩해 사용
