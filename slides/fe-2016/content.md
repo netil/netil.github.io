@@ -217,7 +217,10 @@ http://www.modulecounts.com/
 
 다양한 옵션을 제공하는 것도 좋지만, 그렇다고 결정적 이유도 존재하지 않음
 
-<img src="./img/npm-tweet.png">
+<p class="size18" style="margin:0">
+    <img src="./img/npm-tweet.png"><br>
+    Tom Dale: Ember와 SproutCore 개발 참여
+</p>
 
 https://twitter.com/tomdale/status/667389972794724352
 
@@ -366,8 +369,9 @@ jQuery > React > Angular > Polymer > Vue.js
 # for Production?
 
 - 아직 너무 잦은 변화
- - 2.0.0 (16/9/15)
- - 2.2.0 (16/11/02)
+ - [2.0.0](https://github.com/angular/angular/tree/2.0.0) (2016/9/15)
+ - [2.2.1](https://github.com/angular/angular/tree/2.2.1) (2016/11/17)
+ - [3.0.0](https://github.com/angular/angular/milestone/66) (2017/3 예정)
 - 꼭 TypeScript을 사용하지 않아도 되지만...
  - 대다수의 문서가 TypeScript 기반
 
