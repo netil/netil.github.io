@@ -26,27 +26,34 @@
 
 ----------
 
-### 그러나, <!-- .element: style="margin:0" -->
 # [WebAssembly](http://webassembly.org/)
 
-- 새로운 웹용 표준 low-level language
+- 프로그래밍 언어(일단은 C/C++) 컴파일을 통해 어느 브라우저에서도 빠르게 실행되는 binary 포맷(low-level language)
+    <img src="./img/wasm.png" style="margin-bottom:0"><br>
+    <span class="size18">[Source] https://speakerdeck.com/pine613/webassembly-ru-men</span><br>
 - 브라우저가 가상 머신처럼 동작해 컴파일된 중간 코드를 실행
 - 네이티브 애플리케이션과 같이 빠른 실행을 목표
 - JavaScript 컨텍스트에서 WASM 모듈을 로딩해 사용
 - Compute-intensive 작업 수행에 적합
 
-> 네이티브 C/C++ 코드를 작은 바이너리 포맷으로 실행
+----------
+
+<img src="./img/wasm2.png" style="margin:0"><br>
+<span class="size18">[Source] [WebAssembly Browser Preview](http://v8project.blogspot.kr/2016/10/webassembly-browser-preview.html)</span><br>
+
+> Designed to run native C/C++ code<br>
+> in a tiny binary format
 
 <p class="reference">
     <br>[Reached the Browser Preview milestone](http://webassembly.org/roadmap/)<br>
-    [Advanced JS performance with V8 and Web Assembly](https://youtu.be/PvZdTZ1Nl5o?t=1424)
+    [Chrome Dev Summit 2016: Advanced JS performance with V8 and Web Assembly](https://youtu.be/PvZdTZ1Nl5o?t=1424)
 </p>
 
 ----------
 
 # 뜨거웠던 2016
 
-<img src="./img/fe2016.png" style="width:500px;border:solid 5px #fff">
+<img src="./img/fe2016.png" style="width:500px;border:solid 10px red;background-color:#fff">
 
 <p class="reference">
     HackerNews와 Reddit에서의 토론:<br>
@@ -277,7 +284,7 @@ https://twitter.com/tomdale/status/667389972794724352
 <img src="./img/webpack.svg" style="width:100px"> webpack
 <img src="./img/Browserify.svg" style="width:140px"> Browserify
 
-<img src="./img/bundler.png" style="width:550px">
+<img src="./img/bundler.png" style="width:550px;margin:0">
 
 webpack > Browserify
 
@@ -325,9 +332,9 @@ http://stateofjs.com/2016/buildtools/
 jQuery / Angular / React / Vue.js / Polymer
 
 <img src="./img/trend.png"><br>
-<span class="size18">(1st week, Nov. 2016)</span>
+<span class="size18">(2nd week, Nov. 2016)</span>
 
-jQuery > React > Angular > Polymer > Vue.js
+jQuery > Angular > React > Polymer > Vue.js
 
 <p class="reference">
     [Google Trends](https://www.google.com/trends/explore?cat=13&date=today%2012-m&q=angular,react,vuejs,polymer,jQuery)
@@ -370,7 +377,7 @@ jQuery > React > Angular > Polymer > Vue.js
 
 - 아직 너무 잦은 변화
  - [2.0.0](https://github.com/angular/angular/tree/2.0.0) (2016/9/15)
- - [2.2.1](https://github.com/angular/angular/tree/2.2.1) (2016/11/17)
+ - [2.2.3](https://github.com/angular/angular/tree/2.2.3) (2016/11/23)
  - [3.0.0](https://github.com/angular/angular/milestone/66) (2017/3 예정)
 - 꼭 TypeScript을 사용하지 않아도 되지만...
  - 대다수의 문서가 TypeScript 기반
@@ -592,14 +599,22 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 ----------
 
-# What about standard?
+## What Comes Next for the Web?
 
 - Progressive Web Applications (PWAs)
  - [ServiceWorker](https://www.w3.org/TR/service-workers/) - offline cache<br>
     <span class="size18">[참고] [현실적 PWA](http://netil.github.io/slides/pwa/)</span> 
 - [Web Components](http://webcomponents.org/)
+- [Generic Sensor API](https://www.w3.org/TR/generic-sensor/)
+- [Credential Management API](https://www.w3.org/TR/credential-management-1/)
 - [Web Payments API](https://www.w3.org/TR/webpayments-overview/)
 - [WebVR](https://webvr.info/)
+- [Automotive WG](https://www.w3.org/auto/wg/)
+
+<p class="reference"><br>
+[Chrome Dev Summit 2016: What Comes Next for the Web?](https://developer.chrome.com/devsummit/schedule/sessions/next-for-the-web)<br>
+[W3C Automotive 표준 개발 현황](http://www.slideshare.net/Wonsuk/w3c-automotive)
+</p>
 
 ----------
 
@@ -612,14 +627,6 @@ https://js.foundation/
 <p class="reference">
     [자바스크립트 생태계 통합될까](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20161019140745)
 </p>
-
-----------
-
-# 우리의 자세는?
-
-<img src="./img/study-plan.png">
-
-[A Study Plan To Cure JavaScript Fatigue](https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1)
 
 ----------
 
@@ -644,5 +651,16 @@ https://js.foundation/
 - 확실한 사용 레퍼런스 필요 (React 경우처럼) <!-- .element: class="fragment" -->
 - 활발한 자발적인 커뮤니티 필요 <!-- .element: class="fragment" -->
 - 풍부한 문서와 예제 <!-- .element: class="fragment" -->
-- 3rd 파티 플러그인: 상용 or 오픈 <!-- .element: class="fragment" -->
+- 다양한 3rd 파티 플러그인: 상용 or 오픈 <!-- .element: class="fragment" -->
 
+----------
+
+# 우리의 자세는?
+
+<img src="./img/study-plan.png" style="width:600px"><br>
+<span class="size18">[A Study Plan To Cure JavaScript Fatigue](https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1)</span><br>
+
+<blockquote class="fragment"><p>
+    Everything is amazing and nobody is happy<br>
+    - <span class="size18">[Why I’m Thankful for JS Fatigue](https://medium.com/javascript-scene/why-im-thankful-for-js-fatigue-i-know-you-re-sick-of-those-words-but-this-is-different-296fae0c888f)</span>
+</p></blockquote>
