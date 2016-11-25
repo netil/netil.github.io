@@ -587,7 +587,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 - Chrome: Android에서도 [canary/beta 채널](https://blog.chromium.org/2016/10/canary-channel-for-chrome-on-android.html) 제공 시작
  - [매 2개월](https://www.chromium.org/developers/calendar)마다 정식 릴리즈
 - [Edge](https://dev.windows.com/en-us/microsoft-edge/platform/status/)? - Evegreen 이라고 하지만, 윈도우 업데이트를 통해
-- FireFox: 최근 [Quantum](https://medium.com/mozilla-tech/a-quantum-leap-for-the-web-a3b7174b3c12)(Server 기반) 엔진 변경 발표
+- FireFox: 최근 [Quantum](https://medium.com/mozilla-tech/a-quantum-leap-for-the-web-a3b7174b3c12)(Servo 기반) 엔진 변경 발표
 - [Samsung Internet](https://medium.com/samsung-internet-dev/introducing-samsung-internet-for-developers-6c3a3be42f72)? - 2015/8월 부터 별도 배포
 
 ----------
