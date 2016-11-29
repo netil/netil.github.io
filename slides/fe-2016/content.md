@@ -447,7 +447,7 @@ YouTube는 표준 웹컴포넌트 기반인 Polymer로 새로 개발예정
 
 ----------
 
-# <img src="./img/polymer.svg" style="width:200px;margin:0"> Polymer
+# <img src="./img/polymer.svg" style="width:180px;margin:0"> Polymer
 
 - 표준 Web Component 기반한 프레임워크
   <ul style="font-size:22px">
