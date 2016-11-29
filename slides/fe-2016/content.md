@@ -38,8 +38,10 @@
 
 ----------
 
-<img src="./img/wasm2.png" style="margin:0"><br>
-<span class="size18">[Source] [WebAssembly Browser Preview](http://v8project.blogspot.kr/2016/10/webassembly-browser-preview.html)</span><br>
+<p style="margin:0">
+    <img src="./img/wasm2.png" style="margin:0"><br>
+    <span class="size18">[Source] [WebAssembly Browser Preview](http://v8project.blogspot.kr/2016/10/webassembly-browser-preview.html)</span>
+</p>
 
 > Designed to run native C/C++ code<br>
 > in a tiny binary format
@@ -141,10 +143,10 @@ JavaScript로 표현된 DOM 구조 (VTree)
 
 http://isomorphic.net/
 
-- Isomorphic JS: 페이지를 생성하기 위해 클라이언트와 서버를 활용하는 테크닉
-- Universal JS: 모든 환경에서 실행되는 자바스크립트
+- Isomorphic JS: 클라이언트 또는 서버에서 페이지를 생성(조합)하기 위한 테크닉
+- Universal JS: 모든 자바스크립트 수행 환경에서 실행되는 자바스크립트
 
-http://www.2ality.com/2015/08/isomorphic-javascript.html
+[Is “Isomorphic JavaScript” a good term?](http://www.2ality.com/2015/08/isomorphic-javascript.html)
 
 ----------
 
@@ -157,12 +159,13 @@ http://www.2ality.com/2015/08/isomorphic-javascript.html
 
 ----------
 
-# Transpiler
+# Transpiler <!-- .element: style="margin:0" -->
 
-다른 언어로 변환해주는 도구
-<img src="./img/babel.png" style="width:170px">
+<p style="margin:0">
+    다른 언어로 변환해주는 도구 <img src="./img/babel.png" style="width:170px;margin:0">
+</p>
 
-<iframe src="http://jsbin.com/rodebep/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:350px;height:30px;"></iframe>
+<iframe src="http://jsbin.com/rodebep/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;height:450px"></iframe>
 
 ----------
 
@@ -185,7 +188,7 @@ http://kangax.github.io/compat-table/es6/
 | Name | Type | Syntax | Execution from | Module Unit per |
 | --- | --- | --- | --- | --- | --- |
 | [CommonJS](http://www.commonjs.org/) | Synchronous | module.export<br>require | return | file |
-| [RequireJS](http://requirejs.org/) | Asynchronous | define<br>require | callback | definition |
+| [RequireJS](http://requirejs.org/) (AMD) | Asynchronous | define<br>require | callback | definition |
 | [ES6 Module](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) | Sync/Async | export<br>import | return | definition |
 
 <p class="reference">
@@ -198,7 +201,7 @@ ES6 > CommonJS > RequireJS
 
 # Package Manger
 
-<img src="./img/npm.svg" style="width:300px"> 
+<img src="./img/npm.svg" style="width:300px;margin-right:30px"> 
 <img src="./img/bower.svg" style="width:230px">
 
 | Name | Target | Config | Install Path |
@@ -233,7 +236,9 @@ https://twitter.com/tomdale/status/667389972794724352
 
 ----------
 
-<img src="./img/yarn-logo.svg" style="width:300px">
+<p style="margin:0">
+    <img src="./img/yarn-logo.svg" style="width:300px;margin-top:0">
+</p>
 
 - 페이스북에서 개발한 새로운 패키지 매니저 클라이언트
 - npm 레지스트리와 호환
@@ -256,14 +261,15 @@ https://twitter.com/tomdale/status/667389972794724352
 </p>
 
 <p class="reference">
-    [Yarn: A new package manager for JavaScript](https://code.facebook.com/posts/1840075619545360)
+    <br>[Yarn: A new package manager for JavaScript](https://code.facebook.com/posts/1840075619545360)<br>
+    [Hello, Yarn!](http://blog.npmjs.org/post/151660845210/hello-yarn)
 </p>
 
 ----------
 
 ## npm vs Yarn
 
-<img src="./img/npm-yarn.png">
+<img src="./img/npm-yarn.png" style="margin:0">
 
 <p class="reference">
     [NPM VERSUS YARN - THE EPIC FIGHT FOR SPEED IN CONTINUOUS INTEGRATION](https://stapp.space/npm-versus-yarn-the-epic-fight-for-speed-in-continuous-integration/)
@@ -284,7 +290,9 @@ https://twitter.com/tomdale/status/667389972794724352
 <img src="./img/webpack.svg" style="width:100px"> webpack
 <img src="./img/Browserify.svg" style="width:140px"> Browserify
 
-<img src="./img/bundler.png" style="width:550px;margin:0">
+<p style="margin:0">
+    <img src="./img/bundler.png" style="width:550px;margin:0">
+</p>
 
 webpack > Browserify
 
@@ -297,7 +305,7 @@ webpack > Browserify
 # Build tool
 
 <img src="./img/grunt.svg" style="width:100px"> Grunt
-<img src="./img/gulp.svg" style="width:80px"> Gulp
+<img src="./img/gulp.svg" style="width:80px;margin-left:30px"> Gulp
 
 정의된 작업(Task) 들을<br>
 수행(Runner) 하는 도구
@@ -342,9 +350,11 @@ jQuery > Angular > React > Polymer > Vue.js
 
 ----------
 
-<img src="./img/jQuery.svg" style="width:400px">
-
-<img src="./img/jquery-trend.png" style="width:550px"><br>
+<p style="margin:0 0 20px">
+    <img src="./img/jQuery.svg" style="width:400px" style="margin:0">    
+    <img src="./img/jquery-trend.png" style="width:550px;margin:0"><br>
+    <span class="size18">[Source] [BuiltWith: jQuery Usage Statistics](http://trends.builtwith.com/javascript/jQuery)</span>
+</p>
 
 - 프레임워크 등장 이전까진 de-facto standard 위치
 - 브라우저의 표준 지원률 향상으로 VanillaJS만으로도 점점 충분
@@ -359,8 +369,8 @@ jQuery > Angular > React > Polymer > Vue.js
 <img src="./img/AngularJS.svg" style="width:500px">
 
 - Angular1 != Angular2
-- AtScript &rarr; TypeScript (JS 또는 Dart도 사용가능)
- - [Microsoft And Google Collaborate On Angular 2 Framework, TypeScript Language](https://techcrunch.com/2015/03/05/microsoft-and-google-collaborate-on-typescript-hell-has-not-frozen-over-yet/) <!-- .element: class="size18" -->
+- AtScript &rarr; TypeScript (JS 또는 Dart도 사용가능)<br>
+  <span class="size18">&rarr; [Microsoft And Google Collaborate On Angular 2 Framework, TypeScript Language](https://techcrunch.com/2015/03/05/microsoft-and-google-collaborate-on-typescript-hell-has-not-frozen-over-yet/)</span>
 
 - Google: GWT &rarr; Dart &rarr; TypeScript?
 - 2 way data binding (not built-in v2) &rarr; 1 way
@@ -396,7 +406,8 @@ YouTube는 표준 웹컴포넌트 기반인 Polymer로 새로 개발예정
 # <img src="./img/react.svg" style="width:200px"> React
 
 - 페이스북에서 개발한 MV* 구조에서 View 영역에 대한 구현체
-- 데이터의 흐름이나 구조 등을 다루지 않음 (Flux 아키텍처 구현체 [Redux](http://dobbit.github.io/redux/)와 사용)
+- 데이터의 흐름이나 구조 등을 다루지 않음<br>
+  <span class="size18">&rarr; Flux 아키텍처 구현체 [Redux](http://dobbit.github.io/redux/)와 사용</span>
 - Virtual DOM, one-way data flow(one-way binding) 
 - 페이스북 대표 서비스들(FB, Instagram)에서 사용
 
@@ -410,7 +421,7 @@ YouTube는 표준 웹컴포넌트 기반인 Polymer로 새로 개발예정
 
 ## 간단한 React 예제
 
-<iframe src="http://jsbin.com/wonehox/4/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:400px;height:30px;"></iframe>
+<iframe src="http://jsbin.com/wonehox/4/embed?js,output" style="border:1px solid rgb(170, 170, 170);width:100%;height:450px"></iframe>
 
 ----------
 
@@ -432,20 +443,29 @@ YouTube는 표준 웹컴포넌트 기반인 Polymer로 새로 개발예정
 
 ## 간단한 Vue.js 예제
 
-<iframe src="http://jsbin.com/vayuhi/embed?html,js,output" style="border:1px solid rgb(170, 170, 170);width:100%;min-height:400px;height:30px;"></iframe>
+<iframe src="http://jsbin.com/vayuhi/embed?html,js,output" style="border:1px solid rgb(170, 170, 170);width:100%;height:450px"></iframe>
 
 ----------
 
-# <img src="./img/polymer.svg" style="width:200px"> Polymer
+# <img src="./img/polymer.svg" style="width:200px;margin:0"> Polymer
 
 - 표준 Web Component 기반한 프레임워크
- - Custom element, HTML import, Template, Shadow DOM
- - 웹 컴포넌트 미지원 브라우저에 Polyfill 제공도 목적<br>
-   <span class="size18">[참고] [Web Components & Polymer](http://netil.github.io/slides/webcomponent/)</span>
-- 그동안 Web Component 표준 스펙 브라우저 지원이 걸림돌
-
- <a href="http://webcomponents.org/" target="_new" title="http://webcomponents.org/"><img src="./img/webcomponent.png"></a>
-
+  <ul style="font-size:22px">
+   <li>Custom element, HTML import, Template, Shadow DOM<br>
+        &rarr; [Web Components & Polymer](http://netil.github.io/slides/webcomponent/)
+   </li>
+   <li>웹 컴포넌트 미지원 브라우저에 Polyfill 제공도 목적</li>
+   <li>
+    [2.0-preview](https://www.polymer-project.org/2.0/docs/about_20) (2016/11/17)<br>
+        &rarr;  support the new custom elements v1 and shadow DOM v1<br><br>
+    </li>
+  </ul>
+- 그동안 Web Component 표준 스펙 브라우저 지원이 걸림돌<br> <!-- .element: class="fragment" -->
+  <span class="size18">&rarr; Safari - HTML imports 제외한 나머지 구현
+  ([Custom elements](https://webkit.org/blog/7027/introducing-custom-elements/), 
+  [Shadow DOM](https://webkit.org/blog/4096/introducing-shadow-dom-api/), 
+  [Template](https://webkit.org/status/#feature-template-element))</span><br>
+  <a href="http://webcomponents.org/" target="_new" title="http://webcomponents.org/"><img src="./img/webcomponent.png" style="margin-bottom:0"></a>
 
 ----------
 
@@ -504,22 +524,31 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
  - React, Angular, Vue 모두 관련 기능 제공
  - 표준에 일부 기반하기도 하지만...
 
-> "I talk to a lot of JavaScript devs and I find it<br>
-> really interesting that the ones who spend<br>
-> the most time in Angular tend to not know<br>
-> JavaScript nearly as well." \- <a href="https://about.gitlab.com/2016/10/20/why-we-chose-vue/" target="_new" class="size18">Why We Chose Vue.js</a>
-
 <p class="reference">
+    <br>[Using Web Components in React](https://facebook.github.io/react/docs/web-components.html)<br>
     [View encapsulation in Angular 2](http://blog.thoughtram.io/angular/2015/06/29/shadow-dom-strategies-in-angular2.html)
 </p>
 
 ----------
 
-# Being aware of biases
+> "I talk to a lot of JavaScript devs<br>
+> and I find it really interesting<br>
+> that the ones who spend<br>
+> the most time in Angular tend to<br>
+> <span class="red">not know JavaScript nearly as well.</span>"<br>
 
-- 매몰 비용 오류
-- 특정 기술/도구 투자 비용이 증가시, 자신의 선택 합리화를 위해 노력
-- 합리적인 시각을 갖기 어렵게 함
+> \- <a href="https://about.gitlab.com/2016/10/20/why-we-chose-vue/" target="_new">Why We Chose Vue.js</a>
+
+----------
+
+## Being aware of <!-- .element: style="margin:0" -->
+# biases
+
+- 매몰 비용 오류 <!-- .element: class="fragment" -->
+- 특정 기술/도구 투자 비용이 증가시,<br>자신의 선택 합리화를 위해 노력 <!-- .element: class="fragment" -->
+<br><br>
+
+> 합리적인 시각을 갖기 어렵게 만들 수 있다. <!-- .element: class="fragment yellow" -->
 
 ----------
 
@@ -577,11 +606,14 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 ----------
 
-# 다양한 시도들의 요인
+# 다양한 시도들의 배경
 
 - 단일 개발 모델을 통한 멀티 패러다임 소프트웨어 개발 요구
-- 플랫폼별 대응 개발 비용의 문제
-- 일반적으로 Web, iOS, Android 개발 필요한데, 동일 기능을 3가지 환경에 맞추어 개발필요
+- 서비스/앱 개발시 일반적으로 Web, iOS, Android 버전필요<br>
+  &rarr; 동일 기능을 3가지 환경에 맞추어 개발
+<br><br>
+
+> 결국, 플랫폼별 대응 개발 비용의 문제 <!-- .element: class="fragment red" -->
 
 ----------
 
@@ -599,7 +631,7 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 ----------
 
-## What Comes Next for the Web?
+## What Comes Next<br>for the Web?
 
 - Progressive Web Applications (PWAs)
  - [ServiceWorker](https://www.w3.org/TR/service-workers/) - offline cache<br>
@@ -618,11 +650,13 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 
 ----------
 
-<img src="./img/jsf-logo.png">
+<p>
+    <img src="./img/jsf-logo.png" style="margin:0">
+    https://js.foundation/
+</p><br>
 
-[jQuery Foundation](https://jquery.org/) 의 새로운 이름
-
-https://js.foundation/
+[jQuery Foundation](https://jquery.org/) 의 새로운 이름<br>
+생태계의 파편화를 막기위한 노력(?)
 
 <p class="reference">
     [자바스크립트 생태계 통합될까](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20161019140745)
@@ -655,12 +689,16 @@ https://js.foundation/
 
 ----------
 
-# 우리의 자세는?
+## JavaScript Fatigue
+## 우리의 자세는?
 
-<img src="./img/study-plan.png" style="width:600px"><br>
-<span class="size18">[A Study Plan To Cure JavaScript Fatigue](https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1)</span><br>
+<p style="margin:0" class="fragment">
+    <img src="./img/study-plan.png" style="width:600px"><br>
+    <span class="size18">[A Study Plan To Cure JavaScript Fatigue](https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1)</span>
+</p>
 
 <blockquote class="fragment"><p>
-    Everything is amazing and nobody is happy<br>
-    - <span class="size18">[Why I’m Thankful for JS Fatigue](https://medium.com/javascript-scene/why-im-thankful-for-js-fatigue-i-know-you-re-sick-of-those-words-but-this-is-different-296fae0c888f)</span>
+    [Everything is amazing and nobody is happy](https://www.youtube.com/watch?v=q8LaT5Iiwo4)<br>
+    - <span class="size18">Louis C.K</span><br>
+    <span class="size18">[참고] [Why I’m Thankful for JS Fatigue](https://medium.com/javascript-scene/why-im-thankful-for-js-fatigue-i-know-you-re-sick-of-those-words-but-this-is-different-296fae0c888f)</span>
 </p></blockquote>
