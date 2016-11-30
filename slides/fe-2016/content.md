@@ -302,6 +302,43 @@ webpack > Browserify
 
 ----------
 
+# webpack 2
+
+v2 개발중 (2016/11/16 - [v2.1.0-beta.27](https://github.com/webpack/webpack/releases/tag/v2.1.0-beta.27))
+
+- native ES6 import, export<br>
+  and System.import(promise-based loader)
+- [Tree Shaking](https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80#.nfn652t1o) for ES6<br>
+  &rarr; popularized by <a href="http://rollupjs.org"><img src="./img/rollup.svg" style="width:50px"> rollup.js</a>
+
+<p class="reference">
+    <br>[Tree Shaking In JavaScript](http://www.syntaxsuccess.com/viewarticle/tree-shaking-in-javascript)<br>
+    [webpack roadmap](https://webpack.github.io/docs/roadmap.html)<br>
+    [Migrating to Webpack 2](http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/)
+</p>
+
+----------
+
+## Code splitting
+
+개통된 모든 안드로이드 기기의 절반이 <= 1GB RAM<br>
+모바일 사이트 평균 로딩시간: 19 sec
+
+<img src="./img/js-parse-time.png" style="width:600px"><br>
+
+<ul style="font-size:27px">
+    <li style="list-style:none;margin-left:-25px;text-decoration:underline">Automagic code splitting patterns:</li>
+    <li>[Angular built-in lazy module loading](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#lazy-load)</li>
+    <li>[Polymer CLI per route fragments / sharing](https://www.polymer-project.org/1.0/toolbox/server)</li>
+    <li>[Web pack aggressive splitting plugin. require.ensure()](https://github.com/webpack/webpack/tree/master/examples/http2-aggressive-splitting)</li>
+</ul>
+
+<p class="reference">
+    [Chrome Dev Summit 2016: Planning for Performance: PRPL](https://developer.chrome.com/devsummit/schedule/sessions/planning-for-performance)
+</p>
+
+----------
+
 # Build tool
 
 <img src="./img/grunt.svg" style="width:100px"> Grunt
@@ -692,13 +729,16 @@ http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html
 ## JavaScript Fatigue
 ## 우리의 자세는?
 
-<p style="margin:0" class="fragment">
-    <img src="./img/study-plan.png" style="width:600px"><br>
-    <span class="size18">[A Study Plan To Cure JavaScript Fatigue](https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1)</span>
-</p>
-
-<blockquote class="fragment"><p>
+<blockquote><p>
     [Everything is amazing and nobody is happy](https://www.youtube.com/watch?v=q8LaT5Iiwo4)<br>
-    - <span class="size18">Louis C.K</span><br>
-    <span class="size18">[참고] [Why I’m Thankful for JS Fatigue](https://medium.com/javascript-scene/why-im-thankful-for-js-fatigue-i-know-you-re-sick-of-those-words-but-this-is-different-296fae0c888f)</span>
+    - <span class="size18">Louis C.K</span>
 </p></blockquote>
+
+- "Expert"로써 모든 플랫폼의 모든 것을 알아야 한다는 생각 <!-- .element: class="fragment" -->
+- 모든 것을 배우는 것이 해결책인가? <!-- .element: class="fragment" -->
+- 단순하게 현재 작업에 필요한 것, 또는 끌리는 것에 집중 <!-- .element: class="fragment" -->
+
+<p class="reference fragment" style="margin-top:50px">
+    <br>[Why I’m Thankful for JS Fatigue](https://medium.com/javascript-scene/why-im-thankful-for-js-fatigue-i-know-you-re-sick-of-those-words-but-this-is-different-296fae0c888f)<br>
+    [A Study Plan To Cure JavaScript Fatigue](https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1)
+</p>
