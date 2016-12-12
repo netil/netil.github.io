@@ -11,6 +11,7 @@
 - Push-notifications:<br>
   <span style="font-size:20px">[Push API](https://w3c.github.io/push-api/), [Notifications API](https://notifications.spec.whatwg.org/)</span>
 
+
 ----------
 
 ## Performance matters
@@ -47,7 +48,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 - iOS 미지원
   - [Service Workers](https://webkit.org/status/#specification-service-workers): Under Consideration
-  - Web App Manifest?
+  - [Web App Manifest](https://webkit.org/status/#specification-web-app-manifest): Under Consideration
   - Push & Notification API?
 
 - 데스크탑 브라우저? (Service Worker 기준)
@@ -68,10 +69,10 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 </div>
 
 사용자가 방문하는 웹사이트의 모든 리소스들에 대해 브라우저는<br> <!-- .element: class="fragment" -->
-로컬 캐시해 다음 방문시 로컬 캐시된 리소스를 활용하도록 처리된다.
+로컬 캐시해 다음 방문시 로컬 캐시된 리소스를 활용
 
 그러나 많은 경우(온라인 상태인 경우라도)<br> <!-- .element: class="fragment" -->
-로컬 캐시된 리소스를 활용하지 못하는 경우가 발생한다.
+로컬 캐시된 리소스를 활용하지 못하는 경우가 발생
 
 <p>물론, <span class="underline">오프라인인 경우에는 로컬 캐싱은 사용불가</span></p> <!-- .element: class="fragment" -->
 
@@ -100,7 +101,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 # 페이스북 사례
 
 페이스북에 접속하는 사용자들 중 로컬 캐시가 없는<br>
-상태의 요청 비율은 <span class="red underline bold">25.5%</span> 라고 한다. (2015/04 기준)
+상태의 요청 비율은 <span class="red underline bold" style="font-size:50px">25.5%</span> (2015/04 기준)
 
 |  Type | Request rate of<br>missing cache |
 | --- | --- |
@@ -115,11 +116,11 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ## 브라우저의 캐시 공간
 
-로컬 캐싱은 성능에 큰 영향을 주는 요소 중 한 가지.<br>
-그러나 모바일 환경에서의 캐싱은 데스크탑 브라우저에 비해 적은 공간을 사용
+로컬 캐싱은 성능에 큰 영향을 주는 요소 중 한 가지<br>
+그러나 모바일 환경 캐싱은 데스크탑 브라우저에 비해 적은 공간 사용
 
-브라우저에 따라 최대 사용공간은 다르며,<br>
-잘 문서화 되어 있지 않아 정확한 limit을 확인하기는 어렵다.
+브라우저에 따라 최대 사용 공간은 다르며,<br>
+잘 문서화 되어 있지 않아 정확한 limit 확인 어려움
 
 | 종류 | 크기 |
 | --- | --- |
@@ -140,7 +141,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
-## [sw-precache](https://github.com/GoogleChrome/sw-precache)
+# [sw-precache](https://github.com/GoogleChrome/sw-precache)
 빌드 기반의 리소스 프리캐싱
 
 - 캐싱 리소스 파일의 컨텐츠에 기반해 해쉬를 통한 자동 버저닝
@@ -185,7 +186,7 @@ gulp.task('precache', function(callback) {
 
 ----------
 
-## [sw-toolbox](https://github.com/GoogleChrome/sw-toolbox)
+# [sw-toolbox](https://github.com/GoogleChrome/sw-toolbox)
 런타임 요청에 대한 공통의 캐싱 패턴을 제공
 
 다음의 3가지 패턴(전략*)을 제공
@@ -195,7 +196,8 @@ gulp.task('precache', function(callback) {
 
 ```js
 // URL 패턴에 매칭되는 리소스에 대한 캐싱 전략을 지정
-toolbox.router.get("/images", toolbox.[ cacheFirst | networkFirst | fastest ], options);
+toolbox.router.get("/images",
+    toolbox.[ cacheFirst | networkFirst | fastest ], options);
 ```
 
 <p style="margin-top:35px;font-size:20px">
@@ -243,8 +245,11 @@ toolbox.router.get("/images", toolbox.[ cacheFirst | networkFirst | fastest ], o
     global.toolbox.router.default = global.toolbox.networkFirst;
 
     // sw가 페이지의 컨트롤을 빠른 시점에 취할 수 있도록 하는 boilerplate
-    global.addEventListener('install', event => event.waitUntil(global.skipWaiting()));
-    global.addEventListener('activate', event => event.waitUntil(global.clients.claim()));
+    global.addEventListener('install',
+        event => event.waitUntil(global.skipWaiting()));
+
+    global.addEventListener('activate',
+        event => event.waitUntil(global.clients.claim()));
 })(self);
 ```
 
@@ -288,6 +293,13 @@ require('offline-plugin/runtime').install();
 
 ----------
 
+### more tools
+## Service Worker<br>
+## helper libraries
+https://github.com/GoogleChrome/sw-helpers
+
+----------
+
 # Demo
 sw-precache 및 sw-toolbox
 
@@ -319,15 +331,14 @@ sw-precache 및 sw-toolbox
 
 ## 웹 스토리지를 활용한 캐싱 방법
 
-캐시의 상태에 따라 항상 모든 static 파일들이 사용자의 로컬 영역에<br> <!-- .element: class="fragment" -->
-존재한다는 보장은 없기 때문에, 자주 변경이 되지 않는 파일에 대해서는<br>
-localStorage를 이용해 확실하게 캐싱되도록 처리하는 방법도 고려할 수 있다.
+캐시의 상태에 따라 항상 모든 static 파일들이 로컬 영역 존재 보장 없음<br> <!-- .element: class="fragment" -->
+자주 변경이 되지 않는 파일은 localStorage를 이용한 캐싱방법 고려
 
 ### 몇가지 고려사항 : <!-- .element: class="underline fragment" -->
-- 자주 변경을 필요로 하지 않는 기본 라이브러리들로 대상을 한정 <!-- .element: class="fragment" -->
-- 자주 변경되지 않더라도, 업데이트가 필요할 수 있기 때문에 '버전관리' 필요 <!-- .element: class="fragment" -->
+- 자주 변경될 필요 없는 기본 라이브러리들로 대상 한정 <!-- .element: class="fragment" -->
+- 자주 변경되지 않더라도, 업데이트를 위한 '버전관리' 필요 <!-- .element: class="fragment" -->
 - localStorage는 브라우저에 따라 최대 저장용량이 다를 수 있다.<br> <!-- .element: class="fragment" -->
-  대체로 5MB 까지 저장할 수 있지만, 보다 정확한 최대치 확인필요 
+  대체로 5MB 까지이나, 보다 정확한 최대치는 확인필요 
   
   
 <p>[데모]: [네이버 검색 활용 예](https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC)</p> <!-- .element: class="fragment" -->
@@ -352,7 +363,7 @@ let load = (code = "") => {
 };
 ```
 
-조건과 상황에 따라 다르지만, 기존 대비 <span class="red underline bold">25%</span> 성능향상 경험
+조건과 상황에 따라 다르지만, 기존 대비 <span class="red underline bold" style="font-size:40px">25%</span> 성능향상 경험
 
 ----------
 
@@ -409,8 +420,9 @@ PWA gets at most 6% of free space on device
 
 # PWA 디버깅
 
-SW는 'https' 에서만 동작한다.<br>
-그러나 디버깅 용도를 위해 http://localhost 및 http://127.0.0.1 에서도 동작 (포트 상관없음)
+SW는 'https' 에서만 동작<br>
+그러나 디버깅 용도를 위해:<br>
+http://localhost 및 http://127.0.0.1 에서도 동작 (포트 상관없음)
 
 Chrome DevTools > Application Tab:
 - Manifest
@@ -454,13 +466,31 @@ Chrome DevTools > Application Tab:
 
 ----------
 
+<p>
+    <a href="https://developer.chrome.com/devsummit/"><img src="./img/chrome-dev-summit-logo.jpg" style="width:300px"></a><br>
+    총 25 세션 중, 9개가 PWA 관련
+</p>
+
+Chrome '새로운 탭' 화면 구성에서 SW 사용중
+![Chrome new tab](./img/chrome-newtab.png)
+
+----------
+
+> ## The future is<br>
+> ## already here<br>
+> ## — it's just not very evenly distributed<br>
+    > \- [William Gibson](https://en.wikipedia.org/wiki/William_Gibson#Visionary_influence_and_prescience)
+
+----------
+
 # Resources
 
-- https://pwa.rocks/ (오페라에서 아카이빙한 PWA 앱 목록)
+- [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist)
+- https://pwa.rocks/ <span class="size18">(오페라 아카이빙 PWA 앱 목록)</span>
 - Google Developers: [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
 - Google Developers: [SW Case Studies](https://developers.google.com/web/showcase/)
 - Mozilla [Service Worker Cookbook](https://serviceworke.rs/)
 - Service Workers 101: [SW Infographic](https://github.com/delapuente/service-workers-101/)
 - [The Service Worker Lifecycle](https://bitsofco.de/the-service-worker-lifecycle/)
-- [Awesome Progressive Web Apps](https://github.com/TalAter/awesome-progressive-web-apps) (PWA 리소스 큐레이션)
+- [Awesome Progressive Web Apps](https://github.com/TalAter/awesome-progressive-web-apps) <span class="size18">(PWA 리소스 큐레이션)</span>
 - [Progressive Web App Dev Summit 2016](https://events.withgoogle.com/progressive-web-app-dev-summit/)

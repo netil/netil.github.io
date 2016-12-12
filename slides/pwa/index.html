@@ -17,7 +17,7 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
 
-
+        <link rel="stylesheet" href="./css/main.css">
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -35,143 +35,6 @@
 		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
 		<![endif]-->
         <script src="../timer.js"></script>
-
-        <style>
-            .reveal section img{border:0;background:none;vertical-align:middle}
-            textarea { width:90%;position:relative;dispaly:block;font-size:0.55em;background-color:#3F3F3F; color:#fff;font-family: monospace;
-                line-height: 1.2em;
-                word-wrap: break-word;
-                box-shadow: 0px 0px 6px rgba(0,0,0,0.3); }
-
-            .code {
-                position:relative; }
-
-            .code > button {
-                font-family: "Nanum Gothic";
-                margin: 0 0 10px 15px;
-                padding: .3em;
-                font-size:.6em;
-                margin: 0 2px;
-                background-color: #0A5AFA;
-                width: 120px;
-                color: #fff;
-                position: absolute;
-                display: block;
-                border: none;
-                top: 1px;
-                left: 853px;
-                opacity: .4;
-                z-index: 1; }
-
-            .code > button:hover {
-                opacity: 1; }
-
-            button {
-                width: 150px;
-                height: 40px;
-                font-size: 20px; }
-
-            .f_left { float:left }
-
-            p.content {
-                font-size: 28px; }
-
-            .emphasize {
-                color: #81FFDC;
-            }
-
-            h1.outline{text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px white;}
-            .red {color: red}
-            .green {color:green}
-            .yellow {color:#e7ad52}
-            .nostyle {list-style-type:none}
-            .size18, span.size18 {font-size:18px}
-            .size9, span.size9 {font-size: 9px}
-            .bold, span.bold {font-weight:bold}
-            .underline {text-decoration: underline}
-
-            .reveal table td {
-                font-size:24px
-            }
-
-            .reveal .redbox {
-                border: solid 5px red;
-                position:absolute;
-                background-color: rgba(249,0,0,.2);
-                width: 100px;
-                height: 100px;
-                top:0;
-                left: 50%;
-            }
-
-            p > img.flow {
-                border: solid 10px #17A9FF;
-                border-radius: 25px;
-                padding: 5px;
-            }
-
-            .naver-logo {
-                width: 75px;
-                margin: 4px 5px;
-            }
-
-            .reveal .title-animate {
-                margin-bottom: 15px;
-            }
-
-            .reveal .title-animate > div {
-                overflow: hidden;
-            }
-
-            .reveal .title-animate > div:first-child {
-                border-bottom: solid 1px;
-                margin: 0 auto;
-                width: 80%;
-            }
-
-            .reveal .title-animate > div p {
-                margin:0;
-            }
-
-            .reveal .title {
-                animation: slide-up 1s cubic-bezier(0.645, 0.045, 0.355, 1) both;
-            }
-
-            .reveal .title {
-                margin-bottom: -10px;
-            }
-
-            .reveal .sub-title {
-                animation: slide-down 1s cubic-bezier(0.645, 0.045, 0.355, 1) both;
-            }
-
-            .reveal .fragment-text {
-                animation: fragment cubic-bezier(0.645, 0.045, 0.355, 1) 1s both;
-            }
-
-            .reveal .scale {
-                animation: scale cubic-bezier(0.645, 0.045, 0.355, 1) 1s both;
-            }
-
-            @keyframes slide-up {
-                from { transform: translateY(100%); }
-                to { transform: translateY(0); }
-            }
-            @keyframes slide-down {
-                from { transform: translateY(-100%); }
-                to { transform: translateY(0); }
-            }
-
-            @keyframes scale {
-                from { transform: scale(0); }
-                to { transform: scale(1); }
-            }
-
-            @keyframes fragment {
-                from { opacity: 0; transform: translate(0, 30%); }
-                to { opacity: 1; transform: translate(0, 0); }
-            }
-        </style>
 	</head>
 
 	<body>
@@ -185,7 +48,7 @@
 
                         <p style="text-align:right;margin-top:50px;">
                             <small>
-                                <span>25th August, 2016</span><br>
+                                <span><!-- 29/9, 19/12-->December, 2016</span><br>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 185.343" width="80" class="naver-logo">
                                     <path fill="#2db400" d="M 133.297,0 133.297,93.512 69.246,0 l -69.246,0 0,185.343 69.01,0 0,-93.512 64.056,93.512 69.23,0 L 202.297,0 133.297,0 Z"></path>
                                     <path transform="translate(217.073,0)" fill="#2db400" d="m 94.758,118.297 16.251,-61.138 1.887,0 L 129.148,118.297 94.758,118.297 Z m 56.528,-118.297 -78.692,0 -72.594,185.343 76.758,0 6.702,-24.205 56.979,0 6.712,24.205 76.738,0 -72.605,-185.343 Z"></path>
@@ -223,7 +86,7 @@
             // Full list of configuration options available at:
             // https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
-                controls: false,
+                controls: true,
                 progress: true,
                 slideNumber: true,
                 history: true,
