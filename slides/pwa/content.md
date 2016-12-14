@@ -1,7 +1,7 @@
 
 # PWA?
 
-> "Progressive Web Applications take advantage of new technologies to bring the best of mobile sites and native applications to users"<br>
+> A new way to deliver amazing<br>user experiences on the web.<br>
 > \- [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps?hl=en)
 
 - Instant Loading:<br>
@@ -38,8 +38,8 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ![](http://www.sitepen.com/blog/wp-content/uploads/2016/06/lie-fi.gif) <!-- .element: class="fragment" -->
 
-<p style="margin-top:35px;font-size:20px">
-[참고]: [What is lie-fi?](https://developers.google.com/web/fundamentals/performance/poor-connectivity/lie-fi)
+<p class="reference">
+    [What is lie-fi?](https://developers.google.com/web/fundamentals/performance/poor-connectivity/lie-fi)
 </p>
 
 ----------
@@ -98,7 +98,7 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
-# 페이스북 사례
+# Facebook's case
 
 페이스북에 접속하는 사용자들 중 로컬 캐시가 없는<br>
 상태의 요청 비율은 <span class="red underline bold" style="font-size:50px">25.5%</span> (2015/04 기준)
@@ -108,8 +108,8 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 | Desktop | 24.8% |
 | Mobile | 26.9% |
 
-<p style="margin-top:35px;font-size:20px">
-[참고]: [Web performance: Cache efficiency exercise](https://code.facebook.com/posts/964122680272229/web-performance-cache-efficiency-exercise/)
+<p class="reference">
+    [Web performance: Cache efficiency exercise](https://code.facebook.com/posts/964122680272229/web-performance-cache-efficiency-exercise/)
 </p>
 
 ----------
@@ -127,8 +127,8 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 | 데스크탑 | 3자리 수 이상 (또는 사용 디스크 전체 크기의 일부)<br> ex. IE9의 경우는 디스크 크기의 1/256 |
 | 모바일 | 2자리 수 정도의 공간을 활용하는 것으로 알려져 있음<br> ex. Android 2.x의 경우는 최대 캐시 크기는 5.7MB에 불과<br> (iOS의 경우는 50MB 이상) |
 
-<p style="margin-top:35px;font-size:20px">
-[참고]: [Early findings: Mobile browser cache persistence and behaviour](http://www.webperformancetoday.com/2012/07/12/early-findings-mobile-browser-cache-persistence-and-behaviour/)
+<p class="reference">
+    [Early findings: Mobile browser cache persistence and behaviour](http://www.webperformancetoday.com/2012/07/12/early-findings-mobile-browser-cache-persistence-and-behaviour/)
 </p>
 
 ----------
@@ -141,10 +141,80 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ----------
 
-# [sw-precache](https://github.com/GoogleChrome/sw-precache)
+## Service Worker Lifecycle
+
+<p style="margin:0">
+    <img src="./img/lifecycle.png" style="width:650px;margin:inherit">
+</p>
+
+<pre style="margin:0 auto"><code class="lang-js hljs" style="height:250px">// souce: https://serviceworke.rs/strategy-cache-and-update/service-worker.js
+var CACHE = 'cache-and-update';
+
+// On install, cache some resources.
+self.addEventListener('install', function(evt) {
+  console.log('The service worker is being installed.');
+
+  // Ask the service worker to keep installing until the returning promise
+  // resolves.
+  evt.waitUntil(precache());
+});
+
+// On fetch, use cache but update the entry with the latest contents
+// from the server.
+self.addEventListener('fetch', function(evt) {
+  console.log('The service worker is serving the asset.');
+  // You can use `respondWith()` to answer immediately, without waiting for the
+  // network response to reach the service worker...
+  evt.respondWith(fromCache(evt.request));
+  // ...and `waitUntil()` to prevent the worker from being killed until the
+  // cache is updated.
+  evt.waitUntil(update(evt.request));
+});
+
+// Open a cache and use `addAll()` with an array of assets to add all of them
+// to the cache. Return a promise resolving when all the assets are added.
+function precache() {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.addAll([
+      './controlled.html',
+      './asset'
+    ]);
+  });
+}
+
+// Open the cache where the assets were stored and search for the requested
+// resource. Notice that in case of no matching, the promise still resolves
+// but it does with `undefined` as value.
+function fromCache(request) {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.match(request).then(function (matching) {
+      return matching || Promise.reject('no-match');
+    });
+  });
+}
+
+// Update consists in opening the cache, performing a network request and
+// storing the new response data.
+function update(request) {
+  return caches.open(CACHE).then(function (cache) {
+    return fetch(request).then(function (response) {
+      return cache.put(request, response);
+    });
+  });
+}
+</code></pre>
+
+<p class="reference">
+[Service workers 기초 및 활용](http://www.slideshare.net/jungkees/service-workers-44437352)<br>
+[The Service Worker Lifecycle](https://bitsofco.de/the-service-worker-lifecycle/)
+</p>
+
+----------
+
+# [sw-precache](https://github.com/GoogleChrome/sw-precache)<br>
 빌드 기반의 리소스 프리캐싱
 
-- 캐싱 리소스 파일의 컨텐츠에 기반해 해쉬를 통한 자동 버저닝
+- 캐싱 리소스 파일의 컨텐츠에 기반해 hash를 통한 자동 버저닝
 - 변경이 감지되면, 이전 버전을 만료시키고,<br>새로운 버전을 fetch 하도록 SW를 생성
 - 변경되지 않은 캐시 요소에 대해선 그대로 유지
 - cache-first strategy
@@ -189,15 +259,17 @@ gulp.task('precache', function(callback) {
 # [sw-toolbox](https://github.com/GoogleChrome/sw-toolbox)
 런타임 요청에 대한 공통의 캐싱 패턴을 제공
 
-다음의 3가지 패턴(전략*)을 제공
+다음의 5가지 패턴(전략*)을 제공
 - cacheFirst
 - networkFirst
 - fastest
+- cacheOnly
+- networkOnly
 
 ```js
 // URL 패턴에 매칭되는 리소스에 대한 캐싱 전략을 지정
-toolbox.router.get("/images",
-    toolbox.[ cacheFirst | networkFirst | fastest ], options);
+toolbox.router.get("/images", toolbox.
+    [ cacheFirst | networkFirst | fastest | cacheOnly | networkOnly ], options);
 ```
 
 <p style="margin-top:35px;font-size:20px">
@@ -293,10 +365,66 @@ require('offline-plugin/runtime').install();
 
 ----------
 
-### more tools
+### more tools?
 ## Service Worker<br>
 ## helper libraries
 https://github.com/GoogleChrome/sw-helpers
+
+----------
+
+<!-- .slide: data-background="#daa60b" -->
+<div class="title-animate">
+    <div><h1>Debug PWA</h1></div>
+    <div><p>크롬 개발자 도구</p></div>
+</div>
+
+----------
+
+# PWA 디버깅
+
+<p style="background-color:#fff;color:#000;width:50%;margin:8px auto">SW는 'https' 에서만 동작</p>
+그러나 디버깅 용도를 위해:<br>
+http://localhost 및 http://127.0.0.1 에서도 동작 (포트 상관없음)
+
+Chrome DevTools > Application Tab:
+- Manifest
+- Service Workers
+- Cache
+
+> chrome://serviceworker-internals/<br>
+> [Debug Progressive Web Apps](//web-central.appspot.com/web/tools/chrome-devtools/debug/progressive-web-apps/?hl=en)<br> 
+> [Service Worker Debugging](//www.chromium.org/blink/serviceworker/service-worker-faq)
+ 
+
+----------
+
+# Manifest
+
+- 전체 outline 확인
+- homescreen 이벤트 에뮬레이션
+
+![](./img/debug-manifest.png)
+
+----------
+
+# Service Workers
+
+- 네트워크 핸들링
+- 에뮬레이션: [Push a notification](https://gauntface.github.io/simple-push-demo/), [Sync event](https://wicg.github.io/BackgroundSync/demo/)
+- update/unregister sw
+- start/stop sw
+
+![](./img/debug-sw.png)
+
+----------
+
+# Cache
+
+캐시된 리소스의 확인<br>
+![](./img/debug-cache.png)
+
+모든 캐시의 삭제는 Application > Clear storage
+![](./img/debug-cache2.png)
 
 ----------
 
@@ -323,8 +451,8 @@ sw-precache 및 sw-toolbox
 - 스토리지를 활용한 캐싱:<br>
   Web Storage, IndexedDB, File API, etc.
 
-<p style="margin-top:35px;font-size:20px">
-[참고]: [Offline Storage for Progressive Web Apps](https://medium.com/@addyosmani/offline-storage-for-progressive-web-apps-70d52695513c)
+<p class="reference">
+    [Offline Storage for Progressive Web Apps](https://medium.com/@addyosmani/offline-storage-for-progressive-web-apps-70d52695513c)
 </p>
 
 ----------
@@ -334,14 +462,14 @@ sw-precache 및 sw-toolbox
 캐시의 상태에 따라 항상 모든 static 파일들이 로컬 영역 존재 보장 없음<br> <!-- .element: class="fragment" -->
 자주 변경이 되지 않는 파일은 localStorage를 이용한 캐싱방법 고려
 
-### 몇가지 고려사항 : <!-- .element: class="underline fragment" -->
+### 몇 가지 고려사항 : <!-- .element: class="underline fragment" -->
 - 자주 변경될 필요 없는 기본 라이브러리들로 대상 한정 <!-- .element: class="fragment" -->
 - 자주 변경되지 않더라도, 업데이트를 위한 '버전관리' 필요 <!-- .element: class="fragment" -->
 - localStorage는 브라우저에 따라 최대 저장용량이 다를 수 있다.<br> <!-- .element: class="fragment" -->
   대체로 5MB 까지이나, 보다 정확한 최대치는 확인필요 
   
   
-<p>[데모]: [네이버 검색 활용 예](https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC)</p> <!-- .element: class="fragment" -->
+<p>[데모]: [네이버 검색 활용 예](//m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=blackpink)</p> <!-- .element: class="fragment" -->
 
 ----------
 
@@ -403,76 +531,24 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota (
 
 PWA gets at most 6% of free space on device
 
-<p style="margin-top:35px;font-size:20px">
-[참고]: [Browser Storage Abuser](http://demo.agektmr.com/storage/),
+<p class="reference">
+[Browser Storage Abuser](http://demo.agektmr.com/storage/),
 [Offline Storage for Progressive Web Apps](https://medium.com/@addyosmani/offline-storage-for-progressive-web-apps-70d52695513c)
 </p>
 
 ----------
 
-<!-- .slide: data-background="#daa60b" -->
-<div class="title-animate">
-    <div><h1>Debug PWA</h1></div>
-    <div><p>크롬 개발자 도구</p></div>
-</div>
+## Google's interests?
 
-----------
-
-# PWA 디버깅
-
-SW는 'https' 에서만 동작<br>
-그러나 디버깅 용도를 위해:<br>
-http://localhost 및 http://127.0.0.1 에서도 동작 (포트 상관없음)
-
-Chrome DevTools > Application Tab:
-- Manifest
-- Service Workers
-- Cache
-
-> chrome://serviceworker-internals/<br>
-> [Debug Progressive Web Apps](https://web-central.appspot.com/web/tools/chrome-devtools/debug/progressive-web-apps/?hl=en)
-> [Service Worker Debugging](https://www.chromium.org/blink/serviceworker/service-worker-faq)
- 
-
-----------
-
-# Manifest
-
-- 전체 outline 확인
-- homescreen 이벤트 에뮬레이션
-
-![](./img/debug-manifest.png)
-
-----------
-
-# Service Workers
-
-- 네트워크 핸들링
-- 에뮬레이션: [Push a notification](https://gauntface.github.io/simple-push-demo/), [Sync event](https://wicg.github.io/BackgroundSync/demo/)
-- update/unregister sw
-- start/stop sw
-
-![](./img/debug-sw.png)
-
-----------
-
-# Cache
-
-캐시된 리소스의 확인<br>
-![](./img/debug-cache.png)
-
-모든 캐시의 삭제는 Application > Clear storage
-![](./img/debug-cache2.png)
-
-----------
-
-<p>
+<p class="fragment">
     <a href="https://developer.chrome.com/devsummit/"><img src="./img/chrome-dev-summit-logo.jpg" style="width:300px"></a><br>
     총 25 세션 중, 9개가 PWA 관련
 </p>
 
-Chrome '새로운 탭' 화면 구성에서 SW 사용중
-![Chrome new tab](./img/chrome-newtab.png)
+<p class="fragment">
+    Chrome '새로운 탭' 화면 구성에서 SW 사용중
+    ![Chrome new tab](./img/chrome-newtab.png)
+</p>
 
 ----------
 

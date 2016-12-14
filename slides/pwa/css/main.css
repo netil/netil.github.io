@@ -9,6 +9,12 @@ textarea { width:90%;position:relative;dispaly:block;font-size:0.55em;background
     line-height:1.1;
 }
 
+.reveal .reference {
+    margin-top:35px;
+    font-size:20px;
+}
+.reveal .reference:before {content:'[참고]'}
+
 .code {
     position:relative;
 }
