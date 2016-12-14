@@ -143,11 +143,16 @@ PWA 기술들 중, 가장 중요한 요소는 바로 <span class="underline bold
 
 ## Service Worker Lifecycle
 
+<blockquote style="margin:0auto;font-size:20px;background-color:#0404ce;color:yellow">
+    1) Init &rarr; install / activate event <span class="size18">(when SW byte's difference)</span> &rarr; cache<br>
+    2) Request &rarr; fetch / message event &rarr; cache
+</blockquote>
+
 <p style="margin:0">
-    <img src="./img/lifecycle.png" style="width:650px;margin:inherit">
+    <img src="./img/lifecycle.png" style="width:500px;margin:inherit">
 </p>
 
-<pre style="margin:0 auto"><code class="lang-js hljs" style="height:250px">// souce: https://serviceworke.rs/strategy-cache-and-update/service-worker.js
+<pre style="margin:0 auto" class="fragment"><code class="lang-js hljs" style="height:240px">// souce: https://serviceworke.rs/strategy-cache-and-update/service-worker.js
 var CACHE = 'cache-and-update';
 
 // On install, cache some resources.
@@ -204,9 +209,9 @@ function update(request) {
 }
 </code></pre>
 
-<p class="reference">
-[Service workers 기초 및 활용](http://www.slideshare.net/jungkees/service-workers-44437352)<br>
-[The Service Worker Lifecycle](https://bitsofco.de/the-service-worker-lifecycle/)
+<p class="reference fragment">
+    [Service workers 기초 및 활용](http://www.slideshare.net/jungkees/service-workers-44437352)<br>
+    [The Service Worker Lifecycle](https://bitsofco.de/the-service-worker-lifecycle/)
 </p>
 
 ----------
