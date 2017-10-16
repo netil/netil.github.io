@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        x="0px" y="0px"
+        viewBox="-5 40 210 120"
+        xml:space="preserve">
+    <g class="arc" transform="translate(100,100)">
+        <path fill="#79cdf8" d="M6.123233995736766e-15,-100A100,100 0 1,1 -63.742398974868955,-77.05132427757894L0,0Z"></path>
+    </g>
+    <g class="arc" transform="translate(100,100)">
+        <path fill="#b3e1fb" d="M-63.742398974868955,-77.05132427757894A100,100 0 0,1 -12.533323356430373,-99.21147013144778L0,0Z"></path>
+    </g>
+    <g class="arc" transform="translate(100,100)">
+        <path fill="#c1e8fb" d="M-12.533323356430373,-99.21147013144778A100,100 0 0,1 7.044813998280223e-14,-100L0,0Z"></path>
+    </g>
+    <g class="labels">
+        <text dy=".35em" transform="translate(102.58252801635275,142.72538459694837)" text-anchor="middle" style="fill:#333; font-size:12px;">
+            <tspan style="font-weight:bold">iOS 10</tspan>
+            <tspan x="0" dy="16">89%</tspan></text>
+        <text dy=".35em" transform="translate(78.52347395768132,43.81635828773458)" text-anchor="middle" style="fill:#333; font-size:12px;">
+            <tspan style="font-weight:bold">iOS 9</tspan>
+            <tspan x="0" dy="16">9%</tspan>
+        </text>
+        <text dy=".35em" transform="translate(95.81396536471246,11.464884771448553)" text-anchor="middle" style="fill:#333; font-size:12px;">
+            <tspan style="font-weight:bold">Earlier</tspan>
+            <tspan x="0" dy="16">2%</tspan>
+        </text>
+    </g>
+</svg>

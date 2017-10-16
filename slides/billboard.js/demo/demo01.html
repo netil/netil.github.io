@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="lib/billboard.min.css" />
+    <link rel="stylesheet" href="lib/demo.css" />
+    <script src="lib/billboard.pkgd.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div id="chart" class="chart"></div>
+    <script>
+	    var chart = bb.generate({
+		    data: {
+			    columns: [
+				    ["data1", 100000, 102000, 103000, 104000, 100000]
+			    ],
+			    colors: {
+			        data1: "#f87070"
+			    }
+		    },
+		    axis: {
+		        x: {
+		            type: "category"
+		        },
+		        y: {
+		            tick: {
+		                format: d3.format(",")
+		            }
+		        }
+		    },
+		    tooltip: {
+		        format: {
+		            value: d3.format(",")
+		        }
+		    },
+		    point: {
+		        r: 7
+		    }
+	    });
+    </script>
+</body>
+</html>
