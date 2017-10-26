@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>egjs-flicking</title>
+    <script src="lib/flicking.pkgd.min.js"></script>
+    <style>
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        body {
+            margin: 0;
+            width: 450px;
+            min-width: 285px;
+            height: 100vh;
+            background-color: #2196F3
+        }
+
+        #container {
+            width:100%;
+            height:100%;
+            margin: 0 auto;
+        }
+
+        #container p {
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        #container img {
+            width: 100%;
+        }
+
+        #container p {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div>
+        <img src="img/brown.png">
+        <p>Brown</p>
+    </div>
+    <div>
+        <img src="img/cony.png">
+        <p>Cony</p>
+    </div>
+    <div>
+        <img src="img/sally.png">
+        <p>Sally</p>
+    </div>
+</div>
+<script>
+    new eg.Flicking("#container", {
+    	circular: true
+    });
+</script>
+</body>
+</html>
