@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="lib/insight.min.css" />
+    <link rel="stylesheet" href="lib/demo.css" />
+    <script src="lib/billboard.pkgd.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" href="demo.css">
+    <style>
+        body, #chart {margin:0}
+        #chart {
+            width:280px;
+        }
+
+        #chart, #legend {
+            float: left;
+        }
+
+        #legend {
+            list-style: none;
+            margin: 70px 0 0 -20px;
+        }
+
+        #legend li {
+            user-select: none;
+            border-radius: 20px;
+            margin: 10px 0;
+            font-family: 'Daehan';
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart" class="chart"></div>
+    <ul id="legend"></ul>
+    <script>
+        bb.generate({
+	        data: {
+		        columns: [
+			        ["Question", 120],
+			        ["Bug", 139],
+			        ["기타", 49]
+		        ],
+                type: "pie"
+	        },
+	        legend: {
+		        contents: {
+			        bindto: "#legend",
+			        //template: "<li style='color:#fff;padding:10px;background-color:{=COLOR}'>{=TITLE}</li>",
+			        template: function(title, color, data) {
+			        	var value = data[0].value;
+				        // if you want omit some legend, return falsy value
+				        return "<li style='color:#fff;padding:10px;background-color:"+ color +"'>"+ title +" "+ value +"건</li>";
+			        }
+		        }
+	        }
+        });
+    </script>
+</body>
+</html>

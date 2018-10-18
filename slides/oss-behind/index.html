@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>오픈소스 개발: Behind the Scenes</title>
+
+		<meta name="description" content="A presentation of billboard.js, a easy chart library">
+		<meta name="author" content="JaeSung Park">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/blood.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = '../reveal.js/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<script src="./js/lib/anime.min.js"></script>
+		<script src="http://netil.github.io/slides/timer.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background-image="./img/bg1.png">
+					<a href="https://opensource.org/" target="_new" title="Open Source Initiative"><img src="./img/osi.png" style="width:150px"></a>
+
+					<h1 id="head-text">오픈소스 개발</h1>
+					<h3 class="ml1">
+					  <span class="text-wrapper">
+						<span class="line line1"></span>
+						<span class="letters">Behind the Scenes</span>
+						<span class="line line2"></span>
+					  </span>
+					</h3>
+
+					<p style="margin-top:50px">
+						<img src="./img/soscon.png" style="width:300px;padding-top:10px;">
+						<small style="margin-left:20px;border-left: solid 3px #fff;padding:8px 20px 15px;">
+							2018.10.17<br>
+							<img src="./img/naver.svg" style="width:100px">	박재성
+						</small>
+					</p>
+                </section>
+
+                <section data-markdown="content.md"
+                         data-separator="^\r?\n----------\r?\n$"
+                         data-vertical="^=0=0=0\r?\n$"
+                         data-separator-notes="^Note:"
+                         data-charset="utf-8"
+						 data-background-image="./img/bg2.png"
+                         data-background-transition="slide">
+                </section>
+
+                <section data-background-image="./img/bg1.png">
+                    <main>
+						<div class="end-text" style="font-family:'TmonMonsori';font-size:1.6em">
+							<span style="color:#ffed00;display:inline-block;margin:20px;font-size:1.2em">고맙습니다.</span><br>
+							Thank You.<br>
+							Gracias.
+						</div>
+                    </main>
+                </section>
+			</div>
+		</div>
+
+		<script src="../reveal.js/lib/js/head.min.js"></script>
+		<script src="../reveal.js/js/reveal.js"></script>
+		<script src="./js/main.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-56978261-1', 'auto');
+		  ga('send', 'pageview');
+    	</script>
+	</body>
+</html>
