@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="lib/billboard.min.css" />
+    <link rel="stylesheet" href="lib/demo.css" />
+    <script src="lib/billboard.pkgd.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div id="chart" class="chart"></div>
+
+    <button>bar</button>
+    <button>line</button>
+    <button>spline</button>
+    <button>pie</button>
+    <button>gauge</button>
+    <button>area-spline</button>
+    <button>step</button>
+    <button>donut</button>
+    <button>scatter</button>
+
+    <script>
+        var chart = bb.generate({
+          bindto: "#chart",
+          data: {
+            columns: [
+                ["data1", 30, 200, 100, 400, 150, 250],
+                ["data2", 100, 80, 130, 240, 350, 90],
+                ["data3", 150, 120, 58, 135, 258, 159]
+            ],
+            type: "bar",
+            colors: {
+                data1: "#2acefd",
+                data2: "#f87070",
+                data3: "#1f77b4"
+            },
+            labels: true
+          },
+          point: {
+            r: 5
+          }
+        });
+
+        document.body.addEventListener("click", function(e) {
+            var target = e.target;
+
+            target.tagName === "BUTTON" &&
+                chart.transform(e.target.textContent);
+        });
+    </script>
+</body>
+</html>

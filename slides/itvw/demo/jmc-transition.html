@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="lib/billboard.min.css" />
+    <link rel="stylesheet" href="lib/demo.css" />
+    <script src="lib/billboard.pkgd.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div id="chart" class="chart pie"></div>
+    <script>
+    var chart = bb.generate({
+        bindto: "#chart",
+        data: {
+            columns: [
+                ["오픈소스 사용 전환", 67],
+                ["직접 개발", 22],
+                ["개발 중단", 11]
+            ],
+            type: "pie",
+            colors: {
+                "오픈소스 사용 전환": "#2acefd",
+                "직접 개발": "#f87070",
+                "개발 중단": "#1f77b4"
+            }
+        },
+        legend: {
+        	show: false
+        },
+        pie: {
+            label: {
+                ratio: 0.9,
+	            format: function(value, ratio, id) {
+		            return id +" ("+ value +"%)";
+	            }
+            }
+        },
+        onafterinit: function() {
+	        d3.select(".bb-target-개발-중단 text")
+                .style("transform", "rotate(69deg) translateX(-152px)");
+
+	        d3.select(".bb-target-직접-개발 text")
+                .style("transform", "translate(-140px, -20px)");
+
+	        d3.select(".bb-target-오픈소스-사용-전환 text")
+		        .style("transform", "translate(12px, 125px)");
+        }
+    });
+    </script>
+</body>
+</html>
