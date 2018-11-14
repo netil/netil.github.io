@@ -1,15 +1,4 @@
 
-# Vanilla is
-## not common
-
-- Vanilla 개발은 일반적이지 않음
-- Framework + toolchains(transpiler, bundling)
-
-실작업 코드는 브라우저에서 직접적인 실행 어려움<br>
-최종적 결과물은 transpile을 통해 JS로 변환
-
-----------
-
 ## 오늘날의 JS 개발은?
 
 <div class="fragment" style="margin-top:30px;width:70%;margin:40px auto">
@@ -20,6 +9,17 @@
     <h3 style="color:cyan;margin-top:30px;font-size:45px">대다수 '기능'들은</h4>
     <h2 style="color:red">npm 패키지를 사용, '조립'</h2>
 </div>
+
+----------
+
+# Vanilla is
+## not common
+
+- Vanilla 개발은 더이상 일반적이지 않음
+- Framework + toolchains(transpiler, bundling)
+
+실작업 코드는 브라우저에서 직접적인 실행 어려움<br>
+최종적 결과물은 transpiler를 통해 JS로 변환
 
 ----------
 
@@ -124,14 +124,50 @@ ES6+ 코드를 이전 브라우저 호환 코드로 컴파일
 ## What's Coming?
 
 ES2017/ES8
-  - [async/await](https://github.com/tc39/ecmascript-asyncawait)
+  - [Async/Await](https://github.com/tc39/ecmascript-asyncawait)
+
+```js
+ async function getAPI() {
+     let data = await some-async-call();  // 비동기 호출
+     console.log(data);
+ }
+```
+
   - [Shared Memory and Atomics](https://github.com/tc39/ecmascript_sharedmem)
 
-ES2018/ES9
+```js
+ var sab = new SharedArrayBuffer(1024); // 버퍼 생성
+ worker.postMessage(sab); // worker를 통해 데이터 공유
+
+ var int32 = new Int32Array(sab);  // shared typedArray 객체 생성
+ Atomics.wait(int32, 0, 0);  // typedArray 값을 테스트, true면 sleep
+
+ console.log(int32[0]); // 쓰기 스레드가 새로운 값을 저장시 깨어나 값을 반환
+```
+
+----------
+
+## ES2018/ES9
   - RegExp improvement
-  - Promise.prototype.finally
-  - [Async Iteration](https://github.com/tc39/proposal-async-iteration)
+  - [Promise.prototype.finally](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally)
+  - [Async Iterators](https://github.com/tc39/proposal-async-iteration)
+
+```js
+ async function main() {
+    for await (const x of ['c', 'd']) {
+        console.log(x);
+    }
+ }
+```
+
   - [Rest/Spread Properties](https://github.com/tc39/proposal-object-rest-spread)
+
+```js
+ // Rest Properties
+ let {a, ...z} = { a: 1, b: 2, c: 3};  // z: {b, c}
+ // Spread Properties
+ let val = {a, ...z};  // val: {a, b, c}
+```
 
 ----------
 
@@ -196,6 +232,20 @@ JavaScript의 부족한 영역(loose typing)을 채워줌
 
 ----------
 
+## Job Trends
+
+FE Developer: [24,220](https://www.indeed.com/jobs?q=Front+End+Developer)
+
+- React: [57,602](https://www.indeed.com/jobs?q=react)
+- Angular: [16,818](https://www.indeed.com/jobs?q=angular)
+- Vue.js: [1,020](https://www.indeed.com/jobs?q=vue.js)
+
+<p class="reference">
+    indeed.com (미국 / 2018.11.14 기준)
+</p>
+
+----------
+
 <h2 style="margin:0"><img src="./img/react.svg" style="width:100px"> React</h2>
 
 - 2017 라이선스 이슈 <span class="size25">([BSD + Patents](https://wptavern.com/react-users-petition-facebook-to-re-license-react-js-after-apache-software-foundation-bans-bsdpatents-license-in-dependencies) &rarr; [Re-licensed to MIT](https://code.fb.com/web/relicensing-react-jest-flow-and-immutable-js/))</span>
@@ -238,7 +288,8 @@ function Example() {
 ```
 
 <p class="reference">
-    https://reactjs.org/docs/hooks-overview.html
+    [React Conf 2018: React Today and Tomorrow and 90% Cleaner React With Hooks](https://www.youtube.com/watch?v=dpw9EHDh2bM)<br>
+    [Introducing Hooks](https://reactjs.org/hooks)
 </p>
 
 ----------
