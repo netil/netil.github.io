@@ -22,7 +22,8 @@ body {
   font-family: 'Iropke Batang', 'Daehan', 'sans-serif';
   font-size: 36px;
   font-weight: normal;
-  color: #eee; }
+  color: #eee;
+ }
 
 ::selection {
   color: #fff;

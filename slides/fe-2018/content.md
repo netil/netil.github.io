@@ -90,8 +90,8 @@ ES6+ 코드를 이전 브라우저 호환 코드로 컴파일
 
 ----------
 
-<!-- .slide: data-background-image="./img/bg3.png" -->
-<h1 style="text-shadow:none;color:#000">2018년 동향</h1>
+<!-- .slide: data-background-color="#65CFC2" -->
+<h1 style="text-shadow:none;">2018년 동향</h1>
 
 ----------
 
@@ -234,14 +234,15 @@ JavaScript의 부족한 영역(loose typing)을 채워줌
 
 ## Job Trends
 
-FE Developer: [24,220](https://www.indeed.com/jobs?q=Front+End+Developer)
+총 FE Developer 포지션 - [24,220](https://www.indeed.com/jobs?q=Front+End+Developer)
 
-- React: [57,602](https://www.indeed.com/jobs?q=react)
-- Angular: [16,818](https://www.indeed.com/jobs?q=angular)
-- Vue.js: [1,020](https://www.indeed.com/jobs?q=vue.js)
+<iframe src="demo/demo01.html" style="marign-top:40px;width:600px;height:320px;min-height:320px" scrolling="no"></iframe>
 
 <p class="reference">
-    indeed.com (미국 / 2018.11.14 기준)
+    indeed.com (미국 / 2018.11.14 기준)<br>
+    [React](https://www.indeed.com/jobs?q=react) / 
+    [Angular](https://www.indeed.com/jobs?q=angular) / 
+    [Vue.js](https://www.indeed.com/jobs?q=vue.js)
 </p>
 
 ----------
@@ -324,41 +325,71 @@ function Example() {
 
 ----------
 
-## <img src="./img/angular.svg" style="width:150px"> Angular
+## <img src="./img/angular.svg" style="width:150px;margin:0"> Angular
 
-- [Ivy Renderer](https://github.com/angular/angular/issues/21706): <span class="size25">새로운 렌더러, 작고 빠른 컴파일 (v6에 포함되지 않음)</span>
-- [Angular Elements](https://www.youtube.com/watch?v=vHI5C-9vH-E): <span class="size25">Angular 컴포넌트 &rarr; Custom Element</span>
-- Angular Labs <span class="size25">(안정성 유지, 신규 연구결과 균형 조절 및 전달)</span>
-  - <span class="size25">Schematics: 코드를 변환, 생성하는 도구</span>
-  - <span class="size25">Component Dev Kit: 다양한 확장 도구</span>
-  - <span class="size25">ABC(Angular + Bazel + Closure): Angular 애플리케이션 빌드도구</span>
-- v7.0은 [2018/10 내로 정식 릴리스 예정](https://angular.io/guide/releases#release-schedule)
+[Ivy Renderer](https://github.com/angular/angular/issues/21706): 
+Next generation rendering pipeline<br>
+<span class="size25">새로운 렌더러, 작고 빠른 컴파일 (v7에 포함되지 않음)</span>
+
+<img src="./img/ivy-renderer.png" style="width:580px">
+
 
 <p class="reference">
-    [Version 6 of Angular Now Available](https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4)<br>
     Ivy Renderer: [ng-conf: Day 1 Keynote - Brad Green, Miško Hevery, Kara Erickson](https://www.youtube.com/watch?v=dIxknqPOWms&t=1360)
 </p>
 
 ----------
 
+## <img src="./img/angluar-labs.png" style="width:120px;margin:0"> Angular Labs
+
+- Angular Labs <span class="size25">(안정성 유지, 신규 연구결과 균형 조절 및 전달)</span>
+  - <span class="size25">Schematics: 코드를 변환, 생성하는 도구</span>
+  - <span class="size25">Component Dev Kit: 다양한 확장 도구</span>
+  - <span class="size25">ABC(Angular + Bazel + Closure): Angular 애플리케이션 빌드도구</span>
+
+- [Angular Elements](https://www.youtube.com/watch?v=vHI5C-9vH-E): <span class="size25">Angular 컴포넌트 &rarr; Custom Element</span>
+
+<p class="reference">
+    [Release Schedule](https://angular.io/guide/releases#release-schedule)
+</p>
+
+----------
+
 ### v7.0 (2018/10/18)
+#### Material Design: CDK (Component Dev Kit)
 
-- Material Design
-  - CDK (Component Dev Kit)
-    - Drag and Drop 다양한 드래그&드롭 기능 지원
-    - Virtual Scrolling
-    <cdk-virtual-scroll-viewport>  태그를 통해 뷰포트에 보여지는 내용만 출력
-    사용자가 스크롤시, load/unload
+<img src="./img/angular-cdk-virtual-scrolling.gif" style="width:400px;float:left">
 
-- 업데이트 가이드 제공
-https://update.angular.io/
-- CLI
-  - Built-In prompt: routing, CSS processor (ex.SASS)
-  - Bundle budget (2MB warn, 5MB error)
+<ul style="width:500px;font-size:1em">
+    <li>
+        <span class="yellow">Virtual Scrolling</span><br>
+        &lt;cdk-virtual-scroll-viewport>  태그를 통해 뷰포트에 보여지는 내용만 출력
+사용자가 스크롤시, load/unload
+    </li>
+    <li>
+        <span class="yellow">Drag and Drop</span><br>
+        다양한 드래그&드롭 기능 지원
+    </li>
+</div>
+
+----------
+
+## Angular CLI
+
+```bash
+# update to v7
+$ ng update @angular/cli @angular/core
+```
+<img src="./img/angular-update-guide.png" style="width:350px">
+
+- Built-In prompt: routing, CSS processor (ex.SASS)
+- Bundle budget (2MB warn, 5MB error)
 
 
 <p class="reference">
-[Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more](https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c)
+[Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more](https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c)<br>
+[Angular Update Guide](https://update.angular.io/)
+
 </p>
 
 ----------
@@ -511,6 +542,25 @@ render(sayHello('World'), document.body);
 
 ----------
 
+### NativeScript: Code Sharing
+
+[nativescript-schematics](https://github.com/nativescript/nativescript-schematics)을 통해<br>
+웹과 모바일 앱을 단일 프로젝트에서 개발할 수 있다.
+
+<img src="./img/code-sharing-project-structure.png" style="width:600px">
+
+```bash
+$ npm i -g @nativescript/schematics
+$ ng new --collection=@nativescript/schematics my-mobile-app
+```
+
+<p class="reference">
+    [Code Sharing](https://docs.nativescript.org/code-sharing/intro)<br>
+    @angular/cli: 6.1+ 이상에서 사용가능
+</p>
+
+----------
+
 # <img src="./img/reactnative-logo.png" style="width:100px"> React Native
 
 - React 인기에 더불어 인기상승
@@ -550,7 +600,7 @@ render(sayHello('World'), document.body);
 
 ## Chrome Audit
 
-
+크롬 개발자 도구 성능 측정 도구에서 PWA 항목 평가 제공
 <img src="./img/chrome-audit-pwa.png" />
 
 ----------
@@ -595,9 +645,9 @@ chrome://flags/#webxr
 
 ----------
 
-<!-- .slide: data-background-image="./img/bg3.png" -->
-<h3 style="text-shadow:none;color:#000">JavaScript는</h2>
-<h1 style="text-shadow:none;color:#000">어디로 가고 있나?</h1>
+<!-- .slide: data-background-color="#D0A45F" -->
+<h3 style="text-shadow:none;">JavaScript는</h2>
+<h1 style="text-shadow:none;">어디로 가고 있나?</h1>
 
 ----------
 
@@ -644,9 +694,9 @@ JS의 역할과 다양한 환경으로의 확장에 따른 환경변화
 
 ----------
 
-<!-- .slide: data-background-image="./img/bg3.png" -->
-<h3 style="text-shadow:none;color:#000">JavaScript로부터</h3>
-<h1 style="text-shadow:none;color:#000">생존하기</h1>
+<!-- .slide: data-background-color="#64A4F5" -->
+<h3 style="text-shadow:none;">JavaScript로부터</h3>
+<h1 style="text-shadow:none;">생존하기</h1>
 
 ----------
 

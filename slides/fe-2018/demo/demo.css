@@ -1,0 +1,34 @@
+body {
+    background-color: transparent;
+    text-align: center;
+}
+
+.tick text, .bb-legend-item text {
+    fill: white;
+}
+
+.bb line, .bb-axis .domain {
+    stroke: #fff;
+}
+
+.bb-chart-arc .bb-gauge-value {
+    stroke: #fff;
+    transform: translateY(-25px);
+}
+
+.bb-shape.bb-line {
+    stroke-width: 3px;
+ }
+
+.chart {
+    margin: 30px;
+}
+
+button {
+    border: solid 2px #fff;
+    border-radius: 30px;
+    color: #fff;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 3px 10px;
+}

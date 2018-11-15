@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="lib/insight.min.css" />
+    <link rel="stylesheet" href="lib/demo.css" />
+    <script src="lib/billboard.pkgd.min.js"></script>
+    <script src="https://d3js.org/d3-format.v1.min.js"></script>
+    <title>Demo</title>
+    <link rel="stylesheet" href="demo.css">
+    <style>
+        body, #chart {margin:0}
+        #chart {
+            width:280px;
+        }
+
+        #chart, #legend {
+            float: left;
+        }
+
+        #legend {
+            list-style: none;
+            margin: 70px 0 0 -20px;
+        }
+
+        #legend li {
+            user-select: none;
+            border-radius: 20px;
+            margin: 10px 0;
+            font-family: 'Daehan';
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart" class="chart"></div>
+    <ul id="legend"></ul>
+    <script>
+        bb.generate({
+	        data: {
+		        columns: [
+			        ["React", 57602],
+			        ["Angular", 16818],
+			        ["Vue.js", 1020]
+		        ],
+                type: "pie"
+	        },
+	        legend: {
+		        contents: {
+			        bindto: "#legend",
+			        template: function(title, color, data) {
+			        	var value = data[0].value;
+                        var format = d3.format(",");
+
+				        return "<li style='color:#fff;padding:10px;background-color:"+ color +"'>"+ title +" "+ format(value) +"</li>";
+			        }
+		        }
+	        }
+        });
+    </script>
+</body>
+</html>
