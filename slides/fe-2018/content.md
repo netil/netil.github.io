@@ -370,7 +370,11 @@ Next generation rendering pipeline<br>
         <span class="yellow">Drag and Drop</span><br>
         다양한 드래그&드롭 기능 지원
     </li>
-</div>
+</ul>
+
+<p class="reference" style="margin-top:50px">
+    [Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more](https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c)
+</p>
 
 ----------
 
@@ -380,16 +384,13 @@ Next generation rendering pipeline<br>
 # update to v7
 $ ng update @angular/cli @angular/core
 ```
-<img src="./img/angular-update-guide.png" style="width:350px">
-
 - Built-In prompt: routing, CSS processor (ex.SASS)
 - Bundle budget (2MB warn, 5MB error)
 
+<img src="./img/angular-update-guide.png" style="width:350px">
 
-<p class="reference">
-[Version 7 of Angular — CLI Prompts, Virtual Scroll, Drag and Drop and more](https://blog.angular.io/version-7-of-angular-cli-prompts-virtual-scroll-drag-and-drop-and-more-c594e22e7b8c)<br>
-[Angular Update Guide](https://update.angular.io/)
-
+<p class="reference" style="margin-top:20px">
+    [Angular Update Guide](https://update.angular.io/)
 </p>
 
 ----------
