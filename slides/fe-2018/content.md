@@ -183,7 +183,7 @@ ES2017/ES8
 ```
 
   - [JSON Superset](https://github.com/tc39/proposal-json-superset) <span class="size25">extend ECMA-262 syntax into a superset of JSON</span>
-    - <span class="size25">ECMAScript는 JSON.parse에서 JSON이 subset 임을 명시하나</span>
+    - <span class="size25">ECMAScript는 JSON.parse에서 JSON이 subset 임을 명시</span>
     - <span class="size25">JSON에는 unescaped U+2028(LINE SEPARATOR)와 U+2029 (PARAGRAPH SEPARATOR) 포함될 수 있지만 ECMAScript String에는 포함되지 않는 문법적 오류 해결을 위한 스펙</span>
 
 
@@ -325,13 +325,24 @@ function Example() {
 
 ----------
 
+### Doubled speed, half memory
+
+<img src="./img/vuejs-3.0-memory.png" style="width:80%">
+
+<p class="reference">
+    [Evan You Previews Vue.js 3.0](https://medium.com/vue-mastery/evan-you-previews-vue-js-3-0-ab063dec3547)<br>
+    [VueConf TO: Vue 3.0 Updates](https://docs.google.com/presentation/d/1yhPGyhQrJcpJI2ZFvBme3pGKaGNiLi709c37svivv0o/preview?slide=id.p)
+</p>
+
+----------
+
 ## <img src="./img/angular.svg" style="width:150px;margin:0"> Angular
 
 [Ivy Renderer](https://github.com/angular/angular/issues/21706): 
 Next generation rendering pipeline<br>
 <span class="size25">새로운 렌더러, 작고 빠른 컴파일 (v7에 포함되지 않음)</span>
 
-<img src="./img/ivy-renderer.png" style="width:580px">
+<img src="./img/ivy-renderer.png" style="width:60%">
 
 
 <p class="reference">
