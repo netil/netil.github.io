@@ -338,7 +338,7 @@ Readable & Understandable: 쉬운 인터페이스
 # 관점의 변화
 
 <div class="fragment" style="margin-top:30px">
-    <h2 style="color:#f100ff;background-color:#403f3f;border-radius:15px">Phase 1: 2007 ~ 2014</h2>
+    <h2 style="color:#f100ff;background-color:#403f3f;border-radius:15px;">Phase 1: 2007 ~ 2014</h2>
     내부 경쟁력과 빠른 대응을 위해
 </div>
 
