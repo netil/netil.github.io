@@ -4,7 +4,7 @@
 <span class="fragment">지금 나만큼 사는 프레임워크는 나 혼자 뿐이야.</span><br>
 
 <h3 class="fragment">나는 어떻게 여기까지 왔느냐?</h3>
-<h3 class="fragment">잘난 <img src=img/AngularJS.svg style="width:250px"> 제끼고.<br>못난 <img src=img/JQuery.svg style="width:250px"> 보내고...</h3>
+<h3 class="fragment">잘난 <img src=img/AngularJS.svg style="width:250px"> 제끼고.<br>못난 <img src=img/jQuery.svg style="width:250px"> 보내고...</h3>
 
 <p class="fragment">
     <img src=img/react.svg style="width:60px"> <span style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:700;">React</span>
