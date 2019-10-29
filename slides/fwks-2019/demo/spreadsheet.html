@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+        <meta charset="utf-8">
+        <title>spreadsheet</title>
+        <link rel="stylesheet" href="./lib/xspreadsheet.css">
+        <script src="./lib/xspreadsheet.js"></script>
+    </head>
+    <body>
+        <div id="xspreadsheet"></div>
+        <script>
+            var s = x.spreadsheet('#xspreadsheet', {
+                showToolbar: false,
+                row: {
+                    len: 15,
+                    height: 25,
+                },
+                col: {
+                    len: 10,
+                    width: 100
+                }
+            })
+            .loadData({
+                rows: {
+                    0: {
+                        cells: {
+                            0: {text: 20},
+                            1: {text: "=A1 + A2"}
+                        },
+                    },
+                    1: {
+                        cells: {
+                            0: {text: 50},
+                            1: {text: "=A1 - A2"}
+                        }
+                    }
+                }
+            });
+         </script>
+    </body>
+</html>

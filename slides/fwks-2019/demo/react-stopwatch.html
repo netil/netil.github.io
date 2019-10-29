@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>React</title>
+    <script crossorigin src="./lib/react.production.min.js"></script>
+    <script crossorigin src="./lib/react-dom.production.min.js"></script>
+    <script src="./lib/babel.min.js"></script>
+    <style>
+        body{
+            background-color: transparent;
+            color: #fbff03;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+// Component State
+class StopWatch extends React.Component {
+    state = {lapse: 0, running: false};
+
+    handleRunClick = () => {
+        this.setState(state => {
+            if (state.running) {
+                clearInterval(this.timer);
+            } else {
+                const startTime = Date.now() - this.state.lapse;
+
+                this.timer = setInterval(() => {
+                    this.setState({
+                        lapse: Date.now() - startTime,
+                    });
+                });
+            }
+
+            return {running: !state.running};
+        });
+    }
+
+    handleClearClick = () => {
+        clearInterval(this.timer);
+        this.setState({ lapse: 0, running: false });
+    }
+
+    render() {
+        const {lapse, running} = this.state;
+        const buttonStyles = {
+            border: '1px solid #ccc',
+            background: '#fff',
+            fontSize: '2em',
+            padding: 15,
+            margin: 5,
+            width: 200,
+        };
+
+        return (
+            <div style={{textAlign: 'center'}}>
+                <label style={{ fontSize: '7em', display: 'block' }}>
+                    {lapse.toLocaleString()}ms
+                </label>
+
+                <button onClick={this.handleRunClick} style={buttonStyles}>
+                    {running ? '중지' : '시작'}
+                </button>
+
+                <button onClick={this.handleClearClick} style={buttonStyles}>
+                    초기화
+                </button>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<div id='test'><StopWatch /></div>, document.getElementById("root"));
+</script>
+</body>
+</html>

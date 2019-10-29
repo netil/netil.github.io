@@ -2555,7 +2555,9 @@
 
 		// Update the classes of all backgrounds to match the
 		// states of their slides (past/present/future)
-		toArray( dom.background.childNodes ).forEach( function( backgroundh, h ) {
+		toArray(dom.background.childNodes)
+			.filter(v => v.id.indexOf("cover") === -1)
+			.forEach( function( backgroundh, h ) {
 
 			backgroundh.classList.remove( 'past' );
 			backgroundh.classList.remove( 'present' );
