@@ -42,7 +42,7 @@
     그리고 Hooks이 핫한거 알지? 이제 컴포넌트는 클래스가<br>
     아닌 함수형으로 작성해야 돼. Hooks은 함수형에서만 사용할 수 있거든<br>
     ...
-</div>
+</p>
 
 <p class="reference">
     [How it feels to learn JavaScript in 2016](https://medium.com/hackernoon/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.758uh588b) ([한글번역](http://www.looah.com/article/view/2054))
@@ -160,7 +160,7 @@ GitHub에는 JavaScript로 작성된 "framework"<br>
     <img src=img/flux-logo-color.svg style="width:150px"> <span style="font-family:Arial">Flux</span> <h4 style="display:inline-block">사례</h4>
 </div>
 
-단방향 데이터 흐름을 갖는 아키텍처
+[2014년 발표](https://youtu.be/nYkdrAPrdcw?t=706)된 단방향 데이터 흐름을 갖는 아키텍처
 
 <img src="img/flux.png" style="width:550px;margin:0">
 
@@ -195,7 +195,7 @@ GitHub에는 JavaScript로 작성된 "framework"<br>
 ----------
 
 ## Frameworks are not tools for organising your code,
-## they are tools for 
+## they are tools for
 <h2 class="fragment" style="color:#f9dc02;text-decoration:underline;">organising your mind.</h2>
 
 <p class="reference">
@@ -255,16 +255,18 @@ Functions like a spreadsheet, where cells (like formulas)<br>
 run automatically whenever their referenced values change.
 </p>
 
-<iframe src="demo/spreadsheet.html" class="fragment" style="width:530px;min-height:230px" scrolling="no"></iframe><br>
+<iframe src="demo/spreadsheet.html" class="fragment" style="width:530px;min-height:200px" scrolling="no"></iframe><br>
 
-<ul style="font-size:20px">
-    <li>LANPAR(LANguage for Programming Arrays at Random) (1969)</li>
-    <li>VisiCalc (1979)</li>
-    <li>Lotus 1-2-3 (1983)</li>
-    <li>Quattro Pro (1988)</li>
-    <li>MS Excel (1985)</li>
-</ul>
+<p style="margin:0">
+    <img src=img/spreadsheet-logos.png style="margin:0;width:450px">
+</p>
 
+<p style="font-size:17px;margin:5px 0 20px 0">
+    [LANPAR](http://www.renepardo.com/articles/spreadsheet.pdf)(LANguage for Programming Arrays at Random) (1969)<br>
+    [VisiCalc](https://en.wikipedia.org/wiki/VisiCalc) (1979) / [Lotus 1-2-3](https://en.wikipedia.org/wiki/Lotus_1-2-3) (1983) /
+    [Quattro Pro](https://en.wikipedia.org/wiki/Quattro_Pro) (1988) /
+    [MS Excel](https://en.wikipedia.org/wiki/Microsoft_Excel) (1985)
+</p>
 
 <p class="reference">
     [How Observable Runs](https://observablehq.com/@observablehq/how-observable-runs)<br>
@@ -571,7 +573,7 @@ JavaScript 뷰 구성을 더 빠르게 하는 기법 -->
 
 ## 필요한 영역만 업데이트
 
-<iframe src="demo/react-stopwatch.html" style="width:530px;min-height:200px" scrolling="no"></iframe>
+<iframe src="demo/react-stopwatch.html" style="width:530px;min-height:230px" scrolling="no"></iframe>
 ```js
  render() {
    return (
@@ -654,10 +656,9 @@ JavaScript는 [single-thread](https://developer.mozilla.org/en-US/docs/Learn/Jav
 one thread = one call stack = one thing at a time
 </p>
 
-```
-  |--------------- 40 ----------------| frame
-  |-- 10 --|-- 10 --|-- 10 --|-- 10 --| frame
-```
+<pre><code style="text-align:center">|--------------- 40 ----------------| frame
+|-- 10 --|-- 10 --|-- 10 --|-- 10 --| frame
+</code></pre>
 
 하나의 작업이 길게 수행되어<br>
 다른 작업의 실행이 차단되지 않도록
@@ -674,15 +675,15 @@ one thread = one call stack = one thing at a time
     React controls 'how' and 'when' to update UI.
 </p>
 <p class="size25">
-setState() 호출시 즉시 실행되는 것은 아니며, 판단하기에<br>
-가장 이상적인 시점에 UI를 업데이트 하라고 전달하는 것
+    setState() 호출시 즉시 실행되는 것은 아니며, 판단하기에<br>
+    가장 이상적인 시점에 UI를 업데이트 하라고 전달하는 것
 </p>
 
 #### Push based <!-- .element: style="margin:0" -->
-App(programmer) decide when to perform.
+App(programmer) decide when to perform. <!-- .element: style="margin:0 auto 30px" -->
 
 #### Pull based <!-- .element: style="margin:0" -->
-Framework(React) make scheduling decision for you.
+Framework(React) make scheduling decision for you. <!-- .element: style="margin:0 auto 20px" -->
 
 <p class="reference">
     [Andrew Clark: What's Next for React — ReactNext 2016](https://youtu.be/aV1271hd9ew?t=437)
