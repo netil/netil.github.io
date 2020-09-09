@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>TimeSlicing</title>
+    <style>
+        body {background-color:transparent;color:cyan}
+        input[type=text] {width:75%}
+        input, button {font-size:25px;margin:5px 0;}
+        p {margin:0;zoom: 1.5; color: burlywood}
+    </style>
+    <script src="lib/lodash.min.js"></script>
+</head>
+<body>
+<p>
+    <input type="radio" name="type" value="sync" checked /> Synchronous
+    <input type="radio" name="type" value="async" /> Asynchronous
+</p>
+
+<input type="text" placeholder="빠르게 입력해 보세요" /> <button onclick="reset()">Reset</button>
+<div id="msg"></div>
+
+<script>
+const inputText = document.querySelector('input[type=text]');
+const msg = document.getElementById("msg");
+
+function reset() {
+    inputText.value = "";
+    msg.innerHTML = "";
+}
+
+const sleep = (ms, job = 1) => {
+    const taskMs = job === 1 ? ms : ms / job;
+    const cb = () => {
+        const start = +new Date();
+
+        while (true) {
+            if (+new Date() - start >= taskMs) break;
+        }
+    };
+
+    for (let i = 0; i < job; i++) {
+        job.length === 1 ? cb() : setTimeout(cb, 0);
+    }
+}
+
+document.querySelector("input[type=text]")
+    .addEventListener("keydown", e => {
+        const type = document.querySelector("input[type=radio]:checked").value;
+
+        sleep(300, type === "sync" ? 1 : 50);
+        msg.innerHTML += ` ${e.target.value}`;
+    });
+</script>
+</body>
+</html>
