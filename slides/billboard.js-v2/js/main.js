@@ -37,28 +37,17 @@ Reveal.initialize({
 
 Reveal.addEventListener('slidechanged', function(e) {
     var indexh = e.indexh;
-    var canvas = document.querySelector("#cover-holder > canvas");
+    var cover = document.getElementById("cover-holder");
     var bgLogo = document.querySelector(".bg-logo");
 
     if (indexh === 0) {
-        if (canvas) {
-            canvas.style.display = "block";
-            canvas.play = true;
-
-            document.getElementById("cover-holder").animate();
-        }
-
+        cover && (cover.style.display = "block");
         bgLogo && (bgLogo.style.display = "none");
     } else {
-        if (canvas) {
-            canvas.style.display = "none";
-            canvas.play = false;
-        }
-
+        cover && (cover.style.display = "none");
         bgLogo && (bgLogo.style.display = "block");
     }
 
-    playAudio(indexh);
     animate("title-animate", e);
     animeTitle(e);
 });
@@ -87,20 +76,7 @@ Reveal.addEventListener('ready', function(e) {
     cover.appendChild(bgLogo);
 
     bg.insertBefore(cover, document.querySelector(".backgrounds > :first-child"));
-
-    playAudio(indexh);
-
-    cover.animate = addCover();
-    cover.animate();
-} );
-
-function playAudio(indexh) {
-    var audio = document.querySelector("audio");
-
-    if (audio) {
-        audio[indexh === 1 ? "play" : "pause"]();
-    }
-}
+});
 
 function animate(type, e) {
     var selector = "."+ type +" h1, ."+ type +" p";

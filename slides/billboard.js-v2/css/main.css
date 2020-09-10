@@ -86,7 +86,7 @@
 }
 
 .reveal section img{border:0;background:none;vertical-align:middle;box-shadow:none}
-textarea { width:90%;position:relative;dispaly:block;font-size:0.55em;background-color:#3F3F3F; color:#fff;font-family: monospace;
+textarea { width:90%;position:relative;display:block;font-size:0.55em;background-color:#3F3F3F; color:#fff;font-family: monospace;
     line-height: 1.2em;
     word-wrap: break-word;
     box-shadow: 0px 0px 6px rgba(0,0,0,0.3); }
@@ -224,8 +224,12 @@ p > img.flow {
     text-align:center;
 }
 
-.reveal .stacked li img {;
+.reveal .stacked li img {
     box-shadow: 9px 10px 30px 0px rgba(27, 27, 27, 0.45);
+}
+
+.reveal img.person {
+    width:200px;border-radius:150px;border:solid 2px #fff;margin:0;
 }
 
 .naver-logo {
@@ -391,8 +395,6 @@ main h1 {
     font-size: 5em;
     letter-spacing: -.01em;
     transform: rotate(-12deg);
-    color: transparent;
-    text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--base), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 var(--spread) var(--base), 0 0 calc(var(--spread) / 1.5) var(--base);
 }
 
 .reveal main h1 span {
@@ -421,20 +423,24 @@ main h1 span:nth-child(4) {
     font-size:13px;
     color:#fff;
     display:inline-block;
-    float:left;
+    float: left;
 }
 
-.reveal .bg-logo {
-    position: absolute;
+.reveal section > h1, .reveal section > h2, .reveal section > h3 {
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(currentColor 1px, transparent 1px),linear-gradient(to right, currentColor 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-color: #fdfdfd;
+    color: #c1c1c1; */
+}
+
+#cover-holder {
+    background-image: repeating-linear-gradient(45deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%);
+    background-size: 50px 50px;
+    height: 100%;
     display: none;
-    top: 10px;
-    left: 10px;
-    width: 150px;
-    height: 20px;
-    z-index: 1;
-    background: url(../img/deview-logo.png) no-repeat;
-    background-size: 150px;
-    opacity: 0.5;
+    color: #866b02;
 }
 
 .ml1 {

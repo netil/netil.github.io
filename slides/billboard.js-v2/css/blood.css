@@ -43,7 +43,7 @@ body {
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-shadow: 2px 2px 2px #222;
+  /* text-shadow: 2px 2px 2px #222; */
   word-wrap: break-word; }
 
 .reveal h1 {
@@ -147,7 +147,7 @@ body {
   max-height: 400px;
   word-wrap: normal;
   background: #3F3F3F;
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 1.3;
   color: #DCDCDC; }
 
