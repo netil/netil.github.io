@@ -14,8 +14,14 @@
 
 ### Examples
 
+<!-- <img src=img/examples.png style="width:700px"> -->
+
 <iframe src='https://naver.github.io/billboard.js/demo/' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width:100%;height:500px;overflow:hidden'>
 </iframe>
+
+<p class="reference">
+  https://naver.github.io/billboard.js/demo/
+</p>
 
 ----------
 
