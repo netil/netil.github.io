@@ -73,6 +73,8 @@ Reveal.addEventListener('ready', function(e) {
 
     cover.dataBackground = "none";
     cover.id = "cover-holder";
+    cover.style.display = e.indexh === 0 ? "block" : "none";
+
     cover.appendChild(bgLogo);
 
     bg.insertBefore(cover, document.querySelector(".backgrounds > :first-child"));
