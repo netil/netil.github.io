@@ -10,6 +10,7 @@
   "license": "MIT>",
   "homepage": "https://netil.github.io",
   "dependencies": {
+    "reveal.js": "^4.1.0",
     "sw-toolbox": "^3.2.1"
   },
   "devDependencies": {
