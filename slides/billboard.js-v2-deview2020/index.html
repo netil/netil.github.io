@@ -2,65 +2,55 @@
 <html lang="ko">
 	<head>
 		<meta charset="utf-8">
-		<title>깃헙 4.4K 스타 billboard.js 메인터너가 들려주는 오픈소스 개발기</title>
+		<title>billboard.js 메인테이너가 들려주는 오픈소스 개발기</title>
 
-		<meta name="description" content="GitHub 4.3K 스타 웹 차트 오픈소스, billboard.js 성장기">
+		<meta name="description" content="billboard.js 메인테이너가 들려주는 오픈소스 개발기">
 		<meta name="author" content="JaeSung Park">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/blood.css" id="theme">
+		<link rel="stylesheet" href="../node_modules/reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../node_modules/reveal.js/dist/theme/night.css">
+		<link rel="stylesheet" href="../node_modules/reveal.js/plugin/highlight/monokai.css">
+		
+		<link rel="stylesheet" href="./css/main.css">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = '../reveal.js/css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
-		</script>
 		<script src="http://netil.github.io/slides/timer.js"></script>
-		<link rel="stylesheet" href="css/main.css">
 	</head>
 
 	<body>
 		<div class="reveal">
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h3>깃헙 4<span onclick="Timer.init(15)">.</span>4K</h3>
-					<h2><img src="img/billboard.js-white.svg" style=width:500px> 메인터너가 들려주는 오픈소스 개발기</h2>
+				<section data-background-image="./img/bg00.png">
+					<h4>GitHub 4<span onclick="Timer.init(45)">.</span>4K</h4>
+					<h2 class="cover"><img src="img/billboard.js-white.svg" style=width:350px> 메인테이너가<br>들려주는 오픈소스 개발기</h2>
 
-					<!-- <h4 class="ml1">
+					<h4 class="ml1">
 						<span class="text-wrapper">
 						  <span class="line line1"></span>
-						  <span class="letters">14일 만에 GitHub 스타 천 개 받은 차트 오픈소스 개발기, 그 후 3년</span>
+						  <span class="letters">톨먼이형!, 오픈소스 개발은 왜 이래?</span>
 						  <span class="line line2"></span>
 						</span>
-					</h4> -->
+					</h4>
 
-					<p style="margin-top:50px">
-						<img src="./img/soscon-logo.png" style="width:200px">
-						<small style="margin:15px 0 0 20px;border-left: solid 3px #fff;padding:40px;">
+					<p style="margin-top:50px;font-family:'GmarketSansBold'">
+						<img src="./img/deview-logo01.png" style="width:200px;margin:0">
+						<small style="margin-left: 10px;border-left: solid 3px #fff;padding:0 20px;font-size:24px">
 							<!-- 2019.10.29<br> -->
-							<img src="./img/naver.svg" style="width:100px">	박재성
+							<img src="./img/naver.svg" style="width:120px">	<span style="vertical-align:middle;padding-top:4px;display:inline-block;">박재성</span>
 						</small>
 					</p>
                 </section>
 
                 <section data-markdown="content.md"
-                         data-separator="^\r?\n----------\r?\n$"
-                         data-vertical="^=0=0=0\r?\n$"
-                         data-separator-notes="^Note:"
-                         data-charset="utf-8"
-                         data-background-transition="slide">
+					data-separator="^\r?\n----------\r?\n$"
+					data-vertical="^=0=0=0\r?\n$"
+					data-separator-notes="^Note:"
+					data-charset="utf-8"
+					data-background-image="./img/bg.png"
+					data-background-transition="slide">
                 </section>
 
                 <section>
@@ -75,8 +65,11 @@
 			</div>
 		</div>
 
-		<script src="../reveal.js/lib/js/head.min.js"></script>
-		<script src="../reveal.js/js/reveal.js"></script>
+		<script src="../node_modules/reveal.js/dist/reveal.js"></script>
+		<script src="../node_modules//reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../node_modules//reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="../node_modules//reveal.js/plugin/zoom/zoom.js"></script>
+		<script src="./js/lib/anime.min.js"></script>
 		<script src="./js/main.js"></script>
 
 		<script>
