@@ -162,3 +162,7 @@ generate massive amounts of realistic fake data
 - 성장과 동기부여를 제공하는 채널
 - OSS로부터 받은 혜택을, 되돌려 준다는 생각
 - 기업의 비즈니스적 필요성이 어느 정도는 존재하기 때문
+
+<p class="reference">
+  <a href="https://www.fordfoundation.org/about/library/reports-and-studies/roads-and-bridges-the-unseen-labor-behind-our-digital-infrastructure/">Roads and Bridges: The Unseen Labor Behind Our Digital Infrastructure</a>
+</p>
