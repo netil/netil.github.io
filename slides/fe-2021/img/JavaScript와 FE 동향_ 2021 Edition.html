@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5501/fe-2021/#/ -->
+<html lang="ko" class="reveal-full-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>JavaScript와 FE 동향: 2021 Edition</title>
+
+		<meta name="description" content="JavaScript와 FE 동향: 2021 Edition">
+		<meta name="author" content="JaeSung Park">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		
+		
+		
+		
+		
+
+		<script async="" src="./JavaScript와 FE 동향_ 2021 Edition_files/analytics.js"></script><script src="./JavaScript와 FE 동향_ 2021 Edition_files/timer.js"></script>
+	<style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style><link rel="stylesheet" href="./JavaScript와 FE 동향_ 2021 Edition_files/reveal.min.css"><link rel="stylesheet" href="./JavaScript와 FE 동향_ 2021 Edition_files/night.min.css"><link rel="stylesheet" href="./JavaScript와 FE 동향_ 2021 Edition_files/monokai.min.css"><link rel="stylesheet" href="./JavaScript와 FE 동향_ 2021 Edition_files/main.css"></head>
+
+	<body class="reveal-viewport" style="transition: -webkit-transform 0.8s ease 0s; --slide-width:960px; --slide-height:700px;">
+		<div class="reveal slide center focused has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade" style="">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" style="width: 960px; height: 700px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(1.215);">
+				<section data-background-image="./img/bg.png" style="top: 83px; display: block;" class="present">
+					<h1 class="cover flicker">
+						<span onclick="Timer.init(45)">Th</span><span>e</span> 
+						<span>st</span><span>at</span><span>e</span> 
+						<span>o</span><span>f</span>
+					</h1>
+					<h1 class="cover"><span style="color:#000;-webkit-text-stroke:4px #f6df1b">JavaScript</span> &amp; FE</h1>
+					<h2 style="-webkit-text-stroke:#f00 1px;margin:15px 0 0 0">2021 Edition</h2>
+
+					<h4 class="ml1">
+						<span class="text-wrapper">
+						  <span class="line line1"></span>
+						  <span class="letters">2021년 FE 동향, 한방에 끝내기</span>
+						  <span class="line line2"></span>
+						</span>
+					</h4>
+
+					<p style="margin-top:50px;font-family:&#39;ELAND_Nice&#39;">
+						<img src="./JavaScript와 FE 동향_ 2021 Edition_files/deview-logo.png" style="width:200px;margin:0">
+						<small style="margin-left: 10px;border-left: solid 3px #fff;padding:0 20px;font-size:27px">
+							<!-- 2019.10.29<br> -->
+							<img src="./JavaScript와 FE 동향_ 2021 Edition_files/naver.svg" style="width:120px">	<span style="vertical-align:middle;padding-top:4px;display:inline-block;">박재성 <span style="font-size:0.65em">/ Platform FE</span></span>
+						</small>
+					</p>
+                </section>
+
+                <section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 146.5px; display: block;" hidden="" aria-hidden="true" class="future"><h2 id="talk-is-about">talk is about</h2>
+<p>빠르게 변하는 JS/FE의 2021년 생태계의<br>
+변화들을 이야기합니다.</p>
+<p class="size18" style="margin-top:150px;opacity:0.5">
+  💡 발표 자료는 <span class="underline cyan">2021/10월 기준</span>으로 작성되었습니다.<br><br>
+  생태계의 방대함과 시간적 제약으로 인해, 세부 내용까지 다루지는 않습니다.<br>
+  보다 자세한 내용은 각 장표에 포함된 참고 링크를 통해 확인 바랍니다.
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 35px; display: block;" hidden="" aria-hidden="true" class="future"><h4 id="네이버-기술-블로그-d2-helloworld-" class="m-0">네이버 기술 블로그: D2 HelloWorld <!-- --></h4>
+<h2 id="javascript-동향-시리즈">JavaScript 동향 시리즈</h2>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>문서</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2016</td>
+<td><a href="http://d2.naver.com/helloworld/3618177">2016년과 이후 JavaScript의 동향</a></td>
+</tr>
+<tr>
+<td>2017</td>
+<td><a href="http://d2.naver.com/helloworld/2809766">JavaScript(ECMAScript)</a><br><a href="http://d2.naver.com/helloworld/7229119">라이브러리와 프레임워크</a><br><a href="http://d2.naver.com/helloworld/0473039">브라우저 밖의 JavaScript</a></td>
+</tr>
+<tr>
+<td>2018</td>
+<td><a href="http://d2.naver.com/helloworld/7495331">JavaScript(ECMAScript)</a><br><a href="https://d2.naver.com/helloworld/3259111">라이브러리와 프레임워크</a><br><a href="https://d2.naver.com/helloworld/5644368">브라우저 밖의 JavaScript</a></td>
+</tr>
+<tr>
+<td>2019</td>
+<td><a href="https://d2.naver.com/helloworld/4007447">JavaScript(ECMAScript)</a><br><a href="https://d2.naver.com/helloworld/8786166">WebAssembly</a><br>라이브러리와 프레임워크 (<a href="https://d2.naver.com/helloworld/0145894">#1</a>, <a href="https://d2.naver.com/helloworld/2108442">#2</a>)<br>브라우저 밖의 JavaScript (<a href="https://d2.naver.com/helloworld/7700312">#1</a>, <a href="https://d2.naver.com/helloworld/7975004">#2</a>)</td>
+</tr>
+<tr>
+<td>2020</td>
+<td><a href="https://d2.naver.com/helloworld/4268738">JavaScript(ECMAScript)</a><br><a href="https://d2.naver.com/helloworld/8257914">WebAssembly</a><br>라이브러리와 프레임워크 (<a href="https://d2.naver.com/helloworld/7226235">#1</a>, <a href="https://d2.naver.com/helloworld/6951656">#2</a>)</td>
+</tr>
+</tbody></table>
+</section><section data-charset="utf-8" data-background-image="./img/bg02.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+
+<h1 class="index"><span>1</span></h1>
+
+<h2 id="javascript--" class="m-0">JavaScript  <!-- --></h2>
+<h3 id="ecmascript">(ECMAScript)</h3>
+<p><img src="./JavaScript와 FE 동향_ 2021 Edition_files/js-logo.svg" style="width:250px"><br></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="ecmascript-2021es12">ECMAScript 2021/ES12</h2>
+<table>
+<thead>
+<tr>
+<th>명세</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/tc39/proposal-string-replaceall">String.prototype.replaceAll</a></td>
+<td>정규식 <code>g</code> 플래그와 특수문자<br>escape 처리 불편함을 제거<br><pre><code class="hljs scheme"><span class="hljs-symbol">'xxx</span><span class="hljs-symbol">'.replace</span>(<span class="hljs-name"><span class="hljs-builtin-name">/</span></span>(<span class="hljs-name">?:</span>)/g, <span class="hljs-symbol">'-</span>')<span class="hljs-comment">; // '-x-x-x-'</span></code></pre><pre><code class="hljs scheme"><span class="hljs-symbol">'xxx</span><span class="hljs-symbol">'.replaceAll</span>('', <span class="hljs-symbol">'-</span>')<span class="hljs-comment">; // '-x-x-x-'</span></code></pre></td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-promise-any">Promise.any</a></td>
+<td>여러 개의 Promise 모음 중, 첫 번째로 이행(fulfilled)되고,<br>처리(resolved)된 Promise를 반환</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-weakrefs">WeakRefs</a></td>
+<td>약한 참조(weak reference)를 갖는 객체를 저장해,<br>참조되지 않지만 GC에 포함되지 않는 상황을 예방</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-logical-assignment">Logical Assignment Operators</a></td>
+<td><code>&amp;&amp;= ||= ??=</code><br>논리 연산자와 할당 표현식의 혼합 사용</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-numeric-separator">Numeric Separators</a></td>
+<td>긴 숫자 값에 대한 가독성을 위해<br><code>_</code>(underscore)를 구분자로 사용<br>ex) <code>1000000000 --&gt; 1_000_000_000</code></td>
+</tr>
+</tbody></table>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="ecmascript-2022es13">ECMAScript 2022/ES13</h2>
+<p>public, private, static 사용에 대한 명세</p>
+<ul>
+<li><a href="https://github.com/tc39/proposal-private-methods">Private methods and getter/setters for JavaScript classes</a></li>
+<li><a href="https://github.com/tc39/proposal-class-fields">Class field declarations for JavaScript</a></li>
+<li><a href="https://github.com/tc39/proposal-static-class-features">Static class features</a></li>
+</ul>
+<div style="font-size:22px;width:70%;margin:0 auto">
+
+<pre><code data-line-numbers="3-4,8,13-14,17-19" class="js hljs javascript has-highlights"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// Field Declaration</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HTMLElement</span> </span>{</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  x = <span class="hljs-number">0</span>; <span class="hljs-comment">// public field</span></div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">static</span> red = <span class="hljs-string">"#ff0000"</span>;  <span class="hljs-comment">// static public field</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">constructor</span>() {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">super</span>();</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-comment">// this.x = 0; &lt;-- 이렇게 생성자에서 하지 않고, 상위 선언 가능</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// Private Fields</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HTMLElement</span> </span>{</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  #x = <span class="hljs-number">0</span>; <span class="hljs-comment">// private field</span></div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">static</span> #red = <span class="hljs-string">"#ff0000"</span>; <span class="hljs-comment">// static private field</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  clicked() {</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">this</span>.#x++;</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">static</span> #some() { <span class="hljs-comment">// static private method</span></div></td></tr></tbody></table></code></pre></div>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><table>
+<thead>
+<tr>
+<th>명세</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/tc39/proposal-regexp-match-indices">RegExp Match Indices</a></td>
+<td>새로운 <code>d</code> 플래그를 통해 매칭 문자열의<br>시작과 종료 index를 반환</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-top-level-await">Top-level await</a></td>
+<td>async 함수 없이,<br>상위 레벨에서 <code>await</code> 사용</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-private-fields-in-in">Ergonomic brand checks for Private Fields</a></td>
+<td>private 필드값의 존재 유무 판단하고<br>없다면, fallback 제공</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-accessible-object-hasownproperty">Accessible Object.prototype.hasOwnProperty</a></td>
+<td><code>Object.prototype.hasOwnProperty</code><br>➡ Object.hasOwn()로 접근성 개선</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tc39/proposal-class-static-block">Class Static Block</a></td>
+<td>클래스 정의시에 추가적인<br>static 초기화 방법을 제공</td>
+</tr>
+</tbody></table>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="whats-coming">What’s coming?</h2>
+<ul>
+<li><p><a href="https://github.com/tc39/proposal-import-assertions">Import Assertions</a> (Stage 3)<br>
+서버가 잘못된 MIME 타입을 잘못 처리해<br>
+발생될 수 있는 보안이슈를 제거하기 위함</p>
+</li>
+<li><p><a href="https://github.com/tc39/proposal-json-modules">JSON Modules</a> (Stage 3)<br>
+JSON을 보편적 방식의 모듈로 import 한다.<br>
+Import Assertions 명세의 일부였으나, <a href="https://github.com/tc39/notes/blob/master/meetings/2020-07/july-21.md#import-conditions-for-stage-3">20/7월 명세를 분리</a></p>
+<div style="font-size:1.5em;width:600px">
+
+<pre><code data-line-numbers="" class="js hljs javascript"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> json <span class="hljs-keyword">from</span> <span class="hljs-string">"./foo.json"</span> assert { <span class="hljs-attr">type</span>: <span class="hljs-string">"json"</span> };</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span>(<span class="hljs-string">"foo.json"</span>, { <span class="hljs-attr">assert</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">"json"</span> } });</div></td></tr></tbody></table></code></pre></div>
+</li>
+</ul>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><ul>
+<li><a href="https://github.com/tc39/proposal-error-cause">Error Cause</a> (Stage 3)<br>
+오류 객체 초기화시 추가 옵션 객체 필드 <code>cause</code> 추가</li>
+</ul>
+<div style="font-size:1.2em;width:65%;margin:-10px auto">
+
+<pre><code data-line-numbers="4,12" class="js hljs javascript has-highlights"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doJob</span>(<span class="hljs-params"></span>) </span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">const</span> rawResource = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">'//domain/resource-a'</span>)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Download raw resource failed'</span>, { <span class="hljs-attr">cause</span>: err });</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    });</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">try</span> {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">await</span> doJob();</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">} <span class="hljs-keyword">catch</span> (e) {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-built_in">console</span>.log(e);</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Caused by'</span>, e.cause);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// Error: Upload job result failed</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// Caused by TypeError: Failed to fetch</span></div></td></tr></tbody></table></code></pre></div>
+
+<ul>
+<li><p><a href="https://github.com/tc39/proposal-temporal">Temporal</a> (Stage 3)<br>
+모던한 날짜/시간 API를 제공해 기존 Date 객체를 개선</p>
+<p style="text-align:center" class="m-0">
+  <img src="./JavaScript와 FE 동향_ 2021 Edition_files/temporal-object-model.svg" style="width:500px" class="m-0">
+</p>
+
+</li>
+</ul>
+<p><a href="https://github.com/tc39/proposals#stage-3" class="reference">ECMAScript proposals: Stage 3</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg03.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- 
+is possible most run JavaScript?
+
+
+https://youtu.be/krB0enBeSiE?t=5450
+
+-->
+
+<!-- -->
+<h1 class="index"><span>2</span></h1>
+
+<p><img src="./JavaScript와 FE 동향_ 2021 Edition_files/webassembly.svg" style="width:500px"><br></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="웹에서의-wasm">웹에서의 wasm</h2>
+<p>많은 이들은 현재 웹 개발을 위해 사용하고,<br>
+미래에도 웹에 커다란 영향을 줄것이라 생각하고 있다.</p>
+<!-- <div class="grid" style="grid-template-columns:50% 50%">
+  <img src="./img/wasm-usage.png">
+  <img src="./img/future-impact.png" style="width:360px">
+</div> -->
+
+<p><img src="./JavaScript와 FE 동향_ 2021 Edition_files/wasm-usage.png" style="width:400px;margin:0 0 -15px 0"><br>
+  <img src="./JavaScript와 FE 동향_ 2021 Edition_files/future-impact.png" style="width:400px"></p>
+<p><a href="https://blog.scottlogic.com/2021/06/21/state-of-wasm.html" class="reference">The State of WebAssembly 2021</a>  <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="wasm-개발에-사용하는-언어">wasm 개발에 사용하는 언어?</h2>
+<p><a href="https://www.rust-lang.org/">Rust</a>(26%) &gt; <a href="https://isocpp.org/">C++</a> &gt; <a href="https://www.assemblyscript.org/">AssemblyScript</a> &gt; <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Blazor</a> 순</p>
+<p><img src="./JavaScript와 FE 동향_ 2021 Edition_files/language-for-wasm.png" style="width:600px"><br></p>
+<p><a href="https://blog.scottlogic.com/2021/06/21/state-of-wasm.html#language" class="reference">Languages for wasm</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="universal-runtimevm">Universal Runtime(VM)?</h2>
+<blockquote class="fragment fade-right" data-fragment-index="0">
+<!-- -->
+<p>WASM + WASI가 2008년에 존재했었더라면, Docker를 만들<br>
+필요성이 없었을 것이다…서버에서 wasm은 컴퓨팅의 미래다.<br>
+🔖 Solomon Hykes (Docker 공동 창업자)<br>
+<span class="size18"><a href="https://twitter.com/solomonstre/status/1111004913222324225">https://twitter.com/solomonstre/status/1111004913222324225</a></span></p>
+</blockquote>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/wasm-tweet01.png" style="width:350px">
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/wasm-tweet02.png" style="width:355px">
+
+<blockquote class="fragment fade-left" data-fragment-index="1">
+<!-- -->
+<p>범용 VM 아이디어의 실현은 <a href="https://webassembly.org/">https://webassembly.org</a> 이다.<br>
+🔖 Brendan Eich<br>
+<span class="size18"><a href="https://twitter.com/BrendanEich/status/1001307081725562882">https://twitter.com/BrendanEich/status/1001307081725562882</a></span></p>
+</blockquote>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/wasmedge-runtime.png" style="width:500px" class="m-0"></h2>
+<p>클라우드 네이티브, <a href="https://ko.wikipedia.org/wiki/%EC%97%90%EC%A7%80_%EC%BB%B4%ED%93%A8%ED%8C%85">edge</a>, 분산화 환경<br>
+애플리케이션을 위한 wasm 런타임이며,<br>
+가장 <a href="https://github.com/WasmEdge/WasmEdge#performance">빠른 성능</a>을 보유하고 있다.</p>
+<p><a href="https://www.secondstate.io/">Second State</a>에서 <a href="https://github.com/WasmEdge/WasmEdge/tree/0.1.0">SSVM</a>(Second State Wasm VM) 이름으로<br>
+19/6월 <a href="https://github.com/WasmEdge/WasmEdge/commit/33b28d4f236318d63f50f0ede1d26202d9a8e895">개발을 시작</a>했고,<br>
+<a href="https://github.com/WasmEdge/WasmEdge/releases/tag/0.8.0">0.8 릴리스</a>에 현재의 프로젝트명으로 변경했다.</p>
+<p><a href="https://www.cncf.io/sandbox-projects/">CNCF 재단의 샌드박스 프로젝트</a>로 <a href="https://www.secondstate.io/articles/wasmedge-joins-cncf/">21/6월 승인</a>되었다.</p>
+<p>C/C++, Rust, Swift, AssemblyScript, Kotlin 코드로 작성된<br>
+wasm 바이트코드 프로그램 실행과 임베드된 <a href="https://github.com/second-state/wasmedge-quickjs">QuickJS</a> 엔진을 통해<br>
+<a href="https://github.com/WasmEdge/WasmEdge/blob/master/docs/run_javascript.md">wasm 내에서 JavaScript 코드도 실행</a>할 수 있다.</p>
+<p><a href="https://github.com/WasmEdge/WasmEdge" class="reference">https://github.com/WasmEdge/WasmEdge</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><blockquote>
+<p class="green">wasmtime + Lucet = wasmtime  <!-- --></p>
+</blockquote>
+<p><a href="https://github.com/bytecodealliance/lucet">Lucet</a> (<a href="https://www.fastly.com/blog/announcing-lucet-fastly-native-webassembly-compiler-runtime">Fastly</a>)과 <a href="https://wasmtime.dev/">Wasmtime</a>(Mozilla)은 각각 개발사들이<br>
+Bytecode Alliance에 참여한 후, 프로젝트가<br>
+모두 <a href="https://bytecodealliance.org/"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/bytecode-alliance.svg" style="width:200px"></a> 저장소로 이동했었다.</p>
+<p>2020년 중반, Lucet 팀은 Wasmtime 프로젝트에 노력을 집중하기로 결정하고,<br>
+Lucet는 메인터넌스 모드로 전환되었다.</p>
+<p>Bytecode Alliance 산하의 또 다른 프로젝트인<br>
+<a href="https://github.com/bytecodealliance/wasm-micro-runtime">WAMR(WebAssembly Micro Runtime)</a>도 개발되고 있으며,<br>
+wasm 인터프리터, AoT, JIT 컴필레이션을 지원한다.</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="quickjs"><a href="https://bellard.org/quickjs/">QuickJS</a></h2>
+<p>QuickJS는 C로 작성된 임베딩 JavaScript 엔진(JIT 지원없는 인터프리터) 이다.</p>
+<p>WasmEdge은 별도의 포팅 버전 <a href="https://github.com/second-state/wasmedge-quickjs">wasmedge-quickjs</a>이 제공되며,<br>
+또다른 런타임인 <a href="https://wasmer.io/">Wasmer</a>에서도 <a href="https://wapm.io/package/quickjs">qjs.wasm</a> 모듈을 통해 사용할 수 있다.</p>
+<div style="width:60%;margin:0 auto;font-size:2em">
+
+<pre><code data-line-numbers="" class="sh hljs bash"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">$ wasmer qjs.wasm</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">QuickJS - Type <span class="hljs-string">"\h"</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">qjs &gt; const i = 1 + 2;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">qjs &gt; console.log(<span class="hljs-string">"hello "</span> + i);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">hello 3</div></td></tr></tbody></table></code></pre></div>
+
+<p>wasm 모듈로 제공되므로,<br>
+사실상 모든 wasm 런타임에서 사용할 수 있다.</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h3 id="webassembly-roadmap">WebAssembly Roadmap</h3>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/wasm-roadmap.png" style="width:600px">
+
+<!--
+명세 | 설명
+--- | ---
+[Import/Export of Mutable Globals](https://github.com/WebAssembly/mutable-global) |
+[Non-trapping float-to-int conversions](https://github.com/WebAssembly/nontrapping-float-to-int-conversions) |
+[Sign-extension operators](https://github.com/WebAssembly/sign-extension-ops) |
+[Multi-value](https://github.com/WebAssembly/multi-value) |
+[JavaScript BigInt to WebAssembly i64 integration](https://github.com/WebAssembly/JS-BigInt-integration) |
+[Reference Types](https://github.com/WebAssembly/reference-types) |
+[Bulk memory operations](https://github.com/WebAssembly/bulk-memory-operations) |
+-->
+
+
+<p class="reference">
+  <a href="https://webassembly.org/roadmap/">Roadmap</a><br>
+  <a href="https://github.com/WebAssembly/proposals">WebAssembly proposals</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="webassembly-w3c-프로세스">WebAssembly W3C 프로세스</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>단계</th>
+<th>설명 &amp; 필수요건</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>Pre-Proposal<br>[Individual Contributor]</td>
+<td>초기 제안단계로,<br><a href="https://github.com/WebAssembly/design/issues">design</a> repo를 통해 제안</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Feature Proposal<br>[Community Group]</td>
+<td>초기 제안 진행여부 투표 통과</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Proposed Spec Text Available<br>[Community + Working Group]</td>
+<td>영문 텍스트 제안서 제공</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Implementation Phase<br>[Community + Working Group]</td>
+<td>구현과 테스트 세트</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Standardize the Feature [Working Group]</td>
+<td>2개 이상의 Web VM, 1개 이상의 툴체인에서의 구현과 커뮤니티 그룹의 승인</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The Feature is Standardized [Working Group]</td>
+<td>완료. 기능적 완료에 대한 워킹 그룹<br>구성원들간의 공감대 형성</td>
+</tr>
+</tbody></table>
+<p><a href="https://github.com/WebAssembly/meetings/blob/main/process/phases.md" class="reference">WebAssembly W3C Process</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg01.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+<h1 class="index"><span>3</span></h1>
+
+<h2 id="frameworks">Frameworks</h2>
+<p>Another day, another new JavaScript Framework</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-react"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/react.svg" class="logo m-0"> React</h2>
+<h3 id="server-components-" class="m-0">Server Components <!-- --></h3>
+<p class="m-0">새로운 유형의 컴포넌트 제안 <!-- --></p>
+<div class="size25 grid" style="margin-top:20px">
+
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/react-server-components.png" style="width:300px;margin-top:-20px" class="m-0">
+
+<ul>
+<li>클라이언트와 서버 통신은 결과적으로 느리다.</li>
+<li>컴포넌트를 서버로 이동, 데이터 처리는<br>서버에서 이뤄지도록 한다.</li>
+<li>서버 컴포넌트는 번들(webpack으로 번들)에<br>포함하지 않고 필요한 코드만 로딩되게 한다.</li>
+<li>개발 진행을 통해 <code>18 ~ 29%</code> 번들 크기 감소</li>
+<li>SSR을 대체하는 것이 아님</li></ul></div>
+
+
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><table>
+<thead>
+<tr>
+<th>컴포넌트</th>
+<th>확장자</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Server</td>
+<td><code>.server.js</code></td>
+<td>BE 리소스(DB, 파일시스템 등)에 직접 접근</td>
+</tr>
+<tr>
+<td>Client</td>
+<td><code>.client.js</code></td>
+<td>현재의 일반적 클라이언트 컴포넌트를 의미<br>BE 리소스 접근되지 않는다.</td>
+</tr>
+<tr>
+<td>Shared</td>
+<td><code>.js</code></td>
+<td>데이터 변환 처리 로직만을 포함, BE 리소스의<br>상태/영향을 사용하지 않아 어디서든 사용가능하다.</td>
+</tr>
+</tbody></table>
+<p class="reference">
+  <a href="https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html">Introducing Zero-Bundle-Size React Server Components</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="v18-plan">v18 Plan</h2>
+<p>21/6월 차기 버전에 대한 내용을 공개</p>
+<ul>
+<li><a href="https://github.com/reactwg/react-18/discussions/5">New Root API</a></li>
+<li><a href="https://github.com/reactwg/react-18/discussions/22">SSR support for Suspense</a></li>
+</ul>
+<h3 id="concurrent-features-" style="margin:40px auto 5px auto">Concurrent features <!-- --></h3>
+<ul>
+<li><a href="https://github.com/reactwg/react-18/discussions/41">startTransition</a><br>
+  특정 상태 전환 업데이트에 대해 “transition”으로 처리해, 응답성을 유지</li>
+<li><a href="https://reactjs.org/docs/concurrent-mode-reference.html#usedeferredvalue">useDeferredValue</a><br>
+  화면에서 덜 중요한 영역의 업데이트를 지연해, 중요한 영역이 우선되게</li>
+<li><a href="https://reactjs.org/docs/concurrent-mode-reference.html#suspenselist"><code>&lt;SuspenseList&gt;</code></a> (<a href="https://codesandbox.io/s/black-wind-byilt">데모</a>)<br>
+  하위 트리에 있는 <code>&lt;Suspense&gt;</code>의 공개와 로딩 인디케이터 노출 순서를 조율</li>
+<li><a href="https://github.com/reactwg/react-18/discussions/37">Streaming SSR with selective hydrations</a><br>
+  앱 로드 및 인터랙티브 속도 향상</li>
+</ul>
+<p><a href="https://ko.reactjs.org/blog/2021/06/08/the-plan-for-react-18.html" class="reference" style="margin-top:20px">The Plan for React 18</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><ul>
+<li><a href="https://github.com/reactwg/react-18/discussions/21">Automatic Batching</a></li>
+<li><a href="https://github.com/facebook/react/tree/main/packages/react-devtools">react-devtools</a></li>
+<li><a href="https://github.com/reactwg/react-18/discussions">React Working Group</a><br>
+GitHub의 discussion을 사용한 워킹그룹으로<br>
+생태계의 v18 점진적 채택을 위한 준비<br>
+<a href="https://www.youtube.com/watch?v=F4YjkMqTgao" class="reference">React Labs: React 18 Working Group Q&amp;A [Audio]</a> <!-- --></li>
+</ul>
+<p>21/5월, <a href="https://github.com/reactwg/react-18/discussions/9">첫 번째 alpha</a> 공개했고, <code>@alpha</code> tag를 통해 다운로드 가능</p>
+<blockquote>
+<p>npm install react@alpha react-dom@alpha</p>
+</blockquote>
+<h3 id="v18-릴리스-일정">v18 릴리스 일정</h3>
+<ul>
+<li>공개 베타: 최소 수개월 뒤</li>
+<li>RC: 공개베타 이후 수주 뒤</li>
+<li>GA: RC 이후 수주 뒤 공개</li>
+</ul>
+<p><a href="https://github.com/reactwg/react-18/discussions/9" class="reference">Installing React 18 Alpha</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-vuejs"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/vue.svg" class="logo m-0"> Vue.js</h2>
+<h3 id="ie11-지원중단">IE11 지원중단</h3>
+<p>Vue.js 3에 대한 IE11 빌드 제공에 대한 계획을 밝혔었지만,<br>
+최종적으론 지원 중단을 발표</p>
+<p>그 이유로는</p>
+<div class="grid" style="grid">
+
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/ie11-drop.png" style="width:200px" class="m-0">
+
+<ul>
+<li>MS 스스로도 IE 사용하지 않도록 권고 및<br>
+자사 서비스들의 지원중단 선언</li>
+<li>IE11 지원은 많은 비용 필요</li>
+<li>꼭 필요한 경우라면, Vue 2를 사용할 것을 권고<br>
+Vue 3의 중요한 기능들이 Vue 2.7에 구현될 예정</li>
+</ul>
+</div>
+
+<p class="reference">
+  <a href="https://github.com/vuejs/rfcs/blob/ie11/active-rfcs/0038-vue3-ie11-support.md">vue3-ie11-support</a><br>
+  <a href="https://github.com/vuejs/rfcs/discussions/296">Proposal for dropping ie11 support in Vue 3</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="dx-개선-" class="m-0">DX 개선 <!-- --></h2>
+<h4 id="developer-experience-" class="m-0">Developer eXperience <!-- --></h4>
+<div style="font-size:21px">
+
+<ul>
+<li><p>Authoring experience</p>
+<ul>
+<li><a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md"><code>&lt;script setup&gt;</code></a><br>
+  SFC의 새로운 스크립트 타입으로, 최상위 바인딩을 템플릿에 노출</li>
+<li><a href="https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md"><code>&lt;style vars="{some}"&gt;</code> 변수 주입</a><br>
+SFC 스타일에 컴포넌트 상태 CSS 변수 주입</li>
+<li><a href="https://github.com/vuejs/rfcs/discussions/369">Ref sugar</a><br>
+  반응형 변수 <code>$()</code> 사용을 위한  컴파일러 매크로 집합</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/vuejs/devtools">Vue Devtools</a> 6.0 beta</p>
+<ul>
+<li>Vue 2, 3 듀얼버전 지원</li>
+<li>Vuex 통합 예정</li>
+<li>타임라인 뷰, 성능 프로파일링</li>
+</ul>
+</li>
+<li><p>Better IDE/TS 지원</p>
+<ul>
+<li><a href="https://github.com/vuejs/vetur">Vetur</a> Vue tooling for VS Code</li>
+<li><a href="https://github.com/vuedx/languagetools">VueDX</a> A set of tools for better DX for Vue</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="생태계-volar">생태계: <a href="https://github.com/johnsoncodehk/volar">Volar</a></h2>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/volar.png" style="width:500px">
+
+<ul>
+<li>Vue의 언어적 지원을 위한 IDE 플러그인</li>
+<li>VSCode 익스텐션과 CLI 타입검사 도구를 제공</li>
+<li><a href="https://v3.vuejs.org/api/sfc-spec.html">SFC(Single File Component)</a>를 위한 TSX 같은 IDE 경험을 제공</li>
+</ul>
+<h3 style="margin:30px 0 0 0"><a href="https://youtu.be/G-UBEjYyqjo?t=810">Plan</a></h3>
+
+<ul>
+<li>새로운 VSCode 공식 익스텐션은 Volar를 기반 예정</li>
+<li><a href="https://cli.vuejs.org/">@vue/cli</a> 타임검사 도구는 vue-tsc 기반</li>
+</ul>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="v32-" class="m-0">v3.2 <!-- --></h2>
+<div class="size18">
+
+<ul>
+<li><p>새로운 SFC 기능들: <a href="https://v3.vuejs.org/api/sfc-spec.html#script-setup"><code>&lt;script setup&gt;</code></a>,<br>
+<a href="https://v3.vuejs.org/api/sfc-style.html#state-driven-dynamic-css"><code>&lt;style&gt; v-bind</code></a>: 컴포넌트 상태값 바인딩</p>
+</li>
+<li><p>Reactivity 시스템과 템플릿 컴파일러 성능 개선</p>
+</li>
+<li><p>SSR 개선: <a href="https://github.com/vuejs/vue-next/tree/master/packages/server-renderer#streaming-api"><code>@vue/server-renderer</code></a> 패키지<br>
+  Node.js 빌트인과 디커플링된 ESM 빌드 제공,<br>
+  비 Node.js 런타임에서 사용되도록 번들링 가능<br>
+  <a href="https://ssr.vuejs.org/" class="reference" style="display:inline-block;margin-top:5px;font-size:15px">Vue.js Server-Side Rendering Guide</a></p>
+</li>
+<li><p>웹컴포넌트 요소인 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom Elements</a> 생성을 도와주는<br>
+  새로운 <a href="https://v3.vuejs.org/guide/web-components.html#definecustomelement">defineCustomElement</a> 메서드</p>
+<div style="font-size:1.1em;width:110%;margin:-10px 0">
+
+<pre><code data-line-numbers="" class="js hljs javascript"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> { defineCustomElement } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> MyVueElement = defineCustomElement({</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// normal Vue component options here</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">})</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// Register the custom element.</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// After registration, all `&lt;my-vue-element&gt;` tags</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// on the page will be upgraded.</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">customElements.define(<span class="hljs-string">'my-vue-element'</span>, MyVueElement)</div></td></tr></tbody></table></code></pre></div>
+
+</li>
+</ul>
+<p class="quote fragment fade-up" style="margin:0 auto" data-fragment-index="0">
+  2021/2Q 에 npm 배포 태그(latest)가 3으로 전환될 것이라고 밝혔지만,<br>
+  현시점(21/10)까지도 v3은 `next` 태그에서 배포 중
+</p>
+
+</div>
+
+<p class="reference">
+    <a href="https://blog.vuejs.org/posts/vue-3.2.html">Vue 3.2 Released!</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="vuecompat"><a href="https://github.com/vuejs/vue-next/tree/master/packages/vue-compat"><code>@vue/compat</code></a></h2>
+<p>Vue 3 기반의 특별한 빌드로, Vue 2 앱이 3에서 Vue 2 모드로 실행될 수 있게 한다.<br>
+Vue 2 애플리케이션을 3로 업그레이드하거나<br>
+라이브러리들이 3를 지원하는데 사용될 수 있다.</p>
+<div style="font-size:1.5em;width:50%;margin:0 auto">
+
+<pre><code data-line-numbers="" class="diff hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">// package.json</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"dependencies": {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-deletion">-  "vue": "^2.6.12",</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-addition">+  "vue": "^3.1.0",</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-addition">+  "@vue/compat": "^3.1.0"</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">   ...</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">},</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"devDependencies": {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-deletion">-  "vue-template-compiler": "^2.6.12"</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-addition">+  "@vue/compiler-sfc": "^3.1.0"</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr></tbody></table></code></pre></div>
+
+<p>기존 Vue 2 앱에, Vue 2를 제거하고 Vue 3와 compat를 설치하고,<br>
+앱의 실행시 오류와 경고 메세지에 따른 항목들을<br>
+수정한 후, compat 패키지를 제거하는 것으로 마이그레이션을 수행</p>
+<p><a href="https://v3.vuejs.org/guide/migration/migration-build.html" class="reference">Migration Build</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 class="m-0"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/angular.svg" class="logo m-0"> Angular</h2>
+
+<h3 id="v12">v12</h3>
+<ul>
+<li><code>enableIvy:false</code> 설정은 더이상 View Engine을<br>
+사용한 애플리케이션 개발은 지원되지 않는다.<br>
+v12로 작성된 애플리케이션은 모두 Ivy를 사용하게 된다.</li>
+<li>Tooling은 Webpack 5를 사용하며, Webpack 4 지원과 사용은 제거</li>
+<li><a href="https://github.com/angular/angular-cli/pull/20514">새로운 빌드 옵션 <code>inlineStyleLanguage</code></a>: 스타일의 인라인 컴포넌트 스타일 정의<ul>
+<li>CSS(기본값), Sass, SCSS, LESS 지원</li>
+</ul>
+</li>
+<li><a href="https://github.com/angular/angular-cli/pull/20096">Critical CSS 인라이닝은 기본 설정</a>되며,<br>
+해제하려면 <code>inlineCritical:false</code>를 설정해야 한다.</li>
+<li><code>ng build</code>는 <a href="https://github.com/angular/angular-cli/pull/20128">기본값으로 production 빌드를 생성</a></li>
+<li>템플릿에서 Nullish Coaslescing(<code>??</code>) 지원</li>
+</ul>
+<div style="width:70%;margin: 0 auto">
+
+<pre><code data-line-numbers="" class="js hljs javascript"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// 기존 템플릿 조건식</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">{{age !== <span class="hljs-literal">null</span> &amp;&amp; age !== <span class="hljs-literal">undefined</span> ? age : calculateAge() }}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// Nullish Coalescing을 통해 단순화된 조건식</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">{{ age ?? calculateAge() }}</div></td></tr></tbody></table></code></pre></div>
+
+<p><a href="https://blog.angular.io/angular-v12-is-now-available-32ed51fbfd49" class="reference">Angular v12 is now available</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="v13--roadmap">v13 &amp; Roadmap</h2>
+<ul>
+<li><a href="https://github.com/angular/angular/issues/41840">IE11 지원 중단</a></li>
+<li><a href="https://angular.io/guide/roadmap#remove-legacy-view-engine">View Engine</a>은 제거 예정</li>
+<li><a href="https://github.com/angular/angular/issues/38366">Modern Angular Package Format</a><ul>
+<li>UMD 번들 제거, ES2020 output</li>
+</ul>
+</li>
+<li>빌드 경험 개선 <code>ngbuild</code><br><ul>
+<li><a href="https://github.com/angular/angular-cli/blob/master/CHANGELOG.md#v1220-next1-2021-07-01">CLI: JS optimizer로 <code>esbuild</code> + <code>terser</code> 도입</a>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/v13-ng-build.png" style="width:600px"><br>
+전체 빌드 파이프라인 개선과<br>
+<code>build optimizer ➡ Babel Transform</code> 전환을 통해 빌드 속도 <code>20%+</code> 향상 </li>
+</ul>
+</li>
+</ul>
+<p class="reference" style="margin-top:50px">
+  <a href="https://youtu.be/b8mcnjK_kq4?t=1182">State of Angular | October 2021</a><br>
+  <a href="https://angular.io/guide/roadmap">Angular Roadmap</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/protractor.png" style="width:450px"></h2>
+<p>e2e 테스트 프레임워크 <a href="https://www.protractortest.org/">Protractor</a> 미래 논의<br></p>
+<div class="fragment fade-right" data-fragment-index="0">
+
+<blockquote>
+<p class="cyan">2022년말 개발 중단 계획 <!-- --></p>
+</blockquote>
+</div>
+
+
+<ul>
+<li>2013년 처음 개발당시와 현재 환경 발전의 차이로 인해<br>
+테스트 재작성 없이 새로운 기술을 활용할 수 없는 문제</li>
+<li>신규 프로젝트에 포함시키지 않고 선택사항으로 변경.<br>
+CLI를 통해 다른 서드파티 포함 옵션 추가 계획<br>
+<a href="https://www.cypress.io/">Cypress</a>, <a href="https://webdriver.io/">WebbdriverIO</a>, <a href="https://testcafe.io/">TestCafe</a>와 협업 진행중</li>
+</ul>
+<p><a href="https://github.com/angular/protractor/issues/5502" class="reference">Future of Angular E2E &amp; Plans for Protractor</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/svelte.svg"></h2>
+<div class="grid" style="grid-template-columns:50% 50%">
+  <img src="./JavaScript와 FE 동향_ 2021 Edition_files/most-loved-webframework-2021.png" style="width:450px" class="m-0">
+
+<ul>
+<li>Stackoverflow 설문조사에서 개발자들이<br>
+가장 관심(loved)갖는 프레임워크로 답변</li>
+<li>전에도 그리고 앞으로 사용여부 질문엔<br>
+5위를 기록 (1위는 React)</li></ul></div>
+
+
+
+<p><a href="https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-webframe-love-dread" class="reference">stackoverflow 2021 Developer Survey: Web frameworks</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/svelte-kit.svg" style="width:600px"></h2>
+<p><a href="https://sapper.svelte.dev/">Sapper</a>를 계승하는 애플리케이션 프레임워크<br>
+Next.js의 Svelte 버전이라고 생각하면 된다.</p>
+<p>모던 기술 프랙티스를 활용해 Svelte 앱을<br>
+쉽게 개발할 수 있으며 파일 기반 라우팅을 제공한다.</p>
+<ul>
+<li><a href="https://svelte.dev/blog/sveltekit-beta#From_Snowpack_to_Vite">Snowpack ➡ Vite 전환</a></li>
+<li>SvelteKit SSR 향상을 위한 신규 패키지 <a href="https://github.com/sveltejs/svelte/pull/6416"><code>svelte/ssr</code></a></li>
+<li><a href="https://svelte.dev/blog/sveltekit-beta">21/3월 public bata</a> 및 1.0까지 작업 중으로, 마일스톤 상으론 84% 완료</li>
+</ul>
+<p><a href="https://kit.svelte.dev/" class="reference">https://kit.svelte.dev/</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/solid.png" style="width:240px" class="m-0"></h2>
+<p>Solid는 사용자 인터페이스를 만들 수 있는 선언적이며,<br>
+유연한 라이브러리 VDOM 사용하지 않고,<br>
+템플릿을 통해 실제 DOM으로 컴파일</p>
+<div class="grid" style="grid-template-columns:60% 40%;justify-items:left;width:90%;margin:0 auto;">
+
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/solid-benchmark.png" style="width:100%" class="m-0">
+
+<ul>
+<li>2016년 개발 시작,<br>
+  5년만에 1.0 릴리스</li>
+<li>JSX 문법 사용</li>
+</ul>
+</div>
+
+<p>React의 철학과 유사하게 단방향 데이터 흐름, 읽기/쓰기 분리,<br>
+불변성 인터페이스 원리를 따르지만<br>
+VDOM을 사용하지 않고 완전히 다르게 구현</p>
+<p><a href="https://krausest.github.io/js-framework-benchmark/index.html" class="reference">Official results for js web frameworks benchmark</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="example">Example</h2>
+<p class="m-0">1초 인터벌마다 상탯값이 증가하는 카운터 예제 <!-- --></p>
+<div class="grid code" style="grid-gap:0;grid-template-columns:38% 62%;">
+
+<div class="fragment fade-up" style="font-size:22px" data-fragment-index="0">
+
+<p>main.tsx</p>
+<pre><code data-line-numbers="" class="js hljs javascript"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> {render} <span class="hljs-keyword">from</span> <span class="hljs-string">"solid-js/web"</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> {onCleanup, createSignal} <span class="hljs-keyword">from</span> <span class="hljs-string">"solid-js"</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> CountingComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">const</span> [count, setCount] = createSignal(<span class="hljs-number">0</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">const</span> interval = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      setCount(<span class="hljs-function"><span class="hljs-params">count</span> =&gt;</span> count + <span class="hljs-number">1</span>)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    , <span class="hljs-number">1000</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  onCleanup(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> clearInterval(interval));</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Count value is {count()}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">};</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">render(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">CountingComponent</span> /&gt;</span></span>,</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"app"</span>));</div></td></tr></tbody></table></code></pre></div>
+
+<div class="size18 fragment fade-up" style="font-size:21px" data-fragment-index="1">
+
+<p>Compiled output</p>
+<pre><code data-line-numbers="4, 15-18" class="js hljs javascript has-highlights"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> {template, render, createComponent, insert} <span class="hljs-keyword">from</span> <span class="hljs-string">'solid-js/web'</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> {createSignal, onCleanup} <span class="hljs-keyword">from</span> <span class="hljs-string">'solid-js'</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> _tmpl$ = template(<span class="hljs-string">`&lt;div&gt;Count value is &lt;/div&gt;`</span>, <span class="hljs-number">2</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> CountingComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">const</span> [count, setCount] = createSignal(<span class="hljs-number">0</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">const</span> interval = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    setCount(<span class="hljs-function"><span class="hljs-params">count</span> =&gt;</span> count + <span class="hljs-number">1</span>)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  , <span class="hljs-number">1000</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  onCleanup(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> clearInterval(interval));</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">(</span>) =&gt;</span> {</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">const</span> _el$ = _tmpl$.cloneNode(<span class="hljs-literal">true</span>);</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">          _el$.firstChild;</div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr class="highlight-line"><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    insert(_el$, count, <span class="hljs-literal">null</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">return</span> _el$;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  })();</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">};</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">render(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> createComponent(CountingComponent, {}),</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="25"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"app"</span>));</div></td></tr></tbody></table></code></pre></div>
+</div>
+
+<p><a href="https://www.solidjs.com/examples/counter" class="reference">Example: Counter</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg02.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+<h1 class="index"><span>4</span></h1>
+
+<h2 id="runtime">Runtime</h2>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/nodejs.svg" style="width:350px" class="m-0"></h2>
+<div class="grid">
+
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/node-release.png">
+
+<ul>
+<li>N-API ➡ <a href="https://nodejs.org/api/n-api.html#n_api_node_api">Node-API</a>로 <a href="https://nodejs.medium.com/renaming-n-api-to-node-api-27aa8ca30ed8">이름 변경</a><br>
+Node-API는 <a href="https://nodejs.org/api/addons.html#addons_node_api">네이티브 Node 애드온</a> 개발에<br>사용되며, 종종 “NAPI”로 발음되었다.<br>
+그러나, <a href="https://www.npr.org/sections/codeswitch/2019/08/09/412886884/the-racial-roots-behind-the-term-nappy">경멸적 용어</a>로 오인될 소지가 있어, 이름을 변경</li>
+<li><a href="https://nodejs.org/dist/latest-v16.x/docs/api/wasi.html">WASI(WebAssembly System Interface) 지원</a><br>
+실험적 WASI API를 제공한다. WASI는 샌드박스된<br>
+wasm 애플리케이션에 OS의 POSIX 유사함수에<br>접근할 수 있게 한다.</li>
+<li><a href="https://github.com/nodejs/next-10">next-10</a><br>
+성공적이었던 지난 10년을 기반으로, 향후 10년에 대한<br>
+전략적 방향성 논의를 위한 기록 저장소</li>
+</ul>
+</div>
+
+<p><a href="https://github.com/nodejs/Release" class="reference">Release schedule</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-corepack"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/corepack.png" class="logo m-0" style="width:75px"> Corepack</h2>
+<p>Node.js 16.9에 기본 포함된 실험적 스크립트 도구<br>
+Node와 패키지 매니저(Yarn, Pnpm 같은)간 브릿지처럼 동작</p>
+<p>npm 외의 서드파티 패키지 관리자를<br>
+<span class="cyan">전역에 설치하지 않고</span> 사용할 수 있게 한다.</p>
+<p>많은 경우 npm 사용이 문제 없지만, 필요에 따라<br>
+다른 패키지 관리자(현재 Yarn과 pnpm 지원)를 사용해야 하는 경우를 위해 제공</p>
+<div class="grid code" style="width:90%">
+
+<pre><code data-line-numbers="" class="sh hljs bash"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment"># corepack 사용을 활성화</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">$ corepack <span class="hljs-built_in">enable</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment"># 프로젝트에 yarn을 설치하고 사용을 활성화 한다.</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">$ corepack prepare yarn@1.22.11 --activate</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment"># 특정 패키지 매니저를 활성화 하는 경우</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">$ corepack <span class="hljs-built_in">enable</span> yarn</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment"># yarn을 사용해 axio를 설치</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">$ corepack yarn add axios</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment"># 비활성화 하는 경우</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">$ corepack <span class="hljs-built_in">disable</span></div></td></tr></tbody></table></code></pre><pre><code data-line-numbers="" class="json hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// https://nodejs.org/api/packages.html#packages_packagemanager</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// package.json</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-attr">"packageManager"</span>: <span class="hljs-string">"yarn@1.22.11"</span>,</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    ...</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr></tbody></table></code></pre> </div>
+
+<p class="reference">
+    <a href="https://github.com/nodejs/corepack">https://github.com/nodejs/corepack</a><br>
+    <a href="https://javascript.plainenglish.io/what-is-corepack-in-node-js-d26dfc2cae43">What is Corepack in Node.js?</a>
+</p>
+
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="pure-esm">Pure ESM</h2>
+<div class="grid code" style="width:80%;margin:0 auto;grid-template-columns:20% 80%;grid-gap:0;text-align:left">
+
+<pre><code class="json hljs">
+
+ <span class="hljs-comment">// package.json</span>
+ {
+   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"module"</span>,
+   ...
+ }</code></pre><p>가장 가까운 부모의 pakcage.json에<br>
+<code>"type":"module"</code> 설정된 경우, <code>.js</code> 확장자는<br>
+ESM으로 로딩된다.</p>
+</div>
+
+<p>즉, 프로젝트 의존성 패키지가 <code>"type":"module"</code> 설정되었다면,<br>
+자신도 <code>"type":"module"</code> 설정필요</p>
+<p>이 경우, <code>.js</code>는 ESM으로 처리되고, CJS는 <code>.cjs</code> 확장자를 가져야 한다.</p>
+<p>그렇지 않을 경우</p>
+<div style="width:80%;margin:0 auto" class="fragment fade-up" data-fragment-index="0">
+
+<pre><code class="sh hljs bash">Error [ERR_REQUIRE_ESM]: Must use import to load ES Module: ...
+require() of ES modules is not supported.
+require() of ... from ... is an ES module file as it is a .js file whose nearest parent package.json
+contains <span class="hljs-string">"type"</span>: <span class="hljs-string">"module"</span> <span class="hljs-built_in">which</span> defines all .js files <span class="hljs-keyword">in</span> that package scope as ES modules.
+Instead rename index.js to end <span class="hljs-keyword">in</span> .cjs, change the requiring code to use import(), or
+remove <span class="hljs-string">"type"</span>: <span class="hljs-string">"module"</span> from .../package.json.
+...
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1080:13)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    ...</code></pre></div>
+
+<p class="reference">
+  <a href="https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c">Pure ESM packages</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h3 id="사용자-측면">사용자 측면</h3>
+<ul>
+<li>CJS를 ESM으로 전환하고, package.json에 <code>"type":"module"</code> 설정</li>
+<li>비동기 문맥에서는 <code>await import(...)</code>를 적용</li>
+<li>ESM 이동이 준비되지 않았다면, 현재 상태(의존성 패키지 버전 포함)를 유지</li>
+</ul>
+<h3 id="라이브러리-측면-" style="margin:50px 0 0 0">라이브러리 측면 <!-- --></h3>
+<h2 id="dual-cjsesm">Dual CJS/ESM</h2>
+<p>아직 생태계는 준비되지 않았으므로,<br>
+<span class="cyan">Dual CJS/ESM 패키지</span>를 제공하는 것 필요</p>
+<div style="font-size:1.2em;width:40%;margin:0 auto">
+
+<pre><code data-line-numbers="" class="json hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// package.json</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"module"</span>,</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-attr">"exports"</span>: {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-attr">"import"</span>: <span class="hljs-string">"./main-module.js"</span>,</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-attr">"require"</span>: <span class="hljs-string">"./main-require.cjs"</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  },</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr></tbody></table></code></pre></div>
+
+<p class="reference">
+  <a href="https://nodejs.org/api/packages.html#packages_dual_commonjs_es_module_packages">Dual CommonJS/ES module packages</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-deno"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/deno.svg" class="logo m-0"> Deno</h2>
+<p>20/5월, <a href="https://deno.com/blog/v1/">1.0 릴리스</a> 이후,<br>
+<span class="cyan">사용 가능성과 확장성</span>을 위한 작업들을 진행</p>
+<ul>
+<li><a href="https://deno.com/blog/the-deno-company/">Deno Company</a> 설립<br>
+  초기 투자에 Next.js의 Guillermo Rauch(<a href="https://angel.co/v/back/rauch-capital">Rauch Capital</a>),<br>
+Mozilla 주식회사 등이 참여</li>
+<li><a href="https://deno.com/deploy/">Deno Deploy</a> 발표<br><ul>
+<li>Deno CLI를 통해 배포할 수 있는 분산 시스템 환경<br></li>
+<li>21/10 현재, <a href="https://deno.com/blog/deploy-beta2/">Beta 2</a> 상태로, 무료로 제공되나 이후 유료 전환예정<br></li>
+<li><a href="https://deno.com/deploy/docs/regions/">전세계 25개 리전</a>을 통해 배포</li>
+</ul>
+</li>
+<li><a href="https://deno.land/x">deno.land/x</a> - 패키지 레지스트리</li>
+<li>deno 번들러: <a href="https://github.com/kt3k/packup"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/packup.svg" class="logo m-0" style="margin:7px"></a> 개발중<br></li>
+<li><a href="https://deno.com/blog/deno-on-mdn/">MDN 호환성 테이블에 Deno 항목 노출되기 시작</a></li>
+</ul>
+</section><section data-charset="utf-8" data-background-image="./img/bg03.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+<h1 class="index"><span>5</span></h1>
+
+<h2 id="package-manager">Package Manager</h2>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/npm.svg" style="width:250px" class="m-0"></h2>
+<p>GitHub의 <a href="https://github.blog/2020-03-16-npm-is-joining-github/">npm 인수 (20/3월)</a> 후,<br>
+주요 소식은 GitHub 블로그를 통해 공유</p>
+<div class="size18">
+
+<h3 id="npm-v7-2010월--" style="margin:50px 0 0 0">npm v7 (20/10월)  <!-- --></h3>
+<ul>
+<li><p><a href="https://github.com/npm/rfcs/blob/latest/implemented/0026-workspaces.md">Workspaces</a><br>
+단일 최상위 레벨(root 패키지) 내에서 여러 패키지를 관리 지원 제공</p>
+</li>
+<li><p><a href="https://github.com/npm/rfcs/blob/latest/implemented/0025-install-peer-deps.md">Peer dependency  자동설치</a><br>
+v7 이전엔 개발자들이 직접 peer dependency 설치 필요했지만,<br>
+새로운 알고리즘은 <code>node_modules</code> 트리에서 일치하는 패키지가 발견되도록 보장</p>
+</li>
+<li><p><a href="https://blog.npmjs.org/post/621733939456933888/npm-v7-series-why-keep-package-lockjson">새로운 package-lock 포맷 v2, 그리고 yarn.lock 지원</a><br></p>
+<ul>
+<li>새로운 포맷은 재현 가능한 빌드 구성과,<br>
+  패키지 트리 구축에 필요한 모든 정보를 포함</li>
+<li>v7 전에는 무시되었던 <code>yarn.lock</code>은<br>
+  패키지 구성과 가이던스 소스로 활용 가능</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<p><a href="https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/" class="reference">Presenting v7.0.0 of the npm CLI</a> <!--- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="npm-v8-2110월">npm v8 (21/10월)</h2>
+<p>v8이 1년여 만에 새로 릴리스 되었고,<br>
+Node.js의 LTS 생명주기에 맞추기 위한 목적</p>
+<ul>
+<li>이에 따라 <code>node&lt;12</code> 지원 중단</li>
+<li>지원되는 Node.js 버전이 아닌경우, 설치되지 않도록 변경<br>
+<code>npm@6</code>가 <code>node@8</code> 환경에서 <code>npm@7</code> 설치가 가능해 발생했던 이슈를 제거</li>
+</ul>
+<p class="reference" style="margin-top:50px">
+    <a href="https://github.blog/changelog/2021-10-07-npm-cli-upgraded-to-version-8/">npm CLI upgraded to version 8</a><br>
+    <a href="https://github.com/npm/rfcs/issues/445">[RRFC] Breaking changes for npm@8</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/yarn.svg" style="width:250px" class="m-0"></h2>
+<ul>
+<li>참여 확대: 메인터너들 중, Facebook 소속은 이제 없다. </li>
+<li>v3 작업 시작<ul>
+<li>Node 10 지원중단</li>
+<li>Node corepack 지원</li>
+<li>esbuild 지원<ul>
+<li>esbuild를 사용해 Yarn 번들을 생성</li>
+<li><a href="https://github.com/yarnpkg/berry/tree/master/packages/esbuild-plugin-pnp">@yarnpkg/esbuild-plugin-pnp</a><br>
+➡ Yarn과 esbuild를 사용할 수 있도록 해준다.</li>
+</ul>
+</li>
+<li>PnP 모드에서 ESM 지원</li>
+</ul>
+</li>
+</ul>
+<p>현재 RC 단계로, 다음과 같이 설치할 수 있다.</p>
+<div style="width:50%;margin:0 auto">
+
+<pre><code class="sh hljs bash">$ npm install -g yarn    <span class="hljs-comment"># update the global yarn to latest v1</span>
+$ yarn <span class="hljs-built_in">set</span> version berry <span class="hljs-comment"># enable v2</span>
+$ yarn <span class="hljs-built_in">set</span> version 3.x   <span class="hljs-comment"># update to v3</span></code></pre></div>
+
+<p class="reference">
+  <a href="https://dev.to/arcanis/yarn-3-0-performances-esbuild-better-patches-e07">Yarn 3.0 🚀🤖 Performances, ESBuild, Better Patches, ...</a><br>
+  <a href="https://github.com/yarnpkg/berry/blob/master/CHANGELOG.md#300">Yarn 3.0 Changelog</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-pnpm"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/pnpm.svg" class="logo m-0"> pnpm</h2>
+<p>pnpm의 가장 큰 특징은 ‘효율적 디스크 사용’</p>
+<p>어떻게 동작하나?<br>
+단일 공간에 패키지를 저장하고, 심볼릭 링크를 통해 공유</p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/pnpm-idea.jpg" style="width:500px" class="m-0">
+
+
+<p><a href="https://pnpm.io/" class="reference">https://pnpm.io/</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><p>npm은 모든 패키지들이 모듈 디렉토리 루트(<code>node_modules</code>)에 위치(hosit)<br></p>
+<p>이는 소스 코드들이 프로젝트 의존성으로<br>
+추가되지 않는 경우라도 접근이 가능하게 함</p>
+<p>pnpm은 심볼릭 링크를 사용해 프로젝트에서 의존성을 갖는<br>
+패키지들만 모듈 디렉토리에 위치한다.</p>
+<div class="grid code" style="width:90%;margin: 0 auto;justify-items:none">
+
+<pre><code class="sh hljs bash">$ npm install express
+
+/node_modules/
+    .bin/
+    accepts/
+    array-flatten/
+    body-parser/
+    bytes/
+    content-disposition/
+    cookie-signature/
+    ...
+    <span class="hljs-comment"># 총 48개 디렉토리 생성</span></code></pre><pre><code class="sh hljs bash">$ pnpm add express
+
+/node_modules/
+    .pnpm/   <span class="hljs-comment"># virtual store directory</span>
+    .modules.yaml
+    express <span class="hljs-comment"># Symbolic Link    </span>
+
+  <span class="hljs-comment"># express 심볼릭 링크엔 다음과 같은 내용이 포함된다.</span>
+  <span class="hljs-comment"># .pnpm/express@4.17.1/node_modules/express</span></code></pre></div>
+
+</section><section data-charset="utf-8" data-background-image="./img/bg01.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+<h1 class="index"><span>6</span></h1>
+도구의 전성시대
+
+<h2 id="tools-" style="margin:30px 0 0">Tools <!-- --></h2>
+<h3 id="bundlerbuild">Bundler/Build</h3>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="새로운-트렌드-" class="m-0">새로운 트렌드? <!-- --></h2>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/go-logo-blue.svg">
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/rust-logo-blk.svg">
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/ocaml.svg" style="width:300px">
+
+<ul>
+<li>비 JavaScript 언어를 JavaScript 도구에 사용<ul>
+<li>Rust: <a href="https://deno.land/">Deno</a>, <a href="https://github.com/swc-project/swc">swc</a>, <a href="https://github.com/rome/tools">Rome</a>, <a href="https://github.com/dprint/dprint">dprint</a>, <a href="https://github.com/volta-cli/volta">Volta</a>, <a href="https://github.com/Schniz/fnm">fnm</a></li>
+<li>Go: <a href="https://github.com/evanw/esbuild">esbuld</a></li>
+<li>OCaml: <a href="https://github.com/facebook/flow">Flow</a></li>
+</ul>
+</li>
+<li style="margin-top:20px">개발 시점에선 unbundled 방식의 접근 <!-- --></li>
+<li>빌드 도구들이 다른 빌드/번들 도구에 의존</li>
+<li>스캐폴딩 + 빌드/번들러 형태로의 확장</li>
+</ul>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-esbuild"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/esbuild.svg" class="logo m-0"> esbuild</h2>
+<p>Go로 작성된 번들러로, <a href="https://github.com/evanw/esbuild/commit/23c40b1b6a76a8626f1d160f89677ed2c73b6090">20/1월</a> <a href="https://github.com/evanw">Evan Wallace</a>에 의해 개발되었다.</p>
+<p>빌드 도구의 성능에 새로운 시대를 여는 것을 목표하며,<br>
+TS/JSX 등 모던 번들러가 제공하는 기능들이 기본 제공된다.</p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/esbuild-benchmark.svg" style="width:500px" class="m-0">
+
+<p>esbuild를 사용하는 도구들:</p>
+<ul>
+<li>Yarn</li>
+<li>Angular CLI</li>
+<li>Vite ➡ SvelteKit</li>
+<li>Packup</li>
+</ul>
+<p><a href="https://esbuild.github.io/" class="reference">https://esbuild.github.io</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-vite"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/vite.svg" class="logo m-0"> Vite</h2>
+<p>quick을 뜻하는 프랑스어 “Vite”(<code>/vit/</code>, “veet”로 발음)는<br>
+Evan You가 개발(<a href="https://github.com/vitejs/vite/commit/820c2cfbefd376b7be2d0ba5ad1fd39d3e45347e#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519">20/4월 개발시작</a>)한 빌드 도구다.</p>
+<ul>
+<li>개발시 번들링 수행않고, ESM으로 로딩</li>
+<li>prebundling은 esbuild, 배포 버전은 Rollup 사용.</li>
+<li>Rollup 플러그인 호환</li>
+</ul>
+<div class="grid" style="width:90%;margin: 0 auto">
+
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/vite-cli.gif" style="width:500px">
+
+<p>기존 vue-cli와 vite는 일단 공존하나,<br>
+장기적으론, 2개 도구의 통합 필요<br>
+➡ Vite(스피드) + vue-cli(포괄적인 지원성)</p>
+</div>
+
+<p><a href="https://vitejs.dev/" class="reference">https://vitejs.dev/</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/rome.png" style="width:350px" class="m-0"></h2>
+<p><a href="https://github.com/babel/babel/commit/c97696c224d718d96848df9e1577f337b45464be">6to5</a>(Babel)를 개발했던 <a href="https://twitter.com/sebmck">Sebastian McKenzie</a>의<br>
+프로젝트로, 20/8월 첫 베타 릴리스</p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/rome-is.gif">
+
+<p>Babel, ESLint, Webpack, Prettier, Jest 등<br>
+오늘날 모던 웹 애플리케이션 개발을 위해 필요한<br>
+툴 체인들을 단일 도구로 대체하기 위한 목적</p>
+<p><a href="https://rome.tools/" class="reference">https://rome.tools/</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><p>기본 아이디어는 <span class="underline green">단일 <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a> 생성을 재사용</span> 하는것.
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/rome-ast-toolchain.png" style="width:600px;background-color:#fff"><br>
+<a href="https://aralroca.com/blog/do-all-roads-lead-to-rome" class="reference">Do all roads lead to Rome?</a> <!-- --></p>
+<ul>
+<li><a href="https://rome.tools/blog/announcing-rome-tools-inc/">20/5월 Rome Tools Inc 설립</a><br>
+초기 투자에 GitHub 공동창업자인 Tom-Preston Werner도 참여</li>
+<li>21/9월, <a href="https://rome.tools/blog/2021/09/21/rome-will-be-rewritten-in-rust">Rust로 재작성 계획 발표</a><br>
+Rome 내부에서 타이트하게 모든 코드들을 관리해 성능,<br>
+메모리 사용량 그리고 정확성(correctness)과<br>
+타입 안정성을 제공하기 위해서 필요</li>
+</ul>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/parcel.png" style="width:350px" class="m-0"></h2>
+<p>2019년에 시작되었던 v2 작업은 오랜 시간 끝에 21/10월 릴리스</p>
+<ul>
+<li><a href="https://swc.rs/"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/swc.png" style="width:70px;margin:0" alt="swc"></a> 를 컴파일러로 사용<br>
+Babel AST 기반 컴파일러 ➡ swc 기반 Rust로 작성</li>
+<li>Tree shaking 기본 활성화, 자동 코드분할(code splitting)</li>
+<li>Automatic differential bundling<br>
+모던 브라우저를 위한 네이티브 ESM과 레거시 브라우저를 위한<br>
+fallback 2가지 버전 제공</li>
+<li>향상된 JSX 지원
+React 17의 JSX 런타임 지원</li>
+</ul>
+<p><a href="https://parceljs.org/blog/v2/" class="reference">Announcing Parcel v2!</a>  <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-wmr"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/wmr.svg" style="width:170px;margin:-35px"> WMR</h2>
+<p>Preact 개발자인 Jason Miller가 개발<br>
+의존성 없는 단일 파일 통합 개발도구</p>
+<blockquote>
+<p class="size18 cyan">The tiny all-in-one development tool for modern web apps <!-- --></p>
+</blockquote>
+<ul>
+<li>엔트리 포인트 없이 스크립트 로딩만을 통해 실행<br>
+<code>&lt;script type="module" src="/index.js"&gt;</code></li>
+<li>스캐폴딩을 위한 <a href="https://npm.im/create-wmr"><code>create-wmr</code></a> 제공</li>
+<li>npm 패키지의 설치없이 import</li>
+<li>HMR: Preact 컴포넌트와 CSS</li>
+<li>빌트인 TS 및 JSX 브라우저 디버깅 기능</li>
+<li>정적 자원들에 대한 hot reloading</li>
+<li>Rollup 플러그인 지원 (Rollup 사용되지 않는 경우에도)</li>
+</ul>
+<p><a href="https://wmr.dev/" class="reference">https://wmr.dev/</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-snowpack"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/snowpack.svg" class="logo m-0"> Snowpack</h2>
+<div class="grid">
+
+<p>Unbundle 개발 철학<br>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/snowpack-unbulde.png" style="width:400px"></p>
+<ul>
+<li>개발 모드에선 번들링 하지 않고, 각 파일은<br>
+빌드 후 캐싱 개별 파일들은 네이티브 ESM으로 로딩</li>
+<li style="margin-top:20px"><!-- -->
+npm의 CJS 모듈은 어떻게 로딩할까?<br>
+브라우저 실행을 위해 snowpack은 이들을<br>
+단일 파일로 번들링하고 네이티브 ESM으로<br>
+사용될 수 있게 한다.</li>
+</ul>
+</div>
+
+<p>💡 SvelteKit에서 채택되었지만, <a href="https://svelte.dev/blog/sveltekit-beta#From_Snowpack_to_Vite">Vite에 밀려났다</a>.</p>
+<p> <a href="https://www.snowpack.dev/" class="reference">https://www.snowpack.dev/</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg02.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+<h1 class="index"><span>6</span></h1>
+
+<h3 id="progressive-web-apps">Progressive Web Apps</h3>
+<p><img src="./JavaScript와 FE 동향_ 2021 Edition_files/pwa.svg" style="width:400px"><br></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="브라우저-벤더들의-" class="m-0">브라우저 벤더들의 <!-- --></h2>
+<h3 id="서로-다른-방향성-" class="m-0">서로 다른 방향성 <!-- --></h3>
+<div class="fragment fade-down" data-fragment-index="0">
+
+<h3 id="google-ms-samsung-진영-" style="margin-top:50px">Google, MS, Samsung 진영 <!-- --></h3>
+<p>“<span class="cyan">가능성/능력</span>“(capability)에 대한 고려를 통해,<br>
+웹 플랫폼에서 더 많은 것을 수행할 수 있는 갸능성/능력에 적극성을 띈다.</p>
+</div>
+<div class="fragment fade-up" data-fragment-index="1">
+
+<h3 id="apple-mozilla-진영-" style="margin-top:70px">Apple, Mozilla 진영 <!-- --></h3>
+<p>“<span class="red">개인정보 보호</span>“(Privacy) 이슈를 가장 최우선으로 고려하기 때문에<br>
+웹에서의 새로운 가능성을 제공하는 기능들에 부정적 입장을 취한다.</p>
+</div>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-fugu-프로젝트--"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/fugu-project.png" style="width:100px" class="m-0"> Fugu 프로젝트  <!-- --></h2>
+<h3 id="web-capabilities">Web Capabilities</h3>
+<p>2019년 주요 벤더들(Google, MS, Intel, 삼성)이<br>
+네이티브(모바일/데스크톱) 앱에서 가능한 것들을<br>
+웹앱에서도 가능하게 만들기 위해 시작한 프로젝트</p>
+<blockquote class="red fragment fade-right" data-fragment-index="0">
+<!-- -->
+<p>We believe web apps should be able<br>
+to do anything native apps can.</p>
+</blockquote>
+<p>네이티브 기능들이 웹에 노출되더라도, 사용자 보안, 신뢰 및<br>
+개인정보 보호 같은 핵심적 원칙은 유지되어야 한다</p>
+<p class="quote size18" style="width:70%">
+"Fugu"는 복어(<span style="font-family:Arial">ふぐ</span>)를 뜻하는 일본어로, 복어 요리는 특성상<br>
+ 잘 준비되면 맛있는 요리지만, 독이 제거되지 못하면 치명적
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/webapis-layer.png" style="width:450px">
+
+<ul>
+<li>웹에 필요한 네이티브 API를 평가하고, Web API로 노출</li>
+<li>Web API는 OS 네이티브 API와 애플리케이션간 추가적 레이어로 동작</li>
+</ul>
+<div class="grid" style="width:70%;margin: 0 auto">
+
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/fugu-api-tracker.png" style="width:200px">
+
+<p><a href="https://fugu-tracker.web.app/">Fugu API Tracker</a><br><br>
+현재 진행되고 있는 Fugu API들의<br>
+구현 및 진행 상태 확인</p>
+</div>
+
+<p class="reference">
+  <a href="https://web.dev/fugu-status/">New capabilities status</a><br>
+  <a href="https://www.chromium.org/teams/web-capabilities-fugu">Web Capabilities (Project Fugu 🐡)</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="richer-install-ui">Richer Install UI</h2>
+<div class="size25 grid">
+
+  <div>
+    <img src="./JavaScript와 FE 동향_ 2021 Edition_files/pwa-richer-install.gif" style="width:200px"><br>
+    <a href="https://youtu.be/55whfvePXBA?t=115" class="reference m-9" style="font-size:12px">PWA Richer install UI on Mobile</a>
+  </div>
+
+<ul>
+<li>M91, Dev/Canary 버전에서<br>
+<code>#mobile-pwa-install-use-bottom-sheet</code><br>플래그 활성화시 사용가능</li>
+<li>manifest.json에 <code>screenshots</code>과<br><code>description</code> 필드 추가하면 끝.</li></ul></div>
+
+
+
+<p class="reference">
+  <a href="https://developer.chrome.com/blog/richer-pwa-installation/">Richer PWA installation UI</a><br>
+  <a href="https://www.youtube.com/watch?v=gCC6gpdZnWk">PWA Summit 2021: Make your PWAs look and launch beautifully</a>
+</p>
+
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="-webkit"><img src="./JavaScript와 FE 동향_ 2021 Edition_files/webkit.svg" class="logo m-0"> WebKit</h2>
+<p>WebKit 팀은 블로그를 통해 보안 및 개인정보 보호 우려에 따라<br>
+다음의 Web APIs 구현하지 않는다고 발표</p>
+<div class="quote" style="font-size:13px">
+
+<ul>
+<li>Web Bluetooth</li>
+<li>Web MIDI API</li>
+<li>Magnetometer API</li>
+<li>Web NFC API</li>
+<li>Device Memory API</li>
+<li>Network Information API</li>
+<li>Battery Status API (Firefox도 구현했다가 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1313580">제거</a>)</li>
+<li>Web Bluetooth Scanning</li>
+<li>Ambient Light Sensor</li>
+<li>HDCP Policy Check extension for EME</li>
+<li>Proximity Sensor</li>
+<li>WebHID</li>
+<li>Serial API</li>
+<li>Web USB</li>
+<li>Geolocation Sensor (background geolocation)</li>
+<li>User Idle Detection</li>
+</ul>
+</div>
+
+<p><a href="https://webkit.org/tracking-prevention/" class="reference">Tracking Prevention in WebKit</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id=""><img src="./JavaScript와 FE 동향_ 2021 Edition_files/mozilla.svg" class="m-0"></h2>
+<h3 id="pwa-방향성-전환">PWA 방향성 전환?</h3>
+<p>데스크톱 지원을 위한 실험적 기능인<br>
+SSB(Site Specific Browser)를 제거하고,<br>
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1682593#c8">PWA 지원 계획 없다고 코멘트</a></p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/firefox-no-pwa-plan.png" style="width:450px">
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="store-배포-" class="m-0">Store 배포 <!-- --></h2>
+<p>가장 간단한 방법은 MS/Google이 개발에 참여하고 있는<br>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/pwa-builder.svg" style="margin:10px 0 0 0;width:180px"> 를 사용하는 것이다.<br></p>
+<div class="grid" style="grid-template-columns:60% 40%">
+
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/pwa-builder.gif" style="width:500px" class="m-0">
+
+<p>PWABuilder는 기본 코어로<br>
+구글의 <a href="https://github.com/GoogleChromeLabs/bubblewrap">Bubblewrap</a>을 활용<br>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/bubblewrap.png" style="width:150px"></p>
+</div>
+
+<p>AppStore는 정책 변경에 따라 지원이 중단되었다.<br>
+<a href="https://github.com/pwa-builder/PWABuilder/issues/799">Where is the iOS target?</a></p>
+ <p class="reference">
+  <a href="https://www.pwabuilder.com/">PWA Builder</a><br>
+  <a href="https://www.youtube.com/watch?v=XBStJqajO9M">PWA Summit 2021: Bringing your PWA to the app store</a> (<a href="https://tinyurl.com/pwa-app-stores">발표 슬라이드</a>)
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="androidms">Android/MS</h2>
+<h3 id="android">Android</h3>
+<p><a href="https://developer.chrome.com/docs/android/trusted-web-activity/">Trusted Web Activity</a>(TWA) 사용<br>
+Android 앱에서 Custom Tabs 기반 프로토콜을 사용, 웹앱 콘텐츠를 여는 방법</p>
+<div class="quote" style="margin:20px auto 50px auto">
+  <h4>💡 <a href="https://developers.google.com/web/fundamentals/integration/webapks">WebAPK</a>?</h4>
+    <p style="font-size:15px" class="m-0">
+        PWA 앱을 '홈 화면에 추가'를 통해 설치시,<br>
+        크롬에서 자동 생성해 설치하는 특별한 APK(Android Application Package)로<br>
+        이를 통해 PWA앱이 네이티브 앱처럼, 앱런처나 Android 설정 등에 노출되게 만든다.
+    </p>
+</div>
+
+<h3 id="ms">MS</h3>
+<div class="size18">
+
+<ul>
+<li><a href="https://developer.microsoft.com/en-us/microsoft-store/pwa/">Easily distribute your PWAs and get more exposure</a></li>
+<li><a href="https://docs.microsoft.com/ko-kr/windows/uwp/publish/pwa/overview">Microsoft Store에 PWA 제출</a><br></li>
+<li><a href="https://blogs.windows.com/msedgedev/2018/02/06/welcoming-progressive-web-apps-edge-windows-10/">MS - Welcoming Progressive Web Apps to Microsoft Edge and Windows 10</a></li>
+</ul>
+</div>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="apple-app-store">Apple App Store</h2>
+<p>iOS/iPad 14, Big Sur를 통해 추가된 “<a href="https://webkit.org/blog/10882/app-bound-domains/">App-Bound Domains</a>“를 통해 가능하다.</p>
+<p><a class="reference" href="https://developer.apple.com/videos/play/wwdc2020-10188/?time=1606">WWDC 2020: App-bound domains</a></p>
+<p>이 기능은 웹뷰의 네비게이션을 작은 규모의 origins 셋으로 제한하도록 만든다.<br>
+이는 네이티브 코드의 웹 콘텐츠 상호작용을 줄이고,<br>
+웹뷰에서 API 강요성을 높인다.</p>
+<p>App-Bound Domain이 활성화 된 경우,<br>
+PWA의 핵심적 API인 ServiceWorkers를 사용할 수 있게된다.</p>
+<!--
+패키징 및 단계별 과정:
+- XCode를 사용해 런처를 생성
+- App-Bound Domains 설정
+- macOS 패키지 생성
+- AppStore에 배포
+-->
+
+<p class="reference" style="margin-top:50px">
+  <a href="https://app.pluralsight.com/library/courses/publishing-progressive-web-apps/">Publishing Progressive Web Apps</a> (Pluralsight: 유료강의)
+</p>
+
+</section><section data-charset="utf-8" data-background-image="./img/bg02.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+<h1 class="index"><span>7</span></h1>
+네이티브로의 이동
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="es6-지원율">ES6 지원율</h2>
+<ul>
+<li>주요 브라우저와 런타임에서 98~100% 도달</li>
+<li>주요 프레임워크들(<a href="https://github.com/vuejs/rfcs/blob/ie11/active-rfcs/0038-vue3-ie11-support.md">Vue 3</a>, <a href="https://github.com/angular/angular/issues/41840">Angular 13</a>)과 도구(<a href="https://make.wordpress.org/core/2021/03/25/discussion-summary-dropping-support-for-ie11/">Wordpress</a>)들의 IE11 지원중단</li>
+</ul>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/es6-compatibility.png" style="width:500px">
+
+<p>우리들은 계속 ES5(또는 레거시 브라우저)를 위해<br>
+코드를 Transpile할 필요성이 있을까?</p>
+<p><a href="http://kangax.github.io/compat-table/es6/" class="reference">ECMAScript 6 compatibility table</a>  <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="트랜스파일링-" class="m-0">트랜스파일링, <!-- --></h2>
+<h3 id="번들링은-계속-필요한가-" class="m-0">번들링은 계속 필요한가? <!-- --></h3>
+<ul>
+<li><p>MS의 IE11 지원, 2022년 6월15일 종료 <a href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/">발표</a></p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/ie11-timeline.png" style="width:450px;margin:0">
+</li>
+<li><p>Node.js Test Runner인 <a href="https://github.com/avajs/ava">AVA</a>는 <a href="https://github.com/avajs/ava/releases/tag/v3.0.0">Babel 트랜스파일링을 3.0 부터 제거</a></p>
+</li>
+<li><p>그러나 번들러는 import/export 구문을 정적 분석,<br>
+사용되지 않는 export를 제거 최적화 제공 측면에선 아직 유용<br></p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/esm-bundling.png" style="width:450px;margin:0">
+
+</li>
+</ul>
+<p class="reference" style="margin-top:20px">
+    <a href="https://docs.google.com/document/d/1ovo4PurT_1K4WFwN2MYmmgbLcr7v6DRQN67ESVA-wq0/pub">ES Moduling loading</a><br>
+    <a href="https://world.hey.com/dhh/modern-web-apps-without-javascript-bundling-or-transpiling-a20f2755">Modern web apps without JavaScript bundling or transpiling</a>
+</p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h3 id="http2-multiplexing">HTTP/2 Multiplexing</h3>
+<p>HTTP/2는 Multiplexing을 통해,<br>
+단일 TCP 연결을 통해 다중 요청/응답을 처리한다.<br></p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/http2-multiplexing.png" style="width:500px">
+<!-- 출처: https://blog.sessionstack.com/how-javascript-works-deep-dive-into-websockets-and-http-2-with-sse-how-to-pick-the-right-path-584e6b8e3bf7 -->
+
+
+<ul>
+<li>더는 작은 파일들을 커다란 파일로 만들어
+보내야 하는 등의 성능적 개선이 필요치 않다.<br></li>
+<li>즉, 현재의 단일 파일 번들링 패턴은 많은 면에서 유효하지 않게 되어가고 있다. </li>
+</ul>
+<p><a href="https://hpbn.co/http2/#request-and-response-multiplexing" class="reference">Request and Response Multiplexing</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h3 id="http2-점유율">HTTP/2 점유율</h3>
+<p>2021/9 기준, 전세계 요청 중 67% 차지.</p>
+<img src="./JavaScript와 FE 동향_ 2021 Edition_files/http2.png" style="width:700px">
+
+<p><a href="https://httparchive.org/reports/state-of-the-web#h2" class="reference">HTTP/2 Requests</a> <!-- --></p>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h2 id="네이티브-전환의-걸림돌">네이티브 전환의 걸림돌</h2>
+<ul>
+<li>JSX, TypeScript에 대한 트랜스파일링</li>
+<li>Tree-shaking과 같은 최적화 작업의 수행</li>
+</ul>
+<p class="cyan">만약, 도구 사용이 필요 없게 된다면? <!-- --></p>
+<ul>
+<li class="fragment fade-up" data-fragment-index="0">👏 골치아픈 복잡한 설정에서 해방 <!-- --></li>
+<li class="fragment fade-up" data-fragment-index="1"><!-- --> 
+🚀 개발 환경의 최적화와 성능 향상: <img src="./JavaScript와 FE 동향_ 2021 Edition_files/vite.svg" style="width:30px"> Vite, <img src="./JavaScript와 FE 동향_ 2021 Edition_files/snowpack.svg" style="width:30px"> Snowpack</li>
+<li class="fragment fade-up" data-fragment-index="2"><!-- -->
+🙆 작성된 코드가 트랜스파일러를 통해 변환되지 않으므로,<br>
+배포된 코드와 작성된 코드간 차이없어 디버깅 경험 개선</li>
+</ul>
+</section><section data-charset="utf-8" data-background-image="./img/bg03.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><!-- -->
+<h1 class="index"><span>7</span></h1>
+
+<h3 id="wrap-up">Wrap Up</h3>
+</section><section data-charset="utf-8" data-background-image="./img/bg00.png" data-background-transition="slide" data-markdown="" data-markdown-parsed="true" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future"><h3 id="2021년의-" class="m-0">2021년의 <!-- --></h3>
+<h2 id="javascript--fe-생태계">JavaScript &amp; FE 생태계?</h2>
+<ul>
+<li class="fragment fade-left" data-fragment-index="0">WebAssembly 실사용 확산은 더디지만, 미래의 얼굴  <!-- --></li>
+<li class="fragment fade-right" data-fragment-index="1"><!-- -->
+프레임워크는 여전히 <img src="./JavaScript와 FE 동향_ 2021 Edition_files/react.svg" style="width:25px" class="m-0"> React 강세<br>
+Who’s Next?: <img src="./JavaScript와 FE 동향_ 2021 Edition_files/vue.svg" style="width:30px" class="m-0"> Vue.js? <img src="./JavaScript와 FE 동향_ 2021 Edition_files/svelte.svg" style="width:120px" class="m-0">? <img src="./JavaScript와 FE 동향_ 2021 Edition_files/solid.png" style="width:100px" class="m-0"> ?</li>
+<li class="fragment fade-left" data-fragment-index="2"><!-- -->
+<a href="https://www.typescriptlang.org/"><code>TypeScript</code></a>, <a href="https://facebook.github.io/jsx/"><code>JSX</code></a> 는 점점 de-facto</li>
+<li class="fragment fade-right" data-fragment-index="3">IE11은 이제 그만  <!-- --></li>
+<li class="fragment fade-left" data-fragment-index="4">BFF 또는 BE 영역의 FE 기술사용은 확장되며, 가속화  <!-- --></li>
+<li class="fragment fade-right" data-fragment-index="5">PureESM: CJS ➡ ESM 전환  <!-- --></li>
+<li class="fragment fade-left" data-fragment-index="6">Toolchain: non JavaScript for JavaScript  <!-- --></li>
+<li class="fragment fade-right" data-fragment-index="7">PWA의 메인 스트림으로의 성장은 더디고 요원<br>  <!-- -->
+➡ 결국, WebKit의 향방에 따라</li>
+</ul>
+</section>
+
+                <section data-background-image="./img/bg.png" style="top: 350px; display: none;" hidden="" aria-hidden="true" class="future">
+                    <main>
+						<div class="end">
+							<div class="end-text">
+								<span style="color:#ffed00">고맙습니다.</span><br>
+								<span style="font-size:0.8em;-webkit-text-stroke:#f0680d 2px;">Thank You.</span><br>
+								<span style="font-size:0.8em;-webkit-text-stroke:rgb(209, 208, 208) 2px;color:#ac07d5">Gracias.</span>
+							</div><br>
+							<div style="margin-top:20px">
+								<span style="font-size:13.5px" class="green">Support us by,</span><br>
+								<a href="https://github.com/naver/billboard.js" title="billboard.js, the web chart library."><img src="./JavaScript와 FE 동향_ 2021 Edition_files/billboard.js-white.svg" class="logo m-0"></a> / 
+								<img src="./JavaScript와 FE 동향_ 2021 Edition_files/github.svg" style="width:25px" class="m-0"> <a href="https://github.com/naver/fe-news" title="Monthly curated Front-end NEWS from NAVER.">naver/fe-news</a><br>
+								<img src="./JavaScript와 FE 동향_ 2021 Edition_files/NAVER-love-FE.png" style="width:300px;margin-top:20px" class="m-0">
+						</div>
+                    </div></main>
+                </section>
+			</div>
+		<div class="backgrounds"><div class="slide-background present" data-background-hash="0./img/bg.pngnullnullnullnullnullnullnull" data-loaded="true" style="display: block;"><div class="slide-background-content" style="background-image: url(&quot;./img/bg.png&quot;);"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" data-loaded="true" style="display: block;"><div class="slide-background-content" style="background-image: url(&quot;./img/bg00.png&quot;);"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" data-loaded="true" style="display: block;"><div class="slide-background-content" style="background-image: url(&quot;./img/bg00.png&quot;);"></div></div><div class="slide-background future" data-background-hash="0./img/bg02.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg03.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg01.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg02.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg03.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg01.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg02.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg02.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg03.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg00.pngnullnullnullnullnullslidenull" data-background-transition="slide" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="0./img/bg.pngnullnullnullnullnullnullnull" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-number" style="display: block;"><a href="http://127.0.0.1:5501/fe-2021/#/">
+					<span class="slide-number-a">1</span>
+					</a></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-right enabled highlight" aria-label="next slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="progress" style="display: block;"><span style="transform: scaleX(0);"></span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div class="aria-status" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Th e st at e o f JavaScript &amp; FE 2021 Edition 2021년 FE 동향, 한방에 끝내기 박재성 / Platform FE </div></div>
+
+		<script src="./JavaScript와 FE 동향_ 2021 Edition_files/reveal.min.js"></script>
+		<script src="./JavaScript와 FE 동향_ 2021 Edition_files/markdown.min.js"></script>
+		<script src="./JavaScript와 FE 동향_ 2021 Edition_files/highlight.min.js"></script>
+		<script src="./JavaScript와 FE 동향_ 2021 Edition_files/zoom.min.js"></script>
+		<script src="./JavaScript와 FE 동향_ 2021 Edition_files/main.js"></script>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-56978261-1', 'auto');
+		  ga('send', 'pageview');
+    	</script>
+	<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
