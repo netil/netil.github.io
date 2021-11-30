@@ -159,8 +159,8 @@ Front-end 기술 스택에서 기본으로 사용되지만,<br>
 
 ## 2021년은
 
-- [Free Software 등장](https://www.gnu.org/) (1985), <span class="green">38년</span>째
-- [Open Source 용어 정의](https://opensource.com/article/18/2/coining-term-open-source-software) (1988), <span class="cyan">23년</span>째
+- [Free Software 등장](https://www.gnu.org/) (1983), <span class="green">36년</span>째
+- [Open Source 용어 정의](https://opensource.com/article/18/2/coining-term-open-source-software) (1988), <span class="cyan">33년</span>째
 
 > <!-- .element: class="red fragment fade-up" -->
 > 그러나, 아직도 OSS 프로젝트 지속성에 대한<br>

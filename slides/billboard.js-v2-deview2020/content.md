@@ -765,7 +765,7 @@ billboard.js의 많은 기능들은 외부 컨트리뷰션을 통해 이뤄졌�
 ## Open Source <!-- .element: style="margin:0 0 -10px 0" -->
 
 Open Source(1998) 용어가 정의된 후,<br>
-<span class="size40 cyan bold">22</span>년째
+<span class="size40 cyan bold">32</span>년째
 
 </div>
 
