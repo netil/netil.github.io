@@ -23,8 +23,10 @@ Reveal.initialize({
 }).then(() => {
     const waves = document.querySelector("svg.waves");
 
-    document.querySelector(".backgrounds").prepend(waves);
-    waves.style.display = "block";
+    if (waves) {
+        document.querySelector(".backgrounds").prepend(waves);
+        waves.style.display = "block";
+    }
 });
 
 const path = "../assets/"
