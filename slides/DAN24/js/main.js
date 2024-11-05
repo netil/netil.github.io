@@ -20,6 +20,11 @@ Reveal.initialize({
         smartypants: true,
         smartLists: true
     }
+}).then(() => {
+    const waves = document.querySelector("svg.waves");
+
+    document.querySelector(".backgrounds").prepend(waves);
+    waves.style.display = "block";
 });
 
 const path = "../assets/"

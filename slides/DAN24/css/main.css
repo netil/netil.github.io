@@ -6,7 +6,7 @@
 @import url('https://cdn.jsdelivr.net/gh/naen-nae/fonts/build/css/Cafe24Simplehae.css');
 @import url('https://cdn.jsdelivr.net/gh/naen-nae/fonts/build/css/SDSamliphopangche_Outline.css');
 @import url('https://cdn.jsdelivr.net/gh/naen-nae/fonts/build/css/EliceDigitalBaeum.css');
-@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Gothic+A1&family=Moirai+One&family=Nabla&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR&family=Orbit&family=Gugi&family=Gothic+A1&family=Moirai+One&family=Nabla&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
 
 @font-face {
     font-family: 'GmarketSansBold';
@@ -27,8 +27,17 @@
     --spread: .5em;
     --shift: .01em;
     --base: #01fa22;
-    --c1: #fcf802;
-    --c2: #9c63c7;
+    /* --c1: #fcf802;
+    --c2: #9c63c7; */
+    
+    --s: 150px; /* control the size*/
+    --cc1: #000000;
+    --cc2: #262627;
+    
+    --_g: 
+       var(--cc1) 0%  5% ,var(--cc2) 6%  15%,var(--cc1) 16% 25%,var(--cc2) 26% 35%,var(--cc1) 36% 45%,
+       var(--cc2) 46% 55%,var(--cc1) 56% 65%,var(--cc2) 66% 75%,var(--cc1) 76% 85%,var(--cc2) 86% 95%,
+       #0000 96%;
 }
 
 .reveal img.solid-border {
@@ -36,21 +45,19 @@
 }
 
 .reveal .slides .section-background {
-    background:linear-gradient(90deg, #2acefd 33%, #f87070 0, #f87070  66%, #1f77b4 0);
+    /* background:linear-gradient(90deg, #2acefd 33%, #f87070 0, #f87070  66%, #1f77b4 0); */
 }
 
 /* slide background */
 .reveal .slide-background.present {
-    /* background pattern from: http://lea.verou.me/css3patterns/#carbon */
-    background:
-    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-    background-color: #131313;
-    background-size: 20px 20px;
+    /* https://css-pattern.com/overlapping-circles/ */
+    /* background:
+        radial-gradient(50% 50% at 100% 0,var(--_g)),
+        radial-gradient(50% 50% at 0 100%,var(--_g)),
+        radial-gradient(50% 50%,var(--_g)),
+        radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
+        var(--c1);
+    background-size: var(--s) var(--s); */
 }
 
 .reveal .slide-background:first-child {
@@ -80,7 +87,7 @@
 }
 
 .reveal .slides .cover-title {
-    font-family: "NEXON Lv1 Gothic", 'HangeulNuri';
+    font-family: 'Moirai One',"NEXON Lv1 Gothic", 'HangeulNuri';
     font-weight: 700;
     margin: 0;
     -webkit-text-stroke: 1px #000;
@@ -88,7 +95,7 @@
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-    font-family: 'SDSamliphopangche_Outline','ELAND_Nice', 'GmarketSansBold';
+    font-family: 'ELAND_Nice', 'GmarketSansBold';
     color: rgb(135 253 205);
 }
 
@@ -106,7 +113,7 @@
 }
 
 .reveal {
-    font-family: "Cafe24Simplehae", "GmarketSansLight", "NEXON Lv1 Gothic";
+    font-family: "Song Myung", "IBM Plex Sans KR", Orbit, "GmarketSansLight", "NEXON Lv1 Gothic";
     font-size: 1.5em;
 }
 
@@ -698,7 +705,7 @@ div.end-text {
     font-size: 50px;
     text-align: left;
     color: #EDEEE9;
-    font-family:'SDSamliphopangche_Outline';
+    font-family: 'Moirai One';
     text-shadow: 0px 0px rgb(62 62 64 / 100%), -1px 1px rgb(62 62 64 / 100%), -2px 2px rgb(62 62 64 / 100%), -3px 3px rgb(62 62 64 / 100%), -4px 4px rgb(62 62 64 / 100%), -5px 5px rgb(62 62 64 / 100%), -6px 6px rgb(62 62 64 / 100%), -7px 7px rgb(62 62 64 / 100%), -8px 8px rgb(62 62 64 / 100%), -9px 9px rgb(62 62 64 / 100%), -10px 10px rgb(62 62 64 / 100%), -11px 11px rgb(62 62 64 / 100%), -12px 12px rgb(62 62 64 / 100%), -13px 13px rgb(62 62 64 / 100%), -14px 14px rgb(62 62 64 / 100%), -15px 15px rgb(62 62 64 / 100%), -16px 16px rgb(62 62 64 / 100%), -17px 17px rgb(62 62 64 / 100%), -18px 18px rgb(62 62 64 / 100%), -19px 19px rgb(62 62 64 / 100%), -20px 20px rgb(62 62 64 / 100%), -21px 21px rgb(62 62 64 / 100%), -22px 22px rgb(62 62 64 / 100%), -23px 23px rgb(62 62 64 / 100%), -24px 24px rgb(62 62 64 / 100%), -25px 25px rgb(62 62 64 / 100%), -26px 26px rgb(62 62 64 / 100%), -27px 27px rgb(62 62 64 / 100%), -28px 28px rgb(62 62 64 / 100%), -29px 29px rgb(62 62 64 / 100%), -30px 30px rgb(62 62 64 / 100%), -31px 31px rgb(62 62 64 / 100%), -32px 32px rgb(62 62 64 / 100%), -33px 33px rgb(62 62 64 / 100%), -34px 34px rgb(62 62 64 / 100%), -35px 35px rgb(62 62 64 / 100%), -36px 36px rgb(62 62 64 / 100%), -37px 37px rgb(62 62 64 / 100%), -38px 38px rgb(62 62 64 / 100%), -39px 39px rgb(62 62 64 / 100%), -40px 40px rgb(62 62 64 / 100%), -41px 41px rgb(62 62 64 / 100%), -42px 42px rgb(62 62 64 / 100%), -43px 43px rgb(62 62 64 / 100%), -44px 44px rgb(62 62 64 / 100%), -45px 45px rgb(62 62 64 / 100%), -46px 46px rgb(62 62 64 / 100%), -47px 47px rgb(62 62 64 / 100%), -48px 48px rgb(62 62 64 / 100%), -49px 49px rgb(62 62 64 / 100%), -50px 50px rgb(62 62 64 / 100%), -51px 51px rgb(62 62 64 / 100%), -52px 52px rgb(62 62 64 / 100%), -53px 53px rgb(62 62 64 / 100%), -54px 54px rgb(62 62 64 / 100%), -55px 55px rgb(62 62 64 / 100%), -56px 56px rgb(62 62 64 / 100%), -57px 57px rgb(62 62 64 / 100%), -58px 58px rgb(62 62 64 / 100%), -59px 59px rgb(62 62 64 / 100%), -60px 60px rgb(62 62 64 / 100%), -61px 61px rgb(62 62 64 / 100%), -62px 62px rgb(62 62 64 / 100%), -63px 63px rgb(62 62 64 / 100%), -64px 64px rgb(62 62 64 / 100%), -65px 65px rgb(62 62 64 / 100%), -66px 66px rgb(62 62 64 / 100%), -67px 67px rgb(62 62 64 / 100%), -68px 68px rgb(62 62 64 / 100%), -69px 69px rgb(62 62 64 / 100%), -70px 70px rgb(62 62 64 / 100%), -71px 71px rgb(62 62 64 / 100%), -72px 72px rgb(62 62 64 / 100%), -73px 73px rgb(62 62 64 / 100%), -74px 74px rgb(62 62 64 / 100%), -75px 75px rgb(62 62 64 / 100%), -76px 76px rgb(62 62 64 / 100%), -77px 77px rgb(62 62 64 / 100%), -78px 78px rgb(62 62 64 / 100%), -79px 79px rgb(62 62 64 / 100%), -80px 80px rgb(62 62 64 / 100%), -81px 81px rgb(62 62 64 / 100%), -82px 82px rgb(62 62 64 / 100%), -83px 83px rgb(62 62 64 / 100%), -84px 84px rgb(62 62 64 / 100%), -85px 85px rgb(62 62 64 / 100%), -86px 86px rgb(62 62 64 / 100%), -87px 87px rgb(62 62 64 / 100%), -88px 88px rgb(62 62 64 / 100%), -89px 89px rgb(62 62 64 / 100%), -90px 90px rgb(62 62 64 / 100%), -91px 91px rgb(62 62 64 / 100%), -92px 92px rgb(62 62 64 / 100%), -93px 93px rgb(62 62 64 / 100%), -94px 94px rgb(62 62 64 / 100%), -95px 95px rgb(62 62 64 / 100%), -96px 96px rgb(62 62 64 / 100%), -97px 97px rgb(62 62 64 / 100%), -98px 98px rgb(62 62 64 / 100%), -99px 99px rgb(62 62 64 / 100%), -100px 100px rgb(62 62 64 / 100%);
 }
 
@@ -807,3 +814,68 @@ div.end-text {
         transform: scale(1.2) rotateX(var(--rotate)) rotateY(var(--rotate));
     }
 }
+
+/*----- waves: start -----*/
+.waves {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height:15vh;
+    min-height:100px;
+    max-height:150px;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.parallax {
+    fill-opacity: 0.5;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+        height:40px;
+        min-height:40px;
+    }
+    .content {
+        height:30vh;
+    }
+    h1 {
+        font-size:24px;
+    }
+}
+/*----- waves: end -----*/
