@@ -7,6 +7,42 @@
 @import url('https://cdn.jsdelivr.net/gh/naen-nae/fonts/build/css/SDSamliphopangche_Outline.css');
 @import url('https://cdn.jsdelivr.net/gh/naen-nae/fonts/build/css/EliceDigitalBaeum.css');
 @import url('https://fonts.googleapis.com/css2?family=Song+Myung&family=IBM+Plex+Sans+KR&family=Orbit&family=Gugi&family=Gothic+A1&family=Moirai+One&family=Nabla&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fastly.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
+@import url('https://hangeul.pstatic.net/hangeul_static/css/NanumHuman.css');
+
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTBookendBatangR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/TTBookendBatangR.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTNoeulB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/PTNoeulB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LOTTERIADDAG';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIADDAG.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'GmarketSansBold';
@@ -95,7 +131,7 @@
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-    font-family: 'ELAND_Nice', 'GmarketSansBold';
+    font-family: "LOTTERIADDAG", 'ELAND_Nice', 'GmarketSansBold';
     color: rgb(135 253 205);
 }
 
@@ -113,7 +149,7 @@
 }
 
 .reveal {
-    font-family: "Song Myung", "IBM Plex Sans KR", Orbit, "GmarketSansLight", "NEXON Lv1 Gothic";
+    font-family:  "GmarketSansLight", "NEXON Lv1 Gothic";
     font-size: 1.5em;
 }
 

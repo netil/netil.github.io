@@ -56,15 +56,12 @@ Session 5: 16:25~16:40
 
 ----------
 
-한줄답변:
-
-- 왜 Front-end를 선택해야 하는가?
-
-- 성장하는 개발자/일잘러 되기
-- FE가 AI에게 대체될까?
-- 디자인시스템은 정말 유용한가?
-- FE는 이제 고인걸까?
-- React는 영원할까?
+- 왜 Front-end를 선택해야 하는가? <!-- .element: class="fragment" -->
+- 성장하는 개발자/일잘러 되기 <!-- .element: class="fragment" -->
+- FE가 AI에게 대체될까? <!-- .element: class="fragment" -->
+- 디자인시스템은 정말 유용한가? <!-- .element: class="fragment" -->
+- FE는 이제 고인걸까? <!-- .element: class="fragment" -->
+- React는 영원할까? <!-- .element: class="fragment" -->
 
 ----------
 
