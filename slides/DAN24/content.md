@@ -23,7 +23,7 @@
 
 Session 1: 15:00~15:20
 ## 이븐한 네이버 FE 성장문화
-#### (feat. FE News) <!-- .element: style="margin-top:-30px" -->
+#### feat. <img src="./FE-growth/img/fe-news-logo.svg" style="width:80px;margin-top:-20px">
 
 Do or do not. There is no try.
 
