@@ -486,6 +486,11 @@ p > img.flow {
     border-radius:100px;border:solid 2px #fff;margin:0;
 }
 
+.reveal .w50 {
+    width:50px;
+    height:50px;
+}
+
 .naver-logo {
     width: 75px;
     margin: 5px 5px;

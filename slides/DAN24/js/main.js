@@ -12,6 +12,8 @@ Reveal.initialize({
     hideCursorTime: 2000,
     pdfMaxPagesPerSlide: 1,
     pdfSeparateFragments: false,
+    // autoSlide: 5000,
+    // loop: true,
 
     // Optional reveal.js plugins
     plugins: [RevealMarkdown, RevealHighlight, RevealZoom],
@@ -27,6 +29,10 @@ Reveal.initialize({
         document.querySelector(".backgrounds").prepend(waves);
         waves.style.display = "block";
     }
+});
+
+Reveal.configure({
+    autoSlideMethod: () => Reveal.right()
 });
 
 const path = "../assets/"
