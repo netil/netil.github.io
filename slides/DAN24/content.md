@@ -24,30 +24,57 @@
 Session 1: 15:00~15:20
 ## 이븐한 네이버 FE 성장문화
 #### (feat. FE News) <!-- .element: style="margin-top:-30px" -->
+
+Do or do not. There is no try.
+
+<div style="background-image:url('./img/jaesung.park.jpg')" class="person"></div>
+
 ### 박재성
 
 ----------
 
-Session 2: 15:20~15:50	
+Session 2: 15:20~15:50
 ## JSON과 마크업을 연결하기 
+
+아빠는 개발자
+
+<div style="background-image:url('./img/sungwon.cha.jpg')" class="person"></div>
+
 ### 차성원
 
 ----------
 
 Session 3: 15:50~16:10
 ## FE 개발자의 알쓸잡 유니코드 이야기
+
+세상은 잡부라하지만<br>
+본인은 제너럴리스트라고 주장하는 평범한 시니어 개발자!
+
+<div style="background-image:url('./img/dahyun.kim.jpg')" class="person"></div>
+
 ### 김다현
 
 ----------
 
 Session 4: 16:10~16:25
 ## FE 개발자 vs. 서비스 개발자
+
+여행과 맥주를 좋아하는 개발자
+
+<div style="background-image:url('./img/youngjae.yun.jpg')" class="person"></div>
+
 ### 윤영제
 
 ----------
 
 Session 5: 16:25~16:40
 ## 흑백 요리사로 돌아보는 코드 리뷰 원칙
+
+이름은 캡틴판교지만 판교에서 살지는 못합니다.<br>
+(a.k.a 캡틴판교)
+
+<div style="background-image:url('./img/kihyo.jang.jpg')" class="person"></div>
+
 ### 장기효
 
 ----------

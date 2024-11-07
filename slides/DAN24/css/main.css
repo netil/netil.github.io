@@ -87,13 +87,6 @@
 /* slide background */
 .reveal .slide-background.present {
     /* https://css-pattern.com/overlapping-circles/ */
-    /* background:
-        radial-gradient(50% 50% at 100% 0,var(--_g)),
-        radial-gradient(50% 50% at 0 100%,var(--_g)),
-        radial-gradient(50% 50%,var(--_g)),
-        radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
-        var(--c1);
-    background-size: var(--s) var(--s); */
 }
 
 .reveal .slide-background:first-child {
@@ -485,8 +478,12 @@ p > img.flow {
     box-shadow: 9px 10px 30px 0px rgba(27, 27, 27, 0.45);
 }
 
-.reveal img.person {
-    width:200px;border-radius:150px;border:solid 2px #fff;margin:0;
+.reveal .person {
+    display:inline-block;
+    width:100px;
+    height:100px;
+    background-size: cover;
+    border-radius:100px;border:solid 2px #fff;margin:0;
 }
 
 .naver-logo {
