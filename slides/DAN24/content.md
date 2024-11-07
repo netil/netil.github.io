@@ -36,7 +36,8 @@ Do or do not. There is no try.
 Session 2: 15:20~15:50
 ## JSON과 마크업을 연결하기 
 
-아빠는 개발자
+아빠는 개발자<br>
+https://bluewings.github.io
 
 <div style="background-image:url('./img/sungwon.cha.jpg')" class="person"></div>
 
