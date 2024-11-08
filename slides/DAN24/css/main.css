@@ -890,6 +890,12 @@ div.end-text {
     display: none;
 }
 
+#timer {
+    left: auto !important;
+    right: 55px !important;
+    top: 230px !important;
+}
+
 /*----- waves: start -----*/
 .waves {
     position: absolute;
