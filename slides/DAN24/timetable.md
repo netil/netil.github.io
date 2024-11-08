@@ -12,7 +12,7 @@
 
 
 <div>
-    경품 후원사: 
+    📙 경품 후원: 
     <img src="./img/jpub.png" style="width:100px;"> 
     <img src="./img/gilbut.png" style="filter:invert(1);width:80px;"> 
     <img src="./img/hanbit.png" style="width:150px">

@@ -26,7 +26,6 @@ Reveal.initialize({
     const waves = document.querySelector("svg.waves");
 
     if (waves) {
-        document.querySelector(".backgrounds").prepend(waves);
         waves.style.display = "block";
     }
 });

@@ -118,6 +118,7 @@
 .reveal .slides .cover-title {
     font-family: 'Moirai One',"NEXON Lv1 Gothic", 'HangeulNuri';
     font-weight: 700;
+    font-size: 3em;
     margin: 0;
     -webkit-text-stroke: 1px #000;
     position: relative;
@@ -865,6 +866,22 @@ div.end-text {
 
 .opentalk-qr img {
      margin:0 0 5px 0;
+}
+
+.opinion {
+    border: dotted #fff 1px;
+    border-radius: 15px;
+    padding: 8px 0;
+    width: 80%;
+    margin: 10px auto;
+    background-color: rgb(55 149 247 / 30%);
+    font-size: 0.8em;    
+}
+
+.opinion h4 {
+    display: inline;
+    font-size: 1.2em;
+    color: #00f6ff;
 }
 
 /*----- waves: start -----*/
