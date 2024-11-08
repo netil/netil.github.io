@@ -34,9 +34,14 @@
 			<div class="slides">
 				<section class="cover" data-background-image="./img/bg.png" data-background-position="left">
 					<h3 style="-webkit-text-stroke:#f00 1px;margin:0 0 -5px 0">기술워크샵 라운지</h3>
-					<h2 class="cover-title" _onclick="Timer.init(45)">
+					<h2 class="cover-title" _onclick="Timer.init(45)" ondblclick="document.querySelector('.time').style.display='block'">
 						<span style="color:#000;-webkit-text-stroke:4px #f6df1b">나는 네이버 프런트엔드<br>개발자 입니다.</span>
 					</h2>
+
+					<p class="time">
+						<span id="time" class="bold size25"></span><br>
+						잠시 후, <span class="cyan bold underline" id="time-init">17:00</span>에 시작합니다.
+					</p>
 					
 					<h4 class="ml1 m-0" style="font-size:0.65em;margin:30px 0 -15px 0">2024.11.11 / H26y</h4>
 
@@ -76,6 +81,12 @@
 					</section>
 				</section>
 			</div>
+
+			<iframe style="opacity:0;position:absolute" 
+				onmouseover="this.style.opacity=0.3" 
+				onmouseout="this.style.opacity=0"
+				src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1040616880&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+				width="200" height="130" scrolling="no" frameborder="no"></iframe>
 
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 				<defs>

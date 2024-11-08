@@ -28,6 +28,19 @@ Reveal.initialize({
     if (waves) {
         waves.style.display = "block";
     }
+
+    const $time = document.getElementById("time");
+
+    if ($time) {
+        const time = () => {
+            $time.innerHTML = new Date().toLocaleTimeString(("en-GB"));
+            setTimeout(time, 1000);
+        }
+
+        time();
+    }
+
+    setCover();
 });
 
 Reveal.configure({
