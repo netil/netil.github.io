@@ -18,6 +18,11 @@
     <img src="./img/hanbit.png" style="width:150px">
 </div>
 
+<div style="font-size:13px">
+<span class="cyan bold size18">===== 📣 안내 =====</span><br>
+오픈톡(상단 우측 QR)에 좋은 의견/질문 남겨주신 분들을 선정해 경품(IT 전문도서)을 드립니다.<br>
+'패널토론' 세션 후, 대상자 분들에 대한 공지와 증정 예정이므로 끝까지 자리를 함께 해주시길 부탁드립니다. 😁
+</div>
 
 ----------
 
