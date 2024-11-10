@@ -112,7 +112,7 @@ fe라운지에서 가장 좋아하는 시간입니다!!<br>
   - "OOO에 대한 다른 의견을 말씀해 주실분?"라는 질문은 항상 고요함 가득
 - 운영 스케줄링 <!-- .element: class="fragment" -->
     - 기간별 운영 담당자(3인)를 선정.
-    - 하지만, 모두가 항상 참여하지 못하는 경우 발생<br>→ 누군가 대신 해주어야 함
+    - 하지만, 모두가 항상 참여하지 못하는 경우 발생<br>> 누군가 대신 해주어야 함
 - 매주 진행 <!-- .element: class="fragment" -->
     - 지금은 다시 못할것 같아요...
 - 들었다 놨다 - '피드백' <!-- .element: class="fragment" -->
@@ -150,8 +150,8 @@ fe라운지에서 가장 좋아하는 시간입니다!!<br>
 - 한해간 주요 영역에 대한 설문 항목 정리의 어려움 <!-- .element: class="fragment" -->
     - 글로벌 생태계와 국내 생태계는 차이가 존재
 - 진행 프로세스 <!-- .element: class="fragment" -->
-    - 설문 질문/항목 정리 → 사내 진행 공지 → 답변 정리 → 결과 사이트 제작
-    - 설문 질문수 40개+. 참여 부담 → 낮은 응답률
+    - 설문 질문/항목 정리 > 사내 진행 공지 > 답변 정리 > 결과 사이트 제작
+    - 설문 질문수 40개+. 참여 부담 > 낮은 응답률
 - 얼만큼 유용한걸까? <!-- .element: class="fragment" -->
     - PV 수준만이 집계되기 때문에, 실제 활용도가 드러나지 않는 문제
     - 지속을 위한 동기부여 재료가 부족
@@ -195,7 +195,7 @@ https://github.com/naver/fe-news
   - 이유? 연차별, 경험적 관점에서     다양성 확보의 필요성
 - 코드 리뷰와 같이 매월 '리뷰어'가 소식 PR에 대한 리뷰 <!-- .element: class="fragment" -->
   - 맞춤법/문법/통일된 단어사용 검수
-      - ex. FrontEnd, Front-End, Frontend → `Front-end`
+      - ex. FrontEnd, Front-End, Frontend > `Front-end`
   - 표현상의 문제 등
       - ex. 문체는 `펑어체`, 주관적 의견/표현 배제 등
 - 소식 발행 <!-- .element: class="fragment" -->
@@ -210,7 +210,7 @@ https://github.com/naver/fe-news
 
 <div class="fragment">
 
-어떤 소식을 큐레이션 할지가 제일 중요 → <span class="yellow">퀄리티</span>
+어떤 소식을 큐레이션 할지가 제일 중요 > <span class="yellow">퀄리티</span>
 
 </div>
 
@@ -229,9 +229,9 @@ https://github.com/naver/fe-news
 
 - 연속적인 시간으로 환산시 3일+? 수준 <!-- .element: class="fragment" -->
 - 하지만, 큐레이션은 한달내내 지속 <!-- .element: class="fragment" -->
-   <br>→ 무언가 보다가 괜찮아 보이면 킵해두기
+   <br>> 무언가 보다가 괜찮아 보이면 킵해두기
 - 괜찮은 글을 찾는 과정이 가장 어렵고, 그 다음은 소개글로 요약하는 것 <!-- .element: class="fragment" -->
-    - 훑어봤을때 좋아보였는데, 막상 읽어보니 별로인 경우 → 시간 낭비
+    - 훑어봤을때 좋아보였는데, 막상 읽어보니 별로인 경우 > 시간 낭비
 
 ----------
 
