@@ -261,6 +261,6 @@ https://github.com/naver/fe-news
 <div class="fragment" style="margin-top:35px;color:#ecb45a">
 
 ### 일단, 작은 것이라도 <!-- .element: class="m-0" style="color:#ecb45a" -->
-### 시작해 보신다면 어떨까요? <!-- .element: class="m-0" style="color:#ecb45a" -->
+3### 시작해 보신다면 어떨까요? <!-- .element: class="m-0" style="color:#ecb45a" -->
 
 </div>

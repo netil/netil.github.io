@@ -144,7 +144,7 @@
 
 .reveal {
     font-family:  Cafe24Simplehae, "GmarketSansLight", "NEXON Lv1 Gothic";
-    font-size: 1.35em;
+    font-size: 1.7em;
 }
 
 .reveal ul {
@@ -288,7 +288,7 @@ html.print-pdf .reveal .index span {
 
 .reveal .grid {
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 50% 50%;
     justify-items: center;
     align-items: center;
 }
@@ -857,7 +857,7 @@ div.end-text {
 .opentalk-qr {
     text-align:center;
     font-size:15px;
-    width:150px;
+    width:200px;
     position:absolute;
     top:50px;
     right:50px;
@@ -872,7 +872,7 @@ div.end-text {
     border: dotted #fff 1px;
     border-radius: 15px;
     padding: 8px 0;
-    width: 80%;
+    width: 90%;
     margin: 10px auto;
     background-color: rgb(55 149 247 / 30%);
     font-size: 0.8em;    
@@ -893,7 +893,7 @@ div.end-text {
 #timer {
     left: auto !important;
     right: 55px !important;
-    top: 230px !important;
+    top: 280px !important;
 }
 
 /*----- waves: start -----*/
