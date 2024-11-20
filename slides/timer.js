@@ -29,9 +29,9 @@ var Timer = {
             "left:calc(100vw - 150px)",
             "top:20px",
             "font-weight:bold",
-            "z-index:1000",
+            "z-index:99999",
             "cursor:pointer",
-            "opacity:0.4",
+            "opacity:0.5",
             "position:fixed",
         ].join(";");
         div.id = "timer";
