@@ -1,6 +1,6 @@
 /**
  * Simple bookmarklet timer
- * javascript:void(!function(d, s){s=d.createElement("script");s.src="http://netil.github.io/slides/timer.js";d.head.appendChild(s);s.onload=function(){Timer.init(prompt("Minutes?"))}}(document));
+ * javascript:void(!function(d, s){s=d.createElement("script");s.src="https://netil.github.io/slides/timer.js";d.head.appendChild(s);s.onload=function(){Timer.init(prompt("Minutes?"))}}(document));
  */
 var Timer = {
     min: 10,
@@ -31,7 +31,8 @@ var Timer = {
             "font-weight:bold",
             "z-index:1000",
             "cursor:pointer",
-            "opacity:0.4"
+            "opacity:0.4",
+            "position:fixed",
         ].join(";");
         div.id = "timer";
 
