@@ -31,7 +31,6 @@ var Timer = {
             "font-weight:bold",
             "z-index:99999",
             "cursor:pointer",
-            "opacity:0.5",
             "position:fixed",
         ].join(";");
         div.id = "timer";
@@ -49,10 +48,13 @@ var Timer = {
 
         var fp = function (e) {
             Timer.start();
+            div.style.opacity = .5;
             doc.body.removeEventListener("keydown", fp);
+            div.removeEventListener("click", fp);
         }
 
         doc.body.addEventListener("keydown", fp, false);
+        div.addEventListener("click", fp, false);
     },
 
     start: function() {
