@@ -1,3 +1,5 @@
+const { clear } = require("gulp-cache");
+
 /**
  * Simple bookmarklet timer
  * javascript:void(!function(d, s){s=d.createElement("script");s.src="https://netil.github.io/slides/timer.js";d.head.appendChild(s);s.onload=function(){Timer.init(prompt("Minutes?"))}}(document));
@@ -41,7 +43,7 @@ var Timer = {
             min = this.min;
         }
 
-        div.innerHTML = "<span>"+ (min < 10 ? "0":"") + min +":00</span>";
+        this.reset();
         this.el = div.querySelector("span");
 
         doc.body.insertBefore(div, doc.body.firstChild);
@@ -55,6 +57,7 @@ var Timer = {
 
         doc.body.addEventListener("keydown", fp, false);
         div.addEventListener("click", fp, false);
+        div.addEventListener("dblclick", this.reset.bind(this), false);
     },
 
     start: function() {
@@ -76,5 +79,10 @@ var Timer = {
                 wrapper.style.color = "red";
             }
         }, 1000);
+    },
+
+    reset: function() {
+        this.interval && clearInterval(this.interval);
+        this.wrapper.innerHTML = "<span>"+ (min < 10 ? "0":"") + min +":00</span>";
     }
 };
