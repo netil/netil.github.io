@@ -1,37 +1,41 @@
 /**
  * Simple bookmarklet timer
- * javascript:void(!function(d, s){s=d.createElement("script");s.src="https://netil.github.io/slides/timer.js";d.head.appendChild(s);s.onload=function(){Timer.init(prompt("Minutes?"))}}(document));
+ * javascript:void(!function(d, s){s=d.createElement("script");s.src="https://netil.github.io/slides/timer.js";d.head.appendChild(s);}(document));
  */
-var Timer = {
+const Timer = {
     min: 10,
     wrapper: null,
-    el: null,
+    time: null,
     interval: null,
     init: function(min) {
         if (this.wrapper) {
             return;
         }
 
-        var doc = document;
-        var div = this.wrapper = doc.createElement("div");
+        const doc = document;
+        const div = this.wrapper = doc.createElement("div");
 
         div.style.cssText = [
-            "font-family:'Montserrat', 'Hanna', Impact, sans-serif",
+            "font-family:'DM Sans', sans-serif",
+            "font-optical-sizing:auto",
+            "font-weight:600",
+            "font-size:2em",
+            "font-style:normal",
+            "font-optical-sizing:auto",
             "width:130px",
-            "padding:7px 0",
+            "padding:4px 0",
             "position:absolute",
             "color:#807E7E",
-            "font-size:2em",
-            "border:solid 2px",
+            "border:solid 2px #727272",
             "text-align:center",
             "background-color:#fff",
             "border-radius: 20px",
             "left:calc(100vw - 150px)",
             "top:20px",
-            "font-weight:bold",
             "z-index:99999",
             "cursor:pointer",
             "position:fixed",
+            "user-select:none"
         ].join(";");
         div.id = "timer";
 
@@ -41,10 +45,13 @@ var Timer = {
             min = this.min;
         }
 
+        this.wrapper.innerHTML = "<span></span>";
+        this.time = this.wrapper.querySelector("span");
         this.reset();
+
         doc.body.insertBefore(div, doc.body.firstChild);
 
-        var fp = function (e) {
+        const fp = function (e) {
             Timer.start();
             div.style.opacity = .5;
             doc.body.removeEventListener("keydown", fp);
@@ -60,9 +67,11 @@ var Timer = {
     },
 
     start: function() {
-        var wrapper = this.wrapper;
-        var el = this.el || wrapper.querySelector("span");
-        var duration = this.min*60, min, sec;
+        const wrapper = this.wrapper;
+        const el = this.time || wrapper.querySelector("span");
+        let duration = this.min*60;
+        let min;
+        let sec;
 
         this.interval = setInterval(function () {
             min = Math.abs(parseInt(duration / 60, 10));
@@ -82,8 +91,17 @@ var Timer = {
 
     reset: function() {
         this.interval && clearInterval(this.interval);
-        this.wrapper.innerHTML = "<span>"+ (this.min < 10 ? "0":"") + this.min +":00</span>";
+        this.time.innerHTML = `${this.min < 10 ? "0":""} ${this.min}:00`;
         this.wrapper.style.color = "#000";
-        this.el = this.wrapper.querySelector("span");
     }
 };
+
+const font = new FontFace("DM Sans", "url('https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHTWEBlw.woff2')");
+
+document.fonts.add(font);
+font.load();
+
+// Wait until the fonts are all loaded
+document.fonts.ready.then(() => {
+    Timer.init(prompt("Minutes?"));
+});
