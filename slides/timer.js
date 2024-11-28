@@ -60,7 +60,6 @@ var Timer = {
     },
 
     start: function() {
-        console.log("start")
         var wrapper = this.wrapper;
         var el = this.el || wrapper.querySelector("span");
         var duration = this.min*60, min, sec;
@@ -84,6 +83,7 @@ var Timer = {
     reset: function() {
         this.interval && clearInterval(this.interval);
         this.wrapper.innerHTML = "<span>"+ (this.min < 10 ? "0":"") + this.min +":00</span>";
+        this.wrapper.style.color = "#000";
         this.el = this.wrapper.querySelector("span");
     }
 };
