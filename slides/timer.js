@@ -19,11 +19,11 @@ const Timer = {
             "font-family:'DM Sans', sans-serif",
             "font-optical-sizing:auto",
             "font-weight:600",
-            "font-size:30px",
+            "font-size:33px",
             "font-style:normal",
             "font-optical-sizing:auto",
-            "width:max-content",
-            "padding:8px",
+            "width:110px",
+            "padding:3px",
             "position:absolute",
             "color:#807E7E",
             "border:solid 2px #727272",
@@ -53,7 +53,7 @@ const Timer = {
 
         const fp = function (e) {
             Timer.start();
-            div.style.opacity = .5;
+            div.style.opacity = .55;
             doc.body.removeEventListener("keydown", fp);
             div.removeEventListener("click", fp);
         }
