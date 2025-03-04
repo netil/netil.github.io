@@ -103,5 +103,6 @@ font.load();
 
 // Wait until the fonts are all loaded
 document.fonts.ready.then(() => {
-    Timer.init(prompt("Minutes?"));
+    console.log("initialized");
+    // Timer.init(prompt("Minutes?"));
 });
