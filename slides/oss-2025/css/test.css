@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+:root {
+    --spread: .5em;
+    --shift: .01em;
+    --base: #01fa22;
+    /* --c1: #fcf802;
+    --c2: #9c63c7; */
+    
+    --s: 150px; /* control the size*/
+    --cc1: #000000;
+    --cc2: #262627;
+    
+    --shadow: blue;
+    --color-c9: #c9c9c9;
+    --color-bbb: #bbb;
+    --color-b9: #b9b9b9;
+    --color-aaa: #aaa;
+    --shadow-1: rgba(0,0,0,.1);
+    --shadow-3: rgba(0,0,0,.3);
+    --shadow-2: rgba(0,0,0,.2);
+    --shadow-25: rgba(0,0,0,.25);
+    --shadow-15: rgba(0,0,0,.15);
+
+    --_g: 
+       var(--cc1) 0%  5% ,var(--cc2) 6%  15%,var(--cc1) 16% 25%,var(--cc2) 26% 35%,var(--cc1) 36% 45%,
+       var(--cc2) 46% 55%,var(--cc1) 56% 65%,var(--cc2) 66% 75%,var(--cc1) 76% 85%,var(--cc2) 86% 95%,
+       #0000 96%;
+}
+
+.reveal img.solid-border {
+    border: solid 1px #000;
+}
+
+/*----- common styles -----*/
+
+.reveal .logo {
+    width: 120px;
+}
+
+.reveal img {
+    margin:20px 0; /* 위아래 여백 20px, 좌우 여백 0으로 간결하게 설정했습니다 */
+}

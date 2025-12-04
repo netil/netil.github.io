@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>우리가 알고 있는 프로그래밍의 종말</title>
+
+	<meta name="author" content="JaeSung Park">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/blood.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css">
+
+	<link rel="stylesheet" href="./css/blood.css">
+	<link rel="stylesheet" href="./css/main.css">
+
+	<script src="https://netil.github.io/slides/timer.js"></script>
+	<style>
+		.logo-text {
+			font-family: 'Honk', sans-serif;
+			font-size: 5rem;
+			text-transform: uppercase;
+		}
+
+		#timer {
+			top: 30px !important;
+			right: 30px !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<audio></audio>
+		<div class="slides">
+			<section>
+				<section>
+					<h3 onclick="go()" style="color:#fff">2025 오픈소스 페스티벌</h3>
+					<div class="cover-title">
+						<h4 class="m-0" style="display:inline-block" onclick="go()">우리가 알고 있는<span class="insertion"
+								data-content="OSS"></span>프로그래밍의 종말</h4>
+						<h1 class="m-0" style="margin:0 0 10px">현실적 AI</h1>
+						<h4 class="m-0" style="color:#f7da01">우리는 대체되는가, 증폭되는가?
+							</h2>
+					</div>
+					<p style="margin-top:50px;font-family:'GmarketSansBold'">
+						<img src="./img/naver.svg" style="width:70px;margin-right:10px" class="m-0">
+						<small style="text-align:left;border-left:solid 3px #fff;padding:0 15px">
+							2025.12.05<br>
+							<span style="display:inline-block;padding-top:2px;">박재성</span>
+						</small>
+					</p>
+				</section>
+			</section>
+
+			<section data-markdown="content.md" data-separator="^\r?\n----------\r?\n$" data-vertical="^=0=0=0\r?\n$"
+				data-separator-notes="^Note:" data-charset="utf-8" data-background-transition="slide">
+			</section>
+
+			<section>
+				<section>
+					<div class="cover-title">
+						<h2>고맙습니다.</h2>
+					</div>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/zoom/zoom.min.js"></script>
+	<script src="./js/main.js"></script>
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-56978261-1', 'auto');
+		ga('send', 'pageview');
+
+		document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+
+		function go() {
+			Timer.init(25);
+		}
+	</script>
+</body>
+</html>
