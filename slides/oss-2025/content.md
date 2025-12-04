@@ -45,9 +45,6 @@ https://x.com/karpathy/status/1617979122625712128
 <img src="img/uber.svg" style="width:200px;filter:invert(1)"> | learning to use AI agents to code is "going to be an<br>absolute necessity at Uber within a year." (25/4)<br>[The CEO of Uber says not enough of his employees know how to use AI](https://www.businessinsider.com/uber-ceo-not-enough-employees-use-ai-khosrowshahi-brown-2025-4)
 <img src="img/Accenture.svg" style="width:200px"> | Accenture plans on exiting staff who can’t be reskilled on AI. (25/9)<br>[Accenture plans on exiting staff who can’t be reskilled on AI](https://www.cnbc.com/2025/09/26/accenture-plans-on-exiting-staff-who-cant-be-reskilled-on-ai.html)
 <img src="img/amazon_logo.svg" style="width:200px"> | to ensure we’re investing in our biggest bets ... overall reduction in our corporate workforce of approximately 14,000 roles<br>[Amazon laying off about 14,000 ... as it invests more in AI](https://www.cnbc.com/2025/10/28/amazon-layoffs-corporate-workers-ai.html) (25/10)
-<!-- <img src="img/anthropic_logo.svg" style="width:200px"> | AI could wipe out half of all entry-level white-collar jobs and spike unemployment to 10% to 20% in the next one to five years. (25/11)<br>[Why Anthropic CEO Dario Amodei spends so much time warning of AI's potential dangers](https://www.cbsnews.com/news/anthropic-ceo-dario-amodei-warning-of-ai-potential-dangers-60-minutes-transcript/) -->
-
-<!-- <img src="img/kakao.svg" style="width:200px"> | 카카오가 코딩 등 인공지능(AI)이 대신할 수 있는<br>직무는 신규 채용을 제한하기로 했다.<br>[[단독] 신규채용 대신 AI로 카카오의 인사 혁신](https://v.daum.net/v/20250417230301842) -->
 
 ----------
 
@@ -227,14 +224,14 @@ builds | 38.38%
 경험이 적은 개발자일수록 도구 채택률과 생산성 향상률이 더 높았음
 
 ## 이유? <!-- .element: style="margin-top:30px" -->
-- 경험이 적은 개발자들은 일반적으로 더 작고 맥락이 덜 필요한 작업을 할당받게 됨
-- 대규모 코드베이스에서 데이터 손상을 유발하는 미묘한 스코프 문제 등을<br>식별하는 것과 같이 복잡하고 많은 맥락이 필요한 작업은 시니어에게 할당
+- 경험 적은 개발자들에겐 작고 맥락 적은 작업 할당
+- 대규모 코드베이스의 미묘한 스코프와 큰 복잡성 문제는 시니어에게 할당
 
 ### LLM 의존해 성장하는 주니어 개발자들이 <!-- .element: style="margin-top:30px" -->
 #### 미래에 시니어 레벨에서 요구되는 판단력과 
 #### 경험으로 관리했던 복잡한 문제들을 어떻게 해결할 것인가?
-보통 장애나 디버깅 환경이 보통 장애물로 인식되지만,<br>
-오히려 그런 상황의 경험이 성장을 이끌어냄
+보통 '<span class="red">장애나 디버깅</span>' 환경은 문제로 인식<br>
+하지만 그런 상황의 경험이 <span class="cyan">성장</span>을 이끌어냄
 
 ----------
 
@@ -512,7 +509,8 @@ AI 코딩 에이전트를 위한 지침서 포맷<br>
 
 ## 어떤 모델을 사용해야 할까?
 
-<img src="img/most-popular-models-2511.png" style="width:65%">
+<span class="size18">2025/12 기준</span><br>
+<img src="img/most-popular-models-202512.png" style="width:55%">
 
 - https://openrouter.ai/rankings
 
@@ -523,7 +521,7 @@ AI 코딩 에이전트를 위한 지침서 포맷<br>
 
 VSCode Copilot(~25/4) → Cursor(25/6) →<br>
 Claude Code(Opus)(25/8) → Codex(25/9) →<br>
-(❓) Gemini 3 Pro/Opus 4.5(25/12)
+(❓) [Gemini 3 Pro](https://deepmind.google/models/gemini/pro/)/[Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5)(25/12)
 
 > 급변하는 변화에 따라, 지속적 판단과 선택 필요
 
@@ -538,7 +536,7 @@ Claude Code(Opus)(25/8) → Codex(25/9) →<br>
 
 ----------
 
-# Tip
+## 새 대화 사용하기
 
 - 짧게 컨택스트를 유지하거나 "새 대화"를 사용
 - 문맥이 길어지면, 속도, 처리능력, 노이즈 등이 증가
@@ -569,7 +567,7 @@ https://x.com/karpathy/status/1902737525900525657
 ## Threshold decay
 
 [IFScale](https://distylai.github.io/IFScale/) 벤치마크 수행에서<br>
-150 ~ 200개의 지침 초과 시점부터 성능 저하 관찰
+150 ~ 200개의 명령어 초과 시점부터 성능 저하 관찰
 
 <img src="img/how-many-instructions.png" style="width:50%;margin-bottom:20px">
 
@@ -612,13 +610,14 @@ ex. [Claude Sonnet 4](https://openrouter.ai/anthropic/claude-sonnet-4)
 
 ----------
 
-## AI 시대에서의 <!-- .element class="m-0" -->
+### AI 시대에서의 <!-- .element class="m-0" -->
 # 규칙
 
 - AI 작성 코드를 검토하지 않은채 코드베이스에 허용하지 않기
-- 모든 라인을 검사 및 확인. 이해되지 않는 경우 AI가 더 잘 안다고 가정하면 안됨
+- 이해되지 않는 경우, AI가 더 잘 안다고 가정하면 안됨
 
-> ### 품질 없는 속도는 아무 의미 없음
+> ### 품질 없는 속도는
+>## 아무 의미 없음.
 
 ----------
 
