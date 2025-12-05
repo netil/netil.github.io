@@ -7,18 +7,18 @@
 
 #### 오픈소스 메인테이너 <!-- .element: style="margin-top:30px" -->
 
-<a href="https://github.com/naver/billboard.js"><img src="https://naver.github.io/billboard.js/img/logo/billboard.js-white.svg" style="width:250px"></a>
+<a href="https://github.com/naver/billboard.js" target="_new"><img src="https://naver.github.io/billboard.js/img/logo/billboard.js-white.svg" style="width:350px"></a>
 
 #### Creator of <!-- .element: style="margin-top:30px" -->
 
-<a href="https://github.com/naver/fe-news"><img src="https://github.com/naver/fe-news/raw/master/assets/logo.svg" style="height:80px"></a>
-<a href="https://naver.github.io/fe-news/stateof-fejs/2025/"><img src="https://naver.github.io/fe-news/stateof-fejs/assets/img/logo-white.svg" style="height:80px"></a>
+<a href="https://github.com/naver/fe-news" target="_new"><img src="https://github.com/naver/fe-news/raw/master/assets/logo.svg" style="height:80px"></a>
+<a href="https://naver.github.io/fe-news/stateof-fejs/2025/" target="_new"><img src="https://naver.github.io/fe-news/stateof-fejs/assets/img/logo-white.svg" style="height:80px"></a>
 
-#### And... <!-- .element: style="margin-top:30px" -->
+#### 저서 <!-- .element: style="margin-top:30px" -->
 
-['나는 네이버 프런트엔드 개발자입니다'](https://search.shopping.naver.com/book/catalog/39386955623) 외 2권 저서
-
-<img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3938695%2F39386955623.20230905101119.jpg&type=w216" style="width:130px">
+<a href="https://search.shopping.naver.com/book/catalog/39386955623" target="_new"><img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3938695%2F39386955623.20230905101119.jpg&type=w216" style="height:170px"></a>
+<a href="https://search.shopping.naver.com/book/catalog/32489634698" target="_new"><img src="https://shopping-phinf.pstatic.net/main_3248963/32489634698.20220527023032.jpg?type=w300" style="height:170px"></a>
+<a href="https://search.shopping.naver.com/book/catalog/32496890879" target="_new"><img src="https://shopping-phinf.pstatic.net/main_3249689/32496890879.20251104084859.jpg?type=w300" style="height:170px"></a>
 
 ----------
 
@@ -615,13 +615,16 @@ ex. [Claude Sonnet 4](https://openrouter.ai/anthropic/claude-sonnet-4)
 
 - AI 작성 코드를 검토하지 않은채 코드베이스에 허용하지 않기
 - 이해되지 않는 경우, AI가 더 잘 안다고 가정하면 안됨
+- AI는 일을 잘 할수 있습니다. 단, "일을 잘 시킬때만".
 
 > ### 품질 없는 속도는
 >## 아무 의미 없음.
 
+
+
 ----------
 
-로봇이 지시를 어긋나 동작하는 모습을 볼수도
+지시를 어긋나 동작하는 모습을 볼수도
 
 <img src="img/robot.gif" style="width:50%">
 
