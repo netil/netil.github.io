@@ -117,7 +117,7 @@ https://x.com/petergyang/status/1863058206752379255
 ## Pain points
 
 State of Web Dev AI 2025
-<img src="img/webdev-ai-2025.png" style="width:90%;margin-top:20px">
+<img src="img/webdev-ai-2025.png" style="margin-top:20px">
 
 [Model Providers Pain Points](https://2025.stateofai.dev/en-US/models/#models_pain_points)<br>
 [Pain point](https://2025.stateofai.dev/en-US/usage/#ai_pain_points)
@@ -191,7 +191,7 @@ SVG 기반 예제를 비트맵 렌더링으로 만든 경험
 # AI로 인한
 ## 생산성 변화에 대한 인식
 
-<img src="img/dora-survey2025.png" style="width:80%">
+<img src="img/dora-survey2025.png" style="95%">
 
 > <!-- .element: style="font-size:0.7em" -->
 > AI’s primary role in software development is that of an amplifier.<br>
@@ -240,7 +240,7 @@ builds | 38.38%
 
 Git 저장소 변화 분석 서비스 제공 [GitClear](https://www.gitclear.com/)의 연구 결과
 
-<img src="img/git-codebase.png" style="width:80%">
+<img src="img/git-codebase.png" style="width:95%">
 
 Copilot 사용 이후, 새로 추가되는 코드 라인 수와<br>
 'churn'(2주 내 수정/되돌림) 증가,<br>
@@ -253,15 +253,17 @@ Copilot 사용 이후, 새로 추가되는 코드 라인 수와<br>
 
 ## AI 생산성의 역설
 
-<img src="img/ai-productivity-paradox.png" style="width:50%;background-color:#fff;margin: 10px 0">
+<img src="img/ai-productivity-paradox.png" style="width:70%;background-color:#fff;margin: 10px 0">
 
-AI로 개발 아웃풋은 빨라졌지만, 리뷰시간이 증가
+AI로 개발 아웃풋이 가속화 → 인간 개발자의 리뷰시간 증가
 
 [The AI Productivity Paradox Report 2025](https://www.faros.ai/blog/ai-software-engineering)
 
 ----------
 
 ## 디버깅 시간의 증가
+
+초기 빨라보이는 생산성은 후반 디버깅 시간 증가로 상쇄
 
 <div class="grid" style="align-items:end;grid-template-columns:40% 50%">
 
@@ -370,7 +372,7 @@ https://x.com/satyanadella/status/1883753899255046301
 
 ----------
 
-## 수요의 증가
+# 수요의 증가 <!-- .element: class="m-0" -->
 ### 누구나 코딩할 수 있다.
 
 [[정책 인사이트] ‘불법 현수막 관리 시스템’ 개발한 강남구 공무원 “3개월 독학, 비용은 6만원”](https://biz.chosun.com/topics/topics_social/2025/05/10/YT4AWFQTVRAJHDDKZWZ564FPSU)
@@ -569,7 +571,7 @@ https://x.com/karpathy/status/1902737525900525657
 [IFScale](https://distylai.github.io/IFScale/) 벤치마크 수행에서<br>
 150 ~ 200개의 명령어 초과 시점부터 성능 저하 관찰
 
-<img src="img/how-many-instructions.png" style="width:50%;margin-bottom:20px">
+<img src="img/how-many-instructions.png" style="width:55%;margin-bottom:10px">
 
 [How many instructions can LLMs follow at once?](https://arxiv.org/pdf/2507.11538) <span class="size18">(25/7)</span>
 
@@ -579,7 +581,7 @@ https://x.com/karpathy/status/1902737525900525657
 
 단일 도구, 단일 LLM만 사용하지 않는 상황에선 비용 부담
 
-<img src="img/ai-difficulty.png" style="width:65%">
+<img src="img/ai-difficulty.png" style="width:70%">
 
 
 [State of FE·JS Korea 2025 > AI 사용 장애물](https://naver.github.io/fe-news/stateof-fejs/2025/#ai-difficulties)
@@ -593,7 +595,7 @@ https://x.com/karpathy/status/1902737525900525657
 
 ex. [Claude Sonnet 4](https://openrouter.ai/anthropic/claude-sonnet-4)
 
-<img src="img/token-price.png" style="width:50%;margin: 10px 0 0 0">
+<img src="img/token-price.png" style="width:60%;margin: 10px 0 0 0">
 
 <div style="font-size:13px;margin:0 0 20px 0">
 
@@ -615,16 +617,14 @@ ex. [Claude Sonnet 4](https://openrouter.ai/anthropic/claude-sonnet-4)
 
 - AI 작성 코드를 검토하지 않은채 코드베이스에 허용하지 않기
 - 이해되지 않는 경우, AI가 더 잘 안다고 가정하면 안됨
-- AI는 일을 잘 할수 있습니다. 단, "일을 잘 시킬때만".
 
 > ### 품질 없는 속도는
 >## 아무 의미 없음.
 
-
-
 ----------
 
-지시를 어긋나 동작하는 모습을 볼수도
+AI는 일을 잘 할수 있습니다.
+## 단, <span class="cyan bold">"일을 잘 시킬때만".
 
 <img src="img/robot.gif" style="width:50%">
 
