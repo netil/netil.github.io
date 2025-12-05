@@ -7,7 +7,7 @@ Reveal.initialize({
     slideNumber: true,
     history: true,
     center: true,
-    transition: "slide", // none/fade/slide/convex/concave/zoom
+    transition: "convex", // none/fade/slide/convex/concave/zoom
     fragments: true,
     hideCursorTime: 2000,
     pdfMaxPagesPerSlide: 1,
